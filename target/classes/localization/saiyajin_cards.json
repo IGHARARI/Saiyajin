@@ -42,7 +42,7 @@
 	},
 	"GreatApeForm": {
 		"NAME": "Great Ape Form",
-		"DESCRIPTION": "Can only be used when there is a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust every non-attack card from your hand and deck. Gain 15 Ki Regen. Gain 8 Plated Armor."
+		"DESCRIPTION": "Can only be used on a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust all non-attack cards from your hand and deck. Gain 15 Ki Regen and 8 Plated Armor."
 	},
 	"ConcussiveBlow": {
 		"NAME": "Concussive Blow",
