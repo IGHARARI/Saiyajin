@@ -18,4 +18,5 @@ public class PowerPaths {
 	public static final String KI_REGEN = "img/powers/ki.png";
 	public static final String FULL_MOON = "img/powers/reflection.png";
 	public static final String GREAT_APE = "img/powers/combo.png";
+	public static final String CONCUSSION = "img/powers/reflection.png";
 }

@@ -27,6 +27,7 @@ public class Ki extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
 		this.img = new Texture(PowerPaths.KI);
 		this.canGoNegative = false;
+		updateDescription();
 	}
 	
 	@Override
