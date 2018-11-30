@@ -14,4 +14,7 @@ public abstract class PowerNames {
 
 	public static final String KI_BARRIER = "KiExplosion";
 	public static final String BURNING_SOUL = "BurningSoul";
+	public static final String CANT_REVIVE = "CantRevive";
+	public static final String CONCUSSION = "Concussion";
+	public static final String REFLECTION = "Reflection";
 }

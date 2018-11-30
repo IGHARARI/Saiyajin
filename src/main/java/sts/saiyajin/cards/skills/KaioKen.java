@@ -39,7 +39,7 @@ public class KaioKen extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeMagicNumber(VULNERABILITY_RECEIVED - UPGRADED_VULNERABILITY_RECEIVED);
+			upgradeMagicNumber(UPGRADED_VULNERABILITY_RECEIVED - VULNERABILITY_RECEIVED);
 		}
 	}
 

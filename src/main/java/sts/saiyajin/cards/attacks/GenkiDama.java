@@ -25,7 +25,8 @@ public class GenkiDama extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.GENKI_DAMA);
 	private static final int COST = 3;
 	private static final int BASE_DAMAGE = 0;
-	private int BASE_KI_DAMAGE_MULTIPLIER = 1;
+	private static final int BASE_KI_MAX_CONSUME = 25;
+	private static final int UPGRADED_KI_MAX_CONSUME = 40;
 	
 	public GenkiDama() {
 		super(CardNames.GENKI_DAMA, cardStrings.NAME, CardPaths.SAIYAN_STRIKE, COST, cardStrings.DESCRIPTION, 
@@ -35,7 +36,7 @@ public class GenkiDama extends CustomCard {
 		        AbstractCard.CardTarget.ALL_ENEMY);
 		
 		this.baseDamage = BASE_DAMAGE;
-		this.baseMagicNumber = BASE_KI_DAMAGE_MULTIPLIER;
+		this.baseMagicNumber = BASE_KI_MAX_CONSUME;
 		this.magicNumber = this.baseMagicNumber;
 	}
 
@@ -43,7 +44,7 @@ public class GenkiDama extends CustomCard {
 	public void upgrade() {
 		if (!upgraded){
 			upgradeName();
-			upgradeMagicNumber(1);
+			upgradeMagicNumber(UPGRADED_KI_MAX_CONSUME - BASE_KI_MAX_CONSUME);
 		}
 	}
 
@@ -51,8 +52,8 @@ public class GenkiDama extends CustomCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		Saiyajin kakarot = (Saiyajin) player;
 		Ki kiPower = (Ki) kakarot.getPower(PowerNames.KI);
-		int damage = kiPower.amount * this.magicNumber;
-		int multiDamage[] = DamageInfo.createDamageMatrix(damage, true);
+		int kiToUse = Math.min(kiPower.amount, this.magicNumber);
+		int multiDamage[] = DamageInfo.createDamageMatrix(kiToUse, true);
 		
 		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(
 				player, multiDamage, damageTypeForTurn, AttackEffect.SMASH);

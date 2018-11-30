@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.ui.PowerPaths;
 
 public class KiBarrierPower extends AbstractPower {
 	public static final String POWER_ID = PowerNames.KI_BARRIER;
@@ -30,7 +31,7 @@ public class KiBarrierPower extends AbstractPower {
 		this.owner = owner;
 		this.amount = amount;
 		this.description = DESCRIPTIONS[0];
-		this.img = new Texture("img/powers/reflection.png");
+		this.img = new Texture(PowerPaths.KI_BARRIER);
 	}
   
 	@Override

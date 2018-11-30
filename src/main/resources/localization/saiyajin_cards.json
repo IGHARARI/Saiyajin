@@ -65,11 +65,11 @@
 	},
 	"SenzuBean": {
 		"NAME": "Senzu Bean",
-		"DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength and Metallicize.",
-		"UPGRADE_DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength."
+		"DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength and can only take a third of its max HP of damage per turn",
+		"UPGRADE_DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength and Metallicize."
 	},
 	"GenkiDama": {
 		"NAME": "Genki Dama",
-		"DESCRIPTION": "Consume all your Ki, deal !M! damage to all enemies for every point of Ki spent. Gain 2 Weakened."
+		"DESCRIPTION": "Consume all your Ki (up to !M!) and deal that much damage to all enemies. Gain 2 Weakened."
 	}
 }

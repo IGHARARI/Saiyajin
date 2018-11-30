@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
+import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.powers.Revive;
 import sts.saiyajin.ui.CardPaths;
 
@@ -29,6 +30,8 @@ public class SenzuBean extends CustomCard {
 		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.ENEMY);
 		this.baseMagicNumber = REVIVE_BUFF;
+		this.magicNumber = baseMagicNumber;
+		this.exhaust = true;
 	}
 
 	@Override
@@ -43,7 +46,9 @@ public class SenzuBean extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new Revive(monster, REVIVE_BUFF), REVIVE_BUFF));
+		if (!monster.hasPower(PowerNames.CANT_REVIVE)){
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new Revive(monster, REVIVE_BUFF), REVIVE_BUFF));
+		}
 	}
 
 }

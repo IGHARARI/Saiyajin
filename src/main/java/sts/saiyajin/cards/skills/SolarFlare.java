@@ -27,6 +27,8 @@ public class SolarFlare extends KiCard {
 		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.ENEMY);
 		kiRequired = KI_COST;
+		this.baseMagicNumber = KI_COST;
+		this.magicNumber = this.baseMagicNumber;
 	}
 
 	@Override

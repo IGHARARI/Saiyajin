@@ -28,7 +28,7 @@ public class BurningSoulPower extends AbstractPower {
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-		this.img = new Texture(PowerPaths.STUN);
+		this.img = new Texture(PowerPaths.BURNING_SOUL);
 	}
   
 	@Override

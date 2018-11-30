@@ -15,11 +15,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.ui.PowerPaths;
+
 public class ReflectionPower
   extends AbstractPower
 {
-	public static final String POWER_ID = "Reflection";
-	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Reflection");
+	public static final String POWER_ID = PowerNames.REFLECTION;
+	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private boolean justApplied;
@@ -35,13 +38,13 @@ public class ReflectionPower
 	public ReflectionPower(AbstractCreature owner, final int amount, final boolean justApplied)
 	{
 		this.name = NAME;
-		this.ID = "Reflection";
+		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
 		this.justApplied = justApplied;
         this.isTurnBased = true;
 		this.description = DESCRIPTIONS[0];
-		this.img = new Texture("img/powers/reflection.png");
+		this.img = new Texture(PowerPaths.REFLECTION);
 	}
   
 	@Override
@@ -56,10 +59,10 @@ public class ReflectionPower
             return;
         }
         if (this.amount == 0) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Reflection"));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "Reflection", 1));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
         }
     }
 	

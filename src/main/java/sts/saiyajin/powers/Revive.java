@@ -7,6 +7,8 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -41,7 +43,7 @@ public class Revive extends AbstractPower {
 		this.amount = -1;
 		this.buffAmount = amount;
 		this.type = AbstractPower.PowerType.BUFF;
-		this.img = new Texture(PowerPaths.COMBO);
+		this.img = new Texture(PowerPaths.SENZU_REVIVE);
 		this.canGoNegative = false;
 	}
 	
@@ -52,14 +54,16 @@ public class Revive extends AbstractPower {
 			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, power));
 		}
 		
-		this.owner.heal(this.owner.maxHealth);
-		((AbstractMonster)this.owner).usePreBattleAction();
 		int invincibleAmount = (owner.maxHealth / 3 ) +1;
-		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, buffAmount), buffAmount));
-		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new InvinciblePower(owner, invincibleAmount), invincibleAmount));
-		AbstractDungeon.actionManager.addToTop(new StunMonsterAction((AbstractMonster) owner, owner, 1));
+		if (owner.currentHealth > 1){
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, owner.currentHealth -1)));
+		}
+		AbstractDungeon.actionManager.addToBottom(new HealAction(owner, owner, owner.maxHealth));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new StrengthPower(owner, buffAmount), buffAmount));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new InvinciblePower(owner, invincibleAmount), invincibleAmount));
+		AbstractDungeon.actionManager.addToBottom(new StunMonsterAction((AbstractMonster) owner, owner, 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new CantRevivePower(owner, 1), 1));
 		AbstractDungeon.getCurrRoom().addRelicToRewards(RelicTier.COMMON);
-		logger.info("################### ON ENEMY DEATH  FINISH #########");
 		return 0;
 	}
 	
