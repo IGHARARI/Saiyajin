@@ -11,18 +11,19 @@ import com.megacrit.cardcrawl.powers.MetallicizePower;
 
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.BurningSoulPower;
+import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class SuperSaiyanForm extends AbstractCard
 {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.SUPER_SAIYAN_FORM);
-	private static final int COST = 2;
-	private static final int BASE_KI_REGEN = 4;
+	private static final int COST = 3;
+	private static final int UPGRADED_COST = 2;
+	private static final int BASE_KI_REGEN = 3;
 	private static final int UPGRADED_KI_REGEN = 2;
 	private int metallicizeAmount;
-	private static final int BASE_METALLICIZE = 6;
-	private static final int UPGRADED_METALLICIZE = 8;
+	private static final int BASE_METALLICIZE = 4;
+	private static final int UPGRADED_METALLICIZE = 5;
 	
     
     public SuperSaiyanForm() {
@@ -38,7 +39,7 @@ public class SuperSaiyanForm extends AbstractCard
     
     @Override
     public void use(final AbstractPlayer player, final AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BurningSoulPower(player, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiRegenPower(player, this.magicNumber), this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new MetallicizePower(player, this.metallicizeAmount), this.metallicizeAmount));
     }
     
@@ -51,6 +52,7 @@ public class SuperSaiyanForm extends AbstractCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeBaseCost(UPGRADED_COST);
             this.upgradeMagicNumber(UPGRADED_KI_REGEN);
             metallicizeAmount = UPGRADED_METALLICIZE;
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;

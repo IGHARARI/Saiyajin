@@ -20,8 +20,7 @@ public class ThirstForFight extends CustomCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.THIRST_FOR_FIGHT);
 
-	private static final int COST = 2;
-	private final static int UPGRADED_COST = 1;
+	private static final int COST = 1;
 	
 	
 	public ThirstForFight() {
@@ -37,7 +36,6 @@ public class ThirstForFight extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeBaseCost(UPGRADED_COST);
 			this.exhaust = false;
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 			initializeDescription();

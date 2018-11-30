@@ -28,6 +28,10 @@
 		"NAME": "Meteor Dash",
 		"DESCRIPTION": "Dash at the enemy to deliver a heavy blow dealing !D! damage. Start a Combo"
 	},
+	"Quickening": {
+		"NAME": "Quickening",
+		"DESCRIPTION": "Gain !B! Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki."
+	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
 		"DESCRIPTION": "Gain !M! Dexterity. Put a Full Moon and a Great Ape Form in your draw pile."
@@ -47,6 +51,10 @@
 	"BurningSoul": {
 		"NAME": "Burning Soul",
 		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn in order to gain the same amount of Ki Barrier."
+	},
+	"TurtleShell": {
+		"NAME": "Turtle Shell",
+		"DESCRIPTION": "Gain !M! Ki Regen."
 	},
 	"Flurry": {
 		"NAME": "Flurry",

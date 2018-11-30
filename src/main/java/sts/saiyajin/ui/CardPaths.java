@@ -22,6 +22,8 @@ public class CardPaths {
 	public static final String KI_EXPLOSION = "img/cards/block.png";
 	public static final String BURNING_SOUL = "img/cards/block.png";
 	public static final String CONCUSSIVE_BLOW = "img/cards/block.png";
+	public static final String QUICKENING = "img/cards/block.png";
+	public static final String TURTLE_SHELL = "img/cards/block.png";
 
 	/**
 	 * UNCOMMONS
@@ -30,11 +32,12 @@ public class CardPaths {
 	public static final String TELEPORT = "img/cards/block.png";
 	public static final String THIRST_FOR_FIGHT = "img/cards/block.png";
 	public static final String DRAINING_STRIKE = "img/cards/block.png";
-	public static final String SUPER_SAIYAN_FORM = "img/cards/block.png";
+	public static final String ENDURE = "img/cards/block.png";
 	
 	/**
 	 * RARES
 	 */
+	public static final String SUPER_SAIYAN_FORM = "img/cards/block.png";
 	public static final String TAUNT = "img/cards/block.png";
 	public static final String SENZU_BEAN = "img/cards/block.png";
 	public static final String MONKEY_TAIL = "img/cards/block.png";
