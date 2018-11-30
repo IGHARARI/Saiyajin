@@ -1,0 +1,75 @@
+{
+	"SAIYA_Strike": {
+		"NAME": "Saiyan Punch",
+		"DESCRIPTION": "Deal !D! damage."
+	},
+	"SAIYA_Defend": {
+		"NAME": "Block",
+		"DESCRIPTION": "Gain !B! Block. If you have !M! or more Ki gain an extra 2 Block."
+	},
+	"EnergyBlast": {
+		"NAME": "Energy Blast",
+		"DESCRIPTION": "Deal !D! damage to all enemies. If you have !M! or more Ki, consume it to deal an extra 2 damage to each enemy."
+	},
+	"PowerUp": {
+		"NAME": "Power Up",
+		"DESCRIPTION": "Yell REALLY loud in order to gain !M! Ki and !B! block."
+	},
+	"KameHameHa": {
+		"NAME": "Kame Hame Ha",
+		"DESCRIPTION": "Use up to 20 Ki to deal up to !D! damage to an enemy, total damage is proportional to Ki used. NL Combo Finisher: Costs 1 less energy per Combo Chain counter."
+	},
+	"KaioKen": {
+		"NAME": "KaioKen",
+		"DESCRIPTION": "Gain 20 Ki, apply !M! Vulnerable to yourself. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain 20 Ki. NL Exhaust."
+	},
+	"MeteorDash": {
+		"NAME": "Meteor Dash",
+		"DESCRIPTION": "Dash at the enemy to deliver a heavy blow dealing !D! damage. Start a Combo"
+	},
+	"BurningSoul": {
+		"NAME": "Burning Soul",
+		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn in order to gain the same amount of Ki Barrier."
+	},
+	"Flurry": {
+		"NAME": "Flurry",
+		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. If you have !M! or more Ki, consume it to deal 1 more damage per hit. Increases Combo chain."	
+	},
+	"ThirstForFight": {
+		"NAME": "Thirst for Battle",
+		"DESCRIPTION": "Gain 1 Strength for every buff on a target enemy. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain 1 Strength for every buff on a target enemy."
+	},
+	"Teleport": {
+		"NAME": "Instant Transfer",
+		"DESCRIPTION": "Teleport next to the enemy to Start a Combo or increase your current Combo Chain. Consumes !M! Ki."
+	},
+	"DrainingStrike": {
+		"NAME": "Draining Strike",
+		"DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit with unblocked damage.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit."
+	},
+	"Taunt": {
+		"NAME": "Taunt",
+		"DESCRIPTION": "Give an enemy !M! Strength, gain 1 Reflect."
+	},
+	"KiExplosion": {
+		"NAME": "Ki Explosion",
+		"DESCRIPTION": "Gain !B! block and !M! Ki Barrier. Consumes 10 Ki."
+	},
+	"SolarFlare": {
+		"NAME": "Solar Flare",
+		"DESCRIPTION": "Stun an enemy for 1 turn. Consumes !M! Ki.",
+		"UPGRADE_DESCRIPTION": "Stun All enemies for 1 turn. Consumes !M! Ki."
+	},
+	"SenzuBean": {
+		"NAME": "Senzu Bean",
+		"DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength and Metallicize.",
+		"UPGRADE_DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength."
+	},
+	"GenkiDama": {
+		"NAME": "Genki Dama",
+		"DESCRIPTION": "Consume all your Ki, deal !M! damage to all enemies for every point of Ki spent. Gain 2 Weakened."
+	}
+}

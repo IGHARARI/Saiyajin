@@ -1,0 +1,30 @@
+{
+  "KiPower": {
+    "NAME": "Ki",
+    "DESCRIPTIONS": ["Used to empower your different abilities"]
+  },
+  "StunPower": {
+    "NAME": "Stun",
+    "DESCRIPTIONS": ["Stunned enemies can't take actions."]
+  },
+  "Revive": {
+    "NAME": "Revive",
+    "DESCRIPTIONS": ["Enemy will revive when killed with full HP and extra buffs."]
+  },
+  "Reflection": {
+    "NAME": "Reflection",
+    "DESCRIPTIONS": ["Reflects damage back to the attacker."]
+  },
+  "BurningSoul": {
+    "NAME": "Burning Soul",
+    "DESCRIPTIONS": ["Spend Ki to gain gain Ki Barrier charges at the end of every turn."]
+  },
+  "KiExplosion": {
+    "NAME": "Ki Barrier",
+    "DESCRIPTIONS": ["When attacked by an enemy, deal back damage equal to the amount of Ki Barrier charges. Expires at end of turn."]
+  },
+  "ComboPower": {
+    "NAME": "Combo Chain",
+    "DESCRIPTIONS": ["Consume a Combo Chain with a Combo Finisher for enhanced effects"]
+  }
+}
