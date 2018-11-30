@@ -19,6 +19,10 @@
     "NAME": "Burning Soul",
     "DESCRIPTIONS": ["Spend Ki to gain gain Ki Barrier charges at the end of every turn."]
   },
+  "Concussion": {
+    "NAME": "Concussion",
+    "DESCRIPTIONS": ["Deal damage at the end of turn equal to the number of Concussion charges. Increase by 1 at the end of every round."]
+  },
   "KiRegen": {
     "NAME": "Ki Regen",
     "DESCRIPTIONS": ["Regenerate Ki equal to your Ki Regen amount at the start of every turn."]
