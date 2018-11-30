@@ -28,13 +28,11 @@ public class BurningSoulPower extends AbstractPower {
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-		this.description = DESCRIPTIONS[0];
 		this.img = new Texture(PowerPaths.STUN);
 	}
   
 	@Override
-	public void updateDescription()
-	{
+	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
 	}
   

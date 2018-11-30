@@ -5,5 +5,5 @@ public class CharacterSelection {
 	 * 	CHARACTER SELECTION PATHS
 	 */
 	public static final String SAIYAN_CHARACTER_BUTTON = "img/charSelect/kameselect.png";
-	public static final String SAIYAN_PORTRAIT = "img/charSelect/saiyanPortrait.jpg";
+	public static final String SAIYAN_PORTRAIT = "img/charSelect/saiyanPortrait.png";
 }

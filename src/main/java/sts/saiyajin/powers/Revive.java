@@ -63,8 +63,8 @@ public class Revive extends AbstractPower {
 		return 0;
 	}
 	
-	
+	@Override
 	public void updateDescription() {
-		//this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
+		this.description = DESCRIPTIONS[0];
 	}
 }

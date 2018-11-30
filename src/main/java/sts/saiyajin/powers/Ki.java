@@ -33,13 +33,15 @@ public class Ki extends AbstractPower {
 	}
 	
 	@Override
+	public void updateDescription()
+	{
+		this.description = DESCRIPTIONS[0];
+	}
+	
+	@Override
 	public void atStartOfTurn() {
 		super.atStartOfTurn();
 		AbstractPlayer player = AbstractDungeon.player;
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, KI_REGEN_AMOUNT), KI_REGEN_AMOUNT));
-	}
-	
-	public void updateDescription() {
-	    //this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
 	}
 }

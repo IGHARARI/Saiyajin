@@ -45,8 +45,7 @@ public class ReflectionPower
 	}
   
 	@Override
-	public void updateDescription()
-	{
+	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
 	}
   
@@ -66,9 +65,6 @@ public class ReflectionPower
 	
     @Override
     public int onAttacked(final DamageInfo info, final int damageAmount) {
-    	logger.info("On attacked for refelctionpower");
-    	logger.info("reflection damage amount : " + damageAmount);
-    	logger.info("refelctionpower info : " + info.owner.id + " " + this.owner.id + " " + info.type + " " + info.output);
         if (info.owner != null && info.owner != this.owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && info.output > 0) {
             this.flash();
             AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, info.output, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
