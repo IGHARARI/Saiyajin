@@ -35,9 +35,11 @@ import sts.saiyajin.cards.attacks.KiBlast;
 import sts.saiyajin.cards.attacks.MeteorDash;
 import sts.saiyajin.cards.attacks.Strike;
 import sts.saiyajin.cards.powers.BurningSoul;
+import sts.saiyajin.cards.powers.GreatApeForm;
 import sts.saiyajin.cards.powers.MonkeyTail;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.skills.Defend;
+import sts.saiyajin.cards.skills.FullMoon;
 import sts.saiyajin.cards.skills.InstantTransfer;
 import sts.saiyajin.cards.skills.KaioKen;
 import sts.saiyajin.cards.skills.KiExplosion;
@@ -98,7 +100,7 @@ public class SaiyaMod implements
                 ENERGY_ORB_CC_PORTRAIT
             );
             BaseMod.addColor(
-        		CardColors.SAIYAN_CARD_COLOR,
+        		CardColors.SAIYAN_EXTRA_CARD_COLOR,
         		someColor,
         		someColor,
         		someColor,
@@ -191,6 +193,15 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SOLAR_FLARE);
         BaseMod.addCard(new SenzuBean());
         UnlockTracker.unlockCard(CardNames.SENZU_BEAN);
+        
+        /**
+         * UNOBTAINABLE CARDS
+         */
+        BaseMod.addCard(new GreatApeForm());
+        UnlockTracker.unlockCard(CardNames.GREAT_APE_FORM);
+        BaseMod.addCard(new FullMoon());
+        UnlockTracker.unlockCard(CardNames.FULL_MOON);
+        
     }
     
     public void receiveEditStrings() {

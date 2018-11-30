@@ -29,8 +29,8 @@ public class GreatApeForm extends AbstractCard
     public GreatApeForm() {
 		super(CardNames.GREAT_APE_FORM, cardStrings.NAME, CardPaths.GREAT_APE_FORM, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.POWER,
-		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.RARE,
+		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        AbstractCard.CardRarity.SPECIAL,
 		        AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber;
     }

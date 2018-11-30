@@ -25,8 +25,8 @@ public class FullMoon extends CustomCard {
 	public FullMoon() {
 		super(CardNames.FULL_MOON, cardStrings.NAME, CardPaths.FULL_MOON, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
-		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.COMMON,
+		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        AbstractCard.CardRarity.SPECIAL,
 		        AbstractCard.CardTarget.SELF);
 		this.exhaust = true;
 	}

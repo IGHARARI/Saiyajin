@@ -7,5 +7,8 @@ public class LibraryTypeEnum {
 
   @SpireEnum
   public static CardLibrary.LibraryType SAIYAN_CARD_COLOR;
+  
+  @SpireEnum
+  public static CardLibrary.LibraryType SAIYAN_EXTRA_CARD_COLOR;
 
 }

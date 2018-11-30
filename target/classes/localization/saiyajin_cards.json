@@ -89,8 +89,8 @@
 	},
 	"SuperSaiyanForm": {
 		"NAME": "Super Saiyan Form",
-		"DESCRIPTION": "Regenerate !M! Ki at the start of every turn, gain 4 Metallicize.",
-		"UPGRADE_DESCRIPTION": "Regenerate !M! Ki at the start of every turn, gain 5 Metallicize."
+		"DESCRIPTION": "Gain !M! Ki Regen and 4 Metallicize.",
+		"UPGRADE_DESCRIPTION": "Gain !M! Ki Regen and 5 Metallicize."
 	},
 	"SenzuBean": {
 		"NAME": "Senzu Bean",
