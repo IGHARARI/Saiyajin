@@ -17,4 +17,7 @@ public abstract class PowerNames {
 	public static final String CANT_REVIVE = "CantRevive";
 	public static final String CONCUSSION = "Concussion";
 	public static final String REFLECTION = "Reflection";
+	public static final String KI_REGEN = "KiRegen";
+	public static final String FULL_MOON = "FullMoon";
+	public static final String GREAT_APE = "GreatApe";
 }

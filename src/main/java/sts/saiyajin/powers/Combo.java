@@ -1,6 +1,9 @@
 package sts.saiyajin.powers;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -21,6 +24,8 @@ public class Combo extends AbstractPower {
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+	final Logger logger = LogManager.getLogger(Combo.class);
+	
 	public Combo(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
@@ -33,7 +38,6 @@ public class Combo extends AbstractPower {
 
 	@Override
 	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		super.onApplyPower(power, target, source);
 		if (power instanceof Combo){
 			for (AbstractCard c : AbstractDungeon.player.hand.group) {
 				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain(power.amount);
@@ -47,6 +51,20 @@ public class Combo extends AbstractPower {
 		}
 	}
 
+	@Override
+	public void onRemove() {
+		logger.info("ON REMOVE CALLED FOR COMBO");
+		for (AbstractCard c : AbstractDungeon.player.hand.group) {
+			if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain(0);
+		}
+		for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+			if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain(0);
+		}
+		for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+			if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain(0);
+		}
+	}
+	
 	@Override
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];

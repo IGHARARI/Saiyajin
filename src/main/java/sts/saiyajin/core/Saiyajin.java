@@ -41,7 +41,6 @@ public class Saiyajin extends CustomPlayer {
 	private static final int HAND_SIZE = 6;
 	private static final int ASCENSION_MAX_HP_LOSS = 5;
 	private static final int BASE_KI = 20;
-//	private int currentKi;
 	private int maxKi;
 	
 	final Logger logger = LogManager.getLogger(Saiyajin.class);
@@ -207,18 +206,6 @@ public class Saiyajin extends CustomPlayer {
 	public String getVampireText() {
 	    return com.megacrit.cardcrawl.events.city.Vampires.DESCRIPTIONS[1];
 	}
-
-//	public int getCurrentKi() {
-//		return currentKi;
-//	}
-//
-//	public void useKi(int kiToUse){
-//		currentKi = Math.max(0, currentKi - kiToUse);
-//	}
-//	
-//	public void gainKi(int kiToGain) {
-//		currentKi = Math.min(maxKi, currentKi + kiToGain);
-//	}
 
 	public int getMaxKi() {
 		return maxKi;

@@ -2,11 +2,8 @@ package sts.saiyajin.powers;
 
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -20,7 +17,7 @@ public class Ki extends AbstractPower {
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 	
-	private static final int KI_REGEN_AMOUNT = 3;
+//	private static final int KI_REGEN_AMOUNT = 3;
 
 	public Ki(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -37,10 +34,10 @@ public class Ki extends AbstractPower {
 		this.description = DESCRIPTIONS[0];
 	}
 	
-	@Override
-	public void atStartOfTurn() {
-		super.atStartOfTurn();
-		AbstractPlayer player = AbstractDungeon.player;
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, KI_REGEN_AMOUNT), KI_REGEN_AMOUNT));
-	}
+//	@Override
+//	public void atStartOfTurn() {
+//		super.atStartOfTurn();
+//		AbstractPlayer player = AbstractDungeon.player;
+//		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, KI_REGEN_AMOUNT), KI_REGEN_AMOUNT));
+//	}
 }

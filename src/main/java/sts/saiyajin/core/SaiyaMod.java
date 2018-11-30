@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -23,7 +24,9 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
+import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
+import sts.saiyajin.cards.attacks.ConcussiveBlow;
 import sts.saiyajin.cards.attacks.DrainingStrike;
 import sts.saiyajin.cards.attacks.Flurry;
 import sts.saiyajin.cards.attacks.GenkiDama;
@@ -32,6 +35,8 @@ import sts.saiyajin.cards.attacks.KiBlast;
 import sts.saiyajin.cards.attacks.MeteorDash;
 import sts.saiyajin.cards.attacks.Strike;
 import sts.saiyajin.cards.powers.BurningSoul;
+import sts.saiyajin.cards.powers.MonkeyTail;
+import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.skills.Defend;
 import sts.saiyajin.cards.skills.InstantTransfer;
 import sts.saiyajin.cards.skills.KaioKen;
@@ -44,6 +49,7 @@ import sts.saiyajin.cards.skills.ThirstForFight;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.RelicNames;
+import sts.saiyajin.powers.Ki;
 import sts.saiyajin.relics.SaiyanBlood;
 import sts.saiyajin.ui.CharacterSelection;
 
@@ -54,7 +60,8 @@ public class SaiyaMod implements
 	EditCardsSubscriber,
 	EditRelicsSubscriber,
 	OnPowersModifiedSubscriber,
-	PostBattleSubscriber
+	PostBattleSubscriber,
+	OnStartBattleSubscriber
 	{
 
 	public static final Logger logger = LogManager.getLogger(SaiyaMod.class);
@@ -158,6 +165,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.FLURRY);
         BaseMod.addCard(new DrainingStrike());
         UnlockTracker.unlockCard(CardNames.DRAINING_STRIKE);
+        BaseMod.addCard(new ConcussiveBlow());
+        UnlockTracker.unlockCard(CardNames.CONCUSSIVE_BLOW);
         
         /**
          * Uncommon cards
@@ -168,10 +177,14 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.TELEPORT);
         BaseMod.addCard(new ThirstForFight());
         UnlockTracker.unlockCard(CardNames.THIRST_FOR_FIGHT);
+        BaseMod.addCard(new SuperSaiyanForm());
+        UnlockTracker.unlockCard(CardNames.SUPER_SAIYAN_FORM);
 
         /**
          * RARE CARDS
          */
+        BaseMod.addCard(new MonkeyTail());
+        UnlockTracker.unlockCard(CardNames.MONKEY_TAIL);
         BaseMod.addCard(new Taunt());
         UnlockTracker.unlockCard(CardNames.TAUNT);
         BaseMod.addCard(new SolarFlare());
@@ -217,10 +230,18 @@ public class SaiyaMod implements
 	}
 
 	@Override
-	public void receivePostBattle(AbstractRoom arg0) {
+	public void receivePostBattle(AbstractRoom r) {
 		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_BLOOD)){
 			((SaiyanBlood)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_BLOOD)).battleEnd();
 		}
+	}
+
+	@Override
+	public void receiveOnBattleStart(AbstractRoom r) {
+		Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
+		Ki kiPower = new Ki(kakarot, kakarot.getMaxKi());
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(kakarot, kakarot, kiPower, kakarot.getMaxKi()));
+		
 	}
 
 }

@@ -19,6 +19,8 @@ public abstract class CardNames {
 	public static final String METEOR_DASH = "MeteorDash";
 	public static final String FLURRY = "Flurry";
 	public static final String KI_EXPLOSION = "KiExplosion";
+	public static final String BURNING_SOUL = "BurningSoul";
+	public static final String CONCUSSIVE_BLOW = "ConcussiveBlow";
 	
 	/**
 	 * UNCOMMONS
@@ -27,11 +29,14 @@ public abstract class CardNames {
 	public static final String SOLAR_FLARE = "SolarFlare";
 	public static final String THIRST_FOR_FIGHT = "ThirstForFight";
 	public static final String DRAINING_STRIKE = "DrainingStrike";
-	public static final String BURNING_SOUL = "BurningSoul";
+	public static final String SUPER_SAIYAN_FORM = "SuperSaiyanForm";
 	
 	/**
 	 * RARES
 	 */
 	public static final String TAUNT = "Taunt";
 	public static final String SENZU_BEAN = "SenzuBean";
+	public static final String MONKEY_TAIL = "MonkeyTail";
+	public static final String GREAT_APE_FORM = "GreatApeForm";
+	public static final String FULL_MOON = "FullMoon";
 }

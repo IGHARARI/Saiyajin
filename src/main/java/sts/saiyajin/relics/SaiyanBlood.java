@@ -17,7 +17,7 @@ import basemod.abstracts.CustomRelic;
 import sts.saiyajin.cards.utils.RelicNames;
 import sts.saiyajin.core.SaiyaMod;
 import sts.saiyajin.core.Saiyajin;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.RelicPaths;
 
 public class SaiyanBlood extends CustomRelic {
@@ -27,6 +27,7 @@ public class SaiyanBlood extends CustomRelic {
 
 	private ArrayList<String> currentDebuffs = new ArrayList<String>();
 	private boolean battleStarted = false;
+	private static final int KI_REGEN = 3;
 
 	final Logger logger = LogManager.getLogger(SaiyaMod.class);
 	
@@ -52,9 +53,7 @@ public class SaiyanBlood extends CustomRelic {
 	public void atBattleStartPreDraw() {
 		flash();
 		Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
-		Ki kiPower = new Ki(kakarot, kakarot.getMaxKi());
-		ApplyPowerAction powerAction = new ApplyPowerAction(kakarot, kakarot, kiPower, kakarot.getMaxKi());
-		AbstractDungeon.actionManager.addToTop(powerAction);
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(kakarot, kakarot, new KiRegenPower(kakarot, KI_REGEN), KI_REGEN));
 		currentDebuffs.clear();
 		battleStarted = true;
 	}

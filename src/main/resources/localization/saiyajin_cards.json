@@ -17,7 +17,7 @@
 	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
-		"DESCRIPTION": "Use up to 20 Ki to deal up to !D! damage to an enemy, total damage is proportional to Ki used. NL Combo Finisher: Costs 1 less energy per Combo Chain counter."
+		"DESCRIPTION": "Deal !D! damage to an enemy, consume !M! Ki. NL Combo Finisher: Costs 1 less energy per Combo Chain counter."
 	},
 	"KaioKen": {
 		"NAME": "KaioKen",
@@ -27,6 +27,22 @@
 	"MeteorDash": {
 		"NAME": "Meteor Dash",
 		"DESCRIPTION": "Dash at the enemy to deliver a heavy blow dealing !D! damage. Start a Combo"
+	},
+	"MonkeyTail": {
+		"NAME": "Monkey Tail",
+		"DESCRIPTION": "Gain !M! Dexterity. Put a Full Moon and a Great Ape Form in your draw pile."
+	},
+	"FullMoon": {
+		"NAME": "Full Moon",
+		"DESCRIPTION": "The moon looms ominously in the sky."
+	},
+	"GreatApeForm": {
+		"NAME": "Great Ape Form",
+		"DESCRIPTION": "Can only be used when there is a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust every non-attack card from your hand and deck. Gain 15 Ki Regen. Gain 8 Plated Armor."
+	},
+	"ConcussiveBlow": {
+		"NAME": "Concussive Blow",
+		"DESCRIPTION": "Deal !D! damage and apply !M! Concussion to the target."
 	},
 	"BurningSoul": {
 		"NAME": "Burning Soul",
@@ -62,6 +78,11 @@
 		"NAME": "Solar Flare",
 		"DESCRIPTION": "Stun an enemy for 1 turn. Consumes !M! Ki.",
 		"UPGRADE_DESCRIPTION": "Stun All enemies for 1 turn. Consumes !M! Ki."
+	},
+	"SuperSaiyanForm": {
+		"NAME": "Super Saiyan Form",
+		"DESCRIPTION": "Regenerate !M! Ki at the start of every turn, gain 4 Metallicize.",
+		"UPGRADE_DESCRIPTION": "Regenerate !M! Ki at the start of every turn, gain 5 Metallicize."
 	},
 	"SenzuBean": {
 		"NAME": "Senzu Bean",

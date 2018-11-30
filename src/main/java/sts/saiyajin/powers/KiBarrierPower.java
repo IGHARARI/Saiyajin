@@ -35,8 +35,7 @@ public class KiBarrierPower extends AbstractPower {
 	}
   
 	@Override
-	public void updateDescription()
-	{
+	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
 	}
   

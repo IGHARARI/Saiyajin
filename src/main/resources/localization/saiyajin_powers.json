@@ -19,9 +19,25 @@
     "NAME": "Burning Soul",
     "DESCRIPTIONS": ["Spend Ki to gain gain Ki Barrier charges at the end of every turn."]
   },
+  "KiRegen": {
+    "NAME": "Ki Regen",
+    "DESCRIPTIONS": ["Regenerate Ki equal to your Ki Regen amount at the start of every turn."]
+  },
   "KiExplosion": {
     "NAME": "Ki Barrier",
     "DESCRIPTIONS": ["When attacked by an enemy, deal back damage equal to the amount of Ki Barrier charges. Expires at end of turn."]
+  },
+  "SuperSaiyanForm": {
+    "NAME": "Super Saiyan Form",
+    "DESCRIPTIONS": ["Hyaaaaaaaa!!"]
+  },
+  "GreatApe": {
+    "NAME": "Great Ape Form",
+    "DESCRIPTIONS": ["Gain [E] [E]  at the start of every turn."]
+  },
+  "FullMoon": {
+    "NAME": "Full Moon",
+    "DESCRIPTIONS": ["As you look at the moon, the moon looks back."]
   },
   "ComboPower": {
     "NAME": "Combo Chain",
