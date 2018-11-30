@@ -38,12 +38,16 @@ import sts.saiyajin.cards.powers.BurningSoul;
 import sts.saiyajin.cards.powers.GreatApeForm;
 import sts.saiyajin.cards.powers.MonkeyTail;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
+import sts.saiyajin.cards.powers.TurtleShell;
 import sts.saiyajin.cards.skills.Defend;
+import sts.saiyajin.cards.skills.Endure;
 import sts.saiyajin.cards.skills.FullMoon;
 import sts.saiyajin.cards.skills.InstantTransfer;
 import sts.saiyajin.cards.skills.KaioKen;
 import sts.saiyajin.cards.skills.KiExplosion;
 import sts.saiyajin.cards.skills.PowerUp;
+import sts.saiyajin.cards.skills.Quickening;
+import sts.saiyajin.cards.skills.Scouter;
 import sts.saiyajin.cards.skills.SenzuBean;
 import sts.saiyajin.cards.skills.SolarFlare;
 import sts.saiyajin.cards.skills.Taunt;
@@ -99,7 +103,7 @@ public class SaiyaMod implements
                 POWER_CC_PORTRAIT,
                 ENERGY_ORB_CC_PORTRAIT
             );
-            BaseMod.addColor(
+        BaseMod.addColor(
         		CardColors.SAIYAN_EXTRA_CARD_COLOR,
         		someColor,
         		someColor,
@@ -169,12 +173,18 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.DRAINING_STRIKE);
         BaseMod.addCard(new ConcussiveBlow());
         UnlockTracker.unlockCard(CardNames.CONCUSSIVE_BLOW);
+        BaseMod.addCard(new Quickening());
+        UnlockTracker.unlockCard(CardNames.QUICKENING);
+        BaseMod.addCard(new TurtleShell());
+        UnlockTracker.unlockCard(CardNames.TURTLE_SHELL);
+        BaseMod.addCard(new Scouter());
+        UnlockTracker.unlockCard(CardNames.SCOUTER);
         
         /**
          * Uncommon cards
          */
-        BaseMod.addCard(new GenkiDama());
-        UnlockTracker.unlockCard(CardNames.GENKI_DAMA);
+        BaseMod.addCard(new Endure());
+        UnlockTracker.unlockCard(CardNames.ENDURE);
         BaseMod.addCard(new InstantTransfer());
         UnlockTracker.unlockCard(CardNames.TELEPORT);
         BaseMod.addCard(new ThirstForFight());
@@ -185,6 +195,8 @@ public class SaiyaMod implements
         /**
          * RARE CARDS
          */
+        BaseMod.addCard(new GenkiDama());
+        UnlockTracker.unlockCard(CardNames.GENKI_DAMA);
         BaseMod.addCard(new MonkeyTail());
         UnlockTracker.unlockCard(CardNames.MONKEY_TAIL);
         BaseMod.addCard(new Taunt());

@@ -55,7 +55,7 @@ public class Flurry extends CustomCard {
 		Ki kiPower = (Ki) kakarot.getPower(PowerNames.KI);
 		int actualDamage = this.damage;
 		if (kiPower.amount >= this.magicNumber){
-			actualDamage += 1;
+			actualDamage += 2;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -this.magicNumber), -this.magicNumber));
 		}
 		DamageInfo perHitDamage = new DamageInfo(player, actualDamage, this.damageTypeForTurn);

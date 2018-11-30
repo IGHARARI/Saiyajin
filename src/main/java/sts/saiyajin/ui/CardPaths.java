@@ -24,6 +24,7 @@ public class CardPaths {
 	public static final String CONCUSSIVE_BLOW = "img/cards/block.png";
 	public static final String QUICKENING = "img/cards/block.png";
 	public static final String TURTLE_SHELL = "img/cards/block.png";
+	public static final String SCOUTER = "img/cards/block.png";
 
 	/**
 	 * UNCOMMONS

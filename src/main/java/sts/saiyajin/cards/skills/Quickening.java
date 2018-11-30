@@ -30,12 +30,12 @@ public class Quickening extends KiCard {
 		super(CardNames.QUICKENING, cardStrings.NAME, CardPaths.QUICKENING, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
 		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.UNCOMMON,
-		        AbstractCard.CardTarget.ALL_ENEMY);
+		        AbstractCard.CardRarity.COMMON,
+		        AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = KI_CONSUMPTION;
 		this.magicNumber = this.baseMagicNumber;
 		this.kiRequired = KI_CONSUMPTION;
-		this.block = PLATED_ARMOR_AMOUNT;
+		this.baseBlock = PLATED_ARMOR_AMOUNT;
 	}
 
 	@Override

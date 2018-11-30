@@ -28,6 +28,10 @@
 		"NAME": "Meteor Dash",
 		"DESCRIPTION": "Dash at the enemy to deliver a heavy blow dealing !D! damage. Start a Combo"
 	},
+	"Endure": {
+		"NAME": "Endure",
+		"DESCRIPTION": "Consume ALL your Ki, gain that much block."
+	},
 	"Quickening": {
 		"NAME": "Quickening",
 		"DESCRIPTION": "Gain !B! Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki."
@@ -52,13 +56,17 @@
 		"NAME": "Burning Soul",
 		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn in order to gain the same amount of Ki Barrier."
 	},
+	"Scouter": {
+		"NAME": "Scouter",
+		"DESCRIPTION": "Consume !M! Ki to gain !B! block this and next turn. If the enemy is not attacking gain an extra 4 block."
+	},
 	"TurtleShell": {
 		"NAME": "Turtle Shell",
 		"DESCRIPTION": "Gain !M! Ki Regen."
 	},
 	"Flurry": {
 		"NAME": "Flurry",
-		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. If you have !M! or more Ki, consume it to deal 1 more damage per hit. Increases Combo chain."	
+		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. If you have !M! or more Ki, consume it to deal 2 more damage. Increases Combo chain."	
 	},
 	"ThirstForFight": {
 		"NAME": "Thirst for Battle",
@@ -67,7 +75,7 @@
 	},
 	"Teleport": {
 		"NAME": "Instant Transfer",
-		"DESCRIPTION": "Teleport next to the enemy to Start a Combo or increase your current Combo Chain. Consumes !M! Ki."
+		"DESCRIPTION": "Apply 1 Vulnerable to an enemy, Start or Increase a Combo Chain. Consumes !M! Ki."
 	},
 	"DrainingStrike": {
 		"NAME": "Draining Strike",

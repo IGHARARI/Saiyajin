@@ -26,7 +26,7 @@ public class KameHameHa extends ComboFinisher {
 	private static final int BASE_DAMAGE = 16; 
 	private static final int UPGRADE_DAMAGE = 8; 
 	private static final int KI_COST = 20; 
-	private static final int UPGRADED_KI_COST = -5; 
+	private static final int UPGRADED_KI_COST = -10; 
 	
 	public KameHameHa() {
 		super(CardNames.KAME_HAME_HA, cardStrings.NAME, CardPaths.SAIYAN_STRIKE, COST, cardStrings.DESCRIPTION, 

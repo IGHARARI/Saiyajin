@@ -22,6 +22,7 @@ public abstract class CardNames {
 	public static final String CONCUSSIVE_BLOW = "ConcussiveBlow";
 	public static final String QUICKENING = "Quickening";
 	public static final String TURTLE_SHELL = "TurtleShell";
+	public static final String SCOUTER = "Scouter";
 	
 	/**
 	 * UNCOMMONS
