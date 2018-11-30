@@ -38,8 +38,8 @@ public class Combo extends AbstractPower {
 
 	@Override
 	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		logger.info("ON APPLY COMBO AMOUNT: " + power.amount);
 		if (power instanceof Combo){
+			logger.info("ON APPLY COMBO AMOUNT: " + power.amount);
 			for (AbstractCard c : AbstractDungeon.player.hand.group) {
 				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain(power.amount);
 			}
