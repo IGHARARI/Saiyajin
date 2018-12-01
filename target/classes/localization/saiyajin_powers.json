@@ -15,6 +15,10 @@
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Reflects damage back to the attacker."]
   },
+  "CantRevive": {
+    "NAME": "Can't revive",
+    "DESCRIPTIONS": ["This creature has Revived once and can't do it again."]
+  },
   "BurningSoul": {
     "NAME": "Burning Soul",
     "DESCRIPTIONS": ["Spend Ki to gain gain Ki Barrier charges at the end of every turn."]

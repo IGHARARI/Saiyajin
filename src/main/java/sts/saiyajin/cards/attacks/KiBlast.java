@@ -1,6 +1,7 @@
 package sts.saiyajin.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
 import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
@@ -64,6 +66,9 @@ public class KiBlast extends CustomCard {
 		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(
 				player, multiDamage, damageTypeForTurn, AttackEffect.SLASH_HORIZONTAL);
 		AbstractDungeon.actionManager.addToBottom(damageAction);
+		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters){
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.06f));
+		}
 	}
 
 }

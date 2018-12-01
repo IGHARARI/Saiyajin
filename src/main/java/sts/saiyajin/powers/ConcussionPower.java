@@ -35,6 +35,7 @@ public class ConcussionPower
         this.isTurnBased = true;
 		this.description = DESCRIPTIONS[0];
 		this.img = new Texture(PowerPaths.CONCUSSION);
+		this.type = PowerType.DEBUFF;
 	}
   
 	@Override

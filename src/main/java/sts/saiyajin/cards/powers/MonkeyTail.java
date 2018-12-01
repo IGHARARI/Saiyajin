@@ -1,6 +1,5 @@
 package sts.saiyajin.cards.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -12,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
+import sts.saiyajin.actions.InsertCardsIntoDeckAction;
 import sts.saiyajin.cards.skills.FullMoon;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
@@ -40,9 +40,9 @@ public class MonkeyTail extends AbstractCard
     public void use(final AbstractPlayer player, final AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, this.magicNumber), this.magicNumber));
 		CardGroup cardsToAdd = new CardGroup(CardGroupType.UNSPECIFIED);
-		cardsToAdd.addToBottom(new FullMoon());
-		cardsToAdd.addToBottom(new GreatApeForm());
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, cardsToAdd, cardsToAdd.size()));
+		cardsToAdd.addToBottom(new FullMoon().makeCopy());
+		cardsToAdd.addToBottom(new GreatApeForm().makeCopy());
+		AbstractDungeon.actionManager.addToBottom(new InsertCardsIntoDeckAction(cardsToAdd));
 		
     }
     

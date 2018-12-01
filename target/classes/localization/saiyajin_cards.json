@@ -54,8 +54,8 @@
 	},
 	"Quickening": {
 		"NAME": "Quickening",
-		"DESCRIPTION": "Gain 2 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki.",
-		"UPGRADE_DESCRIPTION": "Gain 3 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki."
+		"DESCRIPTION": "Gain 1 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki.",
+		"UPGRADE_DESCRIPTION": "Gain 2 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki."
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
@@ -67,7 +67,7 @@
 	},
 	"GreatApeForm": {
 		"NAME": "Great Ape Form",
-		"DESCRIPTION": "Can only be used on a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust all non-attack cards from your hand and deck. Gain 15 Ki Regen and 5 Plated Armor."
+		"DESCRIPTION": "Can only be used on a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Gain 15 Ki Regen, 8 Plated Armor and 3 Strength."
 	},
 	"ConcussiveBlow": {
 		"NAME": "Concussive Blow",

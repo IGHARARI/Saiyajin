@@ -2,11 +2,8 @@ package sts.saiyajin.powers;
 
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -34,12 +31,5 @@ public class CantRevivePower extends AbstractPower {
 	@Override
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
-	}
-	
-	@Override
-	public void atStartOfTurn() {
-		super.atStartOfTurn();
-		AbstractPlayer player = AbstractDungeon.player;
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new CantRevivePower(player, 1), 1));
 	}
 }

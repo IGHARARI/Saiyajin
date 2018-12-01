@@ -7,9 +7,10 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -50,14 +51,14 @@ public class Revive extends AbstractPower {
 	@Override
 	public int onAttacked(DamageInfo info, int damageAmount) {
 		if (!this.owner.hasPower(PowerNames.REVIVE) || this.owner.currentHealth > damageAmount) return super.onAttacked(info, damageAmount);
-		for(AbstractPower power : this.owner.powers){
-			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, power));
-		}
-		
-		int invincibleAmount = (owner.maxHealth / 3 ) +1;
 		if (owner.currentHealth > 1){
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, owner.currentHealth -1)));
+			AbstractDungeon.actionManager.addToBottom(new LoseHPAction(owner, owner, owner.currentHealth -1));
 		}
+		for(AbstractPower power : this.owner.powers){
+			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, power));
+		}
+		int invincibleAmount = (owner.maxHealth / 3 ) +1;
+		AbstractDungeon.actionManager.addToBottom(new WaitAction(1f));
 		AbstractDungeon.actionManager.addToBottom(new HealAction(owner, owner, owner.maxHealth));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new StrengthPower(owner, buffAmount), buffAmount));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new InvinciblePower(owner, invincibleAmount), invincibleAmount));

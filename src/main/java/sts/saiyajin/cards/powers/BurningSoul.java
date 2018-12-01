@@ -22,7 +22,7 @@ public class BurningSoul extends AbstractCard
 	private static final int UPGRADED_KI_BARRIER = 2;
     
     public BurningSoul() {
-		super(CardNames.KI_EXPLOSION, cardStrings.NAME, CardPaths.KI_EXPLOSION, COST, cardStrings.DESCRIPTION, 
+		super(CardNames.BURNING_SOUL, cardStrings.NAME, CardPaths.BURNING_SOUL, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.POWER,
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
