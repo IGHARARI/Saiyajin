@@ -79,7 +79,7 @@
 	},
 	"Scouter": {
 		"NAME": "Scouter",
-		"DESCRIPTION": "Consume !M! Ki to gain !B! block this and next turn. If the enemy is not attacking gain an extra 4 block."
+		"DESCRIPTION": "Consume !M! Ki to gain !B! block this and next turn. If the enemy is NOT attacking gain an extra 4 block."
 	},
 	"TurtleShell": {
 		"NAME": "Turtle Shell",

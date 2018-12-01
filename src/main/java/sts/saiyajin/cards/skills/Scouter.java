@@ -52,7 +52,7 @@ public class Scouter extends KiCard {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -this.kiRequired), -this.kiRequired));
 	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new NextTurnBlockPower(player, this.block, this.name), this.block));
-	    if (monster != null && (monster.intent == AbstractMonster.Intent.ATTACK || monster.intent == AbstractMonster.Intent.ATTACK_BUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEBUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEFEND)){
+	    if (monster != null && !(monster.intent == AbstractMonster.Intent.ATTACK || monster.intent == AbstractMonster.Intent.ATTACK_BUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEBUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEFEND)){
 	    	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, EXTRA_BLOCK));
 		    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new NextTurnBlockPower(player, EXTRA_BLOCK, this.name), EXTRA_BLOCK));
 	    }

@@ -1,10 +1,16 @@
 package sts.saiyajin.cards.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import java.util.function.Predicate;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -51,12 +57,36 @@ public class GreatApeForm extends AbstractCard
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new GreatApePower(player, 1), 1));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiRegenPower(player, KI_REGEN), KI_REGEN));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, PLATED_ARMOR), PLATED_ARMOR));
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.drawPile.size()));
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.discardPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.discardPile.size()));
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.hand, player.exhaustPile, c -> c.type != CardType.ATTACK, player.hand.size()));
+		
+		exhaustCardsFromPile(AbstractDungeon.player.drawPile, c -> c.type != CardType.ATTACK);
+		exhaustCardsFromPile(AbstractDungeon.player.hand, c -> c.type != CardType.ATTACK);
+		exhaustCardsFromPile(AbstractDungeon.player.discardPile, c -> c.type != CardType.ATTACK);
+//		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.drawPile.size()));
+//		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.discardPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.discardPile.size()));
+//		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.hand, player.exhaustPile, c -> c.type != CardType.ATTACK, player.hand.size()));
     }
     
-    @Override
+    private void exhaustCardsFromPile(CardGroup group, Predicate<AbstractCard> exhaustPredicate) {
+		for(AbstractCard card : group.group){
+			if (!exhaustPredicate.test(card)) continue;
+			
+			AbstractDungeon.player.drawPile.group.remove(card);
+			AbstractDungeon.player.limbo.group.add(card);
+			card.current_y = -200.0f * Settings.scale;
+			card.target_x = Settings.WIDTH / 2.0f + 200.0f * Settings.scale;
+			card.target_y = Settings.HEIGHT / 2.0f;
+			card.targetAngle = 0.0f;
+			card.lighten(false);
+			card.drawScale = 0.12f;
+			card.targetDrawScale = 0.75f;
+			AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
+			AbstractDungeon.actionManager.addToTop(new UnlimboAction(card));
+			AbstractDungeon.actionManager.addToTop(new WaitAction(0.3f));
+		}
+		
+	}
+
+	@Override
     public AbstractCard makeCopy() {
         return new GreatApeForm();
     }
