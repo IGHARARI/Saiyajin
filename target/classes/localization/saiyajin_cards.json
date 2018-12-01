@@ -19,6 +19,10 @@
 		"NAME": "Kame Hame Ha",
 		"DESCRIPTION": "Deal !D! damage to an enemy, consume !M! Ki. NL Combo Finisher: Costs 1 less energy per Combo Chain counter."
 	},
+	"CCCapsule": {
+		"NAME": "C.C. Capsule",
+		"DESCRIPTION": "Get a random Power, it costs 1 less Energy until played. NL Exhaust."
+	},
 	"KaioKen": {
 		"NAME": "KaioKen",
 		"DESCRIPTION": "Gain 20 Ki, apply !M! Vulnerable to yourself. NL Exhaust.",
@@ -32,9 +36,26 @@
 		"NAME": "Endure",
 		"DESCRIPTION": "Consume ALL your Ki, gain that much block."
 	},
+	"BackAttack": {
+		"NAME": "Back Attack",
+		"DESCRIPTION": "Deal !D! damage to an enemy. Can only be used un vulnerable enemies."
+	},
+	"ExtremeSpeed": {
+		"NAME": "Extreme-speed",
+		"DESCRIPTION": "Draw !M! cards. Consume 15 Ki."
+	},
+	"BigBangAttack": {
+		"NAME": "Big-Bang Attack",
+		"DESCRIPTION": "Deal !D! damage, consume !M! Ki."
+	},
+	"LastResort": {
+		"NAME": "Last Resort",
+		"DESCRIPTION": "Consume ALL your Ki, gain 1 Strength for every !M! Ki consumed. Lose ALL Ki Regen."
+	},
 	"Quickening": {
 		"NAME": "Quickening",
-		"DESCRIPTION": "Gain !B! Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki."
+		"DESCRIPTION": "Gain 2 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki.",
+		"UPGRADE_DESCRIPTION": "Gain 3 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki."
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
@@ -46,7 +67,7 @@
 	},
 	"GreatApeForm": {
 		"NAME": "Great Ape Form",
-		"DESCRIPTION": "Can only be used on a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust all non-attack cards from your hand and deck. Gain 15 Ki Regen and 8 Plated Armor."
+		"DESCRIPTION": "Can only be used on a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust all non-attack cards from your hand and deck. Gain 15 Ki Regen and 5 Plated Armor."
 	},
 	"ConcussiveBlow": {
 		"NAME": "Concussive Blow",

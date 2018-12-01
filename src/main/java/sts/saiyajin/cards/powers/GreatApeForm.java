@@ -22,7 +22,7 @@ public class GreatApeForm extends AbstractCard
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.GREAT_APE_FORM);
 	private static final int COST = 3;
 	private static final int KI_REGEN = 15;
-	private static final int PLATED_ARMOR = 8;
+	private static final int PLATED_ARMOR = 5;
 	private static final String NEED_FULL_MOON = "The Full Moon isn't out yet...";
 	
     
@@ -51,10 +51,9 @@ public class GreatApeForm extends AbstractCard
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new GreatApePower(player, 1), 1));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiRegenPower(player, KI_REGEN), KI_REGEN));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, PLATED_ARMOR), PLATED_ARMOR));
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, player.exhaustPile, c -> c.type != CardType.ATTACK));
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.discardPile, player.exhaustPile, c -> c.type != CardType.ATTACK));
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.hand, player.exhaustPile, c -> c.type != CardType.ATTACK));
-		
+		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.drawPile.size()));
+		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.discardPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.discardPile.size()));
+		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.hand, player.exhaustPile, c -> c.type != CardType.ATTACK, player.hand.size()));
     }
     
     @Override

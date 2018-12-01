@@ -2,6 +2,6 @@
   "SaiyanBlood": {
     "NAME": "Saiyan Blood",
     "FLAVOR": "Saiyan blood courses through your veins",
-    "DESCRIPTIONS": ["Allows saiyans to utilize Ki and become stronger every time they heal."]
+    "DESCRIPTIONS": ["Gain 3 Ki Regen at the start of each battle. Every time a debuff applied to you expires, gain 1 permanent HP and 1 Strength."]
   }
 }

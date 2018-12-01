@@ -25,6 +25,7 @@ public class Quickening extends KiCard {
 	private static final int UPGRADED_KI_CONSUMPTION = -6;
 	private static final int PLATED_ARMOR_AMOUNT = 2;
 	private static final int UPGRADED_PLATED_ARMOR_AMOUNT = 1;
+	private int platedArmor;
 	
 	public Quickening() {
 		super(CardNames.QUICKENING, cardStrings.NAME, CardPaths.QUICKENING, COST, cardStrings.DESCRIPTION, 
@@ -35,7 +36,8 @@ public class Quickening extends KiCard {
 		this.baseMagicNumber = KI_CONSUMPTION;
 		this.magicNumber = this.baseMagicNumber;
 		this.kiRequired = KI_CONSUMPTION;
-		this.baseBlock = PLATED_ARMOR_AMOUNT;
+		platedArmor = PLATED_ARMOR_AMOUNT;
+		this.block = baseBlock;
 	}
 
 	@Override
@@ -43,13 +45,15 @@ public class Quickening extends KiCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_KI_CONSUMPTION);
-			upgradeBlock(UPGRADED_PLATED_ARMOR_AMOUNT);
+			platedArmor = UPGRADED_PLATED_ARMOR_AMOUNT;
+			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+			initializeDescription();
 		}
 	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, this.block)));
+	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, platedArmor)));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, 1, false), 1, true, AbstractGameAction.AttackEffect.NONE));
         }

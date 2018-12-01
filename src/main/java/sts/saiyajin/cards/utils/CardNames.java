@@ -23,6 +23,10 @@ public abstract class CardNames {
 	public static final String QUICKENING = "Quickening";
 	public static final String TURTLE_SHELL = "TurtleShell";
 	public static final String SCOUTER = "Scouter";
+	public static final String CC_CAPSULE = "CCCapsule";
+	public static final String BACK_ATTACK = "BackAttack";
+	public static final String EXTREME_SPEED = "ExtremeSpeed";
+	public static final String BIG_BANG_ATTACK = "BigBangAttack";
 	
 	/**
 	 * UNCOMMONS
@@ -33,6 +37,7 @@ public abstract class CardNames {
 	public static final String DRAINING_STRIKE = "DrainingStrike";
 	public static final String SUPER_SAIYAN_FORM = "SuperSaiyanForm";
 	public static final String ENDURE = "Endure";
+	public static final String LAST_RESORT = "LastResort";
 	
 	/**
 	 * RARES

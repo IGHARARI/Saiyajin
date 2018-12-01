@@ -42,7 +42,7 @@ public class MonkeyTail extends AbstractCard
 		CardGroup cardsToAdd = new CardGroup(CardGroupType.UNSPECIFIED);
 		cardsToAdd.addToBottom(new FullMoon());
 		cardsToAdd.addToBottom(new GreatApeForm());
-		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, cardsToAdd));
+		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, cardsToAdd, cardsToAdd.size()));
 		
     }
     

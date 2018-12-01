@@ -26,6 +26,8 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
+import sts.saiyajin.cards.attacks.BackAttack;
+import sts.saiyajin.cards.attacks.BigBangAttack;
 import sts.saiyajin.cards.attacks.ConcussiveBlow;
 import sts.saiyajin.cards.attacks.DrainingStrike;
 import sts.saiyajin.cards.attacks.Flurry;
@@ -39,12 +41,15 @@ import sts.saiyajin.cards.powers.GreatApeForm;
 import sts.saiyajin.cards.powers.MonkeyTail;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
+import sts.saiyajin.cards.skills.CcCapsule;
 import sts.saiyajin.cards.skills.Defend;
 import sts.saiyajin.cards.skills.Endure;
+import sts.saiyajin.cards.skills.ExtremeSpeed;
 import sts.saiyajin.cards.skills.FullMoon;
 import sts.saiyajin.cards.skills.InstantTransfer;
 import sts.saiyajin.cards.skills.KaioKen;
 import sts.saiyajin.cards.skills.KiExplosion;
+import sts.saiyajin.cards.skills.LastResort;
 import sts.saiyajin.cards.skills.PowerUp;
 import sts.saiyajin.cards.skills.Quickening;
 import sts.saiyajin.cards.skills.Scouter;
@@ -179,6 +184,14 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.TURTLE_SHELL);
         BaseMod.addCard(new Scouter());
         UnlockTracker.unlockCard(CardNames.SCOUTER);
+        BaseMod.addCard(new CcCapsule());
+        UnlockTracker.unlockCard(CardNames.CC_CAPSULE);
+        BaseMod.addCard(new ExtremeSpeed());
+        UnlockTracker.unlockCard(CardNames.EXTREME_SPEED);
+        BaseMod.addCard(new BigBangAttack());
+        UnlockTracker.unlockCard(CardNames.BIG_BANG_ATTACK);
+        BaseMod.addCard(new BackAttack());
+        UnlockTracker.unlockCard(CardNames.BACK_ATTACK);
         
         /**
          * Uncommon cards
@@ -191,6 +204,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.THIRST_FOR_FIGHT);
         BaseMod.addCard(new SuperSaiyanForm());
         UnlockTracker.unlockCard(CardNames.SUPER_SAIYAN_FORM);
+        BaseMod.addCard(new LastResort());
+        UnlockTracker.unlockCard(CardNames.LAST_RESORT);
 
         /**
          * RARE CARDS
