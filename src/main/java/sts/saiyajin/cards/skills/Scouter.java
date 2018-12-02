@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import sts.saiyajin.cards.types.KiCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class Scouter extends KiCard {
@@ -49,7 +49,7 @@ public class Scouter extends KiCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -this.kiRequired), -this.kiRequired));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -this.kiRequired), -this.kiRequired));
 	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new NextTurnBlockPower(player, this.block, this.name), this.block));
 	    if (monster != null && !(monster.intent == AbstractMonster.Intent.ATTACK || monster.intent == AbstractMonster.Intent.ATTACK_BUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEBUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEFEND)){

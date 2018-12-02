@@ -19,6 +19,14 @@
     "NAME": "Can't revive",
     "DESCRIPTIONS": ["This creature has Revived once and can't do it again."]
   },
+  "PlayerFlight": {
+    "NAME": "Flight",
+    "DESCRIPTIONS": ["Receive 50% less damage, lose a stack of Flight when you get attacked. When losing flight gain 1 Weak."]
+  },
+  "Medicine": {
+    "NAME": "Medicine",
+    "DESCRIPTIONS": ["Whenever you have 2 or more stacks of Medicine transform them into Artifact."]
+  },
   "BurningSoul": {
     "NAME": "Burning Soul",
     "DESCRIPTIONS": ["Spend Ki to gain gain Ki Barrier charges at the end of every turn."]

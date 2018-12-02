@@ -3,6 +3,7 @@ package sts.saiyajin.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,8 +17,8 @@ import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.core.Saiyajin;
-import sts.saiyajin.powers.Combo;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.ComboPower;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class Flurry extends CustomCard {
@@ -38,6 +39,7 @@ public class Flurry extends CustomCard {
 		        AbstractCard.CardTarget.ENEMY);
 	    this.baseDamage = BASE_DAMAGE;
 	    this.baseMagicNumber = BASE_KI_CONSUMPTION_FOR_BONUS;
+	    magicNumber = baseMagicNumber;
 	}
 
 	@Override
@@ -52,19 +54,17 @@ public class Flurry extends CustomCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		Saiyajin kakarot = (Saiyajin) player;
-		Ki kiPower = (Ki) kakarot.getPower(PowerNames.KI);
-		int actualDamage = this.damage;
+		KiPower kiPower = (KiPower) kakarot.getPower(PowerNames.KI);
+		DamageInfo perHitDamage = new DamageInfo(player, this.damage, this.damageTypeForTurn);
 		if (kiPower.amount >= this.magicNumber){
-			actualDamage += 2;
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -this.magicNumber), -this.magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		}
-		DamageInfo perHitDamage = new DamageInfo(player, actualDamage, this.damageTypeForTurn);
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-		Combo comboPower = (Combo) kakarot.getPower(PowerNames.COMBO);
-		if (comboPower != null){
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Combo(player, 1), 1));
+		if (kakarot.hasPower(ComboPower.POWER_ID)){
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
 		}
 	}
 

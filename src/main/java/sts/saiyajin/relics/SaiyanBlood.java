@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -67,12 +68,14 @@ public class SaiyanBlood extends CustomRelic {
 		int debuffsPurged = 0;
 		for (String oldDebuff : currentDebuffs){
 			if (!AbstractDungeon.player.hasPower(oldDebuff)){
+				logger.info("debuff purged: " + oldDebuff);
 				debuffsPurged++;
 			}
 		}
 		currentDebuffs = new ArrayList<String>();
 		for(AbstractPower power : AbstractDungeon.player.powers){
-			if (power.type.equals(PowerType.DEBUFF)){
+			if (power.type.equals(PowerType.DEBUFF) && !power.ID.equals(StrengthPower.POWER_ID) && !power.ID.equals(DexterityPower.POWER_ID)){
+				logger.info("current debuffs: " + power.ID);
 				currentDebuffs.add(power.ID);
 			}
 		}

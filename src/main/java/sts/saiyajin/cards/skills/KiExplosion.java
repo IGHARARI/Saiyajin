@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import sts.saiyajin.cards.types.KiCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.powers.KiBarrierPower;
 import sts.saiyajin.ui.CardPaths;
 
@@ -52,7 +52,7 @@ public class KiExplosion extends KiCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		GainBlockAction block = new GainBlockAction(player, player, this.block);
 	    AbstractDungeon.actionManager.addToBottom(block);
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -this.kiRequired), -this.kiRequired));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -this.kiRequired), -this.kiRequired));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiBarrierPower(player, this.magicNumber), this.magicNumber));
 	}
 

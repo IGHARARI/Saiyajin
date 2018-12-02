@@ -103,7 +103,7 @@ public class Saiyajin extends CustomPlayer {
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.KI_BLAST);
-		starterDeck.add(CardNames.POWER_UP);
+		starterDeck.add(CardNames.KAIO_KEN);
 		
 		return starterDeck;
 	}

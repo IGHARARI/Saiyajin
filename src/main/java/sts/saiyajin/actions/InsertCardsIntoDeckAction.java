@@ -1,5 +1,7 @@
 package sts.saiyajin.actions;
 
+import java.util.function.Predicate;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,11 +14,17 @@ public class InsertCardsIntoDeckAction extends AbstractGameAction {
     
 	final Logger logger = LogManager.getLogger(InsertCardsIntoDeckAction.class);
 	CardGroup toInsert;
+	Predicate<AbstractCard> predicate = null;
 	
-    public InsertCardsIntoDeckAction(CardGroup toInsert) {
+	public InsertCardsIntoDeckAction(CardGroup toInsert) {
+		this(toInsert, null);
+	}
+	
+    public InsertCardsIntoDeckAction(CardGroup toInsert, Predicate<AbstractCard> pred) {
         this.setValues(AbstractDungeon.player, AbstractDungeon.player);
         this.actionType = ActionType.CARD_MANIPULATION;
         this.toInsert = toInsert;
+        this.predicate = pred;
     }
     
     @Override
@@ -25,6 +33,7 @@ public class InsertCardsIntoDeckAction extends AbstractGameAction {
         	while (toInsert.size() > 0){
         		AbstractCard c = toInsert.getTopCard();
         		toInsert.removeCard(c);
+        		if (predicate != null && !predicate.test(c)) continue;
         		toInsert.moveToDeck(c, true);
         	}
             this.isDone = true;

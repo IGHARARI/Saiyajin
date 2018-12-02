@@ -45,13 +45,16 @@ import sts.saiyajin.cards.skills.CcCapsule;
 import sts.saiyajin.cards.skills.Defend;
 import sts.saiyajin.cards.skills.Endure;
 import sts.saiyajin.cards.skills.ExtremeSpeed;
+import sts.saiyajin.cards.skills.Fly;
 import sts.saiyajin.cards.skills.FullMoon;
 import sts.saiyajin.cards.skills.InstantTransfer;
 import sts.saiyajin.cards.skills.KaioKen;
 import sts.saiyajin.cards.skills.KiExplosion;
 import sts.saiyajin.cards.skills.LastResort;
+import sts.saiyajin.cards.skills.Medicine;
 import sts.saiyajin.cards.skills.PowerUp;
 import sts.saiyajin.cards.skills.Quickening;
+import sts.saiyajin.cards.skills.SaiyanHubris;
 import sts.saiyajin.cards.skills.Scouter;
 import sts.saiyajin.cards.skills.SenzuBean;
 import sts.saiyajin.cards.skills.SolarFlare;
@@ -60,7 +63,7 @@ import sts.saiyajin.cards.skills.ThirstForFight;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.RelicNames;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.relics.SaiyanBlood;
 import sts.saiyajin.ui.CharacterSelection;
 
@@ -154,22 +157,22 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.STRIKE);
         BaseMod.addCard(new Defend());
         UnlockTracker.unlockCard(CardNames.DEFEND);
-        BaseMod.addCard(new PowerUp());
-        UnlockTracker.unlockCard(CardNames.POWER_UP);
         BaseMod.addCard(new KiBlast());
         UnlockTracker.unlockCard(CardNames.KI_BLAST);
+        BaseMod.addCard(new KaioKen());
+        UnlockTracker.unlockCard(CardNames.KAIO_KEN);
         
         /**
          * Common cards
          */
+        BaseMod.addCard(new PowerUp());
+        UnlockTracker.unlockCard(CardNames.POWER_UP);
         BaseMod.addCard(new KiExplosion());
         UnlockTracker.unlockCard(CardNames.KI_EXPLOSION);
         BaseMod.addCard(new BurningSoul());
         UnlockTracker.unlockCard(CardNames.BURNING_SOUL);
         BaseMod.addCard(new KameHameHa());
         UnlockTracker.unlockCard(CardNames.KAME_HAME_HA);
-        BaseMod.addCard(new KaioKen());
-        UnlockTracker.unlockCard(CardNames.KAIO_KEN);
         BaseMod.addCard(new MeteorDash());
         UnlockTracker.unlockCard(CardNames.METEOR_DASH);
         BaseMod.addCard(new Flurry());
@@ -192,6 +195,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.BIG_BANG_ATTACK);
         BaseMod.addCard(new BackAttack());
         UnlockTracker.unlockCard(CardNames.BACK_ATTACK);
+        BaseMod.addCard(new SaiyanHubris());
+        UnlockTracker.unlockCard(CardNames.SAIYAN_HUBRIS);
         
         /**
          * Uncommon cards
@@ -206,10 +211,14 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SUPER_SAIYAN_FORM);
         BaseMod.addCard(new LastResort());
         UnlockTracker.unlockCard(CardNames.LAST_RESORT);
+        BaseMod.addCard(new Fly());
+        UnlockTracker.unlockCard(CardNames.FLY);
 
         /**
          * RARE CARDS
          */
+        BaseMod.addCard(new Medicine());
+        UnlockTracker.unlockCard(CardNames.MEDICINE);
         BaseMod.addCard(new GenkiDama());
         UnlockTracker.unlockCard(CardNames.GENKI_DAMA);
         BaseMod.addCard(new MonkeyTail());
@@ -277,7 +286,7 @@ public class SaiyaMod implements
 	@Override
 	public void receiveOnBattleStart(AbstractRoom r) {
 		Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
-		Ki kiPower = new Ki(kakarot, kakarot.getMaxKi());
+		KiPower kiPower = new KiPower(kakarot, kakarot.getMaxKi());
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(kakarot, kakarot, kiPower, kakarot.getMaxKi()));
 		
 	}

@@ -12,7 +12,7 @@ import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.powers.Revive;
+import sts.saiyajin.powers.RevivePower;
 import sts.saiyajin.ui.CardPaths;
 
 public class SenzuBean extends CustomCard {
@@ -46,8 +46,8 @@ public class SenzuBean extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		if (!monster.hasPower(PowerNames.CANT_REVIVE)){
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new Revive(monster, REVIVE_BUFF), REVIVE_BUFF));
+		if (!monster.hasPower(PowerNames.CANT_REVIVE) && !monster.hasPower(PowerNames.REVIVE)){
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new RevivePower(monster, 1), 1));
 		}
 	}
 

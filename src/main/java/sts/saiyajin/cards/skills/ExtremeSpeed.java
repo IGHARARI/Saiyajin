@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import sts.saiyajin.cards.types.KiCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class ExtremeSpeed extends KiCard {
@@ -48,6 +48,6 @@ public class ExtremeSpeed extends KiCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -KI_COST), -KI_COST));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -KI_COST), -KI_COST));
 	}
 }

@@ -41,11 +41,11 @@ public class BurningSoulPower extends AbstractPower {
 		if(isPlayer){
 			Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
 			if (kakarot.hasPower(PowerNames.KI)){
-				Ki kiPower = (Ki) kakarot.getPower(PowerNames.KI);
+				KiPower kiPower = (KiPower) kakarot.getPower(PowerNames.KI);
 				int usableKi = Math.min(this.amount, kiPower.amount);
 				if (usableKi > 0) {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiBarrierPower(kakarot, usableKi), usableKi));
-				    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new Ki(kakarot, -usableKi), -usableKi));
+				    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiPower(kakarot, -usableKi), -usableKi));
 				}
 			}
 		}

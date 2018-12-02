@@ -20,4 +20,6 @@ public abstract class PowerNames {
 	public static final String KI_REGEN = "KiRegen";
 	public static final String FULL_MOON = "FullMoon";
 	public static final String GREAT_APE = "GreatApe";
+	public static final String PLAYER_FLIGHT = "PlayerFlight";
+	public static final String MEDICINE = "Medicine";
 }

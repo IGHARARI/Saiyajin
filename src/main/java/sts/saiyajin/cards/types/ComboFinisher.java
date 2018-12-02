@@ -15,7 +15,7 @@ public abstract class ComboFinisher extends CustomCard {
 		super(id, name, img, cost, rawDescription, type, color, rarity, target);
 	}
 	
-	public abstract void updatedComboChain(int amount);
+	public abstract void updatedComboChain();
 	
 	public abstract void resetComboChain();
 

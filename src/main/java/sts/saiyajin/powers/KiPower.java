@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.ui.PowerPaths;
 
-public class Ki extends AbstractPower {
+public class KiPower extends AbstractPower {
 
 	public static final String POWER_ID = PowerNames.KI;
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -19,7 +19,7 @@ public class Ki extends AbstractPower {
 	
 //	private static final int KI_REGEN_AMOUNT = 3;
 
-	public Ki(AbstractCreature owner, int amount) {
+	public KiPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;

@@ -40,6 +40,6 @@ public class KiRegenPower extends AbstractPower {
 	@Override
 	public void atStartOfTurn() {
 		AbstractPlayer player = AbstractDungeon.player;
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, this.amount), this.amount));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, this.amount), this.amount));
 	}
 }

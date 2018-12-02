@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.DescriptionStrings;
 import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 
 public abstract class KiCard extends CustomCard {
 
@@ -23,7 +23,7 @@ public abstract class KiCard extends CustomCard {
 		boolean canUse = super.canUse(p, m);
 		if (!canUse) return false;
 		if (AbstractDungeon.player.hasPower(PowerNames.KI)){
-			Ki kiPower = (Ki) AbstractDungeon.player.getPower(PowerNames.KI);
+			KiPower kiPower = (KiPower) AbstractDungeon.player.getPower(PowerNames.KI);
 			if (kiPower.amount >= kiRequired) return true;
 		}
 		this.cantUseMessage = DescriptionStrings.KI_CARD_CANT_USE;

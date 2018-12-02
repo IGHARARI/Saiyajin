@@ -15,9 +15,21 @@
 		"NAME": "Power Up",
 		"DESCRIPTION": "Yell REALLY loud in order to gain !M! Ki and !B! block."
 	},
+	"Medicine": {
+		"NAME": "Medicine",
+		"DESCRIPTION": "Heal !M! HP and gain 1 Medicine. Insert a copy of this card into your draw pile. NL Exhaust."
+	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
 		"DESCRIPTION": "Deal !D! damage to an enemy, consume !M! Ki. NL Combo Finisher: Costs 1 less energy per Combo Chain counter."
+	},
+	"Fly": {
+		"NAME": "Fly",
+		"DESCRIPTION": "Gain 2 Flight. Consume !M! Ki."
+	},
+	"SaiyanHubris": {
+		"NAME": "Saiyan Hubris",
+		"DESCRIPTION": "Gain !M! Ki for each enemy."
 	},
 	"CCCapsule": {
 		"NAME": "C.C. Capsule",
@@ -25,8 +37,8 @@
 	},
 	"KaioKen": {
 		"NAME": "KaioKen",
-		"DESCRIPTION": "Gain 20 Ki, apply !M! Vulnerable to yourself. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Gain 20 Ki. NL Exhaust."
+		"DESCRIPTION": "Gain !M! Ki, apply 1 Vulnerable to yourself. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !M! Ki, apply 1 Vulnerable to yourself."
 	},
 	"MeteorDash": {
 		"NAME": "Meteor Dash",
@@ -38,7 +50,7 @@
 	},
 	"BackAttack": {
 		"NAME": "Back Attack",
-		"DESCRIPTION": "Deal !D! damage to an enemy. Can only be used un vulnerable enemies."
+		"DESCRIPTION": "Deal !D! damage to an enemy. Can only be used un vulnerable enemies. Combo Finisher: Draw cards and apply weaken equal to your Combo Chain."
 	},
 	"ExtremeSpeed": {
 		"NAME": "Extreme-speed",
@@ -54,8 +66,8 @@
 	},
 	"Quickening": {
 		"NAME": "Quickening",
-		"DESCRIPTION": "Gain 1 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki.",
-		"UPGRADE_DESCRIPTION": "Gain 2 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki."
+		"DESCRIPTION": "Gain 1 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki. Start a Combo Chain.",
+		"UPGRADE_DESCRIPTION": "Gain 2 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki. Start a Combo Chain."
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
@@ -87,7 +99,7 @@
 	},
 	"Flurry": {
 		"NAME": "Flurry",
-		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. If you have !M! or more Ki, consume it to deal 2 more damage. Increases Combo chain."	
+		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. If you have !M! or more Ki, consume it for an additional hit. Increases Combo chain."	
 	},
 	"ThirstForFight": {
 		"NAME": "Thirst for Battle",
@@ -100,8 +112,8 @@
 	},
 	"DrainingStrike": {
 		"NAME": "Draining Strike",
-		"DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit with unblocked damage.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit."
+		"DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit with unblocked damage. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit. NL Exhaust."
 	},
 	"Taunt": {
 		"NAME": "Taunt",

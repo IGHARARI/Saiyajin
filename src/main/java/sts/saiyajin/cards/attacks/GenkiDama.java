@@ -17,7 +17,7 @@ import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.core.Saiyajin;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class GenkiDama extends CustomCard {
@@ -51,14 +51,14 @@ public class GenkiDama extends CustomCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		Saiyajin kakarot = (Saiyajin) player;
-		Ki kiPower = (Ki) kakarot.getPower(PowerNames.KI);
+		KiPower kiPower = (KiPower) kakarot.getPower(PowerNames.KI);
 		int kiToUse = Math.min(kiPower.amount, this.magicNumber);
 		int multiDamage[] = DamageInfo.createDamageMatrix(kiToUse, true);
 		
 		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(
 				player, multiDamage, damageTypeForTurn, AttackEffect.SMASH);
 		AbstractDungeon.actionManager.addToBottom(damageAction);
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -kiPower.amount), -kiPower.amount));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiPower.amount), -kiPower.amount));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, 2, false), 2));
 	}
 

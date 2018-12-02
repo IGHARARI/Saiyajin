@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class PowerUp extends CustomCard {
@@ -22,8 +22,7 @@ public class PowerUp extends CustomCard {
 	private static final int COST = 1;
 	private static final int BASE_KI_GAIN = 10;
 	private static final int UPGRADE_KI_GAIN = 5;
-	private int KI_GAIN;
-	private static final int BASE_BLOCK = 3;
+	private static final int BASE_BLOCK = 5;
 	private static final int UPGRADE_BLOCK = 3;
 	
 	public PowerUp() {
@@ -33,7 +32,6 @@ public class PowerUp extends CustomCard {
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.SELF);
 	    this.baseBlock = BASE_BLOCK;
-	    this.KI_GAIN = BASE_KI_GAIN;
 	    this.baseMagicNumber = BASE_KI_GAIN;
 	    this.magicNumber = this.baseMagicNumber	;
 	}
@@ -44,7 +42,6 @@ public class PowerUp extends CustomCard {
 			upgradeName();
 			upgradeBlock(UPGRADE_BLOCK);
 			upgradeMagicNumber(UPGRADE_KI_GAIN);
-			this.KI_GAIN += UPGRADE_KI_GAIN;
 		}
 	}
 
@@ -52,7 +49,7 @@ public class PowerUp extends CustomCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		GainBlockAction block = new GainBlockAction(player, player, this.block);
 	    AbstractDungeon.actionManager.addToBottom(block);
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, KI_GAIN), KI_GAIN));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, magicNumber), magicNumber));
 	}
 
 }

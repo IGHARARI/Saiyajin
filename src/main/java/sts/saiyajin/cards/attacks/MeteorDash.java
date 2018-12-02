@@ -16,7 +16,7 @@ import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.core.Saiyajin;
-import sts.saiyajin.powers.Combo;
+import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class MeteorDash extends CustomCard {
@@ -50,9 +50,9 @@ public class MeteorDash extends CustomCard {
 		DamageInfo strikeDamage = new DamageInfo(player, this.damage, this.damageTypeForTurn);
 		DamageAction strikeAction = new DamageAction(monster, strikeDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
 		AbstractDungeon.actionManager.addToBottom(strikeAction);
-		Combo comboPower = (Combo) kakarot.getPower(PowerNames.COMBO);
+		ComboPower comboPower = (ComboPower) kakarot.getPower(PowerNames.COMBO);
 		if (comboPower == null){
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Combo(player, 1), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
 		}
 	}
 

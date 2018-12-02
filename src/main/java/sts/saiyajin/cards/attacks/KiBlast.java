@@ -18,7 +18,7 @@ import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.core.Saiyajin;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class KiBlast extends CustomCard {
@@ -55,11 +55,11 @@ public class KiBlast extends CustomCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		Saiyajin kakarot = (Saiyajin) player;
-		Ki kiPower = (Ki) kakarot.getPower(PowerNames.KI);
+		KiPower kiPower = (KiPower) kakarot.getPower(PowerNames.KI);
 		int extraDamage = 0;
 		if (kiPower.amount >= this.magicNumber){
 			extraDamage = 2; 
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -this.magicNumber), -this.magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -this.magicNumber), -this.magicNumber));
 		}
 		int damage = this.damage + extraDamage;
 		int multiDamage[] = DamageInfo.createDamageMatrix(damage, true);
@@ -67,6 +67,7 @@ public class KiBlast extends CustomCard {
 				player, multiDamage, damageTypeForTurn, AttackEffect.SLASH_HORIZONTAL);
 		AbstractDungeon.actionManager.addToBottom(damageAction);
 		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters){
+			if (m.isDeadOrEscaped()) continue;
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.06f));
 		}
 	}

@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import sts.saiyajin.cards.types.KiCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.Combo;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.ComboPower;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class InstantTransfer extends KiCard {
@@ -46,9 +46,9 @@ public class InstantTransfer extends KiCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Combo(player, 1), 1));
+	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, 1, false), 1));
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -this.magicNumber), -this.magicNumber));
+	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -this.magicNumber), -this.magicNumber));
 	}
 
 }

@@ -17,7 +17,8 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import sts.saiyajin.cards.types.KiCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.Ki;
+import sts.saiyajin.powers.ComboPower;
+import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
 public class Quickening extends KiCard {
@@ -58,11 +59,13 @@ public class Quickening extends KiCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		logger.info("USE QUICKENING WITH PLATED ARMOR : " + platedArmor);
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, platedArmor), platedArmor));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new Ki(player, -kiRequired), -kiRequired));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiRequired), -kiRequired));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, 1, false), 1, true, AbstractGameAction.AttackEffect.NONE));
+        }
+        if(!AbstractDungeon.player.hasPower(ComboPower.POWER_ID)){
+    	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
         }
 	}
 

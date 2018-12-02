@@ -16,6 +16,7 @@ public class CardPaths {
 	 * COMMONS
 	 */
 	public static final String KAIO_KEN = "img/cards/block.png";
+	public static final String KAME_HAME_HA = "img/cards/strike.png";
 	public static final String GENKI_DAMA = "img/cards/strike.png";
 	public static final String METEOR_DASH = "img/cards/strike.png";
 	public static final String FLURRY = "img/cards/strike.png";
@@ -29,6 +30,7 @@ public class CardPaths {
 	public static final String BACK_ATTACK = "img/cards/strike.png";
 	public static final String EXTREME_SPEED = "img/cards/block.png";
 	public static final String BIG_BANG_ATTACK = "img/cards/strike.png";
+	public static final String SAIYAN_HUBRIS = "img/cards/block.png";
 
 	/**
 	 * UNCOMMONS
@@ -39,6 +41,7 @@ public class CardPaths {
 	public static final String DRAINING_STRIKE = "img/cards/block.png";
 	public static final String ENDURE = "img/cards/block.png";
 	public static final String LAST_RESORT = "img/cards/block.png";
+	public static final String FLY = "img/cards/block.png";
 	
 	/**
 	 * RARES
@@ -47,6 +50,11 @@ public class CardPaths {
 	public static final String TAUNT = "img/cards/block.png";
 	public static final String SENZU_BEAN = "img/cards/block.png";
 	public static final String MONKEY_TAIL = "img/cards/block.png";
+	public static final String MEDICINE = "img/cards/block.png";
+	
+	/**
+	 * SPECIAL
+	 */
 	public static final String GREAT_APE_FORM = "img/cards/block.png";
 	public static final String FULL_MOON = "img/cards/block.png";
 }
