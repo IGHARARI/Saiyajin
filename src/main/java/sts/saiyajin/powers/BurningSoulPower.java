@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.core.Saiyajin;
 import sts.saiyajin.ui.PowerPaths;
 
@@ -41,8 +42,8 @@ public class BurningSoulPower extends AbstractPower {
 		if(isPlayer){
 			Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
 			if (kakarot.hasPower(PowerNames.KI)){
-				KiPower kiPower = (KiPower) kakarot.getPower(PowerNames.KI);
-				int usableKi = Math.min(this.amount, kiPower.amount);
+				int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
+				int usableKi = Math.min(this.amount, kiPower);
 				if (usableKi > 0) {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiBarrierPower(kakarot, usableKi), usableKi));
 				    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiPower(kakarot, -usableKi), -usableKi));

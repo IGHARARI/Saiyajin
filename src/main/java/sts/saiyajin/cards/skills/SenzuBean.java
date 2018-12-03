@@ -21,7 +21,7 @@ public class SenzuBean extends CustomCard {
 
 	private static final int COST = 2;
 	private static final int UPGRADED_COST = 1;
-	private static final int REVIVE_BUFF = 3;
+	private static final int REVIVE_BUFF = 5;
 	
 	public SenzuBean() {
 		super(CardNames.SENZU_BEAN, cardStrings.NAME, CardPaths.SENZU_BEAN, COST, cardStrings.DESCRIPTION, 
@@ -47,7 +47,7 @@ public class SenzuBean extends CustomCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		if (!monster.hasPower(PowerNames.CANT_REVIVE) && !monster.hasPower(PowerNames.REVIVE)){
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new RevivePower(monster, 1), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new RevivePower(monster, this.magicNumber), 1));
 		}
 	}
 

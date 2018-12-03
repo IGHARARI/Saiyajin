@@ -20,8 +20,8 @@ public class PowerUp extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.POWER_UP);
 
 	private static final int COST = 1;
-	private static final int BASE_KI_GAIN = 10;
-	private static final int UPGRADE_KI_GAIN = 5;
+	private static final int BASE_KI_GAIN = 5;
+	private static final int UPGRADE_KI_GAIN = 3;
 	private static final int BASE_BLOCK = 5;
 	private static final int UPGRADE_BLOCK = 3;
 	

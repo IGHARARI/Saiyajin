@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.CardPaths;
@@ -23,7 +24,7 @@ public class LastResort extends CustomCard {
 
 	private static final int COST = 2;
 	private static final int UPGR_COST = 1;
-	private static final int KI_FOR_STR = 5;
+	private static final int KI_FOR_STR = 6;
 	private static final int UPGRADED_KI_FOR_STR = -1;
 	
 	public LastResort() {
@@ -34,6 +35,7 @@ public class LastResort extends CustomCard {
 		        AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = KI_FOR_STR;
 		this.magicNumber = this.baseMagicNumber;
+		exhaust = true;
 	}
 
 	@Override
@@ -47,12 +49,13 @@ public class LastResort extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		KiPower kiPower = (KiPower) AbstractDungeon.player.getPower(KiPower.POWER_ID);
-		int strGain = kiPower.amount / magicNumber;
+		int kiPower = PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID);
+		int strGain = kiPower / magicNumber;
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, strGain), strGain));
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiPower.amount), -kiPower.amount));
 	    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(player, player, KiPower.POWER_ID));
 	    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(player, player, KiRegenPower.POWER_ID));
+	    if (kiPower>0)
+	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiPower), -kiPower));
 	}
 
 }

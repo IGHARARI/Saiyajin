@@ -16,6 +16,7 @@ import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.core.Saiyajin;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
@@ -54,9 +55,9 @@ public class Flurry extends CustomCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		Saiyajin kakarot = (Saiyajin) player;
-		KiPower kiPower = (KiPower) kakarot.getPower(PowerNames.KI);
+		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
 		DamageInfo perHitDamage = new DamageInfo(player, this.damage, this.damageTypeForTurn);
-		if (kiPower.amount >= this.magicNumber){
+		if (kiPower >= this.magicNumber){
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		}

@@ -13,6 +13,7 @@ import basemod.helpers.BaseModCardTags;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
@@ -46,9 +47,9 @@ public class Defend extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		KiPower kiPower = (KiPower) player.getPower(PowerNames.KI);
+		int kiPower = PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID);
 		int blockAmount = this.block;
-		if (kiPower != null && kiPower.amount >= 10) blockAmount += KI_BLOCK_BONUS;
+		if (kiPower >= 10) blockAmount += KI_BLOCK_BONUS;
 		GainBlockAction block = new GainBlockAction(player, player, blockAmount);
 	    AbstractDungeon.actionManager.addToBottom(block);
 	}

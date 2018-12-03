@@ -70,8 +70,4 @@ public class ComboPower extends AbstractPower {
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
 	}
-	
-	static public int getCurrentPlayerComboCounter(){
-		return AbstractDungeon.player.hasPower(ComboPower.POWER_ID) ? AbstractDungeon.player.getPower(ComboPower.POWER_ID).amount : 0;
-	}
 }

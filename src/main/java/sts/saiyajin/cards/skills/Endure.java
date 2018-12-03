@@ -13,6 +13,7 @@ import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
@@ -42,9 +43,10 @@ public class Endure extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		KiPower kiPower = (KiPower) AbstractDungeon.player.getPower(PowerNames.KI);
-	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, kiPower.amount));
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiPower.amount), -kiPower.amount));
+		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
+	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, kiPower));
+	    if (kiPower>0)
+	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiPower), -kiPower));
 	    
 	}
 }

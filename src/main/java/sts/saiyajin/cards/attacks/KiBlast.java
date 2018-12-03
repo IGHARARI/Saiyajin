@@ -16,8 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.core.Saiyajin;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
@@ -27,8 +26,8 @@ public class KiBlast extends CustomCard {
 	private static final int COST = 0;
 	private static final int BASE_DAMAGE = 4; 
 	private static final int UPGRADE_DAMAGE = 2; 
-	private int BASE_KI_COST = 10;
-	private int UPGRADED_KI_COST = 6;
+	private static final int BASE_KI_COST = 10;
+	private static final int UPGRADED_KI_COST = -4;
 	
 	public KiBlast() {
 		super(CardNames.KI_BLAST, cardStrings.NAME, CardPaths.KI_BLAST, COST, cardStrings.DESCRIPTION, 
@@ -48,16 +47,15 @@ public class KiBlast extends CustomCard {
 		if (!upgraded){
 			upgradeName();
 			upgradeDamage(UPGRADE_DAMAGE);
-			upgradeMagicNumber(UPGRADED_KI_COST - BASE_KI_COST);
+			upgradeMagicNumber(UPGRADED_KI_COST);
 		}
 	}
 	
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		Saiyajin kakarot = (Saiyajin) player;
-		KiPower kiPower = (KiPower) kakarot.getPower(PowerNames.KI);
+		int kiPower = PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID);
 		int extraDamage = 0;
-		if (kiPower.amount >= this.magicNumber){
+		if (kiPower >= this.magicNumber){
 			extraDamage = 2; 
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -this.magicNumber), -this.magicNumber));
 		}

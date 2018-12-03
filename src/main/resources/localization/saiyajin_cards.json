@@ -62,7 +62,7 @@
 	},
 	"LastResort": {
 		"NAME": "Last Resort",
-		"DESCRIPTION": "Consume ALL your Ki, gain 1 Strength for every !M! Ki consumed. Lose ALL Ki Regen."
+		"DESCRIPTION": "Consume ALL your Ki, gain 1 Strength for every !M! Ki consumed. Lose ALL Ki Regen. NL Exhaust."
 	},
 	"Quickening": {
 		"NAME": "Quickening",

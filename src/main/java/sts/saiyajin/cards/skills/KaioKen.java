@@ -20,7 +20,7 @@ public class KaioKen extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.KAIO_KEN);
 
 	private static final int COST = 0;
-	private static final int KI_GAIN = 20;
+	private static final int KI_GAIN = 15;
 	private final static int UPGRADED_KI_GAIN = 5;
 	private final static int VULNERABILITY = 1;
 	

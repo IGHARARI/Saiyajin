@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import sts.saiyajin.cards.types.ComboFinisher;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.ui.CardPaths;
 
@@ -70,7 +71,7 @@ public class BackAttack extends ComboFinisher {
 
 	@Override
 	public void updatedComboChain() {
-		int diff = ComboPower.getCurrentPlayerComboCounter() - magicNumber;
+		int diff = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) - magicNumber;
 		upgradeMagicNumber(diff);
 	}
 

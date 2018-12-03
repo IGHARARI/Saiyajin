@@ -18,6 +18,7 @@ import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.DescriptionStrings;
 import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
@@ -57,8 +58,8 @@ public class KameHameHa extends ComboFinisher {
 		boolean canUse = super.canUse(p, m);
 		if (!canUse) return false;
 		if (AbstractDungeon.player.hasPower(PowerNames.KI)){
-			KiPower kiPower = (KiPower) AbstractDungeon.player.getPower(PowerNames.KI);
-			if (kiPower.amount >= this.magicNumber) return true;
+			int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
+			if (kiPower >= this.magicNumber) return true;
 		}
 		this.cantUseMessage = DescriptionStrings.KI_CARD_CANT_USE;
 		return false;
@@ -74,7 +75,7 @@ public class KameHameHa extends ComboFinisher {
 
 	@Override
 	public void updatedComboChain() {
-		int comboAmt = ComboPower.getCurrentPlayerComboCounter();
+		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
 		this.modifyCostForCombat(COST - this.cost - comboAmt);
 	}
 
