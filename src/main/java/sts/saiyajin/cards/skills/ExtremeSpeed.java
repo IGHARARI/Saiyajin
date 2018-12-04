@@ -28,7 +28,7 @@ public class ExtremeSpeed extends KiCard {
 	public ExtremeSpeed() {
 		super(CardNames.EXTREME_SPEED, cardStrings.NAME, CardPaths.EXTREME_SPEED, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
-		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.NONE);
 		this.exhaust = true;

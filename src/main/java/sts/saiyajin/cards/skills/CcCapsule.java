@@ -24,7 +24,7 @@ public class CcCapsule extends CustomCard {
 	public CcCapsule() {
 		super(CardNames.CC_CAPSULE, cardStrings.NAME, CardPaths.CC_CAPSULE, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
-		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.NONE);
 		this.exhaust = true;

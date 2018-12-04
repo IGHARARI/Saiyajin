@@ -29,7 +29,7 @@ public class Medicine extends CustomCard {
 	public Medicine() {
 		super(CardNames.MEDICINE, cardStrings.NAME, CardPaths.MEDICINE, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
-		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.NONE);
 		baseMagicNumber = HEAL;

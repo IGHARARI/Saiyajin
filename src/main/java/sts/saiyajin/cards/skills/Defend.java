@@ -12,7 +12,6 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
@@ -22,7 +21,7 @@ public class Defend extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.DEFEND);
 
 	private static final int COST = 1;
-	private static final int BASE_BLOCK = 6;
+	private static final int BASE_BLOCK = 5;
 	private static final int UPGRADE_BLOCK = 2;
 	private static final int KI_BLOCK_BONUS = 2;
 	private static final int KI_BLOCK_BONUS_REQUIREMENT = 10;
