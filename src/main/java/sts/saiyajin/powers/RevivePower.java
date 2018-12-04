@@ -45,6 +45,7 @@ public class RevivePower extends AbstractPower {
 		this.img = new Texture(PowerPaths.SENZU_REVIVE);
 		this.canGoNegative = false;
 		strengthBuff = strBuff;
+		updateDescription();
 	}
 	
 	@Override
@@ -65,6 +66,7 @@ public class RevivePower extends AbstractPower {
 		}
 		AbstractDungeon.actionManager.addToTop(new WaitAction(1f));
 		AbstractDungeon.getCurrRoom().addRelicToRewards(RelicTier.COMMON);
+		//TODO: CHECK IF ESCAPING GIVES RELIC ANYWAY
 		return dmgReturn;
 	}
 	

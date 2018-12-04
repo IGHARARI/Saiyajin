@@ -9,7 +9,7 @@
 	},
 	"EnergyBlast": {
 		"NAME": "Energy Blast",
-		"DESCRIPTION": "Deal !D! damage to all enemies. If you have !M! or more Ki, consume it to deal an extra 2 damage to each enemy."
+		"DESCRIPTION": "Deal !D! damage to all enemies. If you have !M! or more Ki, consume it to deal an extra 2 damage to each enemy. Start a Combo."
 	},
 	"PowerUp": {
 		"NAME": "Power Up",

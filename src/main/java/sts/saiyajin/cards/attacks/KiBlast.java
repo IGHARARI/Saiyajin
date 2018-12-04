@@ -17,6 +17,7 @@ import basemod.abstracts.CustomCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowersHelper;
+import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
@@ -67,6 +68,9 @@ public class KiBlast extends CustomCard {
 		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters){
 			if (m.isDeadOrEscaped()) continue;
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.06f));
+		}
+		if(PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) == 0){
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
 		}
 	}
 

@@ -38,6 +38,7 @@ public class BigBangAttack extends KiCard {
 		this.baseDamage = BASE_DAMAGE;
 		this.baseMagicNumber = BASE_KI_COST;
 		this.magicNumber = this.baseMagicNumber;
+		kiRequired = magicNumber;
 	}
 
 	@Override
@@ -46,6 +47,7 @@ public class BigBangAttack extends KiCard {
 			upgradeName();
 			upgradeDamage(UPGRADE_DAMAGE);
 			upgradeMagicNumber(UPGRADED_KI_COST);
+			kiRequired = magicNumber;
 		}
 	}
 	
