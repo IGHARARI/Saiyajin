@@ -11,13 +11,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
+import basemod.abstracts.CustomCard;
 import sts.saiyajin.actions.InsertCardsIntoDeckAction;
 import sts.saiyajin.cards.skills.FullMoon;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.ui.CardPaths;
 
-public class MonkeyTail extends AbstractCard
+public class MonkeyTail extends CustomCard
 {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.MONKEY_TAIL);
 	private static final int COST = 2;
