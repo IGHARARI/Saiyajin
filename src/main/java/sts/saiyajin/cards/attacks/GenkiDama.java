@@ -29,7 +29,7 @@ public class GenkiDama extends CustomCard {
 	private static final int UPGRADED_KI_MAX_CONSUME = 40;
 	
 	public GenkiDama() {
-		super(CardNames.GENKI_DAMA, cardStrings.NAME, CardPaths.SAIYAN_STRIKE, COST, cardStrings.DESCRIPTION, 
+		super(CardNames.GENKI_DAMA, cardStrings.NAME, CardPaths.GENKI_DAMA, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.ATTACK,
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.RARE,
