@@ -27,7 +27,7 @@ public class KiBlast extends CustomCard {
 	private static final int COST = 0;
 	private static final int BASE_DAMAGE = 4; 
 	private static final int UPGRADE_DAMAGE = 2; 
-	private static final int BASE_KI_COST = 10;
+	private static final int BASE_KI_COST = 8;
 	private static final int UPGRADED_KI_COST = -4;
 	
 	public KiBlast() {

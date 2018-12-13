@@ -21,7 +21,7 @@ public class Fly extends KiCard {
 
 	private static final int COST = 1;
 	private static final int FLY_AMOUNT = 2;
-	private static final int KI_COST = 25;
+	private static final int KI_COST = 20;
 	private static final int UPGRADED_KI_COST = -10;
 	
 	

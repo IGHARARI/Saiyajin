@@ -19,8 +19,8 @@ public class TurtleShell extends CustomCard
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.TURTLE_SHELL);
 	private static final int COST = 1;
 	private static final int UPGRADED_COST = 0;
-	private static final int BASE_KI_REGEN = 2;
-	private static final int UPGRADED_KI_BARRIER = 1;
+	private static final int BASE_KI_REGEN = 3;
+	private static final int UPGRADED_KI_REGEN = 1;
     
     public TurtleShell() {
 		super(CardNames.TURTLE_SHELL, cardStrings.NAME, CardPaths.TURTLE_SHELL, COST, cardStrings.DESCRIPTION, 
@@ -47,7 +47,7 @@ public class TurtleShell extends CustomCard
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            this.upgradeMagicNumber(UPGRADED_KI_BARRIER);
+            this.upgradeMagicNumber(UPGRADED_KI_REGEN);
         }
     }
 }

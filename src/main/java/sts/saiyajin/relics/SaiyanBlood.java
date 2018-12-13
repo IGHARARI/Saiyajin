@@ -29,7 +29,7 @@ public class SaiyanBlood extends CustomRelic {
 
 	private ArrayList<String> currentDebuffs = new ArrayList<String>();
 	private boolean isBattling = false;
-	private static final int KI_REGEN = 3;
+	private static final int KI_REGEN = 4;
 
 	final Logger logger = LogManager.getLogger(SaiyaMod.class);
 	

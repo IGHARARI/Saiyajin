@@ -33,7 +33,7 @@
 	},
 	"CCCapsule": {
 		"NAME": "C.C. Capsule",
-		"DESCRIPTION": "Get a random Power, it costs 1 less Energy until played. NL Exhaust."
+		"DESCRIPTION": "Get a random Ethereal Power, it costs 1 less Energy until played. NL Exhaust."
 	},
 	"KaioKen": {
 		"NAME": "KaioKen",
@@ -50,7 +50,7 @@
 	},
 	"BackAttack": {
 		"NAME": "Back Attack",
-		"DESCRIPTION": "Deal !D! damage to an enemy. Can only be used un vulnerable enemies. Combo Finisher: Draw cards and apply weaken equal to your Combo Chain."
+		"DESCRIPTION": "Deal !D! damage. Can only be used on vulnerable enemies. NL Combo Finisher: Apply weaken equal to your Combo Chain."
 	},
 	"ExtremeSpeed": {
 		"NAME": "Extreme-speed",

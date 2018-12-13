@@ -35,8 +35,8 @@ import sts.saiyajin.ui.Orb;
 
 public class Saiyajin extends CustomPlayer {
 
-	private static final int STARTING_HP = 40;
-	private static final int MAX_HP = 40;
+	private static final int MAX_HP = 50;
+	private static final int STARTING_HP = MAX_HP;
 	private static final int STARTING_GOLD = 15;
 	private static final int HAND_SIZE = 6;
 	private static final int ASCENSION_MAX_HP_LOSS = 5;

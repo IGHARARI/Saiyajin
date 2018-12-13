@@ -41,7 +41,8 @@ public class CcCapsule extends CustomCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
         final AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
-        c.setCostForTurn(-1);
+        c.modifyCostForTurn(-1);
+        c.isEthereal = true;
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
 	}
 }

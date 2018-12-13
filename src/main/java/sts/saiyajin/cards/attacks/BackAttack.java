@@ -3,7 +3,6 @@ package sts.saiyajin.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -37,8 +36,6 @@ public class BackAttack extends ComboFinisher {
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.ENEMY);
 	    this.baseDamage = BASE_DAMAGE;
-	    this.baseMagicNumber = 0;
-	    this.magicNumber = 0;
 	}
 	
 	@Override
@@ -63,21 +60,21 @@ public class BackAttack extends ComboFinisher {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-		if (magicNumber > 0) {
-			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, magicNumber));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new WeakPower(monster, magicNumber, false), magicNumber));
+		int comboChain = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
+		if (comboChain > 0) {
+			//AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new WeakPower(monster, comboChain, false), comboChain));
 		}
 	}
 
 	@Override
 	public void updatedComboChain() {
-		int diff = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) - magicNumber;
-		upgradeMagicNumber(diff);
+		//magicNumber = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) - magicNumber;
 	}
 
 	@Override
 	public void resetComboChain() {
-		upgradeMagicNumber(-magicNumber);
+		//magicNumber = 0;
 	}
 
 }
