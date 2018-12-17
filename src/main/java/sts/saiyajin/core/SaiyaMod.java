@@ -7,25 +7,32 @@ import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
+import basemod.interfaces.PostPowerApplySubscriber;
 import sts.saiyajin.cards.attacks.BackAttack;
 import sts.saiyajin.cards.attacks.BigBangAttack;
 import sts.saiyajin.cards.attacks.ConcussiveBlow;
@@ -60,9 +67,11 @@ import sts.saiyajin.cards.skills.SenzuBean;
 import sts.saiyajin.cards.skills.SolarFlare;
 import sts.saiyajin.cards.skills.Taunt;
 import sts.saiyajin.cards.skills.ThirstForFight;
+import sts.saiyajin.cards.types.ComboFinisher;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.RelicNames;
+import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.relics.SaiyanBlood;
 import sts.saiyajin.ui.CharacterSelection;
@@ -75,7 +84,9 @@ public class SaiyaMod implements
 	EditRelicsSubscriber,
 	OnPowersModifiedSubscriber,
 	PostBattleSubscriber,
-	OnStartBattleSubscriber
+	OnStartBattleSubscriber,
+	PostPowerApplySubscriber,
+	EditKeywordsSubscriber
 	{
 
 	public static final Logger logger = LogManager.getLogger(SaiyaMod.class);
@@ -289,6 +300,36 @@ public class SaiyaMod implements
 		KiPower kiPower = new KiPower(kakarot, kakarot.getMaxKi());
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(kakarot, kakarot, kiPower, kakarot.getMaxKi()));
 		
+	}
+
+	@Override
+	public void receivePostPowerApplySubscriber(AbstractPower power, AbstractCreature arg1, AbstractCreature arg2) {
+		if (power instanceof ComboPower){
+			logger.info("ON APPLY COMBO AMOUNT: " + power.amount);
+			for (AbstractCard c : AbstractDungeon.player.hand.group) {
+				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
+			}
+			for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
+			}
+			for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
+			}
+		}
+		
+	}
+
+	@Override
+	public void receiveEditKeywords() {
+        Gson gson = new Gson();
+        String json = Gdx.files.internal("localization/saiyajin_keywords.json").readString(StandardCharsets.UTF_8.name());
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
 	}
 
 }

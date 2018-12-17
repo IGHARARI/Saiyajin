@@ -35,23 +35,7 @@ public class ComboPower extends AbstractPower {
 		this.img = new Texture(PowerPaths.COMBO);
 		this.canGoNegative = false;
 	}
-
-	@Override
-	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		if (power instanceof ComboPower){
-			logger.info("ON APPLY COMBO AMOUNT: " + power.amount);
-			for (AbstractCard c : AbstractDungeon.player.hand.group) {
-				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
-			}
-			for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
-			}
-			for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
-			}
-		}
-	}
-
+	
 	@Override
 	public void onRemove() {
 		logger.info("ON REMOVE CALLED FOR COMBO");

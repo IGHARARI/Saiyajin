@@ -1,5 +1,8 @@
 package sts.saiyajin.cards.attacks;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -31,6 +34,8 @@ public class KameHameHa extends ComboFinisher {
 	private static final int UPGRADE_DAMAGE = 8; 
 	private static final int KI_COST = 20; 
 	private static final int UPGRADED_KI_COST = -10; 
+	
+	final Logger logger = LogManager.getLogger(KameHameHa.class);
 	
 	public KameHameHa() {
 		super(CardNames.KAME_HAME_HA, cardStrings.NAME, CardPaths.KAME_HAME_HA, COST, cardStrings.DESCRIPTION, 
@@ -76,6 +81,7 @@ public class KameHameHa extends ComboFinisher {
 	@Override
 	public void updatedComboChain() {
 		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
+		logger.info("Combo amount on kame update: " + comboAmt);
 		this.modifyCostForCombat(COST - this.cost - comboAmt);
 	}
 

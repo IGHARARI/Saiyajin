@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import sts.saiyajin.actions.InsertCardsIntoDeckAction;
 import sts.saiyajin.actions.MedicineAction;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
@@ -34,7 +33,6 @@ public class Medicine extends CustomCard {
 		        AbstractCard.CardTarget.NONE);
 		baseMagicNumber = HEAL;
 		magicNumber = baseMagicNumber;
-		this.exhaust = true;
 	}
 
 	@Override
@@ -52,8 +50,5 @@ public class Medicine extends CustomCard {
 		cg.addToBottom(c);
 		AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new MedicineAction());
-        AbstractDungeon.actionManager.addToBottom(new InsertCardsIntoDeckAction(cg));
-        
-        
 	}
 }

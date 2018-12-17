@@ -5,11 +5,11 @@
 	},
 	"SAIYA_Defend": {
 		"NAME": "Block",
-		"DESCRIPTION": "Gain !B! Block. If you have !M! or more Ki gain an extra 2 Block."
+		"DESCRIPTION": "Gain !B! Block. NL Ki-Enhanced( !M! ): Gain an extra 2 Block."
 	},
 	"EnergyBlast": {
 		"NAME": "Energy Blast",
-		"DESCRIPTION": "Deal !D! damage to all enemies. If you have !M! or more Ki, consume it to deal an extra 2 damage to each enemy. Start a Combo."
+		"DESCRIPTION": "Deal !D! damage to all enemies. NL Ki-Enhanced( !M! ) deal 2 more damage to each enemy. NL Starter."
 	},
 	"PowerUp": {
 		"NAME": "Power Up",
@@ -17,15 +17,15 @@
 	},
 	"Medicine": {
 		"NAME": "Medicine",
-		"DESCRIPTION": "Heal !M! HP and gain 1 Medicine. Insert a copy of this card into your draw pile. NL Exhaust."
+		"DESCRIPTION": "Heal !M! HP and gain 1 Medicine."
 	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
-		"DESCRIPTION": "Deal !D! damage to an enemy, consume !M! Ki. NL Combo Finisher: Costs 1 less energy per Combo Chain counter."
+		"DESCRIPTION": "consume !M! Ki. NL Deal !D! damage to an enem. NL Finisher: Costs 1 less energy per Combo stack."
 	},
 	"Fly": {
 		"NAME": "Fly",
-		"DESCRIPTION": "Gain 2 Flight. Consume !M! Ki."
+		"DESCRIPTION": "Consume !M! Ki. NL Gain 2 Flight."
 	},
 	"SaiyanHubris": {
 		"NAME": "Saiyan Hubris",
@@ -42,7 +42,7 @@
 	},
 	"MeteorDash": {
 		"NAME": "Meteor Dash",
-		"DESCRIPTION": "Dash at the enemy to deliver a heavy blow dealing !D! damage. Start a Combo"
+		"DESCRIPTION": "Deal !D! damage. NL Starter"
 	},
 	"Endure": {
 		"NAME": "Endure",
@@ -50,24 +50,24 @@
 	},
 	"BackAttack": {
 		"NAME": "Back Attack",
-		"DESCRIPTION": "Deal !D! damage. Can only be used on vulnerable enemies. NL Combo Finisher: Apply weaken equal to your Combo Chain."
+		"DESCRIPTION": "Deal !D! damage. Telegraphed. NL Finisher: Apply weaken equal to your Combo."
 	},
 	"ExtremeSpeed": {
 		"NAME": "Extreme-speed",
-		"DESCRIPTION": "Draw !M! cards. Consume 15 Ki."
+		"DESCRIPTION": "Consume 15 Ki. NL Draw !M! cards."
 	},
 	"BigBangAttack": {
 		"NAME": "Big-Bang Attack",
-		"DESCRIPTION": "Deal !D! damage, consume !M! Ki."
+		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage."
 	},
 	"LastResort": {
 		"NAME": "Last Resort",
-		"DESCRIPTION": "Consume ALL your Ki, gain 1 Strength for every !M! Ki consumed. Lose ALL Ki Regen. NL Exhaust."
+		"DESCRIPTION": "Consume ALL your Ki, gain 1 Strength for every !M! Ki consumed. NL Lose ALL Ki Regen. NL Exhaust."
 	},
 	"Quickening": {
 		"NAME": "Quickening",
-		"DESCRIPTION": "Gain 1 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki. Start a Combo Chain.",
-		"UPGRADE_DESCRIPTION": "Gain 2 Plated Armor and apply 1 Vulnerable to all enemies. Consumes !M! Ki. Start a Combo Chain."
+		"DESCRIPTION": "Consume !M! Ki. NL Gain 1 Plated Armor, apply 1 Vulnerable to all enemies. NL Starter.",
+		"UPGRADE_DESCRIPTION": "Consumes !M! Ki. NL Gain 2 Plated Armor, apply 1 Vulnerable to all enemies. NL Starter."
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
@@ -79,7 +79,7 @@
 	},
 	"GreatApeForm": {
 		"NAME": "Great Ape Form",
-		"DESCRIPTION": "Can only be used on a Full Moon. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Gain 15 Ki Regen, 8 Plated Armor and 3 Strength."
+		"DESCRIPTION": "Moonstruck. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Transform into an Ape."
 	},
 	"ConcussiveBlow": {
 		"NAME": "Concussive Blow",
@@ -87,11 +87,11 @@
 	},
 	"BurningSoul": {
 		"NAME": "Burning Soul",
-		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn in order to gain the same amount of Ki Barrier."
+		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn, gain that much Ki-Barrier."
 	},
 	"Scouter": {
 		"NAME": "Scouter",
-		"DESCRIPTION": "Consume !M! Ki to gain !B! block this and next turn. If the enemy is NOT attacking gain an extra 4 block."
+		"DESCRIPTION": "Consume !M! Ki. NL Gain !B! block this and next turn. NL If the enemy is NOT attacking gain an extra 4 block."
 	},
 	"TurtleShell": {
 		"NAME": "Turtle Shell",
@@ -99,7 +99,7 @@
 	},
 	"Flurry": {
 		"NAME": "Flurry",
-		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. If you have !M! or more Ki, consume it for an additional hit. Increases Combo chain."	
+		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. NL Ki-Enhanced( !M! ): hit an additional time. NL Follow-up."	
 	},
 	"ThirstForFight": {
 		"NAME": "Thirst for Battle",
@@ -108,7 +108,7 @@
 	},
 	"Teleport": {
 		"NAME": "Instant Transfer",
-		"DESCRIPTION": "Apply 1 Vulnerable to an enemy, Start or Increase a Combo Chain. Consumes !M! Ki."
+		"DESCRIPTION": "Consumes !M! Ki. NL Apply 1 Vulnerable to an enemy. NL Starter & Follow-up."
 	},
 	"DrainingStrike": {
 		"NAME": "Draining Strike",
@@ -121,12 +121,12 @@
 	},
 	"KiExplosion": {
 		"NAME": "Ki Explosion",
-		"DESCRIPTION": "Gain !B! block and !M! Ki Barrier. Consumes 10 Ki."
+		"DESCRIPTION": "Consumes 10 Ki. NL Gain !B! block and !M! Ki-Barrier. "
 	},
 	"SolarFlare": {
 		"NAME": "Solar Flare",
-		"DESCRIPTION": "Stun an enemy for 1 turn. Consumes !M! Ki.",
-		"UPGRADE_DESCRIPTION": "Stun All enemies for 1 turn. Consumes !M! Ki."
+		"DESCRIPTION": "Consume !M! Ki. NL Stun an enemy for 1 turn. ",
+		"UPGRADE_DESCRIPTION": "Consumes !M! Ki. NL Stun All enemies for 1 turn."
 	},
 	"SuperSaiyanForm": {
 		"NAME": "Super Saiyan Form",
@@ -135,11 +135,11 @@
 	},
 	"SenzuBean": {
 		"NAME": "Senzu Bean",
-		"DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength and can only take a third of its max HP of damage per turn",
-		"UPGRADE_DESCRIPTION": "Give a non-minion enemy a Second Chance. When it dies it is revived with !M! bonus Strength and Metallicize."
+		"DESCRIPTION": "Give a non-minion enemy Revenge: Strength( !M! ), Invincible(33% of Max HP)",
+		"UPGRADE_DESCRIPTION": "Give a non-minion enemy Revenge: Strength( !M! ), Metallicize( !M! x3 )."
 	},
 	"GenkiDama": {
 		"NAME": "Genki Dama",
-		"DESCRIPTION": "Consume all your Ki (up to !M!) and deal that much damage to all enemies. Gain 2 Weakened."
+		"DESCRIPTION": "Consume up to !M! Ki and deal that much damage to all enemies. NL Gain 2 Weakened."
 	}
 }

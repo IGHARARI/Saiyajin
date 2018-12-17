@@ -7,10 +7,10 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -50,22 +50,25 @@ public class WeakRevivePower extends AbstractPower {
 	
 	@Override
 	public int onAttacked(DamageInfo info, int damageAmount) {
+		
 		if (!this.owner.hasPower(PowerNames.REVIVE) || this.owner.currentHealth > damageAmount) return super.onAttacked(info, damageAmount);
+		AbstractDungeon.actionManager.addToTop(new HealAction(owner, owner, owner.maxHealth));
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, buffAmount), buffAmount));
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new MetallicizePower(owner, buffAmount*3), buffAmount*3));
+		AbstractDungeon.actionManager.addToTop(new GainBlockAction(owner, owner, buffAmount*3));
+		AbstractDungeon.actionManager.addToTop(new StunMonsterAction((AbstractMonster) owner, owner, 1));
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new CantRevivePower(owner, 1), 1));
 		for(AbstractPower power : this.owner.powers){
 			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, power));
 		}
-		
+		int dmgReturn = 0;
 		if (owner.currentHealth > 1){
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, owner.currentHealth -1)));
+			dmgReturn = owner.currentHealth -1;
 		}
-		AbstractDungeon.actionManager.addToBottom(new HealAction(owner, owner, owner.maxHealth));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new StrengthPower(owner, buffAmount), buffAmount));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new MetallicizePower(owner, buffAmount*3), buffAmount*3));
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, buffAmount*3));
-		AbstractDungeon.actionManager.addToBottom(new StunMonsterAction((AbstractMonster) owner, owner, 1));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new CantRevivePower(owner, 1), 1));
+		AbstractDungeon.actionManager.addToTop(new WaitAction(1f));
 		AbstractDungeon.getCurrRoom().addRelicToRewards(RelicTier.COMMON);
-		return 0;
+		//TODO: CHECK IF ESCAPING GIVES RELIC ANYWAY
+		return dmgReturn;
 	}
 	
 	@Override

@@ -24,7 +24,7 @@ public class Defend extends CustomCard {
 	private static final int BASE_BLOCK = 5;
 	private static final int UPGRADE_BLOCK = 2;
 	private static final int KI_BLOCK_BONUS = 2;
-	private static final int KI_BLOCK_BONUS_REQUIREMENT = 10;
+	private static final int KI_BLOCK_BONUS_REQUIREMENT = 3;
 	public Defend() {
 		super(CardNames.DEFEND, cardStrings.NAME, CardPaths.SAIYAN_DEFEND, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
