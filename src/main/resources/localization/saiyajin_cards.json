@@ -89,6 +89,10 @@
 		"NAME": "Dragon Radar",
 		"DESCRIPTION": "Put 7 Dragon Balls in your deck, split between your draw and discard piles. NL Exhaust."
 	},
+	"DragonBall": {
+		"NAME": "Dragon Ball",
+		"DESCRIPTION": "Mysterious. Play 7 to grant a powerful wish."
+	},
 	"Kienzan": {
 		"NAME": "Kien-zan",
 		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. This attack ignores block."
