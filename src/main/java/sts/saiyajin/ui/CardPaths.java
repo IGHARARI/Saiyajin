@@ -30,6 +30,8 @@ public class CardPaths {
 	public static final String EXTREME_SPEED = "img/cards/extremespeed_b.png";
 	public static final String BIG_BANG_ATTACK = "img/cards/bigbang_b.png";
 	public static final String SAIYAN_HUBRIS = "img/cards/hubris_b.png";
+	public static final String DOUBLE_MASENKO = "img/cards/kamehameha_b.png";
+	public static final String DRAGON_RADAR = "img/cards/cccapsule_b.png";
 
 	/**
 	 * UNCOMMONS
@@ -41,6 +43,7 @@ public class CardPaths {
 	public static final String ENDURE = "img/cards/endure_b.png";
 	public static final String LAST_RESORT = "img/cards/block_b.png";
 	public static final String FLY = "img/cards/block_b.png";
+	public static final String KIENZAN = "img/cards/kiexplosion_b.png";
 	
 	/**
 	 * RARES
@@ -55,6 +58,7 @@ public class CardPaths {
 	/**
 	 * SPECIAL
 	 */
+	public static final String DRAGON_BALL = "img/cards/block_b.png";
 	public static final String GREAT_APE_FORM = "img/cards/block_b.png";
 	public static final String FULL_MOON = "img/cards/block_b.png";
 }

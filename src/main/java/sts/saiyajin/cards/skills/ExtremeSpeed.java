@@ -20,7 +20,7 @@ public class ExtremeSpeed extends KiCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.EXTREME_SPEED);
 
 	private static final int COST = 1;
-	private static final int KI_COST = 15;
+	private static final int KI_COST = 10;
 	private static final int CARD_DRAW = 2;
 	private static final int UPGRADED_CARD_DRAW = 1;
 	

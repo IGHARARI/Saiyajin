@@ -24,8 +24,8 @@ public class MeteorDash extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.METEOR_DASH);
 
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 7;
-	private static final int UPGRADE_DAMAGE = 2;
+	private static final int BASE_DAMAGE = 9;
+	private static final int UPGRADE_DAMAGE = 3;
 	
 	public MeteorDash() {
 		super(CardNames.METEOR_DASH, cardStrings.NAME, CardPaths.METEOR_DASH, COST, cardStrings.DESCRIPTION, 

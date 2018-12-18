@@ -23,10 +23,10 @@ public class BigBangAttack extends KiCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.BIG_BANG_ATTACK);
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 12; 
+	private static final int BASE_DAMAGE = 15; 
 	private static final int UPGRADE_DAMAGE = 4; 
 	private int BASE_KI_COST = 10;
-	private int UPGRADED_KI_COST = -2;
+	private int UPGRADED_KI_COST = -3;
 	
 	public BigBangAttack() {
 		super(CardNames.BIG_BANG_ATTACK, cardStrings.NAME, CardPaths.BIG_BANG_ATTACK, COST, cardStrings.DESCRIPTION, 

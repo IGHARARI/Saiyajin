@@ -17,10 +17,9 @@ import sts.saiyajin.ui.CardPaths;
 public class BurningSoul extends CustomCard
 {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.BURNING_SOUL);
-	private static final int COST = 2;
-	private static final int UPGRADED_COST = 1;
+	private static final int COST = 1;
 	private static final int BASE_KI_BARRIER = 3;
-	private static final int UPGRADED_KI_BARRIER = 2;
+	private static final int UPGRADED_KI_BARRIER = 3;
     
     public BurningSoul() {
 		super(CardNames.BURNING_SOUL, cardStrings.NAME, CardPaths.BURNING_SOUL, COST, cardStrings.DESCRIPTION, 
@@ -46,7 +45,6 @@ public class BurningSoul extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADED_COST);
             this.upgradeMagicNumber(UPGRADED_KI_BARRIER);
         }
     }

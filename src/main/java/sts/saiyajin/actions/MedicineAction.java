@@ -22,8 +22,7 @@ public class MedicineAction extends AbstractGameAction {
             this.isDone = true;
             AbstractPlayer player = AbstractDungeon.player;
             if (player.hasPower(MedicinePower.POWER_ID) && player.getPower(MedicinePower.POWER_ID).amount > 0){
-            	int amt = player.getPower(MedicinePower.POWER_ID).amount;
-            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ArtifactPower(player, amt), amt));
+            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ArtifactPower(player, 1), 1));
             	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(player, player, MedicinePower.POWER_ID));
             } else {
             	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new MedicinePower(player, 1), 1));

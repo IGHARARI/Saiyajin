@@ -9,7 +9,7 @@
 	},
 	"EnergyBlast": {
 		"NAME": "Energy Blast",
-		"DESCRIPTION": "Deal !D! damage to all enemies. NL Ki-Enhanced( !M! ) deal 2 more damage to each enemy. NL Starter."
+		"DESCRIPTION": "Deal !D! damage to all enemies. NL Ki-Enhanced( !M! ) deal 2 more damage. NL Starter."
 	},
 	"PowerUp": {
 		"NAME": "Power Up",
@@ -21,7 +21,7 @@
 	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
-		"DESCRIPTION": "consume !M! Ki. NL Deal !D! damage to an enem. NL Finisher: Costs 1 less energy per Combo stack."
+		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. NL Finisher: Costs 1 less energy per Combo stack."
 	},
 	"Fly": {
 		"NAME": "Fly",
@@ -54,7 +54,7 @@
 	},
 	"ExtremeSpeed": {
 		"NAME": "Extreme-speed",
-		"DESCRIPTION": "Consume 15 Ki. NL Draw !M! cards."
+		"DESCRIPTION": "Consume 10 Ki. NL Draw !M! cards."
 	},
 	"BigBangAttack": {
 		"NAME": "Big-Bang Attack",
@@ -71,7 +71,7 @@
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
-		"DESCRIPTION": "Gain !M! Dexterity. Put a Full Moon and a Great Ape Form in your draw pile."
+		"DESCRIPTION": "Gain !M! Strength. Put a Full Moon and a Great Ape Form in your draw pile."
 	},
 	"FullMoon": {
 		"NAME": "Full Moon",
@@ -79,11 +79,23 @@
 	},
 	"GreatApeForm": {
 		"NAME": "Great Ape Form",
-		"DESCRIPTION": "Moonstruck. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Transform into an Ape."
+		"DESCRIPTION": "Moonstruck. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Become a Great Ape."
 	},
 	"ConcussiveBlow": {
 		"NAME": "Concussive Blow",
 		"DESCRIPTION": "Deal !D! damage and apply !M! Concussion to the target."
+	},
+	"DragonRadar": {
+		"NAME": "Dragon Radar",
+		"DESCRIPTION": "Put 7 Dragon Balls in your deck, split between your draw and discard piles. NL Exhaust."
+	},
+	"Kienzan": {
+		"NAME": "Kien-zan",
+		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. This attack ignores block."
+	},
+	"DoubleMasenko": {
+		"NAME": "Double Masenko",
+		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage to two different random enemies."
 	},
 	"BurningSoul": {
 		"NAME": "Burning Soul",
@@ -99,7 +111,7 @@
 	},
 	"Flurry": {
 		"NAME": "Flurry",
-		"DESCRIPTION": "Deal !D! damage to an enemy 3 times. NL Ki-Enhanced( !M! ): hit an additional time. NL Follow-up."	
+		"DESCRIPTION": "Deal !D! damage 3 times. NL Ki-Enhanced( !M! ): hit 2 additional times. NL Follow-up."	
 	},
 	"ThirstForFight": {
 		"NAME": "Thirst for Battle",
@@ -108,7 +120,7 @@
 	},
 	"Teleport": {
 		"NAME": "Instant Transfer",
-		"DESCRIPTION": "Consumes !M! Ki. NL Apply 1 Vulnerable to an enemy. NL Starter & Follow-up."
+		"DESCRIPTION": "Consumes !M! Ki. NL Apply 1 Vulnerable. NL Starter & Follow-up."
 	},
 	"DrainingStrike": {
 		"NAME": "Draining Strike",

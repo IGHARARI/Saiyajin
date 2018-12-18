@@ -38,6 +38,8 @@ public class DrainingStrike extends CustomCard {
 		if (!upgraded){
 			upgradeName();
 			upgradeDamage(UPGRADED_DAMAGE);
+			rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+			initializeDescription();
 		}
 	}
 

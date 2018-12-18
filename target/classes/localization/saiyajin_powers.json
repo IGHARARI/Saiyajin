@@ -15,6 +15,10 @@
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Reflects damage back to the attacker."]
   },
+  "DragonBall": {
+    "NAME": "Dragon Ball",
+    "DESCRIPTIONS": ["Collect 7 and make a powerful wish come true."]
+  },
   "CantRevive": {
     "NAME": "Can't revive",
     "DESCRIPTIONS": ["This creature has Revived once and can't do it again."]
@@ -31,7 +35,7 @@
     "NAME": "Burning Soul",
     "DESCRIPTIONS": ["Spend Ki to gain gain Ki Barrier charges at the end of every turn."]
   },
-  "Concussion": {
+  "ConcussionPower": {
     "NAME": "Concussion",
     "DESCRIPTIONS": ["Deal damage at the end of turn equal to the number of Concussion charges. Increase by 1 at the end of every round."]
   },

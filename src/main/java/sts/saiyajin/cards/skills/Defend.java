@@ -1,6 +1,7 @@
 package sts.saiyajin.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,6 +35,7 @@ public class Defend extends CustomCard {
 	    this.tags.add(BaseModCardTags.BASIC_DEFEND);
 	    this.baseBlock = BASE_BLOCK;
 	    this.baseMagicNumber = KI_BLOCK_BONUS_REQUIREMENT;
+	    this.magicNumber = baseMagicNumber;
 	}
 
 	@Override
@@ -51,6 +53,7 @@ public class Defend extends CustomCard {
 		if (kiPower >= 10) blockAmount += KI_BLOCK_BONUS;
 		GainBlockAction block = new GainBlockAction(player, player, blockAmount);
 	    AbstractDungeon.actionManager.addToBottom(block);
+	    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
 	}
 
 }

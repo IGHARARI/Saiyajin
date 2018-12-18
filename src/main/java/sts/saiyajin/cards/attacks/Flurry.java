@@ -60,6 +60,7 @@ public class Flurry extends CustomCard {
 		if (kiPower >= this.magicNumber){
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));

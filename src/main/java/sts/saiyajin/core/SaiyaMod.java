@@ -36,11 +36,13 @@ import basemod.interfaces.PostPowerApplySubscriber;
 import sts.saiyajin.cards.attacks.BackAttack;
 import sts.saiyajin.cards.attacks.BigBangAttack;
 import sts.saiyajin.cards.attacks.ConcussiveBlow;
+import sts.saiyajin.cards.attacks.DoubleMasenko;
 import sts.saiyajin.cards.attacks.DrainingStrike;
 import sts.saiyajin.cards.attacks.Flurry;
 import sts.saiyajin.cards.attacks.GenkiDama;
 import sts.saiyajin.cards.attacks.KameHameHa;
 import sts.saiyajin.cards.attacks.KiBlast;
+import sts.saiyajin.cards.attacks.Kienzan;
 import sts.saiyajin.cards.attacks.MeteorDash;
 import sts.saiyajin.cards.attacks.Strike;
 import sts.saiyajin.cards.powers.BurningSoul;
@@ -50,6 +52,8 @@ import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
 import sts.saiyajin.cards.skills.CcCapsule;
 import sts.saiyajin.cards.skills.Defend;
+import sts.saiyajin.cards.skills.DragonBall;
+import sts.saiyajin.cards.skills.DragonRadar;
 import sts.saiyajin.cards.skills.Endure;
 import sts.saiyajin.cards.skills.ExtremeSpeed;
 import sts.saiyajin.cards.skills.Fly;
@@ -188,6 +192,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.METEOR_DASH);
         BaseMod.addCard(new Flurry());
         UnlockTracker.unlockCard(CardNames.FLURRY);
+        BaseMod.addCard(new DoubleMasenko());
+        UnlockTracker.unlockCard(CardNames.DOUBLE_MASENKO);
         BaseMod.addCard(new DrainingStrike());
         UnlockTracker.unlockCard(CardNames.DRAINING_STRIKE);
         BaseMod.addCard(new ConcussiveBlow());
@@ -224,6 +230,10 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.LAST_RESORT);
         BaseMod.addCard(new Fly());
         UnlockTracker.unlockCard(CardNames.FLY);
+        BaseMod.addCard(new Kienzan());
+        UnlockTracker.unlockCard(CardNames.KIENZAN);
+        BaseMod.addCard(new DragonRadar());
+        UnlockTracker.unlockCard(CardNames.DRAGON_RADAR);
 
         /**
          * RARE CARDS
@@ -248,6 +258,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.GREAT_APE_FORM);
         BaseMod.addCard(new FullMoon());
         UnlockTracker.unlockCard(CardNames.FULL_MOON);
+        BaseMod.addCard(new DragonBall());
+        UnlockTracker.unlockCard(CardNames.DRAGON_BALL);
         
     }
     

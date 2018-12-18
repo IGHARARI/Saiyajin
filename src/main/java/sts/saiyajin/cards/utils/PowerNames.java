@@ -15,11 +15,12 @@ public abstract class PowerNames {
 	public static final String KI_BARRIER = "KiExplosion";
 	public static final String BURNING_SOUL = "BurningSoul";
 	public static final String CANT_REVIVE = "CantRevive";
-	public static final String CONCUSSION = "Concussion";
+	public static final String CONCUSSION = "ConcussionPower";
 	public static final String REFLECTION = "Reflection";
 	public static final String KI_REGEN = "KiRegen";
 	public static final String FULL_MOON = "FullMoon";
 	public static final String GREAT_APE = "GreatApe";
 	public static final String PLAYER_FLIGHT = "PlayerFlight";
 	public static final String MEDICINE = "Medicine";
+	public static final String DRAGON_BALL = "DragonBall";
 }

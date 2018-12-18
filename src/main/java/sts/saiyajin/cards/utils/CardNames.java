@@ -28,6 +28,7 @@ public abstract class CardNames {
 	public static final String EXTREME_SPEED = "ExtremeSpeed";
 	public static final String BIG_BANG_ATTACK = "BigBangAttack";
 	public static final String SAIYAN_HUBRIS = "SaiyanHubris";
+	public static final String DOUBLE_MASENKO = "DoubleMasenko";
 	
 	/**
 	 * UNCOMMONS
@@ -36,10 +37,12 @@ public abstract class CardNames {
 	public static final String TELEPORT = "Teleport";
 	public static final String THIRST_FOR_FIGHT = "ThirstForFight";
 	public static final String DRAINING_STRIKE = "DrainingStrike";
+	public static final String KIENZAN = "Kienzan";
 	public static final String SUPER_SAIYAN_FORM = "SuperSaiyanForm";
 	public static final String ENDURE = "Endure";
 	public static final String LAST_RESORT = "LastResort";
 	public static final String FLY = "Fly";
+	public static final String DRAGON_RADAR = "DragonRadar";
 	
 	/**
 	 * RARES
@@ -55,6 +58,7 @@ public abstract class CardNames {
 	/**
 	 * SPECIAL
 	 */
+	public static final String DRAGON_BALL = "Dragon Ball";
 	public static final String GREAT_APE_FORM = "GreatApeForm";
 	public static final String FULL_MOON = "FullMoon";
 }

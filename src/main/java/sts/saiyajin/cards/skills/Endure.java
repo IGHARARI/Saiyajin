@@ -21,8 +21,8 @@ public class Endure extends CustomCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.ENDURE);
 
-	private static final int COST = 3;
-	private static final int UPGRADED_COST = 2;
+	private static final int COST = 2;
+	private static final int UPGRADED_COST = 1;
 	
 	
 	public Endure() {

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import basemod.abstracts.CustomCard;
 import sts.saiyajin.actions.InsertCardsIntoDeckAction;
@@ -23,8 +23,8 @@ public class MonkeyTail extends CustomCard
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.MONKEY_TAIL);
 	private static final int COST = 2;
 	private static final int UPGRADED_COST = 1;
-	private static final int BASE_DEX = 1;
-	private static final int UPGRADED_DEX = 1;
+	private static final int BASE_STR = 1;
+	private static final int UPGRADED_STR = 1;
 	
     
     public MonkeyTail() {
@@ -33,13 +33,13 @@ public class MonkeyTail extends CustomCard
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.SELF);
-		this.baseMagicNumber = BASE_DEX;
+		this.baseMagicNumber = BASE_STR;
 		this.magicNumber = this.baseMagicNumber;
     }
     
     @Override
     public void use(final AbstractPlayer player, final AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, this.magicNumber), this.magicNumber));
 		CardGroup cardsToAdd = new CardGroup(CardGroupType.UNSPECIFIED);
 		cardsToAdd.addToBottom(new FullMoon().makeCopy());
 		cardsToAdd.addToBottom(new GreatApeForm().makeCopy());
@@ -56,7 +56,7 @@ public class MonkeyTail extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_DEX);
+            this.upgradeMagicNumber(UPGRADED_STR);
             upgradeBaseCost(UPGRADED_COST);
         }
     }
