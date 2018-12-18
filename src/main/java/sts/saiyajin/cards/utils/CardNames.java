@@ -58,7 +58,7 @@ public abstract class CardNames {
 	/**
 	 * SPECIAL
 	 */
-	public static final String DRAGON_BALL = "Dragon Ball";
+	public static final String DRAGON_BALL = "DragonBall";
 	public static final String GREAT_APE_FORM = "GreatApeForm";
 	public static final String FULL_MOON = "FullMoon";
 }
