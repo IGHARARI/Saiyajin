@@ -9,15 +9,15 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
-public class Defend extends CustomCard {
+public class Defend extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.DEFEND);
 
@@ -49,11 +49,14 @@ public class Defend extends CustomCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		int kiPower = PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID);
-		int blockAmount = this.block;
-		if (kiPower >= 10) blockAmount += KI_BLOCK_BONUS;
+		int blockAmount = this.baseBlock;
+		if (kiPower >= 10) {
+			blockAmount += KI_BLOCK_BONUS;
+			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
+		}
+		blockAmount = applyPowerOnBlockHelper(blockAmount);
 		GainBlockAction block = new GainBlockAction(player, player, blockAmount);
 	    AbstractDungeon.actionManager.addToBottom(block);
-	    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
 	}
 
 }

@@ -2,6 +2,7 @@ package sts.saiyajin.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,14 +10,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import sts.saiyajin.cards.types.KiCard;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.powers.KiBarrierPower;
 import sts.saiyajin.ui.CardPaths;
 
-public class KiExplosion extends KiCard {
+public class KiExplosion extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.KI_EXPLOSION);
 
@@ -52,7 +53,7 @@ public class KiExplosion extends KiCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		GainBlockAction block = new GainBlockAction(player, player, this.block);
 	    AbstractDungeon.actionManager.addToBottom(block);
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -this.kiRequired), -this.kiRequired));
+	    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiRequired));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiBarrierPower(player, this.magicNumber), this.magicNumber));
 	}
 

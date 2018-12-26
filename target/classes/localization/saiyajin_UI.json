@@ -5,5 +5,8 @@
   },
   "character_name": {
     "TEXT": ["Bardok"]
+  },
+  "HoningAction": {
+    "TEXT": ["Select up to "," card(s) to Exhaust."]
   }
 }

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -46,7 +47,7 @@ public class BurningSoulPower extends AbstractPower {
 				int usableKi = Math.min(this.amount, kiPower);
 				if (usableKi > 0) {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiBarrierPower(kakarot, usableKi), usableKi));
-				    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiPower(kakarot, -usableKi), -usableKi));
+					AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(kakarot, kakarot, KiPower.POWER_ID, usableKi));
 				}
 			}
 		}

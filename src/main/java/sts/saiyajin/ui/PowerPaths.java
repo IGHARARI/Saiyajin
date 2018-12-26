@@ -21,4 +21,5 @@ public class PowerPaths {
 	public static final String CONCUSSION = "img/powers/reflection.png";
 	public static final String MEDICINE = "img/powers/medicine.png";
 	public static final String DRAGON_BALL = "img/powers/reflection.png";
+	public static final String TRAINING = "img/powers/greatape.png";
 }

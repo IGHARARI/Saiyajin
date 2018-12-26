@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import basemod.abstracts.CustomCard;
 import sts.saiyajin.actions.GreatApeExhaustAction;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
@@ -19,7 +19,7 @@ import sts.saiyajin.powers.GreatApePower;
 import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.CardPaths;
 
-public class GreatApeForm extends CustomCard
+public class GreatApeForm extends SaiyanCard
 {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.GREAT_APE_FORM);
 	private static final int COST = 3;

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,14 +15,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-import sts.saiyajin.cards.types.KiCard;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
-public class Quickening extends KiCard {
+public class Quickening extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.QUICKENING);
 
@@ -39,7 +40,7 @@ public class Quickening extends KiCard {
 		        AbstractCard.CardType.SKILL,
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.COMMON,
-		        AbstractCard.CardTarget.ALL);
+		        AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = KI_CONSUMPTION;
 		this.magicNumber = this.baseMagicNumber;
 		this.kiRequired = KI_CONSUMPTION;
@@ -51,6 +52,7 @@ public class Quickening extends KiCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_KI_CONSUMPTION);
+			kiRequired = magicNumber;
 			this.platedArmor += UPGRADED_PLATED_ARMOR_AMOUNT;
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 			initializeDescription();
@@ -60,7 +62,7 @@ public class Quickening extends KiCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, platedArmor), platedArmor));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiRequired), -kiRequired));
+	    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiRequired));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, 1, false), 1, true, AbstractGameAction.AttackEffect.NONE));
         }

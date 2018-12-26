@@ -29,6 +29,8 @@ public abstract class CardNames {
 	public static final String BIG_BANG_ATTACK = "BigBangAttack";
 	public static final String SAIYAN_HUBRIS = "SaiyanHubris";
 	public static final String DOUBLE_MASENKO = "DoubleMasenko";
+	public static final String MAKANKOSAPPO = "Makankosappo";
+	public static final String DRAGON_FIST = "DragonFist";
 	
 	/**
 	 * UNCOMMONS
@@ -43,6 +45,10 @@ public abstract class CardNames {
 	public static final String LAST_RESORT = "LastResort";
 	public static final String FLY = "Fly";
 	public static final String DRAGON_RADAR = "DragonRadar";
+	public static final String HONING = "Honing";
+	public static final String SPIRIT_SWORD = "SpiritSword";
+	public static final String HYPER_TIME_CHAMBER = "HyperTimeChamber";
+	public static final String OVEREXERT = "Overexert";
 	
 	/**
 	 * RARES
@@ -61,4 +67,10 @@ public abstract class CardNames {
 	public static final String DRAGON_BALL = "DragonBall";
 	public static final String GREAT_APE_FORM = "GreatApeForm";
 	public static final String FULL_MOON = "FullMoon";
+	
+	/**
+	 * STATUS
+	 */
+	public static final String TRAINING = "Training";
+	public static final String KI_BURN = "KiBurn";
 }

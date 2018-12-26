@@ -2,10 +2,9 @@ package sts.saiyajin.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,15 +12,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
-import basemod.abstracts.CustomCard;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowersHelper;
-import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
-public class KiBlast extends CustomCard {
+public class KiBlast extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.KI_BLAST);
 	private static final int COST = 0;
@@ -58,20 +56,21 @@ public class KiBlast extends CustomCard {
 		int extraDamage = 0;
 		if (kiPower >= this.magicNumber){
 			extraDamage = 2; 
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -this.magicNumber), -this.magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, magicNumber));
 		}
-		int damage = this.damage + extraDamage;
-		int multiDamage[] = DamageInfo.createDamageMatrix(damage, true);
-		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(
-				player, multiDamage, damageTypeForTurn, AttackEffect.SLASH_HORIZONTAL);
+		int originalDamage = this.baseDamage;
+		this.baseDamage += extraDamage;
+		applyPowers();
+		calculateCardDamage(null);
+		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(player, this.multiDamage, damageTypeForTurn, AttackEffect.SLASH_HORIZONTAL);
 		AbstractDungeon.actionManager.addToBottom(damageAction);
 		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters){
 			if (m.isDeadOrEscaped()) continue;
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.06f));
 		}
-		if(PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) == 0){
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
-		}
+		PowersHelper.startCombo();
+		
+		this.baseDamage = originalDamage;
 	}
 
 }

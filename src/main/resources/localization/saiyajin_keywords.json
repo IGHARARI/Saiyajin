@@ -22,6 +22,29 @@
   },
   {
     "NAMES": [
+      "Stopped",
+      "stopped"
+    ],
+    "DESCRIPTION": "Stopped enemies can't take actions.'"
+  },
+  {
+    "NAMES": [
+      "Ki-burns",
+      "ki-burns",
+      "ki-burn",
+      "Ki-burn"
+    ],
+    "DESCRIPTION": "Ki-burns are status cards that consume your Ki when drawn."
+  },
+  {
+    "NAMES": [
+      "Training",
+      "training"
+    ],
+    "DESCRIPTION": "When #yTraining you can't use any cards that target enemies."
+  },
+  {
+    "NAMES": [
       "Medicine",
       "medicine"
     ],
@@ -44,8 +67,8 @@
   },
   {
     "NAMES": [
-      "revenge",
-      "Revenge"
+      "redemption",
+      "Redemption"
     ],
     "DESCRIPTION": "When this minion dies it revives Stunned but empowered."
   },
@@ -75,7 +98,8 @@
   	"PROPER_NAME":"Great Ape",
     "NAMES": [
       "Great Ape",
-      "Great ape"
+      "Great ape",
+      "great ape"
     ],
     "DESCRIPTION": "You are huge! When transforming gain 15 Ki Regen, 8 Plated Armor and 3 Strength."
   },

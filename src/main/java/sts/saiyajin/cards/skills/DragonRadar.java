@@ -11,12 +11,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.actions.InsertCardsIntoDeckAction;
 import sts.saiyajin.actions.InsertCardsIntoDiscardAction;
-import sts.saiyajin.cards.types.KiCard;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.ui.CardPaths;
 
-public class DragonRadar extends KiCard {
+public class DragonRadar extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.DRAGON_RADAR);
 
@@ -30,6 +30,7 @@ public class DragonRadar extends KiCard {
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
+		this.exhaust = true;
 	}
 
 	@Override

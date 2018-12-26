@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import sts.saiyajin.actions.DragonBallAction;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.ui.CardPaths;
 
-public class DragonBall extends CustomCard {
+public class DragonBall extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.DRAGON_BALL);
 
@@ -26,6 +26,7 @@ public class DragonBall extends CustomCard {
 		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
 		        AbstractCard.CardRarity.SPECIAL,
 		        AbstractCard.CardTarget.NONE);
+		this.exhaust = true;
 	}
 
 	@Override

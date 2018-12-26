@@ -9,19 +9,19 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-import basemod.abstracts.CustomCard;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
-public class KaioKen extends CustomCard {
+public class KaioKen extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.KAIO_KEN);
 
 	private static final int COST = 0;
-	private static final int KI_GAIN = 15;
-	private final static int UPGRADED_KI_GAIN = 5;
+	private static final int KI_GAIN = 20;
+	private final static int UPGRADED_KI_GAIN = 10;
 	private final static int VULNERABILITY = 1;
 	
 	
@@ -51,7 +51,5 @@ public class KaioKen extends CustomCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, magicNumber), magicNumber));
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VulnerablePower(player, VULNERABILITY, false), VULNERABILITY));
-	    
-	    
 	}
 }

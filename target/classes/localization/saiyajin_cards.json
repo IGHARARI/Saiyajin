@@ -15,9 +15,40 @@
 		"NAME": "Power Up",
 		"DESCRIPTION": "Yell REALLY loud in order to gain !M! Ki and !B! block."
 	},
+	"HyperTimeChamber": {
+		"NAME": "The Time Chamber",
+		"DESCRIPTION": "Enemies become Stopped for 2 turns. NL You are Training for 2 turns."
+	},
+	"Training": {
+		"NAME": "Training",
+		"DESCRIPTION": "Retain. NL You are Training for !M! turns. NL Exhausts when finished training.",
+		"UPGRADE_DESCRIPTION": "Can't play cards that target enemies while in training."
+	},
+	"SpiritSword": {
+		"NAME": "Spirit Sword",
+		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. NL Finisher: Deal !D! x Combo damage to the enemy behind."
+	},
+	"Overexert": {
+		"NAME": "Overexert",
+		"DESCRIPTION": "Gain !M! Strength and 20 Ki. Shuffle 2 Ki-burns into your draw pile. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !M! Strength and 20 Ki. Shuffle 1 Ki-burn into your draw pile. NL Exhaust."
+	},
+	"KiBurn": {
+		"NAME": "Ki Burn",
+		"DESCRIPTION": "Consumes !M! Ki when drawn. NL Ethereal."
+	},
+	"DragonFist": {
+		"NAME": "Dragon Fist",
+		"DESCRIPTION": "Deal !D! damage. Exhaust a card. NL Shuffle a Wounds into your discard pile. NL Follow-up.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. Exhaust a card. NL Follow-up."
+	},
 	"Medicine": {
 		"NAME": "Medicine",
 		"DESCRIPTION": "Heal !M! HP and gain 1 Medicine."
+	},
+	"Honing": {
+		"NAME": "Honing",
+		"DESCRIPTION": "Exhaust up to !M! cards and gain Ki-Regen equal to double their cost. NL Exhaust."
 	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
@@ -46,7 +77,7 @@
 	},
 	"Endure": {
 		"NAME": "Endure",
-		"DESCRIPTION": "Consume ALL your Ki, gain that much block."
+		"DESCRIPTION": "Consume ALL your Ki, gain that much block (currently !B!)."
 	},
 	"BackAttack": {
 		"NAME": "Back Attack",
@@ -92,6 +123,10 @@
 	"DragonBall": {
 		"NAME": "Dragon Ball",
 		"DESCRIPTION": "Mysterious. Play 7 to grant a powerful wish."
+	},
+	"Makankosappo": {
+		"NAME": "Makankosappo",
+		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage 7 times. NL Finisher: Apply concussion equal to your combo."
 	},
 	"Kienzan": {
 		"NAME": "Kien-zan",
@@ -151,8 +186,8 @@
 	},
 	"SenzuBean": {
 		"NAME": "Senzu Bean",
-		"DESCRIPTION": "Give a non-minion enemy Revenge: Strength( !M! ), Invincible(33% of Max HP)",
-		"UPGRADE_DESCRIPTION": "Give a non-minion enemy Revenge: Strength( !M! ), Metallicize( !M! x3 )."
+		"DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Invincible(33% Max HP). NL Obtain a random common relic at end of combat.",
+		"UPGRADE_DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Metallicize( !M! x3 ). NL Obtain a random common relic at end of combat."
 	},
 	"GenkiDama": {
 		"NAME": "Genki Dama",

@@ -37,16 +37,20 @@ import sts.saiyajin.cards.attacks.BackAttack;
 import sts.saiyajin.cards.attacks.BigBangAttack;
 import sts.saiyajin.cards.attacks.ConcussiveBlow;
 import sts.saiyajin.cards.attacks.DoubleMasenko;
+import sts.saiyajin.cards.attacks.DragonFist;
 import sts.saiyajin.cards.attacks.DrainingStrike;
 import sts.saiyajin.cards.attacks.Flurry;
 import sts.saiyajin.cards.attacks.GenkiDama;
 import sts.saiyajin.cards.attacks.KameHameHa;
 import sts.saiyajin.cards.attacks.KiBlast;
 import sts.saiyajin.cards.attacks.Kienzan;
+import sts.saiyajin.cards.attacks.Makankosappo;
 import sts.saiyajin.cards.attacks.MeteorDash;
+import sts.saiyajin.cards.attacks.SpiritSword;
 import sts.saiyajin.cards.attacks.Strike;
 import sts.saiyajin.cards.powers.BurningSoul;
 import sts.saiyajin.cards.powers.GreatApeForm;
+import sts.saiyajin.cards.powers.HyperbolicTimeChamber;
 import sts.saiyajin.cards.powers.MonkeyTail;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
@@ -58,11 +62,13 @@ import sts.saiyajin.cards.skills.Endure;
 import sts.saiyajin.cards.skills.ExtremeSpeed;
 import sts.saiyajin.cards.skills.Fly;
 import sts.saiyajin.cards.skills.FullMoon;
+import sts.saiyajin.cards.skills.Honing;
 import sts.saiyajin.cards.skills.InstantTransfer;
 import sts.saiyajin.cards.skills.KaioKen;
 import sts.saiyajin.cards.skills.KiExplosion;
 import sts.saiyajin.cards.skills.LastResort;
 import sts.saiyajin.cards.skills.Medicine;
+import sts.saiyajin.cards.skills.Overexert;
 import sts.saiyajin.cards.skills.PowerUp;
 import sts.saiyajin.cards.skills.Quickening;
 import sts.saiyajin.cards.skills.SaiyanHubris;
@@ -71,6 +77,8 @@ import sts.saiyajin.cards.skills.SenzuBean;
 import sts.saiyajin.cards.skills.SolarFlare;
 import sts.saiyajin.cards.skills.Taunt;
 import sts.saiyajin.cards.skills.ThirstForFight;
+import sts.saiyajin.cards.special.KiBurn;
+import sts.saiyajin.cards.special.Training;
 import sts.saiyajin.cards.types.ComboFinisher;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
@@ -214,6 +222,10 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.BACK_ATTACK);
         BaseMod.addCard(new SaiyanHubris());
         UnlockTracker.unlockCard(CardNames.SAIYAN_HUBRIS);
+        BaseMod.addCard(new Makankosappo());
+        UnlockTracker.unlockCard(CardNames.MAKANKOSAPPO);
+        BaseMod.addCard(new DragonFist());
+        UnlockTracker.unlockCard(CardNames.DRAGON_FIST);
         
         /**
          * Uncommon cards
@@ -234,6 +246,12 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.KIENZAN);
         BaseMod.addCard(new DragonRadar());
         UnlockTracker.unlockCard(CardNames.DRAGON_RADAR);
+        BaseMod.addCard(new Honing());
+        UnlockTracker.unlockCard(CardNames.HONING);
+        BaseMod.addCard(new SpiritSword());
+        UnlockTracker.unlockCard(CardNames.SPIRIT_SWORD);
+        BaseMod.addCard(new Overexert());
+        UnlockTracker.unlockCard(CardNames.OVEREXERT);
 
         /**
          * RARE CARDS
@@ -250,6 +268,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SOLAR_FLARE);
         BaseMod.addCard(new SenzuBean());
         UnlockTracker.unlockCard(CardNames.SENZU_BEAN);
+        BaseMod.addCard(new HyperbolicTimeChamber());
+        UnlockTracker.unlockCard(CardNames.HYPER_TIME_CHAMBER);
         
         /**
          * UNOBTAINABLE CARDS
@@ -260,6 +280,10 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.FULL_MOON);
         BaseMod.addCard(new DragonBall());
         UnlockTracker.unlockCard(CardNames.DRAGON_BALL);
+        BaseMod.addCard(new Training());
+        UnlockTracker.unlockCard(CardNames.TRAINING);
+        BaseMod.addCard(new KiBurn());
+        UnlockTracker.unlockCard(CardNames.KI_BURN);
         
     }
     

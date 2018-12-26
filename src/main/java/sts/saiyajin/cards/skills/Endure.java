@@ -1,7 +1,7 @@
 package sts.saiyajin.cards.skills;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.cards.utils.PowerNames;
@@ -17,7 +17,7 @@ import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
-public class Endure extends CustomCard {
+public class Endure extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.ENDURE);
 
@@ -31,6 +31,7 @@ public class Endure extends CustomCard {
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
+		this.baseBlock = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
 	}
 
 	@Override
@@ -40,13 +41,21 @@ public class Endure extends CustomCard {
 			upgradeBaseCost(UPGRADED_COST);
 		}
 	}
+	
+	@Override
+	public void hover() {
+		super.hover();
+		this.baseBlock = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
+	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
 	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, kiPower));
-	    if (kiPower>0)
-	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, -kiPower), -kiPower));
+	    if (kiPower>0) {
+	    	int block = applyPowerOnBlockHelper(kiPower);
+	    	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, block));
+	    }
 	    
 	}
 }
