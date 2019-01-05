@@ -23,4 +23,7 @@ public abstract class PowerNames {
 	public static final String PLAYER_FLIGHT = "PlayerFlight";
 	public static final String MEDICINE = "Medicine";
 	public static final String DRAGON_BALL = "DragonBall";
+	public static final String POWER_STANCE = "PowerStance";
+	public static final String EXTREME_SPEED = "ExtremeSpeed";
+	public static final String ENERGY_PLUS = "EnergyPlus";
 }

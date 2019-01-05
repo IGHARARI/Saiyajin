@@ -2,6 +2,7 @@ package sts.saiyajin.powers;
 
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -25,7 +26,8 @@ public class KiPower extends AbstractPower {
 		this.owner = owner;
 		this.amount = amount;
 		this.type = AbstractPower.PowerType.BUFF;
-		this.img = new Texture(PowerPaths.KI);
+        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.KI_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.KI), 0, 0, 48, 48);
 		this.canGoNegative = false;
 		updateDescription();
 	}

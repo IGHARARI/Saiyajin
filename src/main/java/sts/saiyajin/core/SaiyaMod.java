@@ -52,6 +52,7 @@ import sts.saiyajin.cards.powers.BurningSoul;
 import sts.saiyajin.cards.powers.GreatApeForm;
 import sts.saiyajin.cards.powers.HyperbolicTimeChamber;
 import sts.saiyajin.cards.powers.MonkeyTail;
+import sts.saiyajin.cards.powers.PowerStance;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
 import sts.saiyajin.cards.skills.CcCapsule;
@@ -214,8 +215,6 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SCOUTER);
         BaseMod.addCard(new CcCapsule());
         UnlockTracker.unlockCard(CardNames.CC_CAPSULE);
-        BaseMod.addCard(new ExtremeSpeed());
-        UnlockTracker.unlockCard(CardNames.EXTREME_SPEED);
         BaseMod.addCard(new BigBangAttack());
         UnlockTracker.unlockCard(CardNames.BIG_BANG_ATTACK);
         BaseMod.addCard(new BackAttack());
@@ -230,6 +229,8 @@ public class SaiyaMod implements
         /**
          * Uncommon cards
          */
+        BaseMod.addCard(new ExtremeSpeed());
+        UnlockTracker.unlockCard(CardNames.EXTREME_SPEED);
         BaseMod.addCard(new Endure());
         UnlockTracker.unlockCard(CardNames.ENDURE);
         BaseMod.addCard(new InstantTransfer());
@@ -252,6 +253,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SPIRIT_SWORD);
         BaseMod.addCard(new Overexert());
         UnlockTracker.unlockCard(CardNames.OVEREXERT);
+        BaseMod.addCard(new PowerStance());
+        UnlockTracker.unlockCard(CardNames.POWER_STANCE);
 
         /**
          * RARE CARDS

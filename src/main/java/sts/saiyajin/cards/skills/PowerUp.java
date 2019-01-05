@@ -19,11 +19,11 @@ public class PowerUp extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.POWER_UP);
 
-	private static final int COST = 1;
-	private static final int BASE_KI_GAIN = 5;
-	private static final int UPGRADE_KI_GAIN = 3;
-	private static final int BASE_BLOCK = 5;
-	private static final int UPGRADE_BLOCK = 3;
+	private static final int COST = 2;
+	private static final int BASE_KI_GAIN = 8;
+	private static final int UPGRADE_KI_GAIN = 5;
+	private static final int BASE_BLOCK = 13;
+	private static final int UPGRADE_BLOCK = 5;
 	
 	public PowerUp() {
 		super(CardNames.POWER_UP, cardStrings.NAME, CardPaths.POWER_UP, COST, cardStrings.DESCRIPTION, 

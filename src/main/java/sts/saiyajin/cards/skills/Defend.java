@@ -50,7 +50,7 @@ public class Defend extends SaiyanCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		int kiPower = PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID);
 		int blockAmount = this.baseBlock;
-		if (kiPower >= 10) {
+		if (kiPower >= KI_BLOCK_BONUS_REQUIREMENT) {
 			blockAmount += KI_BLOCK_BONUS;
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
 		}

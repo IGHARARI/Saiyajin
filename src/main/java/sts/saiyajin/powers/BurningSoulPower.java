@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -30,7 +31,8 @@ public class BurningSoulPower extends AbstractPower {
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-		this.img = new Texture(PowerPaths.BURNING_SOUL);
+        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.BURNING_SOUL_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.BURNING_SOUL), 0, 0, 48, 48);
 	}
   
 	@Override

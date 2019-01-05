@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.ui.PowerPaths;
 
@@ -32,9 +33,10 @@ public class ConcussionPower
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
+        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.CONCUSSION_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.CONCUSSION), 0, 0, 48, 48);
         this.isTurnBased = true;
 		this.description = DESCRIPTIONS[0];
-		this.img = new Texture(PowerPaths.CONCUSSION);
 		this.type = PowerType.DEBUFF;
 	}
   

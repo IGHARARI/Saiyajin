@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -42,7 +43,8 @@ public class RevivePower extends AbstractPower {
 		this.owner = owner;
 		this.amount = -1;
 		this.type = AbstractPower.PowerType.BUFF;
-		this.img = new Texture(PowerPaths.SENZU_REVIVE);
+        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.SENZU_REVIVE_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.SENZU_REVIVE), 0, 0, 48, 48);
 		this.canGoNegative = false;
 		strengthBuff = strBuff;
 		updateDescription();

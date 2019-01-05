@@ -2,6 +2,7 @@ package sts.saiyajin.powers;
 
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -24,7 +25,8 @@ public class FullMoonPower extends AbstractPower {
 		this.owner = owner;
 		this.amount = 1;
 		this.type = AbstractPower.PowerType.BUFF;
-		this.img = new Texture(PowerPaths.FULL_MOON);
+        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.FULL_MOON_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.FULL_MOON), 0, 0, 48, 48);
 		this.canGoNegative = false;
 	}
 

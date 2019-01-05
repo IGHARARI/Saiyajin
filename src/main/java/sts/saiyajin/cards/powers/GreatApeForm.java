@@ -56,37 +56,8 @@ public class GreatApeForm extends SaiyanCard
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, PLATED_ARMOR), PLATED_ARMOR));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, STR_GAIN), STR_GAIN));
 		AbstractDungeon.actionManager.addToBottom(new GreatApeExhaustAction(this));
-		
-//		exhaustCardsFromPile(AbstractDungeon.player.drawPile, c -> c.type != CardType.ATTACK, this);
-//		exhaustCardsFromPile(AbstractDungeon.player.hand, c -> c.type != CardType.ATTACK, this);
-//		exhaustCardsFromPile(AbstractDungeon.player.discardPile, c -> c.type != CardType.ATTACK, this);
-//		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.drawPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.drawPile.size()));
-//		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.discardPile, player.exhaustPile, c -> c.type != CardType.ATTACK, player.discardPile.size()));
-//		AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(player.hand, player.exhaustPile, c -> c.type != CardType.ATTACK, player.hand.size()));
     }
     
-//    private void exhaustCardsFromPile(CardGroup group, Predicate<AbstractCard> exhaustPredicate, AbstractCard exclude) {
-//    	CardGroup tmp = new CardGroup(CardGroupType.UNSPECIFIED);
-//		for(AbstractCard card : group.group){
-//			if (!exhaustPredicate.test(card) || card.equals(exclude)) continue;
-//			tmp.addToTop(card);
-//		}
-//        for (int i = 0; i < tmp.size(); ++i) {
-//            AbstractCard card = tmp.getNCardFromTop(i);
-//			AbstractDungeon.player.drawPile.group.remove(card);
-//			AbstractDungeon.player.limbo.group.add(card);
-//			card.current_y = -200.0f * Settings.scale;
-//			card.target_x = Settings.WIDTH / 2.0f + 200.0f * Settings.scale;
-//			card.target_y = Settings.HEIGHT / 2.0f;
-//			card.targetAngle = 0.0f;
-//			card.lighten(false);
-//			card.drawScale = 0.12f;
-//			card.targetDrawScale = 0.75f;
-//			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
-//			AbstractDungeon.actionManager.addToBottom(new UnlimboAction(card));
-//			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.3f));
-//        }
-//	}
 
 	@Override
     public AbstractCard makeCopy() {

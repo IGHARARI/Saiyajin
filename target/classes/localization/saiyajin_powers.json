@@ -15,9 +15,17 @@
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Reflects damage back to the attacker."]
   },
+  "PowerStance": {
+    "NAME": "Power Stance",
+    "DESCRIPTIONS": ["Your Attack cards are also Starter."]
+  },
   "DragonBall": {
     "NAME": "Dragon Ball",
     "DESCRIPTIONS": ["Collect 7 and make a powerful wish come true."]
+  },
+  "ExtremeSpeed": {
+    "NAME": "Extreme Speed",
+    "DESCRIPTIONS": ["Draw cards when you play a Combo Finisher."]
   },
   "CantRevive": {
     "NAME": "Can't revive",

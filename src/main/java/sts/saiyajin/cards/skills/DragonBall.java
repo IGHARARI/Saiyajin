@@ -1,5 +1,6 @@
 package sts.saiyajin.cards.skills;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -36,5 +37,6 @@ public class DragonBall extends SaiyanCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractDungeon.actionManager.addToBottom(new DragonBallAction());
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
 	}
 }
