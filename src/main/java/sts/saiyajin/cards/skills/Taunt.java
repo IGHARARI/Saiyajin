@@ -20,7 +20,7 @@ public class Taunt extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.TAUNT);
 
 	private static final int COST = 2;
-	private static final int UPGRADED_COST = 1;
+	private static final int UPGRADED_COST = 0;
 	private static final int STR_GAIN = 2;
 	
 	
@@ -45,7 +45,7 @@ public class Taunt extends SaiyanCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new StrengthPower(monster, this.magicNumber),  this.magicNumber));
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ReflectionPower(player, 1),  1));
+	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ReflectionPower(player, 2),  2));
 	}
 
 }

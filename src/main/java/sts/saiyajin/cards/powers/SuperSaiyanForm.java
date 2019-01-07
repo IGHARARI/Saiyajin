@@ -20,7 +20,7 @@ public class SuperSaiyanForm extends SaiyanCard
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.SUPER_SAIYAN_FORM);
 	private static final int COST = 3;
 	private static final int UPGRADED_COST = 2;
-	private static final int BASE_KI_REGEN = 3;
+	private static final int BASE_KI_REGEN = 4;
 	private static final int UPGRADED_KI_REGEN = 2;
 	private int metallicizeAmount;
 	private static final int BASE_METALLICIZE = 4;

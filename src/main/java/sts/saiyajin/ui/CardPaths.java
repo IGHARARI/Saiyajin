@@ -11,6 +11,7 @@ public class CardPaths {
 	public static final String SAIYAN_DEFEND = "img/cards/block_b.png";
 	public static final String KI_BLAST = "img/cards/kiblast_b.png";
 	public static final String POWER_UP = "img/cards/powerup_b.png";
+	public static final String RUTHLESS_BLOW = "img/cards/ruthlessblow.png";
 
 	/**
 	 * COMMONS
@@ -51,6 +52,7 @@ public class CardPaths {
 	public static final String HYPER_TIME_CHAMBER = "img/cards/timechamber.png";
 	public static final String OVEREXERT = "img/cards/overexert.png";
 	public static final String POWER_STANCE = "img/cards/powerstance.png";
+	public static final String AFTERIMAGE = "img/cards/afterimage.png";
 	
 	/**
 	 * RARES

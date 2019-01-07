@@ -40,6 +40,7 @@ public class GreatApePower extends AbstractPower {
   
 	@Override
 	public void atStartOfTurnPostDraw() {
+		AbstractDungeon.player.getPower(POWER_ID).flash();
 		AbstractDungeon.player.gainEnergy(this.amount * ENERGY_GAIN_PER_STACK);
 	}
 }

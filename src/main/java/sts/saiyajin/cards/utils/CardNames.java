@@ -9,6 +9,7 @@ public abstract class CardNames {
 	public static final String DEFEND = "SAIYA_Defend";
 	public static final String KI_BLAST = "EnergyBlast";
 	public static final String POWER_UP = "PowerUp";
+	public static final String RUTHLESS_BLOW = "RuthlessBlow";
 
 	/**
 	 *  COMMONS
@@ -50,6 +51,7 @@ public abstract class CardNames {
 	public static final String HYPER_TIME_CHAMBER = "HyperTimeChamber";
 	public static final String OVEREXERT = "Overexert";
 	public static final String POWER_STANCE = "PowerStance";
+	public static final String AFTERIMAGE = "Afterimage";
 	
 	/**
 	 * RARES

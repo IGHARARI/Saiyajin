@@ -70,13 +70,11 @@
       "redemption",
       "Redemption"
     ],
-    "DESCRIPTION": "When this minion dies it revives Stunned but empowered."
+    "DESCRIPTION": "When this minion dies it revived Stunned but empowered."
   },
   {
-  	"PROPER_NAME":"Invincible",
     "NAMES": [
-      "invincible",
-      "Invincible"
+      "invincible"
     ],
     "DESCRIPTION": "Can only take a certain amount of damage per turn."
   },
@@ -105,7 +103,7 @@
   },
   {
     "NAMES": [
-      "Concussion"
+      "concussion"
     ],
     "DESCRIPTION": "Deals damage at the end of every turn, and increase the stack amount by 1."
   },

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.cards.utils.CardNames;
+import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 
@@ -20,7 +21,7 @@ public class PowerUp extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.POWER_UP);
 
 	private static final int COST = 2;
-	private static final int BASE_KI_GAIN = 8;
+	private static final int BASE_KI_GAIN = 7;
 	private static final int UPGRADE_KI_GAIN = 5;
 	private static final int BASE_BLOCK = 13;
 	private static final int UPGRADE_BLOCK = 5;
@@ -50,6 +51,7 @@ public class PowerUp extends SaiyanCard {
 		GainBlockAction block = new GainBlockAction(player, player, this.block);
 	    AbstractDungeon.actionManager.addToBottom(block);
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, magicNumber), magicNumber));
+		PowersHelper.comboFollowUp();
 	}
 
 }

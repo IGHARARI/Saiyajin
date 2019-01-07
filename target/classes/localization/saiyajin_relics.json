@@ -2,6 +2,13 @@
   "SaiyanBlood": {
     "NAME": "Saiyan Blood",
     "FLAVOR": "Saiyan blood courses through your veins",
-    "DESCRIPTIONS": ["Gain 3 Ki Regen at the start of each battle. Every time a debuff applied to you expires, gain 1 permanent HP and 1 Strength."]
+    "DESCRIPTIONS": ["Gain 4 Ki Regen at start of battle.",
+    				"When a debuff applied to you expires gain NL 1 MaxHP and 3 TempHP up to 3 times per battle.",
+    				 "Gain 4 Ki Regen at start of battle. Max 3x per battle, grow when a debuff expires."]
+  },
+  "SaiyanHeart": {
+    "NAME": "Saiyan Heart",
+    "FLAVOR": "Your Saiyan Heart thirsts for battle.",
+    "DESCRIPTIONS": ["When a debuff applied to you expires gain 1 MaxHP and 3 TempHP up to 3 times per battle."]
   }
 }

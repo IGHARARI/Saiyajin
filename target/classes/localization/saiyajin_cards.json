@@ -13,11 +13,15 @@
 	},
 	"PowerUp": {
 		"NAME": "Power Up",
-		"DESCRIPTION": "Yell REALLY loud in order to gain !M! Ki and !B! block."
+		"DESCRIPTION": "Yell REALLY loud in order to gain !M! Ki and !B! block. NL Follow-up."
 	},
 	"PowerStance": {
 		"NAME": "Power Stance",
 		"DESCRIPTION": "ALL your Attack cards are now also Starter."
+	},
+	"Afterimage": {
+		"NAME": "Afterimage",
+		"DESCRIPTION": "Gain 1 Buffer, put !M! Daze on top of your draw pile. NL Exhaust. NL Follow-up."
 	},
 	"HyperTimeChamber": {
 		"NAME": "The Time Chamber",
@@ -68,7 +72,7 @@
 	},
 	"CCCapsule": {
 		"NAME": "C.C. Capsule",
-		"DESCRIPTION": "Get a random Ethereal Power, it costs 1 less Energy until played. NL Exhaust."
+		"DESCRIPTION": "Get a random Power, it costs 1 less Energy until played. NL Exhaust."
 	},
 	"KaioKen": {
 		"NAME": "KaioKen",
@@ -173,11 +177,15 @@
 	},
 	"Taunt": {
 		"NAME": "Taunt",
-		"DESCRIPTION": "Give an enemy !M! Strength, gain 1 Reflect."
+		"DESCRIPTION": "Give an enemy !M! Strength, gain 2 Reflect."
 	},
 	"KiExplosion": {
 		"NAME": "Ki Explosion",
 		"DESCRIPTION": "Consumes 10 Ki. NL Gain !B! block and !M! Ki-Barrier. "
+	},
+	"RuthlessBlow": {
+		"NAME": "Ruthless Blow",
+		"DESCRIPTION": "Deal !D! damage. NL Finisher: Apply vulnerable equal to your Combo. "
 	},
 	"SolarFlare": {
 		"NAME": "Solar Flare",
@@ -191,7 +199,7 @@
 	},
 	"SenzuBean": {
 		"NAME": "Senzu Bean",
-		"DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Invincible(33% Max HP). NL Obtain a random common relic at end of combat.",
+		"DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Invincible (33% Max HP). NL Obtain a random common relic at end of combat.",
 		"UPGRADE_DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Metallicize( !M! x3 ). NL Obtain a random common relic at end of combat."
 	},
 	"GenkiDama": {

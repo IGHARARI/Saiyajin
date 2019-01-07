@@ -35,6 +35,7 @@ public class ComboPower extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.COMBO_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.COMBO), 0, 0, 48, 48);
+        this.description = DESCRIPTIONS[0];
 		this.canGoNegative = false;
 	}
 	

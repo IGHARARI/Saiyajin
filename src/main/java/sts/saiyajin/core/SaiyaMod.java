@@ -46,6 +46,7 @@ import sts.saiyajin.cards.attacks.KiBlast;
 import sts.saiyajin.cards.attacks.Kienzan;
 import sts.saiyajin.cards.attacks.Makankosappo;
 import sts.saiyajin.cards.attacks.MeteorDash;
+import sts.saiyajin.cards.attacks.RuthlessBlow;
 import sts.saiyajin.cards.attacks.SpiritSword;
 import sts.saiyajin.cards.attacks.Strike;
 import sts.saiyajin.cards.powers.BurningSoul;
@@ -55,6 +56,7 @@ import sts.saiyajin.cards.powers.MonkeyTail;
 import sts.saiyajin.cards.powers.PowerStance;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
+import sts.saiyajin.cards.skills.Afterimage;
 import sts.saiyajin.cards.skills.CcCapsule;
 import sts.saiyajin.cards.skills.Defend;
 import sts.saiyajin.cards.skills.DragonBall;
@@ -87,6 +89,7 @@ import sts.saiyajin.cards.utils.RelicNames;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.relics.SaiyanBlood;
+import sts.saiyajin.relics.SaiyanHeart;
 import sts.saiyajin.ui.CharacterSelection;
 
 @SpireInitializer
@@ -185,6 +188,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.KI_BLAST);
         BaseMod.addCard(new KaioKen());
         UnlockTracker.unlockCard(CardNames.KAIO_KEN);
+        BaseMod.addCard(new RuthlessBlow());
+        UnlockTracker.unlockCard(CardNames.RUTHLESS_BLOW);
         
         /**
          * Common cards
@@ -255,6 +260,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.OVEREXERT);
         BaseMod.addCard(new PowerStance());
         UnlockTracker.unlockCard(CardNames.POWER_STANCE);
+        BaseMod.addCard(new Afterimage());
+        UnlockTracker.unlockCard(CardNames.AFTERIMAGE);
 
         /**
          * RARE CARDS
@@ -313,23 +320,21 @@ public class SaiyaMod implements
     }
 
 	public void receiveEditRelics() {
-	    BaseMod.addRelicToCustomPool(
-	        new SaiyanBlood(),
-	        CardColors.SAIYAN_CARD_COLOR
-	    );
+		BaseMod.addRelicToCustomPool(new SaiyanHeart(), CardColors.SAIYAN_CARD_COLOR);
+	    BaseMod.addRelicToCustomPool(new SaiyanBlood(), CardColors.SAIYAN_CARD_COLOR);
 	}
 
 	@Override
 	public void receivePowersModified() {
-		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_BLOOD)){
-			((SaiyanBlood)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_BLOOD)).powersWereModified();
+		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
+			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).powersWereModified();
 		}
 	}
 
 	@Override
 	public void receivePostBattle(AbstractRoom r) {
-		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_BLOOD)){
-			((SaiyanBlood)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_BLOOD)).battleEnd();
+		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
+			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).battleEnd();
 		}
 	}
 

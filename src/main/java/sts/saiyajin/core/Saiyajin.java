@@ -37,7 +37,7 @@ public class Saiyajin extends CustomPlayer {
 
 	private static final int MAX_HP = 50;
 	private static final int STARTING_HP = MAX_HP;
-	private static final int STARTING_GOLD = 15;
+	private static final int STARTING_GOLD = 77;
 	private static final int HAND_SIZE = 6;
 	private static final int ASCENSION_MAX_HP_LOSS = 5;
 	private static final int BASE_KI = 20;
@@ -98,21 +98,25 @@ public class Saiyajin extends CustomPlayer {
 		starterDeck.add(CardNames.STRIKE);
 		starterDeck.add(CardNames.STRIKE);
 		starterDeck.add(CardNames.STRIKE);
+		starterDeck.add(CardNames.STRIKE);
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.KI_BLAST);
 		starterDeck.add(CardNames.KAIO_KEN);
+		starterDeck.add(CardNames.RUTHLESS_BLOW);
 		
 		return starterDeck;
 	}
 	@Override
 	public ArrayList<String> getStartingRelics() {
 		UnlockTracker.markRelicAsSeen(RelicNames.SAIYAN_BLOOD);
+		UnlockTracker.markRelicAsSeen(RelicNames.SAIYAN_HEART);
 
 		ArrayList<String> starterRelics = new ArrayList<String>();
 	    starterRelics.add(RelicNames.SAIYAN_BLOOD);
+	    starterRelics.add(RelicNames.SAIYAN_HEART);
 	    return starterRelics;
 	}
 	@Override

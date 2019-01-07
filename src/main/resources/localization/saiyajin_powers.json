@@ -69,6 +69,6 @@
   },
   "ComboPower": {
     "NAME": "Combo Chain",
-    "DESCRIPTIONS": ["Consume a Combo Chain with a Combo Finisher for enhanced effects"]
+    "DESCRIPTIONS": ["Consume your Combo with a Finisher for enhanced effects."]
   }
 }
