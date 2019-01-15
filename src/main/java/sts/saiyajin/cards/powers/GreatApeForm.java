@@ -12,12 +12,12 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import sts.saiyajin.actions.GreatApeExhaustAction;
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.powers.GreatApePower;
 import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowerNames;
 
 public class GreatApeForm extends SaiyanCard
 {
@@ -32,7 +32,7 @@ public class GreatApeForm extends SaiyanCard
     public GreatApeForm() {
 		super(CardNames.GREAT_APE_FORM, cardStrings.NAME, CardPaths.GREAT_APE_FORM, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.POWER,
-		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.SPECIAL,
 		        AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber;

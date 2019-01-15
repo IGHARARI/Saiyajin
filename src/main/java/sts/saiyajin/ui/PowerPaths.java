@@ -40,4 +40,16 @@ public class PowerPaths {
 	public static final String ENERGY_PLUS_B = "img/powers/energyplus128.png";
 	public static final String POWER_STANCE = "img/powers/powerstance48.png";
 	public static final String POWER_STANCE_B = "img/powers/powerstance128.png";
+	
+	
+	public static final String DODGE = "img/powers/powerstance48.png";
+	public static final String DODGE_B = "img/powers/powerstance128.png";
+	public static final String MAJIN_SEAL = "img/powers/powerstance48.png";
+	public static final String MAJIN_SEAL_B = "img/powers/powerstance128.png";
+	public static final String SS3_DEBUFF = "img/powers/powerstance48.png";
+	public static final String SS3_DEBUFF_B = "img/powers/powerstance128.png";
+	public static final String FUROR = "img/powers/powerstance48.png";
+	public static final String FUROR_B = "img/powers/powerstance128.png";
+	public static final String PRESS_ON = "img/powers/powerstance48.png";
+	public static final String PRESS_ON_B = "img/powers/powerstance128.png";
 }

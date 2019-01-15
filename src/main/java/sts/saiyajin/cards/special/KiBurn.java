@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardNames;
 
 public class KiBurn extends SaiyanCard {
 

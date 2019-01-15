@@ -12,12 +12,12 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import sts.saiyajin.cards.special.KiBurn;
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowerNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class Overexert extends SaiyanCard {
 

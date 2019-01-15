@@ -6,6 +6,9 @@
   "character_name": {
     "TEXT": ["Bardok"]
   },
+  "KiCounter": {
+    "TEXT": ["Ki", "This represents your current Ki."]
+  },
   "HoningAction": {
     "TEXT": ["Select up to "," card(s) to Exhaust."]
   }

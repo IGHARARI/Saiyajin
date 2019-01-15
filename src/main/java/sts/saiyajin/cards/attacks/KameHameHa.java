@@ -17,12 +17,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import sts.saiyajin.cards.types.ComboFinisher;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class KameHameHa extends ComboFinisher {
 
@@ -54,7 +54,7 @@ public class KameHameHa extends ComboFinisher {
 			upgradeName();
 			upgradeDamage(UPGRADE_DAMAGE);
 			upgradeMagicNumber(UPGRADED_KI_COST);
-			this.kiRequired = magicNumber;
+			upgradeKiRequired(UPGRADED_KI_COST);
 		}
 	}
 	

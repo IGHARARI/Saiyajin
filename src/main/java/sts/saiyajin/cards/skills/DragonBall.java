@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.actions.DragonBallAction;
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class DragonBall extends SaiyanCard {
 
@@ -24,7 +24,7 @@ public class DragonBall extends SaiyanCard {
 	public DragonBall() {
 		super(CardNames.DRAGON_BALL, cardStrings.NAME, CardPaths.DRAGON_BALL, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
-		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.SPECIAL,
 		        AbstractCard.CardTarget.NONE);
 		this.exhaust = true;

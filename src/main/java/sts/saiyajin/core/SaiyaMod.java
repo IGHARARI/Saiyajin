@@ -46,14 +46,18 @@ import sts.saiyajin.cards.attacks.KiBlast;
 import sts.saiyajin.cards.attacks.Kienzan;
 import sts.saiyajin.cards.attacks.Makankosappo;
 import sts.saiyajin.cards.attacks.MeteorDash;
+import sts.saiyajin.cards.attacks.PowerPole;
 import sts.saiyajin.cards.attacks.RuthlessBlow;
 import sts.saiyajin.cards.attacks.SpiritSword;
 import sts.saiyajin.cards.attacks.Strike;
 import sts.saiyajin.cards.powers.BurningSoul;
+import sts.saiyajin.cards.powers.Furor;
 import sts.saiyajin.cards.powers.GreatApeForm;
 import sts.saiyajin.cards.powers.HyperbolicTimeChamber;
+import sts.saiyajin.cards.powers.MajinSeal;
 import sts.saiyajin.cards.powers.MonkeyTail;
 import sts.saiyajin.cards.powers.PowerStance;
+import sts.saiyajin.cards.powers.SuperSaiyan3Form;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
 import sts.saiyajin.cards.skills.Afterimage;
@@ -73,6 +77,7 @@ import sts.saiyajin.cards.skills.LastResort;
 import sts.saiyajin.cards.skills.Medicine;
 import sts.saiyajin.cards.skills.Overexert;
 import sts.saiyajin.cards.skills.PowerUp;
+import sts.saiyajin.cards.skills.PressOn;
 import sts.saiyajin.cards.skills.Quickening;
 import sts.saiyajin.cards.skills.SaiyanHubris;
 import sts.saiyajin.cards.skills.Scouter;
@@ -80,17 +85,19 @@ import sts.saiyajin.cards.skills.SenzuBean;
 import sts.saiyajin.cards.skills.SolarFlare;
 import sts.saiyajin.cards.skills.Taunt;
 import sts.saiyajin.cards.skills.ThirstForFight;
+import sts.saiyajin.cards.skills.UltraInstinct;
 import sts.saiyajin.cards.special.KiBurn;
 import sts.saiyajin.cards.special.Training;
 import sts.saiyajin.cards.types.ComboFinisher;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.RelicNames;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
-import sts.saiyajin.relics.SaiyanBlood;
+import sts.saiyajin.relics.SaiyanSoul;
 import sts.saiyajin.relics.SaiyanHeart;
 import sts.saiyajin.ui.CharacterSelection;
+import sts.saiyajin.ui.KiDynamicVariable;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.RelicNames;
 
 @SpireInitializer
 public class SaiyaMod implements 
@@ -103,22 +110,28 @@ public class SaiyaMod implements
 	OnStartBattleSubscriber,
 	PostPowerApplySubscriber,
 	EditKeywordsSubscriber
+//	RenderSubscriber,
+//	PostInitializeSubscriber
 	{
 
 	public static final Logger logger = LogManager.getLogger(SaiyaMod.class);
 	
+//	private static KiEnergyCounter kiCounter;
+	
     public SaiyaMod() {
     	BaseMod.subscribe(this);
     	Color someColor = CardHelper.getColor(100f, 10f, 30.0f);
-    	String ATTACK_CC = "img/512/bg_attack_MRS_s.png";
-    	String SKILL_CC = "img/512/bg_skill_MRS_s.png";
-    	String POWER_CC = "img/512/bg_power_MRS_s.png";
-    	String ENERGY_ORB_CC = "img/512/cardOrb.png";
+    	String ATTACK_CC = "img/512/bg_attack_saiyan_s.png";
+    	String SKILL_CC = "img/512/bg_skill_saiyan_s.png";
+    	String POWER_CC = "img/512/bg_power_saiyan_s.png";
+    	String ENERGY_ORB_CC = "img/UI/cardOrb/cardOrb.png";
 
-    	String ATTACK_CC_PORTRAIT = "img/1024/bg_attack_MRS.png";
-    	String SKILL_CC_PORTRAIT = "img/1024/bg_skill_MRS.png";
-    	String POWER_CC_PORTRAIT = "img/1024/bg_power_MRS.png";
-    	String ENERGY_ORB_CC_PORTRAIT = "img/1024/cardOrb.png";
+    	String ATTACK_CC_PORTRAIT = "img/1024/bg_attack_saiyan.png";
+    	String SKILL_CC_PORTRAIT = "img/1024/bg_skill_saiyan.png";
+    	String POWER_CC_PORTRAIT = "img/1024/bg_power_saiyan.png";
+    	String ENERGY_ORB_CC_PORTRAIT = "img/UI/cardOrb/cardOrb_p.png";
+
+    	String CARD_DESCRIPTION_ORB = "img/UI/cardOrb/descriptionOrb.png";
     	
         BaseMod.addColor(
         		CardColors.SAIYAN_CARD_COLOR,
@@ -136,32 +149,42 @@ public class SaiyaMod implements
                 ATTACK_CC_PORTRAIT,
                 SKILL_CC_PORTRAIT,
                 POWER_CC_PORTRAIT,
-                ENERGY_ORB_CC_PORTRAIT
+                ENERGY_ORB_CC_PORTRAIT,
+                CARD_DESCRIPTION_ORB
             );
-        BaseMod.addColor(
-        		CardColors.SAIYAN_EXTRA_CARD_COLOR,
-        		someColor,
-        		someColor,
-        		someColor,
-        		someColor,
-        		someColor,
-        		someColor,
-        		someColor,
-                ATTACK_CC,
-                SKILL_CC,
-                POWER_CC,
-                ENERGY_ORB_CC,
-                ATTACK_CC_PORTRAIT,
-                SKILL_CC_PORTRAIT,
-                POWER_CC_PORTRAIT,
-                ENERGY_ORB_CC_PORTRAIT
-            );
+//        BaseMod.addColor(
+//        		CardColors.SAIYAN_EXTRA_CARD_COLOR,
+//        		someColor,
+//        		someColor,
+//        		someColor,
+//        		someColor,
+//        		someColor,
+//        		someColor,
+//        		someColor,
+//                ATTACK_CC,
+//                SKILL_CC,
+//                POWER_CC,
+//                ENERGY_ORB_CC,
+//                ATTACK_CC_PORTRAIT,
+//                SKILL_CC_PORTRAIT,
+//                POWER_CC_PORTRAIT,
+//                ENERGY_ORB_CC_PORTRAIT
+//            );
     }
 
     public static void initialize() {
         new SaiyaMod();
     }
 
+//    @Override
+//    public void receivePostInitialize() {
+//        // Mod badge
+////        Texture badgeTexture = new Texture(Gdx.files.internal("badge/YohaneModBadge.png"));
+////        ModPanel settingsPanel = new ModPanel();
+////        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
+//    	kiCounter = new KiEnergyCounter(TexturesHelper.getTexture("img/custom_orb_large.png"));
+//    }
+//    
     public void receiveEditCharacters() {
     	logger.info("Start editCharacters: ");
 
@@ -176,6 +199,15 @@ public class SaiyaMod implements
 	}
     
     public void receiveEditCards() {
+    	
+    	
+    	/**
+    	 * Add dynamic variables
+    	 */
+    	logger.info("Adding Ki Dynamic variable");
+    	BaseMod.addDynamicVariable(new KiDynamicVariable());
+    	
+    	
     	logger.info("Adding cards for the Saiyan");
     	/**
     	 * Starter cards
@@ -230,6 +262,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.MAKANKOSAPPO);
         BaseMod.addCard(new DragonFist());
         UnlockTracker.unlockCard(CardNames.DRAGON_FIST);
+        BaseMod.addCard(new Furor());
+        UnlockTracker.unlockCard(CardNames.FUROR);
         
         /**
          * Uncommon cards
@@ -262,10 +296,20 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.POWER_STANCE);
         BaseMod.addCard(new Afterimage());
         UnlockTracker.unlockCard(CardNames.AFTERIMAGE);
+        BaseMod.addCard(new PowerPole());
+        UnlockTracker.unlockCard(CardNames.POWER_POLE);
+        BaseMod.addCard(new UltraInstinct());
+        UnlockTracker.unlockCard(CardNames.ULTRA_INSTINCT);
+        BaseMod.addCard(new SuperSaiyan3Form());
+        UnlockTracker.unlockCard(CardNames.SUPER_SAIYAN_THREE_FORM);
+        BaseMod.addCard(new PressOn());
+        UnlockTracker.unlockCard(CardNames.PRESS_ON);
 
         /**
          * RARE CARDS
          */
+        BaseMod.addCard(new HyperbolicTimeChamber());
+        UnlockTracker.unlockCard(CardNames.HYPER_TIME_CHAMBER);
         BaseMod.addCard(new Medicine());
         UnlockTracker.unlockCard(CardNames.MEDICINE);
         BaseMod.addCard(new GenkiDama());
@@ -278,8 +322,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SOLAR_FLARE);
         BaseMod.addCard(new SenzuBean());
         UnlockTracker.unlockCard(CardNames.SENZU_BEAN);
-        BaseMod.addCard(new HyperbolicTimeChamber());
-        UnlockTracker.unlockCard(CardNames.HYPER_TIME_CHAMBER);
+        BaseMod.addCard(new MajinSeal());
+        UnlockTracker.unlockCard(CardNames.MAJIN_SEAL);
         
         /**
          * UNOBTAINABLE CARDS
@@ -321,7 +365,7 @@ public class SaiyaMod implements
 
 	public void receiveEditRelics() {
 		BaseMod.addRelicToCustomPool(new SaiyanHeart(), CardColors.SAIYAN_CARD_COLOR);
-	    BaseMod.addRelicToCustomPool(new SaiyanBlood(), CardColors.SAIYAN_CARD_COLOR);
+	    BaseMod.addRelicToCustomPool(new SaiyanSoul(), CardColors.SAIYAN_CARD_COLOR);
 	}
 
 	@Override
@@ -375,5 +419,15 @@ public class SaiyaMod implements
             }
         }
 	}
+	
+//    @Override
+//    public void receiveRender(SpriteBatch sb) {
+//        if (AbstractDungeon.player != null && CardCrawlGame.dungeon != null && AbstractDungeon.player.hasPower(KiPower.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+//            if (!AbstractDungeon.isScreenUp) {
+//            	kiCounter.update();
+//                kiCounter.render(sb);
+//            }
+//        }
+//    }
 
 }

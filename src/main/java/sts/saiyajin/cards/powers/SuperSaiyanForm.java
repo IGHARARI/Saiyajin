@@ -10,18 +10,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class SuperSaiyanForm extends SaiyanCard
 {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.SUPER_SAIYAN_FORM);
-	private static final int COST = 3;
-	private static final int UPGRADED_COST = 2;
+	private static final int COST = 2;
+	private static final int UPGRADED_COST = 1;
 	private static final int BASE_KI_REGEN = 4;
-	private static final int UPGRADED_KI_REGEN = 2;
+	private static final int UPGRADED_KI_REGEN = 1;
 	private int metallicizeAmount;
 	private static final int BASE_METALLICIZE = 4;
 	private static final int UPGRADED_METALLICIZE = 5;

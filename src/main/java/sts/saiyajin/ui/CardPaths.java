@@ -53,11 +53,11 @@ public class CardPaths {
 	public static final String OVEREXERT = "img/cards/overexert.png";
 	public static final String POWER_STANCE = "img/cards/powerstance.png";
 	public static final String AFTERIMAGE = "img/cards/afterimage.png";
+	public static final String SUPER_SAIYAN_FORM = "img/cards/supersaiyan_b.png";
 	
 	/**
 	 * RARES
 	 */
-	public static final String SUPER_SAIYAN_FORM = "img/cards/supersaiyan_b.png";
 	public static final String TAUNT = "img/cards/taunt.png";
 	public static final String SENZU_BEAN = "img/cards/senzubean.png";
 	public static final String MONKEY_TAIL = "img/cards/tail_b.png";
@@ -76,4 +76,16 @@ public class CardPaths {
 	 */
 	public static final String TRAINING = "img/cards/training.png";
 	public static final String KI_BURN = "img/cards/kiburn.png";
+
+	/**
+	 * UNIMPLEMENTED IMAGES
+	 */
+	public static final String FUROR = "img/cards/turtleshell_b.png";
+	public static final String POWER_POLE = "img/cards/makankosappo.png";
+	public static final String MAJIN_SEAL = "img/cards/timechamber.png";
+	public static final String ULTRA_INSTINCT = "img/cards/afterimage.png";
+	public static final String SUPER_SAIYAN_THREE_FORM = "img/cards/timechamber.png";
+	public static final String PRESS_ON = "img/cards/afterimage.png";
+	public static final String REKINDLE = "img/cards/afterimage.png";
+	
 }

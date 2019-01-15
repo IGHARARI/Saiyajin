@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.ui.PowerPaths;
+import sts.saiyajin.utils.PowerNames;
 
 public class KiRegenPower extends AbstractPower {
 	public static final String POWER_ID = PowerNames.KI_REGEN;

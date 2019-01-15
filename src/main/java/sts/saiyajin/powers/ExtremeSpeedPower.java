@@ -16,9 +16,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import sts.saiyajin.cards.types.ComboFinisher;
-import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.ui.PowerPaths;
+import sts.saiyajin.utils.PowerNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class ExtremeSpeedPower extends AbstractPower {
 

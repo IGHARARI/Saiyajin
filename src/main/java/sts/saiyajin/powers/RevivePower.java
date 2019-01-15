@@ -22,8 +22,8 @@ import com.megacrit.cardcrawl.powers.InvinciblePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.ui.PowerPaths;
+import sts.saiyajin.utils.PowerNames;
 
 public class RevivePower extends AbstractPower {
 

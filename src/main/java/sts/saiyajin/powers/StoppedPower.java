@@ -14,8 +14,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.ui.PowerPaths;
+import sts.saiyajin.utils.PowerNames;
 
 public class StoppedPower
   extends AbstractPower

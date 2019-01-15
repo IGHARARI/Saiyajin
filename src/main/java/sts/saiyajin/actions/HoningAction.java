@@ -18,12 +18,14 @@ public class HoningAction extends AbstractGameAction {
     public static final String[] TEXT;
     private AbstractPlayer p;
     private int toExhaust;
+    private int bonusKiRegen;
 	
-    public HoningAction(int cardsToExhaust) {
+    public HoningAction(int cardsToExhaust, int bonusKiRegen) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
         this.toExhaust = cardsToExhaust;
+        this.bonusKiRegen =  bonusKiRegen;
     }
     
     @Override
@@ -32,11 +34,11 @@ public class HoningAction extends AbstractGameAction {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 for (final AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                     if (c.costForTurn == -1) {
-                    	int kiGain = EnergyPanel.getCurrentEnergy() * 2;
+                    	int kiGain = (EnergyPanel.getCurrentEnergy() * 2) + bonusKiRegen;
                     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new KiRegenPower(this.p, kiGain), kiGain));
                     }
                     else if (c.costForTurn > 0) {
-                    	int kiGain = c.costForTurn * 2;
+                    	int kiGain = (c.costForTurn * 2) + bonusKiRegen;
                     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new KiRegenPower(this.p, kiGain), kiGain));
                     }
                     this.p.hand.moveToExhaustPile(c);

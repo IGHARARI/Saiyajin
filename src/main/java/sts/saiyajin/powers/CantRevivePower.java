@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import sts.saiyajin.cards.utils.PowerNames;
 import sts.saiyajin.ui.PowerPaths;
+import sts.saiyajin.utils.PowerNames;
 
 public class CantRevivePower extends AbstractPower {
 

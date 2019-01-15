@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FlightPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import sts.saiyajin.cards.utils.PowerNames;
+import sts.saiyajin.utils.PowerNames;
 
 public class PlayerFlightPower extends AbstractPower {
 

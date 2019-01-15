@@ -15,9 +15,9 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import sts.saiyajin.cards.utils.RelicNames;
 import sts.saiyajin.core.SaiyaMod;
 import sts.saiyajin.ui.RelicPaths;
+import sts.saiyajin.utils.RelicNames;
 
 public class SaiyanHeart extends CustomRelic {
 
@@ -79,6 +79,7 @@ public class SaiyanHeart extends CustomRelic {
 		}
 		debuffsPurged = Math.min(3 - hpGainedThisBattle, debuffsPurged);
 		if (debuffsPurged > 0){
+			this.flash();
 			hpGainedThisBattle += debuffsPurged;
 			AbstractDungeon.player.increaseMaxHp(debuffsPurged, true);
 			AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, debuffsPurged*3));

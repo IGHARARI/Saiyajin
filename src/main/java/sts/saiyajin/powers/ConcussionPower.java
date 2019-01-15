@@ -15,8 +15,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import sts.saiyajin.cards.utils.PowerNames;
+
 import sts.saiyajin.ui.PowerPaths;
+import sts.saiyajin.utils.PowerNames;
 
 public class ConcussionPower
   extends AbstractPower

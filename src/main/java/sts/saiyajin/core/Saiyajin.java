@@ -25,11 +25,11 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.abstracts.CustomPlayer;
 import sts.saiyajin.cards.attacks.Strike;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.CardProperties;
-import sts.saiyajin.cards.utils.RelicNames;
 import sts.saiyajin.ui.Orb;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.CardProperties;
+import sts.saiyajin.utils.RelicNames;
 
 
 
@@ -52,8 +52,8 @@ public class Saiyajin extends CustomPlayer {
 //		currentKi = BASE_KI;
 		maxKi = BASE_KI;
 		
-	    this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
-	    this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
+	    this.dialogX = (this.drawX + 10.0F * Settings.scale); // set location for text bubbles
+	    this.dialogY = (this.drawY + 280.0F * Settings.scale); // you can just copy these values
 
 
 	    
@@ -61,9 +61,11 @@ public class Saiyajin extends CustomPlayer {
 	    String MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png"; // shoulder2 / shoulder_1
 	    String MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png"; // shoulder1 / shoulder_2
 	    String MARISA_CORPSE = "img/char/Marisa/fallen.png"; // dead corpse
-	    String MARISA_SKELETON_ATLAS = "img/char/Marisa/MarisaModel_v02.atlas";// Marisa_v0 / MarisaModel_v02
-	    String MARISA_SKELETON_JSON = "img/char/Marisa/MarisaModel_v02.json";
-	    String MARISA_ANIMATION = "Idle";
+//	    String skeletonAtlas = "img/char/Marisa/MarisaModel_v02.atlas";// Marisa_v0 / MarisaModel_v02
+//	    String skeletonJSON = "img/char/Marisa/MarisaModel_v02.json";
+	    String skeletonAtlas = "img/char/Goku/goku.atlas";// Marisa_v0 / MarisaModel_v02
+	    String skeletonJSON = "img/char/Goku/goku.json";
+	    String animation = "animtion0";
 	    
 	    initializeClass(
 	        null,
@@ -75,20 +77,11 @@ public class Saiyajin extends CustomPlayer {
 	        new EnergyManager(ENERGY_PER_TURN)
 	    );
 
-	    loadAnimation(MARISA_SKELETON_ATLAS, MARISA_SKELETON_JSON, 1.0F);
+	    loadAnimation(skeletonAtlas, skeletonJSON, 1.0F);
 	    // if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
-	    AnimationState.TrackEntry e = this.state.setAnimation(0, MARISA_ANIMATION, true);
+	    AnimationState.TrackEntry e = this.state.setAnimation(0, animation, true);
 	    e.setTime(e.getEndTime() * MathUtils.random());
 	    e.setTimeScale(1.0F);
-	}
-	
-	public AbstractRelic getSaiyanBlood(){
-		for(AbstractRelic relic : this.relics){
-			if (relic.relicId.equals(RelicNames.SAIYAN_BLOOD))
-				return relic;
-		}
-		logger.warn("Tried to find saiyan blood in relics but was unsuccessful");
-		return null;
 	}
 	
 	@Override
@@ -111,11 +104,11 @@ public class Saiyajin extends CustomPlayer {
 	}
 	@Override
 	public ArrayList<String> getStartingRelics() {
-		UnlockTracker.markRelicAsSeen(RelicNames.SAIYAN_BLOOD);
+		UnlockTracker.markRelicAsSeen(RelicNames.SAIYAN_SOUL);
 		UnlockTracker.markRelicAsSeen(RelicNames.SAIYAN_HEART);
 
 		ArrayList<String> starterRelics = new ArrayList<String>();
-	    starterRelics.add(RelicNames.SAIYAN_BLOOD);
+	    starterRelics.add(RelicNames.SAIYAN_SOUL);
 	    starterRelics.add(RelicNames.SAIYAN_HEART);
 	    return starterRelics;
 	}

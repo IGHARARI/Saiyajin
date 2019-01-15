@@ -11,17 +11,37 @@
     "NAME": "Revive",
     "DESCRIPTIONS": ["Enemy will revive when killed with full HP and extra buffs."]
   },
+  "Furor": {
+    "NAME": "Furor",
+    "DESCRIPTIONS": ["Whenever an enemy received a buff, gain 1 Strength."]
+  },
+  "PressOn": {
+    "NAME": "Press On",
+    "DESCRIPTIONS": ["Ignore Ki Costs this turn. Whenever you use a card, if you don't have the required Ki add a Ki-Burn to your discard pile."]
+  },
   "Reflection": {
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Reflects damage back to the attacker."]
+  },
+  "SuperSaiyanThreeDebuff": {
+    "NAME": "Super Saiyan Three",
+    "DESCRIPTIONS": ["You are empowered by your transformation, but your powers are slowly draining."]
   },
   "PowerStance": {
     "NAME": "Power Stance",
     "DESCRIPTIONS": ["Your Attack cards are also Starter."]
   },
+  "MajinSeal": {
+    "NAME": "Majin Seal",
+    "DESCRIPTIONS": ["The first attack played each turn has its target randomized. Whenever you gain a stack of combo, gain an additional stack."]
+  },
   "DragonBall": {
     "NAME": "Dragon Ball",
     "DESCRIPTIONS": ["Collect 7 and make a powerful wish come true."]
+  },
+  "Dodge": {
+    "NAME": "Dodge Chance",
+    "DESCRIPTIONS": ["When you are attacked, you have a chance to dodge the attack equal to your dodge stacks. Lost at the end of the round."]
   },
   "ExtremeSpeed": {
     "NAME": "Extreme Speed",

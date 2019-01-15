@@ -11,11 +11,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class InstantTransfer extends SaiyanCard {
 
@@ -41,13 +41,14 @@ public class InstantTransfer extends SaiyanCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_KI_CONSUMPTION);
-			this.kiRequired += UPGRADED_KI_CONSUMPTION;
+			upgradeKiRequired(UPGRADED_KI_CONSUMPTION);
 		}
 	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
+	    PowersHelper.comboFollowUp(); //increase if combo started
+	    PowersHelper.startCombo(); //start combo if not started
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, 1, false), 1));
 	    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, magicNumber));
 	}

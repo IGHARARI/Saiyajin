@@ -13,19 +13,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import sts.saiyajin.cards.types.ComboFinisher;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class RuthlessBlow extends ComboFinisher {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.RUTHLESS_BLOW);
 
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 8;
-	private static final int UPGRADE_DAMAGE = 4;
+	private static final int UPGRADED_COST = 0;
+	private static final int BASE_DAMAGE = 6;
+	private static final int UPGRADE_DAMAGE = 3;
 	
 	public RuthlessBlow() {
 		super(CardNames.RUTHLESS_BLOW, cardStrings.NAME, CardPaths.RUTHLESS_BLOW, COST, cardStrings.DESCRIPTION, 
@@ -41,6 +42,7 @@ public class RuthlessBlow extends ComboFinisher {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_DAMAGE);
+			upgradeBaseCost(UPGRADED_COST);
 		}
 	}
 

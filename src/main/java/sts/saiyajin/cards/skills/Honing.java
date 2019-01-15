@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.actions.HoningAction;
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class Honing extends SaiyanCard {
 
@@ -36,11 +36,16 @@ public class Honing extends SaiyanCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(1);
+			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+			initializeDescription();
+			this.exhaust = false;
 		}
 	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-    	AbstractDungeon.actionManager.addToBottom(new HoningAction(magicNumber));
+		int extraKiRegen = 1;
+		if (upgraded) extraKiRegen++;
+    	AbstractDungeon.actionManager.addToBottom(new HoningAction(magicNumber, extraKiRegen));
 	}
 }

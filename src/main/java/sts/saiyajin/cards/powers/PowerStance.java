@@ -9,16 +9,15 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.PowerStancePower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class PowerStance extends SaiyanCard
 {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.POWER_STANCE);
 	private static final int COST = 1;
-	private static final int UPGRADED_COST = 0;
     
     public PowerStance() {
 		super(CardNames.POWER_STANCE, cardStrings.NAME, CardPaths.POWER_STANCE, COST, cardStrings.DESCRIPTION, 
@@ -42,7 +41,9 @@ public class PowerStance extends SaiyanCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADED_COST);
+            this.isInnate = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

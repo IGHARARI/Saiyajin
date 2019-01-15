@@ -17,9 +17,9 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import basemod.helpers.ModalChoice;
 import basemod.helpers.ModalChoiceBuilder;
-import sts.saiyajin.cards.utils.CardColors;
 import sts.saiyajin.powers.DragonBallPower;
 import sts.saiyajin.powers.PlusEnergyPower;
+import sts.saiyajin.utils.CardColors;
 
 public class DragonBallAction extends AbstractGameAction implements basemod.helpers.ModalChoice.Callback{
     

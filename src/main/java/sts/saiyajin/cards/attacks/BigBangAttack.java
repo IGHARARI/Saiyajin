@@ -14,10 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class BigBangAttack extends SaiyanCard {
 
@@ -47,7 +47,7 @@ public class BigBangAttack extends SaiyanCard {
 			upgradeName();
 			upgradeDamage(UPGRADE_DAMAGE);
 			upgradeMagicNumber(UPGRADED_KI_COST);
-			kiRequired = magicNumber;
+			upgradeKiRequired(UPGRADED_KI_COST);
 		}
 	}
 	

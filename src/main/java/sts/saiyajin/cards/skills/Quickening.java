@@ -16,11 +16,11 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class Quickening extends SaiyanCard {
 
@@ -52,7 +52,7 @@ public class Quickening extends SaiyanCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_KI_CONSUMPTION);
-			kiRequired = magicNumber;
+			upgradeKiRequired(UPGRADED_KI_CONSUMPTION);
 			this.platedArmor += UPGRADED_PLATED_ARMOR_AMOUNT;
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 			initializeDescription();

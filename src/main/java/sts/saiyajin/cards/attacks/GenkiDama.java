@@ -14,17 +14,17 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowerNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class GenkiDama extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.GENKI_DAMA);
-	private static final int COST = 3;
+	private static final int COST = 2;
 	private static final int BASE_DAMAGE = 0;
 	private static final int BASE_KI_MAX_CONSUME = 25;
 	private static final int UPGRADED_KI_MAX_CONSUME = 40;
@@ -60,7 +60,7 @@ public class GenkiDama extends SaiyanCard {
 		AbstractDungeon.actionManager.addToBottom(damageAction);
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, 2, false), 2));
 		if (kiPower>0)
-			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiPower));
+			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiToUse));
 	}
 
 }

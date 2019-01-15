@@ -95,9 +95,7 @@
   {
   	"PROPER_NAME":"Great Ape",
     "NAMES": [
-      "Great Ape",
-      "Great ape",
-      "great ape"
+      "great-ape"
     ],
     "DESCRIPTION": "You are huge! When transforming gain 15 Ki Regen, 8 Plated Armor and 3 Strength."
   },

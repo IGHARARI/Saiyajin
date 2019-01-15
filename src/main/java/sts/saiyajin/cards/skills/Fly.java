@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.powers.PlayerFlightPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class Fly extends SaiyanCard {
 
@@ -42,7 +42,7 @@ public class Fly extends SaiyanCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_KI_COST);
-			kiRequired = magicNumber;
+			upgradeKiRequired(UPGRADED_KI_COST);
 		}
 	}
 

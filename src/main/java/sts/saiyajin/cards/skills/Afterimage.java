@@ -12,10 +12,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
-import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class Afterimage extends SaiyanCard {
 
@@ -29,7 +29,7 @@ public class Afterimage extends SaiyanCard {
 	public Afterimage() {
 		super(CardNames.AFTERIMAGE, cardStrings.NAME, CardPaths.AFTERIMAGE, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
-		        CardColors.SAIYAN_EXTRA_CARD_COLOR,
+		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
 		this.exhaust = true;

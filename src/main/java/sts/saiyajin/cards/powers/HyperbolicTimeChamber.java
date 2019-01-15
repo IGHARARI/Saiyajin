@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.special.Training;
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class HyperbolicTimeChamber extends SaiyanCard
 {
@@ -26,7 +26,7 @@ public class HyperbolicTimeChamber extends SaiyanCard
 		super(CardNames.HYPER_TIME_CHAMBER, cardStrings.NAME, CardPaths.HYPER_TIME_CHAMBER, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.POWER,
 		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.UNCOMMON,
+		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.SELF);
     }
     

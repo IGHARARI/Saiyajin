@@ -15,9 +15,20 @@
 		"NAME": "Power Up",
 		"DESCRIPTION": "Yell REALLY loud in order to gain !M! Ki and !B! block. NL Follow-up."
 	},
+	"Rekindle": {
+		"NAME": "Rekindle",
+		"DESCRIPTION": "Increase your Ki-regen by 50%. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Increase your Ki-regen by 50%."
+	},
+	"PressOn": {
+		"NAME": "Press On",
+		"DESCRIPTION": "This turn you can play cards even if you don't have enough Ki. Whenever you do so, add a Ki-burn to your discard. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "This turn you can play cards even if you don't have enough Ki. Whenever you do so, add a Ki-burn to your discard."
+	},
 	"PowerStance": {
 		"NAME": "Power Stance",
-		"DESCRIPTION": "ALL your Attack cards are now also Starter."
+		"DESCRIPTION": "ALL your Attack cards are now also Starter.",
+		"UPGRADE_DESCRIPTION": "ALL your Attack cards are now also Starter. NL Innate."
 	},
 	"Afterimage": {
 		"NAME": "Afterimage",
@@ -29,12 +40,17 @@
 	},
 	"Training": {
 		"NAME": "Training",
-		"DESCRIPTION": "Retain. NL You are Training for !M! turns. NL Exhausts when finished training.",
+		"DESCRIPTION": "Retain. NL You are Training for !M! turns. NL Exhausts when finished training, cannot be manually discarded or exhausted.",
 		"UPGRADE_DESCRIPTION": "Can't play cards that target enemies while in training."
 	},
 	"SpiritSword": {
 		"NAME": "Spirit Sword",
 		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. NL Finisher: Deal !D! x Combo damage to the enemy behind."
+	},
+	"Furor": {
+		"NAME": "Furor",
+		"DESCRIPTION": "Gain 1 Strength every time an enemy gains a buff.",
+		"UPGRADE_DESCRIPTION": "Gain !M! Strength and !Saiyan:Ki! Ki every time an enemy gains a buff."
 	},
 	"Overexert": {
 		"NAME": "Overexert",
@@ -56,7 +72,13 @@
 	},
 	"Honing": {
 		"NAME": "Honing",
-		"DESCRIPTION": "Exhaust up to !M! cards and gain Ki-Regen equal to double their cost. NL Exhaust."
+		"DESCRIPTION": "Exhaust up to !M! card and gain Ki-Regen equal to 1 + double its cost. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Exhaust up to !M! cards and gain Ki-Regen equal to 2 + double their cost."
+	},
+	"UltraInstinct": {
+		"NAME": "Ultra Instinct",
+		"DESCRIPTION": "Gain 25% Dodge chance X times. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain 25% Dodge chance X+1 times. NL Exhaust."
 	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
@@ -66,9 +88,22 @@
 		"NAME": "Fly",
 		"DESCRIPTION": "Consume !M! Ki. NL Gain 2 Flight."
 	},
+	"PowerPole": {
+		"NAME": "Power Pole",
+		"DESCRIPTION": "Damage ALL enemies, dealing !D! to the closest one, and doubling the damage for each one after that."
+	},
 	"SaiyanHubris": {
 		"NAME": "Saiyan Hubris",
 		"DESCRIPTION": "Gain !M! Ki for each enemy."
+	},
+	"SuperSaiyanThree": {
+		"NAME": "Super Saiyan 3",
+		"DESCRIPTION": "Gain !Saiyan:Ki! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over 4 turns.",
+		"UPGRADE_DESCRIPTION": "Gain !Saiyan:Ki! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over 6 turns."
+	},
+	"MajinSeal": {
+		"NAME": "Majin Seal",
+		"DESCRIPTION": "Gain !M! Ki-regen. Every time you gain Combo gain another Combo. NL Randomize the target of the 1st attack you play each turn."
 	},
 	"CCCapsule": {
 		"NAME": "C.C. Capsule",
@@ -89,7 +124,7 @@
 	},
 	"BackAttack": {
 		"NAME": "Back Attack",
-		"DESCRIPTION": "Deal !D! damage. Telegraphed. NL Finisher: Apply weaken equal to your Combo."
+		"DESCRIPTION": "Deal !D! damage. Telegraphed. NL Finisher: Apply Weak equal to your Combo."
 	},
 	"ExtremeSpeed": {
 		"NAME": "Extreme-speed",
@@ -111,7 +146,7 @@
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
-		"DESCRIPTION": "Gain !M! Strength. Put a Full Moon and a Great Ape Form in your draw pile."
+		"DESCRIPTION": "Gain !M! Strength. Put a Full Moon and a Great-Ape Form in your draw pile."
 	},
 	"FullMoon": {
 		"NAME": "Full Moon",
@@ -151,7 +186,7 @@
 	},
 	"Scouter": {
 		"NAME": "Scouter",
-		"DESCRIPTION": "Consume !M! Ki. NL Gain !B! block this and next turn. NL If the enemy is NOT attacking gain an extra 4 block."
+		"DESCRIPTION": "Consume !Saiyan:Ki! Ki. NL Gain !B! block this and next turn. NL If the enemy is NOT attacking gain an extra !M! block."
 	},
 	"TurtleShell": {
 		"NAME": "Turtle Shell",
@@ -185,7 +220,7 @@
 	},
 	"RuthlessBlow": {
 		"NAME": "Ruthless Blow",
-		"DESCRIPTION": "Deal !D! damage. NL Finisher: Apply vulnerable equal to your Combo. "
+		"DESCRIPTION": "Deal !D! damage. NL Finisher: Apply Vulnerable equal to your Combo. "
 	},
 	"SolarFlare": {
 		"NAME": "Solar Flare",
@@ -204,6 +239,6 @@
 	},
 	"GenkiDama": {
 		"NAME": "Genki Dama",
-		"DESCRIPTION": "Consume up to !M! Ki and deal that much damage to all enemies. NL Gain 2 Weakened."
+		"DESCRIPTION": "Consume up to !M! Ki and deal that much damage to all enemies. NL Gain 2 Weak."
 	}
 }

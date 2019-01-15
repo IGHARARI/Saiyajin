@@ -1,7 +1,7 @@
 {
-  "SaiyanBlood": {
-    "NAME": "Saiyan Blood",
-    "FLAVOR": "Saiyan blood courses through your veins",
+  "SaiyanSoul": {
+    "NAME": "Saiyan Soul",
+    "FLAVOR": "Saiyan blood courses through your veins, your soul too hungers for power.",
     "DESCRIPTIONS": ["Gain 4 Ki Regen at start of battle.",
     				"When a debuff applied to you expires gain NL 1 MaxHP and 3 TempHP up to 3 times per battle.",
     				 "Gain 4 Ki Regen at start of battle. Max 3x per battle, grow when a debuff expires."]

@@ -13,10 +13,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.cards.utils.PowersHelper;
 import sts.saiyajin.core.Saiyajin;
 import sts.saiyajin.ui.PowerPaths;
+import sts.saiyajin.utils.PowerNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class BurningSoulPower extends AbstractPower {
 	public static final String POWER_ID = PowerNames.BURNING_SOUL;

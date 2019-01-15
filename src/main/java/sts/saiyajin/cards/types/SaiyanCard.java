@@ -17,9 +17,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import sts.saiyajin.cards.utils.DescriptionStrings;
-import sts.saiyajin.cards.utils.PowerNames;
-import sts.saiyajin.cards.utils.PowersHelper;
+import sts.saiyajin.utils.DescriptionStrings;
+import sts.saiyajin.utils.PowerNames;
+import sts.saiyajin.utils.PowersHelper;
 
 public class SaiyanCard extends CustomCard {
 	
@@ -30,7 +30,9 @@ public class SaiyanCard extends CustomCard {
 		super(id, name, img, cost, rawDescription, type, color, rarity, target);
 	}
 	
-	protected int kiRequired = 0;
+	public int kiRequired = 0;
+	public int kiVariable = 0;
+	public boolean kiVarUpgraded = false;
 	
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -70,6 +72,7 @@ public class SaiyanCard extends CustomCard {
 	public static boolean canUseKiCard(CustomCard c, boolean superCanUse, int kiRequired) {
 		if (kiRequired == 0) return superCanUse;
 		if (!superCanUse) return false;
+		if (AbstractDungeon.player.hasPower(PowerNames.PRESS_ON)) return true;
 		if (AbstractDungeon.player.hasPower(PowerNames.KI)){
 			int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
 			if (kiPower >= kiRequired) return true;
@@ -78,6 +81,15 @@ public class SaiyanCard extends CustomCard {
 		return false;
 	}
 
+	protected void upgradeKiRequired(int amountToAdd) {
+		kiRequired += amountToAdd;
+	}
+
+	protected void upgradeKiVariable(int amountToAdd) {
+		kiVariable += amountToAdd;
+		kiVarUpgraded = true;
+	}
+	
 	@Override
 	public void upgrade() {
 	}

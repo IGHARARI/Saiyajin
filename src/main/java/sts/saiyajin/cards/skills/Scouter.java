@@ -12,17 +12,17 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.cards.utils.CardColors;
-import sts.saiyajin.cards.utils.CardNames;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.CardColors;
+import sts.saiyajin.utils.CardNames;
 
 public class Scouter extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.SCOUTER);
 
 	private static final int COST = 1;
-	private static final int BASE_BLOCK = 4;
+	private static final int BASE_BLOCK = 5;
 	private static final int UPGRADE_BLOCK = 3;
 	private static final int EXTRA_BLOCK = 4;
 	private static final int KI_CONSUMPTION = 8;
@@ -35,8 +35,9 @@ public class Scouter extends SaiyanCard {
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.ENEMY);
 		kiRequired = KI_CONSUMPTION;
-		baseMagicNumber = KI_CONSUMPTION;
-		magicNumber = KI_CONSUMPTION;
+		kiVariable = KI_CONSUMPTION;
+		baseMagicNumber = EXTRA_BLOCK;
+		magicNumber = EXTRA_BLOCK;
 		this.baseBlock = BASE_BLOCK;
 	}
 
@@ -53,9 +54,14 @@ public class Scouter extends SaiyanCard {
 		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiRequired));
 	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new NextTurnBlockPower(player, this.block, this.name), this.block));
-	    if (monster != null && !(monster.intent == AbstractMonster.Intent.ATTACK || monster.intent == AbstractMonster.Intent.ATTACK_BUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEBUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEFEND)){
-	    	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, EXTRA_BLOCK));
-		    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new NextTurnBlockPower(player, EXTRA_BLOCK, this.name), EXTRA_BLOCK));
+	    if (monsterIsNotAttacking(monster)){
+	    	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, magicNumber));
+		    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new NextTurnBlockPower(player, magicNumber, this.name), magicNumber));
 	    }
+	}
+
+	private boolean monsterIsNotAttacking(AbstractMonster monster) {
+		return (monster != null && !(monster.intent == AbstractMonster.Intent.ATTACK || monster.intent == AbstractMonster.Intent.ATTACK_BUFF || 
+				monster.intent == AbstractMonster.Intent.ATTACK_DEBUFF || monster.intent == AbstractMonster.Intent.ATTACK_DEFEND));
 	}
 }
