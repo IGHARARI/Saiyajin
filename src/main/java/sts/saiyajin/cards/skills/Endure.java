@@ -43,18 +43,17 @@ public class Endure extends SaiyanCard {
 	}
 	
 	@Override
-	public void hover() {
-		super.hover();
+	public void applyPowers() {
 		this.baseBlock = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
+		super.applyPowers();
 	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
-	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, kiPower));
+	    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
 	    if (kiPower>0) {
-	    	int block = applyPowerOnBlockHelper(kiPower);
-	    	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, block));
+	    	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiPower));
 	    }
 	    
 	}

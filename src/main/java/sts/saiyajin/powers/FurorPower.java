@@ -29,8 +29,12 @@ public class FurorPower extends AbstractPower implements OnApplyPowerActionSubsc
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 	final Logger logger = LogManager.getLogger(FurorPower.class);
+	public int kiToRegen;
 	
 	public FurorPower(AbstractCreature owner, int amount) {
+		this(owner, amount, 0);
+	}
+	public FurorPower(AbstractCreature owner, int amount, int kiToRegen) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -42,13 +46,10 @@ public class FurorPower extends AbstractPower implements OnApplyPowerActionSubsc
 		this.canGoNegative = false;
 	}
 	
-	
-	
 	@Override
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
 	}
-
 
 	@Override
 	public void onApplyPowerAction(AbstractCreature target, AbstractCreature source, AbstractPower powerToApply, int stackAmount, boolean isFast, AttackEffect effect) {

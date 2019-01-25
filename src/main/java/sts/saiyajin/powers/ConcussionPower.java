@@ -3,7 +3,10 @@ package sts.saiyajin.powers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -14,14 +17,10 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
 
-public class ConcussionPower
-  extends AbstractPower
-{
+public class ConcussionPower extends AbstractPower implements HealthBarRenderPower {
 	public static final String POWER_ID = PowerNames.CONCUSSION;
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(PowerNames.CONCUSSION);
 	public static final String NAME = powerStrings.NAME;
@@ -58,4 +57,15 @@ public class ConcussionPower
     public void atEndOfRound() {
         stackPower(1);
     }
+
+	@Override
+	public Color getColor() {
+		//Somewhat orange-y cream color.
+		return Color.TAN;
+	}
+
+	@Override
+	public int getHealthBarAmount() {
+		return amount;
+	}
 }

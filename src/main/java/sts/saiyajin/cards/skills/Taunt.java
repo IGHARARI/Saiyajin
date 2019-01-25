@@ -28,7 +28,7 @@ public class Taunt extends SaiyanCard {
 		super(CardNames.TAUNT, cardStrings.NAME, CardPaths.TAUNT, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
 		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.RARE,
+		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.ENEMY);
 		this.baseMagicNumber = STR_GAIN;
 		this.magicNumber = STR_GAIN;

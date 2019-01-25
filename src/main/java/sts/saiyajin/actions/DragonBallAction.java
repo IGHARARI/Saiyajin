@@ -31,7 +31,7 @@ public class DragonBallAction extends AbstractGameAction implements basemod.help
     @Override
     public void update() {
         if (!this.isDone) {
-            this.isDone = true;
+        	this.isDone = true;
             AbstractPlayer player = AbstractDungeon.player;
             if (player.hasPower(DragonBallPower.POWER_ID) && player.getPower(DragonBallPower.POWER_ID).amount == 6){
             	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(player, player, DragonBallPower.POWER_ID));
@@ -64,8 +64,8 @@ public class DragonBallAction extends AbstractGameAction implements basemod.help
         	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, 6), 6));
             break;
         case 2:
-        	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(2));
-        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlusEnergyPower(player, 1), 1));
+        	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(3));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlusEnergyPower(player, 3), 3));
             break;
         case 3:
     		int[] damage = DamageInfo.createDamageMatrix(70);

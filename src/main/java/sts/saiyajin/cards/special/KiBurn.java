@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.KiPower;
@@ -24,7 +23,7 @@ public class KiBurn extends SaiyanCard {
 	public static final Logger logger = LogManager.getLogger(KiBurn.class);
 	
 	public KiBurn() {
-		this(5);
+		this(10);
 	}
 	
 	public KiBurn(Integer kiToBurn) {
@@ -33,8 +32,7 @@ public class KiBurn extends SaiyanCard {
 		        CardColor.COLORLESS,
 		        AbstractCard.CardRarity.SPECIAL,
 		        AbstractCard.CardTarget.NONE);
-		this.baseMagicNumber = kiToBurn;
-		this.magicNumber = kiToBurn;
+		this.baseMagicNumber = this.magicNumber = kiToBurn;
 		this.isEthereal = true;
 	}
 	
@@ -43,13 +41,5 @@ public class KiBurn extends SaiyanCard {
 		super.triggerWhenDrawn();
 		AbstractPlayer player = AbstractDungeon.player;
 		AbstractDungeon.actionManager.addToTop(new ReducePowerAction(player, player, KiPower.POWER_ID, magicNumber));
-	}
-	
-	@Override
-	public void upgrade() {
-	}
-
-	@Override
-	public void use(AbstractPlayer player, AbstractMonster monster) {
 	}
 }

@@ -62,19 +62,7 @@ public class BackAttack extends ComboFinisher {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 		int comboChain = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
 		if (comboChain > 0) {
-			//AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, magicNumber));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new WeakPower(monster, comboChain, false), comboChain));
 		}
 	}
-
-	@Override
-	public void updatedComboChain() {
-		//magicNumber = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) - magicNumber;
-	}
-
-	@Override
-	public void resetComboChain() {
-		//magicNumber = 0;
-	}
-
 }

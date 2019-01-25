@@ -50,23 +50,20 @@ public class PowerPole extends SaiyanCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		int originalDamage = this.baseDamage;
 		ArrayList<AbstractMonster> orderedMonsters = new ArrayList<AbstractMonster>();
 		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
 			if (m.isDeadOrEscaped()) continue;
 			orderedMonsters.add(m);
 		}
 		orderedMonsters.sort((m1,m2) -> Math.round((m1.drawX - m2.drawX)*100));
-		
+		int attackMultiplier = 1;
 		for (AbstractMonster m : orderedMonsters) {
-			logger.info("Monster " + m.name + " is at drawX: " + m.drawX);
-			DamageInfo info = new DamageInfo(player, this.damage);
-			info.applyPowers(player, m);
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m, info, AttackEffect.SLASH_HORIZONTAL, true));
-			this.baseDamage = this.baseDamage*2;
-			applyPowers();
+			DamageInfo tempInfo = new DamageInfo(player, this.baseDamage);
+			tempInfo.applyPowers(player, m);
+			DamageInfo actualDamageInfo = new DamageInfo(player, tempInfo.output * attackMultiplier);
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m, actualDamageInfo, AttackEffect.SLASH_HORIZONTAL, true));
+			attackMultiplier *= 2;
 		}
-		this.baseDamage = originalDamage;
 		applyPowers();
 	}
 

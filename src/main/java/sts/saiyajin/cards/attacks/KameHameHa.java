@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,7 +17,6 @@ import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import sts.saiyajin.cards.types.ComboFinisher;
 import sts.saiyajin.powers.ComboPower;
-import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
@@ -30,8 +28,8 @@ public class KameHameHa extends ComboFinisher {
 	private static final int COST = 3;
 	private static final int BASE_DAMAGE = 20; 
 	private static final int UPGRADE_DAMAGE = 8; 
-	private static final int KI_COST = 20; 
-	private static final int UPGRADED_KI_COST = -10; 
+	private static final int KI_COST = 16; 
+	private static final int UPGRADED_KI_COST = -6; 
 	
 	final Logger logger = LogManager.getLogger(KameHameHa.class);
 	
@@ -63,20 +61,18 @@ public class KameHameHa extends ComboFinisher {
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal), 0.1f));
 		DamageInfo damageInfo = new DamageInfo(player, this.damage, this.damageTypeForTurn);
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, damageInfo, AttackEffect.BLUNT_HEAVY));
-		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, magicNumber));
 	}
 
 	@Override
-	public void updatedComboChain() {
-		//+1 as this is triggered before the power is finally applied
+	public void onComboUpdated() {
+		//I do +1 as this is triggered before the Combo is actually applied
 		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) + 1;
-		logger.info("Combo amount on kame update: " + comboAmt);
 		this.modifyCostForCombat(COST - this.cost - comboAmt);
-		//Current cost is this.cost so the result is COST - combo
+		//Current cost is this.cost so the result of the #math is (COST - combo)
 	}
 
 	@Override
-	public void resetComboChain() {
+	public void onComboRemoved() {
 		int costDiff = COST - this.cost; 
 		this.modifyCostForCombat(costDiff);
 	}

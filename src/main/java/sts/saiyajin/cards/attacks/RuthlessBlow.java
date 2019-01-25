@@ -25,8 +25,7 @@ public class RuthlessBlow extends ComboFinisher {
 
 	private static final int COST = 1;
 	private static final int UPGRADED_COST = 0;
-	private static final int BASE_DAMAGE = 6;
-	private static final int UPGRADE_DAMAGE = 3;
+	private static final int BASE_DAMAGE = 5;
 	
 	public RuthlessBlow() {
 		super(CardNames.RUTHLESS_BLOW, cardStrings.NAME, CardPaths.RUTHLESS_BLOW, COST, cardStrings.DESCRIPTION, 
@@ -41,7 +40,6 @@ public class RuthlessBlow extends ComboFinisher {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADE_DAMAGE);
 			upgradeBaseCost(UPGRADED_COST);
 		}
 	}
@@ -54,13 +52,4 @@ public class RuthlessBlow extends ComboFinisher {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, comboChain, false), comboChain));
 		}
 	}
-
-	@Override
-	public void updatedComboChain() {
-	}
-
-	@Override
-	public void resetComboChain() {
-	}
-
 }

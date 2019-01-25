@@ -25,7 +25,7 @@ public class GreatApeForm extends SaiyanCard
 	private static final int COST = 3;
 	private static final int KI_REGEN = 15;
 	private static final int PLATED_ARMOR = 8;
-	private static final int STR_GAIN = 3;
+	private static final int STR_GAIN = 4;
 	private static final String NEED_FULL_MOON = "The Full Moon isn't out yet...";
 	
     

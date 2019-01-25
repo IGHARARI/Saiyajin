@@ -4,7 +4,10 @@
     "EXTRA_TEXT": ["Came from the planet of the Saiyajin to destroy the Spyre."]
   },
   "character_name": {
-    "TEXT": ["Bardok"]
+    "TEXT": ["Saiyan"]
+  },
+  "HeartKillText": {
+    "TEXT": ["You ready your fists, your soul is ringing with excitement..."]
   },
   "KiCounter": {
     "TEXT": ["Ki", "This represents your current Ki."]

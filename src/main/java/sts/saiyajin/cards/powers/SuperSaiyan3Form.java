@@ -25,17 +25,20 @@ public class SuperSaiyan3Form extends SaiyanCard
 	private static final int UPGRADED_KI_REGEN = 4;
 	private static final int BASE_STR = 4;
 	private static final int UPGRADED_STR = 2;
+	private static final int BASE_TURNS_DURATION = 4;
+	private static final int UPGRADED_TURNS_DURATION = 6;
 	
     
     public SuperSaiyan3Form() {
 		super(CardNames.SUPER_SAIYAN_THREE_FORM, cardStrings.NAME, CardPaths.SUPER_SAIYAN_THREE_FORM, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.POWER,
 		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.UNCOMMON,
+		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = BASE_STR;
 		this.magicNumber = this.baseMagicNumber;
 		this.kiVariable = BASE_KI_REGEN;
+		this.misc = BASE_TURNS_DURATION;
     }
     
     @Override
@@ -43,7 +46,7 @@ public class SuperSaiyan3Form extends SaiyanCard
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiRegenPower(player, this.kiVariable), this.kiVariable));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, this.kiVariable), this.kiVariable));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, this.magicNumber), this.magicNumber));
-		for (int i = 0; i < magicNumber; i++) {
+		for (int i = 0; i < misc; i++) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new SuperSaiyanThreeDebuffPower(player, 1), 1));
 		}
     }
@@ -59,6 +62,7 @@ public class SuperSaiyan3Form extends SaiyanCard
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_STR);
             this.upgradeKiVariable(UPGRADED_KI_REGEN);
+            this.misc = UPGRADED_TURNS_DURATION;
         }
     }
 }

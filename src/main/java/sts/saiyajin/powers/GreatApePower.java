@@ -31,6 +31,7 @@ public class GreatApePower extends AbstractPower {
 		this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.GREAT_APE_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.GREAT_APE), 0, 0, 48, 48);
+        this.description = DESCRIPTIONS[0];
 	}
   
 	@Override

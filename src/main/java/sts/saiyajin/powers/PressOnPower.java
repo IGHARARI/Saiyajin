@@ -20,7 +20,6 @@ import sts.saiyajin.cards.special.KiBurn;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
-import sts.saiyajin.utils.PowersHelper;
 
 public class PressOnPower extends AbstractPower {
 
@@ -53,14 +52,13 @@ public class PressOnPower extends AbstractPower {
 	public void onUseCard(AbstractCard card, UseCardAction action) {
 		super.onUseCard(card, action);
 		if (card instanceof SaiyanCard) {
-			SaiyanCard c = (SaiyanCard) card;
-			if (c.kiRequired > PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID)) {
+			SaiyanCard saiyanCard = (SaiyanCard) card;
+			if (saiyanCard.kiRequired > 0) {
 				this.flash();
 				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new KiBurn(), 1));
 			}
 		}
 	}
-	
 	
 	@Override
 	public void updateDescription() {

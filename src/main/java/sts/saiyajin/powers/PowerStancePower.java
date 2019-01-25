@@ -31,6 +31,7 @@ public class PowerStancePower extends AbstractPower {
 		this.amount = -1;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.POWER_STANCE_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.POWER_STANCE), 0, 0, 48, 48);
+        updateDescription();
 	}
   
 	@Override

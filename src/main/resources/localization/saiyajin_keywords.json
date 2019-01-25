@@ -28,13 +28,16 @@
     "DESCRIPTION": "Stopped enemies can't take actions.'"
   },
   {
+  	"PROPER_NAME":"Ki Burn",
     "NAMES": [
       "Ki-burns",
       "ki-burns",
       "ki-burn",
-      "Ki-burn"
+      "Ki-burn",
+      "ki_burn",
+      "ki_burns"
     ],
-    "DESCRIPTION": "Ki-burns are status cards that consume your Ki when drawn."
+    "DESCRIPTION": "Ki-burns are ethereal status cards that consume Ki when drawn."
   },
   {
     "NAMES": [
@@ -56,7 +59,7 @@
       "Flight",
       "flight"
     ],
-    "DESCRIPTION": "Receive 50% less damage, lose a stack of #yFlight when you get attacked. When losing flight gain #b1 Weak."
+    "DESCRIPTION": "Receive 50% less damage, lose a stack of #yFlight when attacked. When losing flight gain #b1 Weak."
   },
   {
     "NAMES": [
@@ -95,15 +98,17 @@
   {
   	"PROPER_NAME":"Great Ape",
     "NAMES": [
-      "great-ape"
+      "great-ape",
+      "great_ape",
+      "Great_Ape"
     ],
-    "DESCRIPTION": "You are huge! When transforming gain 15 Ki Regen, 8 Plated Armor and 3 Strength."
+    "DESCRIPTION": "You are huge! NL When transforming gain 15 Ki Regen, 8 Plated Armor and 4 Strength."
   },
   {
     "NAMES": [
       "concussion"
     ],
-    "DESCRIPTION": "Deals damage at the end of every turn, and increase the stack amount by 1."
+    "DESCRIPTION": "Concussed creatures lose HP at the start of their turn. Each turn, Concussion is increased by 1."
   },
   {
     "NAMES": [

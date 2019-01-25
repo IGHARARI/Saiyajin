@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import sts.saiyajin.cards.types.ComboFinisher;
@@ -47,9 +46,9 @@ public class ExtremeSpeedPower extends AbstractPower {
 	}
 	
 	@Override
-	public void onPlayCard(AbstractCard card, AbstractMonster m) {
-		super.onPlayCard(card, m);
-		if (card instanceof ComboFinisher) {
+	public void onAfterCardPlayed(AbstractCard usedCard) {
+		super.onAfterCardPlayed(usedCard);
+		if (usedCard instanceof ComboFinisher) {
 			int comboAmount = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
 			int draw = comboAmount/2 + extraDraw;
 			if (draw > 0) {

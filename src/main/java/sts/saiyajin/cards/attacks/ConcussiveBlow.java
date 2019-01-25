@@ -22,9 +22,9 @@ public class ConcussiveBlow extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.CONCUSSIVE_BLOW);
 
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 8;
+	private static final int BASE_DAMAGE = 3;
 	private static final int UPGRADE_DAMAGE = 3;
-	private static final int CONCUSSION_STACKS = 1;
+	private static final int CONCUSSION_STACKS = 2;
 	private static final int UPGRADED_CONCUSSION_STACKS = 2;
 	
 	public ConcussiveBlow() {

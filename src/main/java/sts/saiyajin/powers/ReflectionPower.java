@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -42,9 +43,11 @@ public class ReflectionPower
 		this.owner = owner;
 		this.amount = amount;
 		this.justApplied = justApplied;
+		this.type = PowerType.BUFF;
         this.isTurnBased = true;
 		this.description = DESCRIPTIONS[0];
-		this.img = new Texture(PowerPaths.REFLECTION);
+        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.REFLECTION_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.REFLECTION), 0, 0, 48, 48);
 	}
   
 	@Override

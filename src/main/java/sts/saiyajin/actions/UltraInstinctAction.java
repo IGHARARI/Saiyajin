@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import sts.saiyajin.powers.DodgePower;
@@ -21,35 +22,33 @@ public class UltraInstinctAction extends AbstractGameAction {
     
     public UltraInstinctAction(final AbstractPlayer p, final int amount, final boolean freeToPlayOnce, final int energyOnUse) {
         this.freeToPlayOnce = false;
-        this.energyOnUse = -1;
         this.amount = amount;
         this.p = p;
         this.freeToPlayOnce = freeToPlayOnce;
-        this.duration = Settings.ACTION_DUR_XFAST;
+        this.duration = Settings.ACTION_DUR_FASTER;
         this.actionType = ActionType.SPECIAL;
         this.energyOnUse = energyOnUse;
     }
     
     @Override
     public void update() {
-        int effect = EnergyPanel.totalCount;
-        if (this.energyOnUse != -1) {
-            effect = this.energyOnUse;
+        if (this.duration == Settings.ACTION_DUR_FASTER) {
+	        int effect = this.energyOnUse;
+	        if (this.p.hasRelic(ChemicalX.ID)) {
+	            effect += 2;
+	            this.p.getRelic(ChemicalX.ID).flash();
+	        }
+	        if (effect > 0) {
+	            for (int i = 0; i < effect; ++i) {
+	            	logger.info("Applying dodge amount: " + amount);
+	                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new DodgePower(p, amount), amount));
+	            }
+	            if (!this.freeToPlayOnce) {
+	                this.p.energy.use(EnergyPanel.totalCount);
+	            }
+	        }
         }
-        if (this.p.hasRelic("Chemical X")) {
-            effect += 2;
-            this.p.getRelic("Chemical X").flash();
-        }
-        if (effect > 0) {
-            for (int i = 0; i < effect; ++i) {
-            	logger.info("Applying dodge amount: " + amount);
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new DodgePower(p), amount));
-            }
-            if (!this.freeToPlayOnce) {
-                this.p.energy.use(EnergyPanel.totalCount);
-            }
-        }
-        this.isDone = true;
+        this.tickDuration();
     }
 
     

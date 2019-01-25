@@ -57,6 +57,8 @@ public abstract class CardNames {
 	public static final String SUPER_SAIYAN_THREE_FORM = "SuperSaiyanThree";
 	public static final String ULTRA_INSTINCT = "UltraInstinct";
 	public static final String POWER_POLE = "PowerPole";
+	public static final String REVERBERATING_FORCE = "ReverberatingForce";
+	public static final String SOUL_SPICE = "SoulSpice";
 	
 	/**
 	 * RARES
@@ -68,6 +70,9 @@ public abstract class CardNames {
 	public static final String MEDICINE = "Medicine";
 	public static final String MAJIN_SEAL = "MajinSeal";
 	public static final String REKINDLE = "Rekindle";
+	public static final String THE_BOMB = "Saiyan:TheBomb";
+	public static final String TRANSFIGURATION_BEAM = "TransfigurationBeam";
+	public static final String MOMENTUM = "Momentum";
 
 	
 	

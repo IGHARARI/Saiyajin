@@ -41,15 +41,14 @@ public class ComboPower extends AbstractPower {
 	
 	@Override
 	public void onRemove() {
-		logger.info("ON REMOVE CALLED FOR COMBO");
 		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-			if (c instanceof ComboFinisher) ((ComboFinisher) c).resetComboChain();
+			if (c instanceof ComboFinisher) ((ComboFinisher) c).onComboRemoved();
 		}
 		for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-			if (c instanceof ComboFinisher) ((ComboFinisher) c).resetComboChain();
+			if (c instanceof ComboFinisher) ((ComboFinisher) c).onComboRemoved();
 		}
 		for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-			if (c instanceof ComboFinisher) ((ComboFinisher) c).resetComboChain();
+			if (c instanceof ComboFinisher) ((ComboFinisher) c).onComboRemoved();
 		}
 	}
 	

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import sts.saiyajin.actions.FurorUpgradeAction;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.FurorPower;
 import sts.saiyajin.ui.CardPaths;
@@ -34,6 +35,9 @@ public class Furor extends SaiyanCard {
     @Override
     public void use(final AbstractPlayer player, final AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new FurorPower(player, 1), 1));
+		if (upgraded) {
+			AbstractDungeon.actionManager.addToBottom(new FurorUpgradeAction(kiVariable));
+		}
     }
     
     @Override

@@ -27,7 +27,7 @@ public class Overexert extends SaiyanCard {
 	private static final int BASE_STR_GAIN = 2;
 	private static final int KI_GAIN = 20;
 	private static final int UPGRADE_STR_GAIN = 1;
-	private int KI_BURNS = 2;
+	private static final int KI_BURNS = 2;
 	
 	
 	public Overexert() {
@@ -36,8 +36,7 @@ public class Overexert extends SaiyanCard {
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
-		baseMagicNumber = BASE_STR_GAIN;
-		magicNumber = baseMagicNumber;
+		magicNumber = baseMagicNumber = BASE_STR_GAIN;
 		this.exhaust = true;
 	}
 
@@ -46,9 +45,6 @@ public class Overexert extends SaiyanCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_STR_GAIN);
-			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-			this.initializeDescription();
-			KI_BURNS = 1;
 		}
 	}
 	

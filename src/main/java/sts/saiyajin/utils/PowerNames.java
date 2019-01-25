@@ -27,9 +27,13 @@ public abstract class PowerNames {
 	public static final String EXTREME_SPEED = "ExtremeSpeed";
 	public static final String ENERGY_PLUS = "EnergyPlus";
 
+	
 	public static final String DODGE = "Dodge";
 	public static final String MAJIN_SEAL = "MajinSeal";
 	public static final String SS3_DEBUFF = "SuperSaiyanThreeDebuff";
 	public static final String FUROR = "Furor";
 	public static final String PRESS_ON = "PressOn";
+	public static final String SOUL_SPICE = "SoulSpice";
+	public static final String REVERB_HIT = "ReverbHit";
+	public static final String MOMENTUM = "Momentum";
 }

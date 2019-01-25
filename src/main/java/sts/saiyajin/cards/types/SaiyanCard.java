@@ -43,7 +43,7 @@ public class SaiyanCard extends CustomCard {
 	@SpireOverride
 	protected void renderEnergy(final SpriteBatch sb) {
 		SpireSuper.call(sb);
-		if (kiRequired > 0) {
+		if (this.kiRequired > 0) {
 			final float drawX = this.current_x - 290.0f;
 			final float drawY = this.current_y - 280.0f;
 			sb.setColor(Color.valueOf("fce9b5"));//CardProperties.SAIYAN_CARD_RENDER_COLOR);
@@ -54,13 +54,16 @@ public class SaiyanCard extends CustomCard {
 				ExceptionHandler.handleException(e, logger);
 			}
 			Color costColor = Color.valueOf("f0f291");
-//		Color costColor = new Color();
-//        Color.rgb888ToColor(costColor, Color.rgb888(250, 250, 195));//Color.WHITE.cpy();
 			if (AbstractDungeon.player != null && AbstractDungeon.player.hand.contains(this) && !canUseKiCard(this, true, this.kiRequired)) {
 				costColor = Color.FIREBRICK.cpy();
 			}
+			int kiCost = this.kiRequired;
+			if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(PowerNames.PRESS_ON) && !AbstractDungeon.getCurrRoom().isBattleOver) {
+				kiCost = 0;
+				costColor = Color.LIME;
+			}
 			costColor.a = this.transparency;
-			final String text = String.valueOf(this.kiRequired);
+			final String text = String.valueOf(kiCost);
 			FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale * 0.72f);
 			final BitmapFont font = FontHelper.cardEnergyFont_L;
 			if ((this.type != CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != CardColor.CURSE || this.cardID.equals("Pride"))) {
@@ -91,11 +94,8 @@ public class SaiyanCard extends CustomCard {
 	}
 	
 	@Override
-	public void upgrade() {
-	}
+	public void upgrade() {}
 
 	@Override
-	public void use(AbstractPlayer p0, AbstractMonster p1) {
-	}
-
+	public void use(AbstractPlayer player, AbstractMonster monster) {}
 }

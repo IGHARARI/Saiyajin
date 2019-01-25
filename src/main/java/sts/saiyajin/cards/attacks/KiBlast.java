@@ -24,9 +24,9 @@ public class KiBlast extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.KI_BLAST);
 	private static final int COST = 0;
 	private static final int BASE_DAMAGE = 4; 
-	private static final int UPGRADE_DAMAGE = 2; 
+	private static final int UPGRADE_DAMAGE = 1; 
 	private static final int BASE_KI_COST = 8;
-	private static final int UPGRADED_KI_COST = -4;
+	private static final int UPGRADED_KI_COST = -2;
 	
 	public KiBlast() {
 		super(CardNames.KI_BLAST, cardStrings.NAME, CardPaths.KI_BLAST, COST, cardStrings.DESCRIPTION, 
@@ -53,15 +53,16 @@ public class KiBlast extends SaiyanCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		int kiPower = PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID);
-		int extraDamage = 0;
+		this.baseDamage = BASE_DAMAGE;
+		if (this.upgraded) this.baseDamage += UPGRADE_DAMAGE;
 		if (kiPower >= this.magicNumber){
-			extraDamage = 2; 
+			this.baseDamage += 2; 
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, magicNumber));
 		}
-		int originalDamage = this.baseDamage;
-		this.baseDamage += extraDamage;
-		applyPowers();
-		calculateCardDamage(null);
+		this.calculateCardDamage(null);
+		String dmg = "multidamage damage: ";
+		for (int i : this.multiDamage) {dmg += " " + i + " ";}
+		logger.info(dmg);
 		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(player, this.multiDamage, damageTypeForTurn, AttackEffect.SLASH_HORIZONTAL);
 		AbstractDungeon.actionManager.addToBottom(damageAction);
 		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters){
@@ -69,8 +70,6 @@ public class KiBlast extends SaiyanCard {
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.06f));
 		}
 		PowersHelper.startCombo();
-		
-		this.baseDamage = originalDamage;
 	}
 
 }

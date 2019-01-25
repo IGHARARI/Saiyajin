@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.MinionPower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.RevivePower;
@@ -48,7 +49,7 @@ public class SenzuBean extends SaiyanCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		if (!monster.hasPower(PowerNames.CANT_REVIVE) && !monster.hasPower(PowerNames.REVIVE)){
+		if (!monster.hasPower(MinionPower.POWER_ID) && !monster.hasPower(PowerNames.CANT_REVIVE) && !monster.hasPower(PowerNames.REVIVE)){
 			if (!this.upgraded){
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new RevivePower(monster, this.magicNumber), 1));
 			} else {

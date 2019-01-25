@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
@@ -26,9 +24,9 @@ public class DoubleMasenko extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.DOUBLE_MASENKO);
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 12; 
-	private static final int UPGRADE_DAMAGE = 6; 
-	private static final int KI_COST = 10; 
+	private static final int BASE_DAMAGE = 10; 
+	private static final int UPGRADE_DAMAGE = 4; 
+	private static final int KI_COST = 12; 
 	
 	final Logger logger = LogManager.getLogger(DoubleMasenko.class);
 	
@@ -68,7 +66,5 @@ public class DoubleMasenko extends SaiyanCard {
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(mon2, info, AttackEffect.SLASH_DIAGONAL));
 			
 		}
-		
-	    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
 	}
 }

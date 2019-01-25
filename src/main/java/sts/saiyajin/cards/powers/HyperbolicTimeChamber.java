@@ -1,7 +1,6 @@
 package sts.saiyajin.cards.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import sts.saiyajin.cards.special.Training;
+import sts.saiyajin.actions.TrainingAction;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
@@ -32,8 +31,7 @@ public class HyperbolicTimeChamber extends SaiyanCard
     
     @Override
     public void use(final AbstractPlayer player, final AbstractMonster m) {
-//    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new TrainingPower(player)));
-    	AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new Training(2)));
+    	AbstractDungeon.actionManager.addToTop(new TrainingAction(2));
     	for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
     		if (mon.isDeadOrEscaped()) continue;
     		AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(mon, player, 2));

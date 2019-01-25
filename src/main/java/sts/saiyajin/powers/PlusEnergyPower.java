@@ -20,7 +20,6 @@ public class PlusEnergyPower extends AbstractPower {
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 	
-	public static final int ENERGY_GAIN_PER_STACK = 2;
 
 	final Logger logger = LogManager.getLogger(PlusEnergyPower.class);
 	
@@ -31,6 +30,7 @@ public class PlusEnergyPower extends AbstractPower {
 		this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.ENERGY_PLUS_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.ENERGY_PLUS), 0, 0, 48, 48);
+        this.updateDescription();
 	}
   
 	@Override
@@ -40,6 +40,6 @@ public class PlusEnergyPower extends AbstractPower {
   
 	@Override
 	public void atStartOfTurnPostDraw() {
-		AbstractDungeon.player.gainEnergy(this.amount * ENERGY_GAIN_PER_STACK);
+		AbstractDungeon.player.gainEnergy(this.amount);
 	}
 }

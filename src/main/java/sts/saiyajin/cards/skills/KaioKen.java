@@ -31,9 +31,8 @@ public class KaioKen extends SaiyanCard {
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.BASIC,
 		        AbstractCard.CardTarget.SELF);
-		exhaust = true;
-		baseMagicNumber = KI_GAIN;
-		magicNumber = baseMagicNumber;
+		this.exhaust = true;
+		this.magicNumber = this.baseMagicNumber = KI_GAIN;
 	}
 
 	@Override

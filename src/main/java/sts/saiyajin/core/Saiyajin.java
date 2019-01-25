@@ -19,7 +19,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -38,7 +37,7 @@ public class Saiyajin extends CustomPlayer {
 	private static final int MAX_HP = 50;
 	private static final int STARTING_HP = MAX_HP;
 	private static final int STARTING_GOLD = 77;
-	private static final int HAND_SIZE = 6;
+	private static final int BASE_HAND_SIZE = 6;
 	private static final int ASCENSION_MAX_HP_LOSS = 5;
 	private static final int BASE_KI = 20;
 	private int maxKi;
@@ -91,7 +90,6 @@ public class Saiyajin extends CustomPlayer {
 		starterDeck.add(CardNames.STRIKE);
 		starterDeck.add(CardNames.STRIKE);
 		starterDeck.add(CardNames.STRIKE);
-		starterDeck.add(CardNames.STRIKE);
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.DEFEND);
 		starterDeck.add(CardNames.DEFEND);
@@ -122,7 +120,7 @@ public class Saiyajin extends CustomPlayer {
 	        MAX_HP,
 	        0,
 	        STARTING_GOLD,
-	        HAND_SIZE,
+	        BASE_HAND_SIZE,
 	        this,
 	        getStartingRelics(),
 	        getStartingDeck(),
@@ -182,7 +180,8 @@ public class Saiyajin extends CustomPlayer {
 	}
 	@Override
 	public String getSpireHeartText() {
-		return com.megacrit.cardcrawl.events.beyond.SpireHeart.DESCRIPTIONS[10];
+		UIStrings charDescription = CardCrawlGame.languagePack.getUIString("HeartKillText");
+		return charDescription.TEXT[0];
 	}
 	@Override
 	public Color getSlashAttackColor() {
@@ -191,12 +190,13 @@ public class Saiyajin extends CustomPlayer {
 	@Override
 	public AttackEffect[] getSpireHeartSlashEffect() {
 	    return new AttackEffect[]{
-	            AttackEffect.SLASH_HEAVY,
-	            AttackEffect.FIRE,
+	            AttackEffect.BLUNT_LIGHT,
+	            AttackEffect.BLUNT_LIGHT,
+	            AttackEffect.BLUNT_LIGHT,
+	            AttackEffect.BLUNT_LIGHT,
+	            AttackEffect.BLUNT_HEAVY,
 	            AttackEffect.SLASH_DIAGONAL,
-	            AttackEffect.SLASH_HEAVY,
 	            AttackEffect.FIRE,
-	            AttackEffect.SLASH_DIAGONAL
 	        };
 	}
 	@Override

@@ -68,6 +68,10 @@ public class Training extends SaiyanCard {
 		}
 	}
 	
+	public void addTrainingTurns(int turnsToAdd) {
+		this.upgradeMagicNumber(turnsToAdd);
+	}
+	
 	@Override
 	public void triggerOnEndOfPlayerTurn() {
 	}

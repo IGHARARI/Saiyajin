@@ -9,11 +9,24 @@
 	},
 	"EnergyBlast": {
 		"NAME": "Energy Blast",
-		"DESCRIPTION": "Deal !D! damage to all enemies. NL Ki-Enhanced( !M! ) deal 2 more damage. NL Starter."
+		"DESCRIPTION": "Starter. NL Deal !D! damage to ALL enemies. NL Ki-Enhanced( !M! ) deal 2 more damage."
+	},
+	"SoulSpice": {
+		"NAME": "Soul Spice",
+		"DESCRIPTION": "Whenever you exhaust a Status card gain !M! Strength."
+	},
+	"TransfigurationBeam": {
+		"NAME": "Chocolate Beam",
+		"DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, get a random potion. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, get a random potion."
+	},
+	"Saiyan:TheBomb": {
+		"NAME": "The Bomb",
+		"DESCRIPTION": "At the end of 3 turns, deal !M! damage to ALL enemies and increase the damage of this card by !Saiyan:Misc!. NL Exhaust"
 	},
 	"PowerUp": {
 		"NAME": "Power Up",
-		"DESCRIPTION": "Yell REALLY loud in order to gain !M! Ki and !B! block. NL Follow-up."
+		"DESCRIPTION": "Follow-up. NL Yell REALLY loud in order to gain !M! Ki and !B! block."
 	},
 	"Rekindle": {
 		"NAME": "Rekindle",
@@ -22,17 +35,17 @@
 	},
 	"PressOn": {
 		"NAME": "Press On",
-		"DESCRIPTION": "This turn you can play cards even if you don't have enough Ki. Whenever you do so, add a Ki-burn to your discard. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "This turn you can play cards even if you don't have enough Ki. Whenever you do so, add a Ki-burn to your discard."
+		"DESCRIPTION": "This turn when playing a card with a Ki cost, ignore it and add a Ki Burn into your discard instead. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "This turn when playing a card with a Ki cost, ignore it and add a Ki Burn into your discard instead."
 	},
 	"PowerStance": {
 		"NAME": "Power Stance",
 		"DESCRIPTION": "ALL your Attack cards are now also Starter.",
-		"UPGRADE_DESCRIPTION": "ALL your Attack cards are now also Starter. NL Innate."
+		"UPGRADE_DESCRIPTION": "Innate. NL ALL your Attack cards are now also Starter."
 	},
 	"Afterimage": {
 		"NAME": "Afterimage",
-		"DESCRIPTION": "Gain 1 Buffer, put !M! Daze on top of your draw pile. NL Exhaust. NL Follow-up."
+		"DESCRIPTION": "Follow-up. NL Gain 1 Buffer, put !M! Daze on top of your draw pile. NL Exhaust."
 	},
 	"HyperTimeChamber": {
 		"NAME": "The Time Chamber",
@@ -48,14 +61,13 @@
 		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. NL Finisher: Deal !D! x Combo damage to the enemy behind."
 	},
 	"Furor": {
-		"NAME": "Furor",
+		"NAME": "Defiance",
 		"DESCRIPTION": "Gain 1 Strength every time an enemy gains a buff.",
 		"UPGRADE_DESCRIPTION": "Gain !M! Strength and !Saiyan:Ki! Ki every time an enemy gains a buff."
 	},
 	"Overexert": {
 		"NAME": "Overexert",
-		"DESCRIPTION": "Gain !M! Strength and 20 Ki. Shuffle 2 Ki-burns into your draw pile. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Gain !M! Strength and 20 Ki. Shuffle 1 Ki-burn into your draw pile. NL Exhaust."
+		"DESCRIPTION": "Gain !M! Strength and 20 Ki. Shuffle 2 Ki_Burns into your draw pile. NL Exhaust."
 	},
 	"KiBurn": {
 		"NAME": "Ki Burn",
@@ -63,12 +75,12 @@
 	},
 	"DragonFist": {
 		"NAME": "Dragon Fist",
-		"DESCRIPTION": "Deal !D! damage. Exhaust a card. NL Shuffle a Wounds into your discard pile. NL Follow-up.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. Exhaust a card. NL Follow-up."
+		"DESCRIPTION": " Follow-up. NL Deal !D! damage. Exhaust a card. NL Shuffle a Ki_Burn into your discard pile.",
+		"UPGRADE_DESCRIPTION": "Follow-up. NL Deal !D! damage. Exhaust a card."
 	},
 	"Medicine": {
 		"NAME": "Medicine",
-		"DESCRIPTION": "Heal !M! HP and gain 1 Medicine."
+		"DESCRIPTION": "Gain !M! Regen and 1 Medicine."
 	},
 	"Honing": {
 		"NAME": "Honing",
@@ -77,8 +89,8 @@
 	},
 	"UltraInstinct": {
 		"NAME": "Ultra Instinct",
-		"DESCRIPTION": "Gain 25% Dodge chance X times. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Gain 25% Dodge chance X+1 times. NL Exhaust."
+		"DESCRIPTION": "Gain 25% Dodge chance X times.",
+		"UPGRADE_DESCRIPTION": "Gain 25% Dodge chance X+1 times."
 	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
@@ -98,8 +110,7 @@
 	},
 	"SuperSaiyanThree": {
 		"NAME": "Super Saiyan 3",
-		"DESCRIPTION": "Gain !Saiyan:Ki! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over 4 turns.",
-		"UPGRADE_DESCRIPTION": "Gain !Saiyan:Ki! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over 6 turns."
+		"DESCRIPTION": "Gain !Saiyan:Ki! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over !Saiyan:Misc! turns."
 	},
 	"MajinSeal": {
 		"NAME": "Majin Seal",
@@ -109,6 +120,15 @@
 		"NAME": "C.C. Capsule",
 		"DESCRIPTION": "Get a random Power, it costs 1 less Energy until played. NL Exhaust."
 	},
+	"Momentum": {
+		"NAME": "Momentum",
+		"DESCRIPTION": "Whenever you use a Finisher, only consume half of your Combo.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Whenever you use a Finisher, only consume half of your Combo."
+	},
+	"ReverberatingForce": {
+		"NAME": "Reverb Strike",
+		"DESCRIPTION": "Deal !D! damage. NL At the end of your next turn deal !D! damage. NL Finisher: Increase next turn damage by !D! x Combo."
+	},
 	"KaioKen": {
 		"NAME": "KaioKen",
 		"DESCRIPTION": "Gain !M! Ki, apply 1 Vulnerable to yourself. NL Exhaust.",
@@ -116,7 +136,7 @@
 	},
 	"MeteorDash": {
 		"NAME": "Meteor Dash",
-		"DESCRIPTION": "Deal !D! damage. NL Starter"
+		"DESCRIPTION": "Starter. NL Deal !D! damage."
 	},
 	"Endure": {
 		"NAME": "Endure",
@@ -141,12 +161,12 @@
 	},
 	"Quickening": {
 		"NAME": "Quickening",
-		"DESCRIPTION": "Consume !M! Ki. NL Gain 2 Plated Armor, apply 1 Vulnerable to all enemies. NL Starter.",
-		"UPGRADE_DESCRIPTION": "Consumes !M! Ki. NL Gain 3 Plated Armor, apply 1 Vulnerable to all enemies. NL Starter."
+		"DESCRIPTION": "Starter. NL Consume !M! Ki. NL Gain 2 Plated Armor, apply 1 Vulnerable to ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Starter. NL Consumes !M! Ki. NL Gain 3 Plated Armor, apply 1 Vulnerable to ALL enemies."
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
-		"DESCRIPTION": "Gain !M! Strength. Put a Full Moon and a Great-Ape Form in your draw pile."
+		"DESCRIPTION": "Gain !M! Strength. NL Put a Full Moon and a Great_Ape Form in your draw pile."
 	},
 	"FullMoon": {
 		"NAME": "Full Moon",
@@ -154,7 +174,7 @@
 	},
 	"GreatApeForm": {
 		"NAME": "Great Ape Form",
-		"DESCRIPTION": "Moonstruck. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Become a Great Ape."
+		"DESCRIPTION": "Moonstruck. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Become a Great_Ape."
 	},
 	"ConcussiveBlow": {
 		"NAME": "Concussive Blow",
@@ -170,7 +190,7 @@
 	},
 	"Makankosappo": {
 		"NAME": "Makankosappo",
-		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage 7 times. NL Finisher: Apply concussion equal to your combo."
+		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage !Saiyan:Misc! times. NL Finisher: Apply concussion equal to your combo."
 	},
 	"Kienzan": {
 		"NAME": "Kien-zan",
@@ -194,7 +214,7 @@
 	},
 	"Flurry": {
 		"NAME": "Flurry",
-		"DESCRIPTION": "Deal !D! damage 3 times. NL Ki-Enhanced( !M! ): hit 2 additional times. NL Follow-up."	
+		"DESCRIPTION": "Follow-up. NL Deal !D! damage 3 times. NL Ki-Enhanced( !M! ): hit 1 additional time."	
 	},
 	"ThirstForFight": {
 		"NAME": "Thirst for Battle",
@@ -203,12 +223,12 @@
 	},
 	"Teleport": {
 		"NAME": "Instant Transfer",
-		"DESCRIPTION": "Consumes !M! Ki. NL Apply 1 Vulnerable. NL Starter & Follow-up."
+		"DESCRIPTION": "Starter & Follow-up. NL Consumes !Saiyan:Ki! Ki. NL Apply !M! Vulnerable."
 	},
 	"DrainingStrike": {
-		"NAME": "Draining Strike",
-		"DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit with unblocked damage. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. Gain [E]  for each enemy hit. NL Exhaust."
+		"NAME": "Draining Force",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain [E]  for each enemy hit with unblocked damage. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain [E]  for each enemy hit. NL Exhaust."
 	},
 	"Taunt": {
 		"NAME": "Taunt",
@@ -216,7 +236,7 @@
 	},
 	"KiExplosion": {
 		"NAME": "Ki Explosion",
-		"DESCRIPTION": "Consumes 10 Ki. NL Gain !B! block and !M! Ki-Barrier. "
+		"DESCRIPTION": "Folow-up. NL Consumes !Saiyan:Ki! Ki. NL Gain !B! block and !M! Ki-Barrier. "
 	},
 	"RuthlessBlow": {
 		"NAME": "Ruthless Blow",
@@ -225,7 +245,7 @@
 	"SolarFlare": {
 		"NAME": "Solar Flare",
 		"DESCRIPTION": "Consume !M! Ki. NL Stun an enemy for 1 turn. ",
-		"UPGRADE_DESCRIPTION": "Consumes !M! Ki. NL Stun All enemies for 1 turn."
+		"UPGRADE_DESCRIPTION": "Consumes !M! Ki. NL Stun ALL enemies for 1 turn."
 	},
 	"SuperSaiyanForm": {
 		"NAME": "Super Saiyan Form",
@@ -239,6 +259,6 @@
 	},
 	"GenkiDama": {
 		"NAME": "Genki Dama",
-		"DESCRIPTION": "Consume up to !M! Ki and deal that much damage to all enemies. NL Gain 2 Weak."
+		"DESCRIPTION": "Consume up to !M! Ki and deal that much damage to ALL enemies (currently !D! ). NL Gain !Saiyan:Misc! Weak."
 	}
 }

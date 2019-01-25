@@ -1,6 +1,6 @@
 package sts.saiyajin.cards.skills;
 
-import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.unique.RegenAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
@@ -22,7 +22,7 @@ public class Medicine extends SaiyanCard {
 
 	private static final int COST = 1;
 	private static final int HEAL = 2;
-	private static final int UPGRADED_HEAL = 2;
+	private static final int UPGRADED_HEAL = 1;
 	
 	
 	public Medicine() {
@@ -48,7 +48,7 @@ public class Medicine extends SaiyanCard {
 		AbstractCard c = this.makeCopy();
 		CardGroup cg = new CardGroup(CardGroupType.UNSPECIFIED);
 		cg.addToBottom(c);
-		AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new  RegenAction(player, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new MedicineAction());
 	}
 }

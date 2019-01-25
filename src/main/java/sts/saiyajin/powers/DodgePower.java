@@ -27,9 +27,14 @@ public class DodgePower extends AbstractPower {
 	final Logger logger = LogManager.getLogger(DodgePower.class);
 	
 	public DodgePower(AbstractCreature owner) {
+		this(owner, 1);
+	}
+	
+	public DodgePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
+		this.amount = amount;
 		this.type = AbstractPower.PowerType.BUFF;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.DODGE_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.DODGE), 0, 0, 48, 48);

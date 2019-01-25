@@ -11,7 +11,9 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -29,6 +31,7 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
@@ -47,16 +50,20 @@ import sts.saiyajin.cards.attacks.Kienzan;
 import sts.saiyajin.cards.attacks.Makankosappo;
 import sts.saiyajin.cards.attacks.MeteorDash;
 import sts.saiyajin.cards.attacks.PowerPole;
+import sts.saiyajin.cards.attacks.ReverberatingForce;
 import sts.saiyajin.cards.attacks.RuthlessBlow;
 import sts.saiyajin.cards.attacks.SpiritSword;
 import sts.saiyajin.cards.attacks.Strike;
+import sts.saiyajin.cards.attacks.TransfigurationBeam;
 import sts.saiyajin.cards.powers.BurningSoul;
 import sts.saiyajin.cards.powers.Furor;
 import sts.saiyajin.cards.powers.GreatApeForm;
 import sts.saiyajin.cards.powers.HyperbolicTimeChamber;
 import sts.saiyajin.cards.powers.MajinSeal;
+import sts.saiyajin.cards.powers.Momentum;
 import sts.saiyajin.cards.powers.MonkeyTail;
 import sts.saiyajin.cards.powers.PowerStance;
+import sts.saiyajin.cards.powers.SoulSpice;
 import sts.saiyajin.cards.powers.SuperSaiyan3Form;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
@@ -79,24 +86,29 @@ import sts.saiyajin.cards.skills.Overexert;
 import sts.saiyajin.cards.skills.PowerUp;
 import sts.saiyajin.cards.skills.PressOn;
 import sts.saiyajin.cards.skills.Quickening;
+import sts.saiyajin.cards.skills.Rekindle;
 import sts.saiyajin.cards.skills.SaiyanHubris;
 import sts.saiyajin.cards.skills.Scouter;
 import sts.saiyajin.cards.skills.SenzuBean;
 import sts.saiyajin.cards.skills.SolarFlare;
 import sts.saiyajin.cards.skills.Taunt;
+import sts.saiyajin.cards.skills.TheBomb;
 import sts.saiyajin.cards.skills.ThirstForFight;
 import sts.saiyajin.cards.skills.UltraInstinct;
 import sts.saiyajin.cards.special.KiBurn;
 import sts.saiyajin.cards.special.Training;
 import sts.saiyajin.cards.types.ComboFinisher;
+import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.KiPower;
-import sts.saiyajin.relics.SaiyanSoul;
 import sts.saiyajin.relics.SaiyanHeart;
+import sts.saiyajin.relics.SaiyanSoul;
 import sts.saiyajin.ui.CharacterSelection;
 import sts.saiyajin.ui.KiDynamicVariable;
+import sts.saiyajin.ui.MiscDynamicVariable;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
+import sts.saiyajin.utils.PowerNames;
 import sts.saiyajin.utils.RelicNames;
 
 @SpireInitializer
@@ -109,7 +121,8 @@ public class SaiyaMod implements
 	PostBattleSubscriber,
 	OnStartBattleSubscriber,
 	PostPowerApplySubscriber,
-	EditKeywordsSubscriber
+	EditKeywordsSubscriber,
+	OnCardUseSubscriber
 //	RenderSubscriber,
 //	PostInitializeSubscriber
 	{
@@ -206,6 +219,7 @@ public class SaiyaMod implements
     	 */
     	logger.info("Adding Ki Dynamic variable");
     	BaseMod.addDynamicVariable(new KiDynamicVariable());
+    	BaseMod.addDynamicVariable(new MiscDynamicVariable());
     	
     	
     	logger.info("Adding cards for the Saiyan");
@@ -258,8 +272,6 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.BACK_ATTACK);
         BaseMod.addCard(new SaiyanHubris());
         UnlockTracker.unlockCard(CardNames.SAIYAN_HUBRIS);
-        BaseMod.addCard(new Makankosappo());
-        UnlockTracker.unlockCard(CardNames.MAKANKOSAPPO);
         BaseMod.addCard(new DragonFist());
         UnlockTracker.unlockCard(CardNames.DRAGON_FIST);
         BaseMod.addCard(new Furor());
@@ -268,6 +280,8 @@ public class SaiyaMod implements
         /**
          * Uncommon cards
          */
+        BaseMod.addCard(new Makankosappo());
+        UnlockTracker.unlockCard(CardNames.MAKANKOSAPPO);
         BaseMod.addCard(new ExtremeSpeed());
         UnlockTracker.unlockCard(CardNames.EXTREME_SPEED);
         BaseMod.addCard(new Endure());
@@ -300,14 +314,20 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.POWER_POLE);
         BaseMod.addCard(new UltraInstinct());
         UnlockTracker.unlockCard(CardNames.ULTRA_INSTINCT);
-        BaseMod.addCard(new SuperSaiyan3Form());
-        UnlockTracker.unlockCard(CardNames.SUPER_SAIYAN_THREE_FORM);
         BaseMod.addCard(new PressOn());
         UnlockTracker.unlockCard(CardNames.PRESS_ON);
+        BaseMod.addCard(new Taunt());
+        UnlockTracker.unlockCard(CardNames.TAUNT);
+        BaseMod.addCard(new SoulSpice());
+        UnlockTracker.unlockCard(CardNames.SOUL_SPICE);
+        BaseMod.addCard(new ReverberatingForce());
+        UnlockTracker.unlockCard(CardNames.REVERBERATING_FORCE);
 
         /**
          * RARE CARDS
          */
+        BaseMod.addCard(new SuperSaiyan3Form());
+        UnlockTracker.unlockCard(CardNames.SUPER_SAIYAN_THREE_FORM);
         BaseMod.addCard(new HyperbolicTimeChamber());
         UnlockTracker.unlockCard(CardNames.HYPER_TIME_CHAMBER);
         BaseMod.addCard(new Medicine());
@@ -316,14 +336,20 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.GENKI_DAMA);
         BaseMod.addCard(new MonkeyTail());
         UnlockTracker.unlockCard(CardNames.MONKEY_TAIL);
-        BaseMod.addCard(new Taunt());
-        UnlockTracker.unlockCard(CardNames.TAUNT);
         BaseMod.addCard(new SolarFlare());
         UnlockTracker.unlockCard(CardNames.SOLAR_FLARE);
         BaseMod.addCard(new SenzuBean());
         UnlockTracker.unlockCard(CardNames.SENZU_BEAN);
         BaseMod.addCard(new MajinSeal());
         UnlockTracker.unlockCard(CardNames.MAJIN_SEAL);
+        BaseMod.addCard(new Rekindle());
+        UnlockTracker.unlockCard(CardNames.REKINDLE);
+        BaseMod.addCard(new TheBomb());
+        UnlockTracker.unlockCard(CardNames.THE_BOMB);
+        BaseMod.addCard(new TransfigurationBeam());
+        UnlockTracker.unlockCard(CardNames.TRANSFIGURATION_BEAM);
+        BaseMod.addCard(new Momentum());
+        UnlockTracker.unlockCard(CardNames.MOMENTUM);
         
         /**
          * UNOBTAINABLE CARDS
@@ -393,15 +419,14 @@ public class SaiyaMod implements
 	@Override
 	public void receivePostPowerApplySubscriber(AbstractPower power, AbstractCreature arg1, AbstractCreature arg2) {
 		if (power instanceof ComboPower){
-			logger.info("ON APPLY COMBO AMOUNT: " + power.amount);
 			for (AbstractCard c : AbstractDungeon.player.hand.group) {
-				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
+				if (c instanceof ComboFinisher) ((ComboFinisher) c).onComboUpdated();
 			}
 			for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
+				if (c instanceof ComboFinisher) ((ComboFinisher) c).onComboUpdated();
 			}
 			for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-				if (c instanceof ComboFinisher) ((ComboFinisher) c).updatedComboChain();
+				if (c instanceof ComboFinisher) ((ComboFinisher) c).onComboUpdated();
 			}
 		}
 		
@@ -418,6 +443,21 @@ public class SaiyaMod implements
                 BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+	}
+
+	@Override
+	public void receiveCardUsed(AbstractCard cardPlayed) {
+		if (cardPlayed instanceof SaiyanCard) {
+			SaiyanCard saiyanCard = (SaiyanCard)cardPlayed;
+			if(isCardConsumingKi(saiyanCard)){
+				AbstractPlayer player = AbstractDungeon.player;
+				AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, saiyanCard.kiRequired));
+			}
+		}
+	}
+	
+	private boolean isCardConsumingKi(SaiyanCard cardPlayed) {
+		return (cardPlayed.kiRequired > 0 && !cardPlayed.freeToPlayOnce && !AbstractDungeon.player.hasPower(PowerNames.PRESS_ON));
 	}
 	
 //    @Override

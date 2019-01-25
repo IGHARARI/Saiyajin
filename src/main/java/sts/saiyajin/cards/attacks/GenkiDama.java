@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,9 +24,10 @@ public class GenkiDama extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.GENKI_DAMA);
 	private static final int COST = 2;
+	private static final int WEAK_GAINED = 2;
 	private static final int BASE_DAMAGE = 0;
-	private static final int BASE_KI_MAX_CONSUME = 25;
-	private static final int UPGRADED_KI_MAX_CONSUME = 40;
+	private static final int BASE_KI_MAX_CONSUME = 30;
+	private static final int UPGRADED_KI_MAX_CONSUME = 30;
 	
 	public GenkiDama() {
 		super(CardNames.GENKI_DAMA, cardStrings.NAME, CardPaths.GENKI_DAMA, COST, cardStrings.DESCRIPTION, 
@@ -37,30 +37,37 @@ public class GenkiDama extends SaiyanCard {
 		        AbstractCard.CardTarget.ALL_ENEMY);
 		
 		this.baseDamage = BASE_DAMAGE;
-		this.baseMagicNumber = BASE_KI_MAX_CONSUME;
-		this.magicNumber = this.baseMagicNumber;
+		this.isMultiDamage = true;
+		this.magicNumber = this.baseMagicNumber = BASE_KI_MAX_CONSUME;
+		this.misc = WEAK_GAINED;
 	}
 
 	@Override
 	public void upgrade() {
 		if (!upgraded){
 			upgradeName();
-			upgradeMagicNumber(UPGRADED_KI_MAX_CONSUME - BASE_KI_MAX_CONSUME);
+			upgradeMagicNumber(UPGRADED_KI_MAX_CONSUME);
 		}
+	}
+	
+	@Override
+	public void applyPowers() {
+		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
+		int kiToUse = Math.min(kiPower, this.magicNumber);
+		this.baseDamage = kiToUse;
+		super.applyPowers();
 	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
-		int kiToUse = Math.min(kiPower, this.magicNumber);
-		int multiDamage[] = DamageInfo.createDamageMatrix(kiToUse, true);
 		
 		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(
-				player, multiDamage, damageTypeForTurn, AttackEffect.SMASH);
+				player, this.multiDamage, damageTypeForTurn, AttackEffect.SMASH);
 		AbstractDungeon.actionManager.addToBottom(damageAction);
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, 2, false), 2));
-		if (kiPower>0)
-			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiToUse));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, WEAK_GAINED, false), WEAK_GAINED));
+		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
+		int kiToUse = Math.min(kiPower, this.magicNumber);
+		if (kiPower>0) AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiToUse));
 	}
 
 }

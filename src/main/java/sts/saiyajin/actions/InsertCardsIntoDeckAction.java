@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class InsertCardsIntoDeckAction extends AbstractGameAction {
@@ -25,18 +26,19 @@ public class InsertCardsIntoDeckAction extends AbstractGameAction {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.toInsert = toInsert;
         this.predicate = pred;
+        this.duration = Settings.ACTION_DUR_MED;
     }
     
     @Override
     public void update() {
-        if (!this.isDone) {
+        if (this.duration == Settings.ACTION_DUR_MED) {
         	while (toInsert.size() > 0){
         		AbstractCard c = toInsert.getTopCard();
         		toInsert.removeCard(c);
         		if (predicate != null && !predicate.test(c)) continue;
         		toInsert.moveToDeck(c, true);
         	}
-            this.isDone = true;
         }
+        this.tickDuration();
     }
 }

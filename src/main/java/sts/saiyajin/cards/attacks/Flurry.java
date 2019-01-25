@@ -26,8 +26,8 @@ public class Flurry extends SaiyanCard {
 	private static final int COST = 1;
 	private static final int BASE_DAMAGE = 2;
 	private static final int UPGRADE_DAMAGE = 1;
-	private static final int BASE_KI_CONSUMPTION_FOR_BONUS = 7;
-	private static final int UPGRADED_KI_CONSUMPTION_FOR_BONUS = -3;
+	private static final int BASE_KI_CONSUMPTION_FOR_BONUS = 5;
+	private static final int UPGRADED_KI_CONSUMPTION_FOR_BONUS = -1;
 	
 	public Flurry() {
 		super(CardNames.FLURRY, cardStrings.NAME, CardPaths.FLURRY, COST, cardStrings.DESCRIPTION, 
@@ -36,8 +36,7 @@ public class Flurry extends SaiyanCard {
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.ENEMY);
 	    this.baseDamage = BASE_DAMAGE;
-	    this.baseMagicNumber = BASE_KI_CONSUMPTION_FOR_BONUS;
-	    magicNumber = baseMagicNumber;
+	    this.magicNumber = this.baseMagicNumber = BASE_KI_CONSUMPTION_FOR_BONUS;
 	}
 
 	@Override
@@ -55,7 +54,6 @@ public class Flurry extends SaiyanCard {
 		DamageInfo perHitDamage = new DamageInfo(player, this.damage, this.damageTypeForTurn);
 		if (kiPower >= this.magicNumber){
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, perHitDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
