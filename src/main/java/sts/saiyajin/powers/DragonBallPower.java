@@ -28,6 +28,7 @@ public class DragonBallPower extends AbstractPower {
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.DRAGON_BALL_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.DRAGON_BALL), 0, 0, 48, 48);
 		this.canGoNegative = false;
+		this.updateDescription();
 	}
 
 	@Override

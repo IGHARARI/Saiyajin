@@ -28,6 +28,7 @@ public class MedicinePower extends AbstractPower {
 		this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.MEDICINE_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.MEDICINE), 0, 0, 48, 48);
+        this.updateDescription();
 	}
   
 	@Override

@@ -89,5 +89,12 @@ public class CardPaths {
 	public static final String TRAINING = "img/cards/training.png";
 	public static final String KI_BURN = "img/cards/kiburn.png";
 
+	/**
+	 * unimplemented
+	 */
+	public static final String MIND_BOOM = "img/cards/theBomb.png";
+	public static final String PLANNING = "img/cards/theBomb.png";
+	public static final String KI_STRIKE = "img/cards/transfigurationBeam.png";
+
 	
 }

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.types.ComboFinisher;
 import sts.saiyajin.powers.ComboPower;
-import sts.saiyajin.powers.ReverbHit;
+import sts.saiyajin.powers.ReverbHitPower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
@@ -49,10 +49,10 @@ public class ReverberatingForce extends ComboFinisher {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ReverbHit(monster, this.damage), this.damage));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ReverbHitPower(monster, this.damage), this.damage));
 		int comboStacks = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
 		for (int i = 0; i < comboStacks; i++) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ReverbHit(monster, this.damage), this.damage));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ReverbHitPower(monster, this.damage), this.damage));
 		}
 	}
 

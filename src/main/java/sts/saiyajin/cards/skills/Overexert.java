@@ -36,7 +36,8 @@ public class Overexert extends SaiyanCard {
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
-		magicNumber = baseMagicNumber = BASE_STR_GAIN;
+		this.magicNumber = this.baseMagicNumber = BASE_STR_GAIN;
+		this.kiVariable = KI_GAIN;
 		this.exhaust = true;
 	}
 
@@ -56,7 +57,7 @@ public class Overexert extends SaiyanCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, KI_GAIN), KI_GAIN));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, this.kiVariable), this.kiVariable));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, magicNumber), magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new KiBurn(), KI_BURNS, true, false));
 	}

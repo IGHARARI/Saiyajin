@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
@@ -43,6 +44,7 @@ public class Quickening extends SaiyanCard {
 		this.magicNumber = this.baseMagicNumber;
 		this.kiRequired = KI_CONSUMPTION;
 		this.platedArmor = PLATED_ARMOR_AMOUNT;
+		this.tags.add(SaiyajinCustomCardTags.COMBO_STARTER);
 	}
 
 	@Override

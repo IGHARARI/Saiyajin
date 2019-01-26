@@ -31,6 +31,7 @@ public class CantRevivePower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.CANT_REVIVE), 0, 0, 48, 48);
 		this.canGoNegative = false;
 		this.justApplied = true;
+		this.updateDescription();
 	}
 	
 	@Override

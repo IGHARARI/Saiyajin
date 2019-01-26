@@ -5,13 +5,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import basemod.abstracts.DynamicVariable;
 import sts.saiyajin.cards.types.SaiyanCard;
 
-public class KiDynamicVariable extends DynamicVariable {
+public class KiReqDynamicVariable extends DynamicVariable {
 
-	final static String KI_VARIABLE_KEY = "Saiyan:Ki";
+	final static String KI_REQUIRED_KEY = "Saiyan:KiReq";
 	
 	@Override
 	public String key() {
-		return KI_VARIABLE_KEY;
+		return KI_REQUIRED_KEY;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class KiDynamicVariable extends DynamicVariable {
 	@Override
 	public int value(AbstractCard card) {
 		if (card instanceof SaiyanCard) {
-			return ((SaiyanCard)card).kiVariable;
+			return ((SaiyanCard)card).kiRequired;
 		}
 		return 0;
 	}
@@ -30,16 +30,13 @@ public class KiDynamicVariable extends DynamicVariable {
 	@Override
 	public int baseValue(AbstractCard card) {
 		if (card instanceof SaiyanCard) {
-			return ((SaiyanCard)card).kiVariable;
+			return ((SaiyanCard)card).kiRequired;
 		}
 		return 0;
 	}
 
 	@Override
 	public boolean upgraded(AbstractCard card) {
-		if (card instanceof SaiyanCard) {
-			return ((SaiyanCard)card).kiVarUpgraded;
-		}
-		return false;
+		return card.upgraded;
 	}
 }

@@ -21,16 +21,15 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
 
-public class ReverbHit extends AbstractPower implements HealthBarRenderPower {
+public class ReverbHitPower extends AbstractPower implements HealthBarRenderPower {
 	public static final String POWER_ID = PowerNames.REVERB_HIT;
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(PowerNames.REVERB_HIT);
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 	
-	final Logger logger = LogManager.getLogger(ReverbHit.class);
-	boolean justApplied;
+	final Logger logger = LogManager.getLogger(ReverbHitPower.class);
 	
-	public ReverbHit(AbstractCreature owner, final int amount) {
+	public ReverbHitPower(AbstractCreature owner, final int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -40,7 +39,6 @@ public class ReverbHit extends AbstractPower implements HealthBarRenderPower {
         this.isTurnBased = true;
 		this.description = DESCRIPTIONS[0];
 		this.type = PowerType.DEBUFF;
-		this.justApplied = true;
 	}
   
 	@Override
@@ -50,10 +48,6 @@ public class ReverbHit extends AbstractPower implements HealthBarRenderPower {
   
 	@Override
 	public void atStartOfTurn() {
-		if (this.justApplied) {
-			this.justApplied = false;
-			return;
-		}
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
             AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SMASH, true));

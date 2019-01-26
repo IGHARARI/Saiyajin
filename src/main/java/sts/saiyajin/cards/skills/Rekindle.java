@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.CardPaths;
@@ -28,6 +29,7 @@ public class Rekindle extends SaiyanCard {
 		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.SELF);
 		this.exhaust = true;
+		this.tags.add(SaiyajinCustomCardTags.COMBO_FOLLOW_UP);
 	}
 
 	@Override

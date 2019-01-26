@@ -43,6 +43,7 @@ public class ExtremeSpeedPower extends AbstractPower {
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.EXTREME_SPEED_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.EXTREME_SPEED), 0, 0, 48, 48);
 		this.canGoNegative = false;
+		this.updateDescription();
 	}
 	
 	@Override

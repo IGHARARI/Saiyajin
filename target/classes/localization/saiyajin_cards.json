@@ -20,6 +20,16 @@
 		"DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, get a random potion. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, get a random potion."
 	},
+	"Planning": {
+		"NAME": "Planning",
+		"DESCRIPTION": "Gain !M! Ki. NL Put a Starter or Follow-up from your draw pile into your hand. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !M! Ki. NL Put a Starter or Follow-up from your draw pile into your hand."
+	},
+	"MindBoom": {
+		"NAME": "Mind Boom",
+		"DESCRIPTION": "Apply !Saiyan:Misc! Concussion then double the target's Concussion. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Apply !Saiyan:Misc! Concussion then triple the target's Concussion.  NL Exhaust."
+	},
 	"Saiyan:TheBomb": {
 		"NAME": "The Bomb",
 		"DESCRIPTION": "At the end of 3 turns, deal !M! damage to ALL enemies and increase the damage of this card by !Saiyan:Misc!. NL Exhaust"
@@ -58,16 +68,16 @@
 	},
 	"SpiritSword": {
 		"NAME": "Spirit Sword",
-		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. NL Finisher: Deal !D! x Combo damage to the enemy behind."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. NL Finisher: Deal !D! x Combo damage to the enemy behind."
 	},
 	"Furor": {
 		"NAME": "Defiance",
 		"DESCRIPTION": "Gain 1 Strength every time an enemy gains a buff.",
-		"UPGRADE_DESCRIPTION": "Gain !M! Strength and !Saiyan:Ki! Ki every time an enemy gains a buff."
+		"UPGRADE_DESCRIPTION": "Gain !M! Strength and !Saiyan:KiVar! Ki every time an enemy gains a buff."
 	},
 	"Overexert": {
 		"NAME": "Overexert",
-		"DESCRIPTION": "Gain !M! Strength and 20 Ki. Shuffle 2 Ki_Burns into your draw pile. NL Exhaust."
+		"DESCRIPTION": "Gain !M! Strength and !Saiyan:KiVar! Ki. Shuffle 2 Ki_Burns into your draw pile. NL Exhaust."
 	},
 	"KiBurn": {
 		"NAME": "Ki Burn",
@@ -94,11 +104,11 @@
 	},
 	"KameHameHa": {
 		"NAME": "Kame Hame Ha",
-		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. NL Finisher: Costs 1 less energy per Combo stack."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. NL Finisher: Costs 1 less energy per Combo stack."
 	},
 	"Fly": {
 		"NAME": "Fly",
-		"DESCRIPTION": "Consume !M! Ki. NL Gain 2 Flight."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain 2 Flight."
 	},
 	"PowerPole": {
 		"NAME": "Power Pole",
@@ -110,7 +120,7 @@
 	},
 	"SuperSaiyanThree": {
 		"NAME": "Super Saiyan 3",
-		"DESCRIPTION": "Gain !Saiyan:Ki! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over !Saiyan:Misc! turns."
+		"DESCRIPTION": "Gain !Saiyan:KiVar! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over !Saiyan:Misc! turns."
 	},
 	"MajinSeal": {
 		"NAME": "Majin Seal",
@@ -128,6 +138,10 @@
 	"ReverberatingForce": {
 		"NAME": "Reverb Strike",
 		"DESCRIPTION": "Deal !D! damage. NL At the end of your next turn deal !D! damage. NL Finisher: Increase next turn damage by !D! x Combo."
+	},
+	"KiStrike": {
+		"NAME": "Ki Strike",
+		"DESCRIPTION": "Starter. NL Gain !B! Block. NL Deal !D! damage."
 	},
 	"KaioKen": {
 		"NAME": "KaioKen",
@@ -153,7 +167,7 @@
 	},
 	"BigBangAttack": {
 		"NAME": "Big-Bang Attack",
-		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage."
 	},
 	"LastResort": {
 		"NAME": "Last Resort",
@@ -161,8 +175,8 @@
 	},
 	"Quickening": {
 		"NAME": "Quickening",
-		"DESCRIPTION": "Starter. NL Consume !M! Ki. NL Gain 2 Plated Armor, apply 1 Vulnerable to ALL enemies.",
-		"UPGRADE_DESCRIPTION": "Starter. NL Consumes !M! Ki. NL Gain 3 Plated Armor, apply 1 Vulnerable to ALL enemies."
+		"DESCRIPTION": "Starter. NL Consume !Saiyan:KiReq! Ki. NL Gain 2 Plated Armor, apply 1 Vulnerable to ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Starter. NL Consumes !Saiyan:KiReq! Ki. NL Gain 3 Plated Armor, apply 1 Vulnerable to ALL enemies."
 	},
 	"MonkeyTail": {
 		"NAME": "Monkey Tail",
@@ -190,15 +204,15 @@
 	},
 	"Makankosappo": {
 		"NAME": "Makankosappo",
-		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage !Saiyan:Misc! times. NL Finisher: Apply concussion equal to your combo."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage !Saiyan:Misc! times. NL Finisher: Apply concussion equal to your combo."
 	},
 	"Kienzan": {
 		"NAME": "Kien-zan",
-		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage. This attack ignores block."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. This attack ignores block."
 	},
 	"DoubleMasenko": {
 		"NAME": "Double Masenko",
-		"DESCRIPTION": "Consume !M! Ki. NL Deal !D! damage to two different random enemies."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage to two different random enemies."
 	},
 	"BurningSoul": {
 		"NAME": "Burning Soul",
@@ -206,7 +220,7 @@
 	},
 	"Scouter": {
 		"NAME": "Scouter",
-		"DESCRIPTION": "Consume !Saiyan:Ki! Ki. NL Gain !B! block this and next turn. NL If the enemy is NOT attacking gain an extra !M! block."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain !B! block this and next turn. NL If the enemy is NOT attacking gain an extra !M! block."
 	},
 	"TurtleShell": {
 		"NAME": "Turtle Shell",
@@ -223,7 +237,7 @@
 	},
 	"Teleport": {
 		"NAME": "Instant Transfer",
-		"DESCRIPTION": "Starter & Follow-up. NL Consumes !Saiyan:Ki! Ki. NL Apply !M! Vulnerable."
+		"DESCRIPTION": "Starter & Follow-up. NL Consumes !Saiyan:KiReq! Ki. NL Apply !M! Vulnerable."
 	},
 	"DrainingStrike": {
 		"NAME": "Draining Force",
@@ -236,7 +250,7 @@
 	},
 	"KiExplosion": {
 		"NAME": "Ki Explosion",
-		"DESCRIPTION": "Folow-up. NL Consumes !Saiyan:Ki! Ki. NL Gain !B! block and !M! Ki-Barrier. "
+		"DESCRIPTION": "Follow-up. NL Consumes !Saiyan:KiReq! Ki. NL Gain !B! block and !M! Ki-Barrier. "
 	},
 	"RuthlessBlow": {
 		"NAME": "Ruthless Blow",
@@ -244,8 +258,8 @@
 	},
 	"SolarFlare": {
 		"NAME": "Solar Flare",
-		"DESCRIPTION": "Consume !M! Ki. NL Stun an enemy for 1 turn. ",
-		"UPGRADE_DESCRIPTION": "Consumes !M! Ki. NL Stun ALL enemies for 1 turn."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Stun an enemy for 1 turn. ",
+		"UPGRADE_DESCRIPTION": "Consumes !Saiyan:KiReq! Ki. NL Stun ALL enemies for 1 turn."
 	},
 	"SuperSaiyanForm": {
 		"NAME": "Super Saiyan Form",

@@ -46,6 +46,7 @@ import sts.saiyajin.cards.attacks.Flurry;
 import sts.saiyajin.cards.attacks.GenkiDama;
 import sts.saiyajin.cards.attacks.KameHameHa;
 import sts.saiyajin.cards.attacks.KiBlast;
+import sts.saiyajin.cards.attacks.KiStrike;
 import sts.saiyajin.cards.attacks.Kienzan;
 import sts.saiyajin.cards.attacks.Makankosappo;
 import sts.saiyajin.cards.attacks.MeteorDash;
@@ -82,7 +83,9 @@ import sts.saiyajin.cards.skills.KaioKen;
 import sts.saiyajin.cards.skills.KiExplosion;
 import sts.saiyajin.cards.skills.LastResort;
 import sts.saiyajin.cards.skills.Medicine;
+import sts.saiyajin.cards.skills.MindBoom;
 import sts.saiyajin.cards.skills.Overexert;
+import sts.saiyajin.cards.skills.Planning;
 import sts.saiyajin.cards.skills.PowerUp;
 import sts.saiyajin.cards.skills.PressOn;
 import sts.saiyajin.cards.skills.Quickening;
@@ -104,7 +107,8 @@ import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.relics.SaiyanHeart;
 import sts.saiyajin.relics.SaiyanSoul;
 import sts.saiyajin.ui.CharacterSelection;
-import sts.saiyajin.ui.KiDynamicVariable;
+import sts.saiyajin.ui.KiReqDynamicVariable;
+import sts.saiyajin.ui.KiVarDynamicVariable;
 import sts.saiyajin.ui.MiscDynamicVariable;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
@@ -218,7 +222,8 @@ public class SaiyaMod implements
     	 * Add dynamic variables
     	 */
     	logger.info("Adding Ki Dynamic variable");
-    	BaseMod.addDynamicVariable(new KiDynamicVariable());
+    	BaseMod.addDynamicVariable(new KiVarDynamicVariable());
+    	BaseMod.addDynamicVariable(new KiReqDynamicVariable());
     	BaseMod.addDynamicVariable(new MiscDynamicVariable());
     	
     	
@@ -276,6 +281,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.DRAGON_FIST);
         BaseMod.addCard(new Furor());
         UnlockTracker.unlockCard(CardNames.FUROR);
+        BaseMod.addCard(new Planning());
+        UnlockTracker.unlockCard(CardNames.PLANNING);
         
         /**
          * Uncommon cards
@@ -322,6 +329,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SOUL_SPICE);
         BaseMod.addCard(new ReverberatingForce());
         UnlockTracker.unlockCard(CardNames.REVERBERATING_FORCE);
+        BaseMod.addCard(new KiStrike());
+        UnlockTracker.unlockCard(CardNames.KI_STRIKE);
 
         /**
          * RARE CARDS
@@ -350,6 +359,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.TRANSFIGURATION_BEAM);
         BaseMod.addCard(new Momentum());
         UnlockTracker.unlockCard(CardNames.MOMENTUM);
+        BaseMod.addCard(new MindBoom());
+        UnlockTracker.unlockCard(CardNames.MIND_BOOM);
         
         /**
          * UNOBTAINABLE CARDS

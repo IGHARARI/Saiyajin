@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
@@ -39,6 +40,7 @@ public class KiBlast extends SaiyanCard {
 		this.isMultiDamage = true;
 		this.baseMagicNumber = BASE_KI_COST;
 		this.magicNumber = this.baseMagicNumber;
+		this.tags.add(SaiyajinCustomCardTags.COMBO_STARTER);
 	}
 
 	@Override

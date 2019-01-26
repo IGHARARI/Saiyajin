@@ -33,6 +33,7 @@ public class BurningSoulPower extends AbstractPower {
 		this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.BURNING_SOUL_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.BURNING_SOUL), 0, 0, 48, 48);
+        this.updateDescription();
 	}
   
 	@Override

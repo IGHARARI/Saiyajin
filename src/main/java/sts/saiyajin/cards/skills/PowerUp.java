@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
@@ -35,6 +36,7 @@ public class PowerUp extends SaiyanCard {
 	    this.baseBlock = BASE_BLOCK;
 	    this.baseMagicNumber = BASE_KI_GAIN;
 	    this.magicNumber = this.baseMagicNumber	;
+	    this.tags.add(SaiyajinCustomCardTags.COMBO_FOLLOW_UP);
 	}
 
 	@Override

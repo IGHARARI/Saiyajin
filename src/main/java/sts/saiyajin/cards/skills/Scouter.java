@@ -33,7 +33,6 @@ public class Scouter extends SaiyanCard {
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.ENEMY);
 		kiRequired = KI_CONSUMPTION;
-		kiVariable = KI_CONSUMPTION;
 		baseMagicNumber = EXTRA_BLOCK;
 		magicNumber = EXTRA_BLOCK;
 		this.baseBlock = BASE_BLOCK;

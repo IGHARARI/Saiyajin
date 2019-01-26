@@ -1,6 +1,6 @@
 package sts.saiyajin.cards.skills;
 
-import com.megacrit.cardcrawl.actions.unique.RegenAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.RegenPower;
 
 import sts.saiyajin.actions.MedicineAction;
 import sts.saiyajin.cards.types.SaiyanCard;
@@ -48,7 +49,7 @@ public class Medicine extends SaiyanCard {
 		AbstractCard c = this.makeCopy();
 		CardGroup cg = new CardGroup(CardGroupType.UNSPECIFIED);
 		cg.addToBottom(c);
-		AbstractDungeon.actionManager.addToBottom(new  RegenAction(player, magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegenPower(player, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new MedicineAction());
 	}
 }

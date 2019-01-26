@@ -28,6 +28,7 @@ public class FullMoonPower extends AbstractPower {
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.FULL_MOON_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.FULL_MOON), 0, 0, 48, 48);
 		this.canGoNegative = false;
+		this.updateDescription();
 	}
 
 	@Override

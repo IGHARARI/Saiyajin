@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
@@ -31,6 +32,7 @@ public class MeteorDash extends SaiyanCard {
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.ENEMY);
 	    this.baseDamage = BASE_DAMAGE;
+	    this.tags.add(SaiyajinCustomCardTags.COMBO_STARTER);
 	}
 
 	@Override

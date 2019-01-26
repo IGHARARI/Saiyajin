@@ -4,13 +4,16 @@
     "EXTRA_TEXT": ["Came from the planet of the Saiyajin to destroy the Spyre."]
   },
   "character_name": {
-    "TEXT": ["Saiyan"]
+    "TEXT": ["The Saiyan"]
   },
   "HeartKillText": {
     "TEXT": ["You ready your fists, your soul is ringing with excitement..."]
   },
   "KiCounter": {
     "TEXT": ["Ki", "This represents your current Ki."]
+  },
+  "PlanningAction": {
+    "TEXT": ["Select a card to retrieve."]
   },
   "HoningAction": {
     "TEXT": ["Select up to "," card(s) to Exhaust."]

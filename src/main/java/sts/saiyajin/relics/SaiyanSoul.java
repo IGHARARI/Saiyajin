@@ -20,7 +20,7 @@ public class SaiyanSoul extends CustomRelic {
 	private static final String IMG = RelicPaths.SAIYAN_SOUL;
 	private static final String IMG_OTL = RelicPaths.SAIYAN_SOUL_OUTLINE;
 
-	private static final int KI_REGEN = 4;
+	private static final int KI_REGEN = 5;
 
 	final Logger logger = LogManager.getLogger(SaiyaMod.class);
 	

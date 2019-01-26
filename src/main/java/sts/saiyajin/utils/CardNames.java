@@ -34,6 +34,7 @@ public abstract class CardNames {
 	public static final String DRAGON_FIST = "DragonFist";
 	public static final String PRESS_ON = "PressOn";
 	public static final String FUROR = "Furor";
+	public static final String PLANNING = "Planning";
 	
 	/**
 	 * UNCOMMONS
@@ -59,6 +60,7 @@ public abstract class CardNames {
 	public static final String POWER_POLE = "PowerPole";
 	public static final String REVERBERATING_FORCE = "ReverberatingForce";
 	public static final String SOUL_SPICE = "SoulSpice";
+	public static final String KI_STRIKE = "KiStrike";
 	
 	/**
 	 * RARES
@@ -73,6 +75,7 @@ public abstract class CardNames {
 	public static final String THE_BOMB = "Saiyan:TheBomb";
 	public static final String TRANSFIGURATION_BEAM = "TransfigurationBeam";
 	public static final String MOMENTUM = "Momentum";
+	public static final String MIND_BOOM = "MindBoom";
 
 	
 	

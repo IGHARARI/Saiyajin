@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
@@ -34,6 +35,8 @@ public class InstantTransfer extends SaiyanCard {
 		
 		this.kiRequired =  KI_CONSUMPTION;
 		this.magicNumber = this.baseMagicNumber = VULNERABILITY_STACKS;
+		this.tags.add(SaiyajinCustomCardTags.COMBO_STARTER);
+		this.tags.add(SaiyajinCustomCardTags.COMBO_FOLLOW_UP);
 	}
 
 	@Override

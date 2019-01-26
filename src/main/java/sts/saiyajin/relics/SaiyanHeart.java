@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -28,7 +29,6 @@ public class SaiyanHeart extends CustomRelic {
 	private boolean isBattling = false;
 
 	final Logger logger = LogManager.getLogger(SaiyaMod.class);
-	private int hpGainedThisBattle;
 	
 	public SaiyanHeart() {
 		super(
@@ -39,6 +39,7 @@ public class SaiyanHeart extends CustomRelic {
 			LandingSound.MAGICAL
 		);
 		this.description = DESCRIPTIONS[0];
+		this.counter = -2;
 	}
 
 	public String getUpdatedDescription() {
@@ -50,37 +51,42 @@ public class SaiyanHeart extends CustomRelic {
 	}
 
 	@Override
-	public void atBattleStartPreDraw() {
+	public void atBattleStart() {
 		currentDebuffs.clear();
 		isBattling = true;
-		hpGainedThisBattle = 0;
+		this.counter = 0;
+		this.beginLongPulse();
 	}
 	
 	public void battleEnd(){
 		isBattling = false;
-		hpGainedThisBattle = 0;
+		this.counter = -1;
+		this.stopPulse();
+	}
+	
+	@Override
+	public void atTurnStart() {
+		super.atTurnStart();
+		++this.counter;
+		if (counter == 8) this.stopPulse();
 	}
 	
 	public void powersWereModified() {
-		if (!isBattling || hpGainedThisBattle >= 3) return;
+		if (!isBattling || GameActionManager.turn > 7) return;
 		int debuffsPurged = 0;
 		for (String oldDebuff : currentDebuffs){
 			if (!AbstractDungeon.player.hasPower(oldDebuff)){
-				logger.info("debuff purged: " + oldDebuff);
 				debuffsPurged++;
 			}
 		}
-		currentDebuffs = new ArrayList<String>();
+		currentDebuffs.clear();
 		for(AbstractPower power : AbstractDungeon.player.powers){
 			if (power.type.equals(PowerType.DEBUFF) && !power.ID.equals(StrengthPower.POWER_ID) && !power.ID.equals(DexterityPower.POWER_ID)){
-				logger.info("current debuffs: " + power.ID);
 				currentDebuffs.add(power.ID);
 			}
 		}
-		debuffsPurged = Math.min(3 - hpGainedThisBattle, debuffsPurged);
 		if (debuffsPurged > 0){
 			this.flash();
-			hpGainedThisBattle += debuffsPurged;
 			AbstractDungeon.player.increaseMaxHp(debuffsPurged, true);
 			AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, debuffsPurged*3));
 		}

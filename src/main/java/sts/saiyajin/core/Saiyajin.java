@@ -57,9 +57,9 @@ public class Saiyajin extends CustomPlayer {
 
 	    
 	    int ENERGY_PER_TURN = 3; // how much energy you get every turn
-	    String MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png"; // shoulder2 / shoulder_1
-	    String MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png"; // shoulder1 / shoulder_2
-	    String MARISA_CORPSE = "img/char/Marisa/fallen.png"; // dead corpse
+	    String GOKU_SHOULDER_2 = "img/char/Goku/shoulder_2.png"; // shoulder2 / shoulder_1
+	    String GOKU_SHOULDER_1 = "img/char/Goku/shoulder_1.png"; // shoulder1 / shoulder_2
+	    String GOKU_CORPSE = "img/char/Goku/goku_fallen.png"; // dead corpse
 //	    String skeletonAtlas = "img/char/Marisa/MarisaModel_v02.atlas";// Marisa_v0 / MarisaModel_v02
 //	    String skeletonJSON = "img/char/Marisa/MarisaModel_v02.json";
 	    String skeletonAtlas = "img/char/Goku/goku.atlas";// Marisa_v0 / MarisaModel_v02
@@ -68,9 +68,9 @@ public class Saiyajin extends CustomPlayer {
 	    
 	    initializeClass(
 	        null,
-	        MARISA_SHOULDER_2, // required call to load textures and setup energy/loadout
-	        MARISA_SHOULDER_1,
-	        MARISA_CORPSE,
+	        GOKU_SHOULDER_2, // required call to load textures and setup energy/loadout
+	        GOKU_SHOULDER_1,
+	        GOKU_CORPSE,
 	        getLoadout(),
 	        20.0F, -10.0F, 220.0F, 290.0F,
 	        new EnergyManager(ENERGY_PER_TURN)
