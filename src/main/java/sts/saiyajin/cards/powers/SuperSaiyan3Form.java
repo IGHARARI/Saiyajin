@@ -21,12 +21,12 @@ public class SuperSaiyan3Form extends SaiyanCard
 {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.SUPER_SAIYAN_THREE_FORM);
 	private static final int COST = 2;
-	private static final int BASE_KI_REGEN = 8;
+	private static final int BASE_KI_REGEN = 10;
 	private static final int UPGRADED_KI_REGEN = 4;
-	private static final int BASE_STR = 4;
+	private static final int BASE_STR = 5;
 	private static final int UPGRADED_STR = 2;
-	private static final int BASE_TURNS_DURATION = 4;
-	private static final int UPGRADED_TURNS_DURATION = 6;
+	private static final int BASE_TURNS_DURATION = 5;
+	private static final int UPGRADED_TURNS_DURATION = 7;
 	
     
     public SuperSaiyan3Form() {

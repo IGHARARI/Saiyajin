@@ -50,8 +50,7 @@ public class InstantTransfer extends SaiyanCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-	    PowersHelper.comboFollowUp(); //increase if combo started
-	    PowersHelper.startCombo(); //start combo if not started
+	    PowersHelper.startOrFollowUpCombo();
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, this.magicNumber, false), this.magicNumber));
 	}
 

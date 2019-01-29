@@ -20,16 +20,15 @@ public class ComboStarterAction extends AbstractGameAction {
     
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_XFAST) {
-        	AbstractPlayer player = AbstractDungeon.player;
-    		if(PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) == 0){
-    			int comboStacks = 1;
-    			if (player.hasPower(MajinSealPower.POWER_ID)) comboStacks += player.getPower(MajinSealPower.POWER_ID).amount;
-    			for (int i=0; i < comboStacks; i++) {
-    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
-    			}
-    		}
-        }
+    	AbstractPlayer player = AbstractDungeon.player;
+		if(PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) == 0){
+			int comboStacks = 1;
+			if (player.hasPower(MajinSealPower.POWER_ID)) comboStacks += player.getPower(MajinSealPower.POWER_ID).amount;
+			for (int i=0; i < comboStacks; i++) {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ComboPower(player, 1), 1));
+			}
+		}
+		this.isDone = true;
         this.tickDuration();
     }
 

@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.utils.BattleHelper;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
 
@@ -50,12 +51,7 @@ public class PowerPole extends SaiyanCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		ArrayList<AbstractMonster> orderedMonsters = new ArrayList<AbstractMonster>();
-		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-			if (m.isDeadOrEscaped()) continue;
-			orderedMonsters.add(m);
-		}
-		orderedMonsters.sort((m1,m2) -> Math.round((m1.drawX - m2.drawX)*100));
+		ArrayList<AbstractMonster> orderedMonsters = BattleHelper.getCurrentBattleMonstersSortedOnX(true);
 		int attackMultiplier = 1;
 		for (AbstractMonster m : orderedMonsters) {
 			DamageInfo tempInfo = new DamageInfo(player, this.baseDamage);

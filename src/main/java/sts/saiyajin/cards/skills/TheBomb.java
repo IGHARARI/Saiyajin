@@ -18,8 +18,7 @@ import sts.saiyajin.utils.CardNames;
 public class TheBomb extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.THE_BOMB);
-	private static final int COST = 2;
-	private static final int UPGRADED_COST = 2;
+	private static final int COST = 1;
 	private static final int BASE_DAMAGE = 8;
 	private static final int DAMAGE_INCREASE = 1;
 	private static final int UPGRADED_DAMAGE_INCREASE = 2;
@@ -40,7 +39,6 @@ public class TheBomb extends SaiyanCard {
 	public void upgrade() {
 		if (!upgraded){
 			upgradeName();
-			upgradeBaseCost(UPGRADED_COST);
 			this.misc = UPGRADED_DAMAGE_INCREASE;
 		}
 	}

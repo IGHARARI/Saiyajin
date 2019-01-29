@@ -1,6 +1,9 @@
 package sts.saiyajin.relics;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,6 +15,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -29,6 +34,8 @@ public class SaiyanHeart extends CustomRelic {
 	private boolean isBattling = false;
 
 	final Logger logger = LogManager.getLogger(SaiyaMod.class);
+	
+	private final static Set<String> invalidDebuffs = new HashSet<String>(Arrays.asList(StrengthPower.POWER_ID, DexterityPower.POWER_ID, LoseStrengthPower.POWER_ID, LoseDexterityPower.POWER_ID));
 	
 	public SaiyanHeart() {
 		super(
@@ -81,7 +88,7 @@ public class SaiyanHeart extends CustomRelic {
 		}
 		currentDebuffs.clear();
 		for(AbstractPower power : AbstractDungeon.player.powers){
-			if (power.type.equals(PowerType.DEBUFF) && !power.ID.equals(StrengthPower.POWER_ID) && !power.ID.equals(DexterityPower.POWER_ID)){
+			if (power.type.equals(PowerType.DEBUFF) && !invalidDebuffs.contains(power.ID)){
 				currentDebuffs.add(power.ID);
 			}
 		}

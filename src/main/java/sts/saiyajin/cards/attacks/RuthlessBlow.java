@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -13,11 +14,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import sts.saiyajin.cards.types.ComboFinisher;
-import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
-import sts.saiyajin.utils.PowersHelper;
 
 public class RuthlessBlow extends ComboFinisher {
 
@@ -45,11 +44,12 @@ public class RuthlessBlow extends ComboFinisher {
 	}
 
 	@Override
+	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, comboStacks, false), comboStacks));
+	}
+	
+	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-		int comboChain = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
-		if (comboChain > 0) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, comboChain, false), comboChain));
-		}
 	}
 }

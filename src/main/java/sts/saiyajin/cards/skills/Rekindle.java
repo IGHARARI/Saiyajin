@@ -29,7 +29,6 @@ public class Rekindle extends SaiyanCard {
 		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.SELF);
 		this.exhaust = true;
-		this.tags.add(SaiyajinCustomCardTags.COMBO_FOLLOW_UP);
 	}
 
 	@Override

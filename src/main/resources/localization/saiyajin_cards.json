@@ -1,31 +1,50 @@
 {
-	"SAIYA_Strike": {
+	"Saiyan:SAIYA_Strike": {
 		"NAME": "Saiyan Punch",
 		"DESCRIPTION": "Deal !D! damage."
 	},
-	"SAIYA_Defend": {
+	"Saiyan:SAIYA_Defend": {
 		"NAME": "Block",
 		"DESCRIPTION": "Gain !B! Block. NL Ki-Enhanced( !M! ): Gain an extra 2 Block."
 	},
-	"EnergyBlast": {
+	"Saiyan:EnergyBlast": {
 		"NAME": "Energy Blast",
 		"DESCRIPTION": "Starter. NL Deal !D! damage to ALL enemies. NL Ki-Enhanced( !M! ) deal 2 more damage."
 	},
-	"SoulSpice": {
+	"Saiyan:SoulSpice": {
 		"NAME": "Soul Spice",
 		"DESCRIPTION": "Whenever you exhaust a Status card gain !M! Strength."
 	},
-	"TransfigurationBeam": {
+	"Saiyan:ExpandingShockwave": {
+		"NAME": "Expanding Shockwave",
+		"DESCRIPTION": "Follow-up. NL Deal !D! damage. NL Deal twice that much damage to all other enemies."
+	},
+	"Saiyan:Twize": {
+		"NAME": "Twize",
+		"DESCRIPTION": "The next Finisher you trigger this turn gets triggered an additional time. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "The next Finisher you trigger this turn gets triggered an additional time."
+	},
+	"Saiyan:Reset": {
+		"NAME": "Reset",
+		"DESCRIPTION": "Finisher: Gain Strength equal to your combo. NL At the end of this turn, lose that Strength. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Finisher: Gain Strength equal to your combo. NL At the end of this turn, lose that Strength."
+	},
+	"Saiyan:TransfigurationBeam": {
 		"NAME": "Chocolate Beam",
 		"DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, get a random potion. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, get a random potion."
 	},
-	"Planning": {
+	"Saiyan:Pacing": {
+		"NAME": "Pacing",
+		"DESCRIPTION": "Gain X Combo.",
+		"UPGRADE_DESCRIPTION": "Gain X+1 Combo."
+	},
+	"Saiyan:Planning": {
 		"NAME": "Planning",
 		"DESCRIPTION": "Gain !M! Ki. NL Put a Starter or Follow-up from your draw pile into your hand. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Gain !M! Ki. NL Put a Starter or Follow-up from your draw pile into your hand."
 	},
-	"MindBoom": {
+	"Saiyan:MindBoom": {
 		"NAME": "Mind Boom",
 		"DESCRIPTION": "Apply !Saiyan:Misc! Concussion then double the target's Concussion. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Apply !Saiyan:Misc! Concussion then triple the target's Concussion.  NL Exhaust."
@@ -34,244 +53,244 @@
 		"NAME": "The Bomb",
 		"DESCRIPTION": "At the end of 3 turns, deal !M! damage to ALL enemies and increase the damage of this card by !Saiyan:Misc!. NL Exhaust"
 	},
-	"PowerUp": {
+	"Saiyan:PowerUp": {
 		"NAME": "Power Up",
 		"DESCRIPTION": "Follow-up. NL Yell REALLY loud in order to gain !M! Ki and !B! block."
 	},
-	"Rekindle": {
+	"Saiyan:Rekindle": {
 		"NAME": "Rekindle",
 		"DESCRIPTION": "Increase your Ki-regen by 50%. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Increase your Ki-regen by 50%."
 	},
-	"PressOn": {
+	"Saiyan:PressOn": {
 		"NAME": "Press On",
 		"DESCRIPTION": "This turn when playing a card with a Ki cost, ignore it and add a Ki Burn into your discard instead. NL Exhaust",
 		"UPGRADE_DESCRIPTION": "This turn when playing a card with a Ki cost, ignore it and add a Ki Burn into your discard instead."
 	},
-	"PowerStance": {
+	"Saiyan:PowerStance": {
 		"NAME": "Power Stance",
 		"DESCRIPTION": "ALL your Attack cards are now also Starter.",
 		"UPGRADE_DESCRIPTION": "Innate. NL ALL your Attack cards are now also Starter."
 	},
-	"Afterimage": {
+	"Saiyan:Afterimage": {
 		"NAME": "Afterimage",
 		"DESCRIPTION": "Follow-up. NL Gain 1 Buffer, put !M! Daze on top of your draw pile. NL Exhaust."
 	},
-	"HyperTimeChamber": {
+	"Saiyan:HyperTimeChamber": {
 		"NAME": "The Time Chamber",
 		"DESCRIPTION": "Enemies become Stopped for 2 turns. NL You are Training for 2 turns."
 	},
-	"Training": {
+	"Saiyan:Training": {
 		"NAME": "Training",
 		"DESCRIPTION": "Retain. NL You are Training for !M! turns. NL Exhausts when finished training, cannot be manually discarded or exhausted.",
 		"UPGRADE_DESCRIPTION": "Can't play cards that target enemies while in training."
 	},
-	"SpiritSword": {
+	"Saiyan:SpiritSword": {
 		"NAME": "Spirit Sword",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. NL Finisher: Deal !D! x Combo damage to the enemy behind."
 	},
-	"Furor": {
+	"Saiyan:Furor": {
 		"NAME": "Defiance",
 		"DESCRIPTION": "Gain 1 Strength every time an enemy gains a buff.",
 		"UPGRADE_DESCRIPTION": "Gain !M! Strength and !Saiyan:KiVar! Ki every time an enemy gains a buff."
 	},
-	"Overexert": {
+	"Saiyan:Overexert": {
 		"NAME": "Overexert",
 		"DESCRIPTION": "Gain !M! Strength and !Saiyan:KiVar! Ki. Shuffle 2 Ki_Burns into your draw pile. NL Exhaust."
 	},
-	"KiBurn": {
+	"Saiyan:KiBurn": {
 		"NAME": "Ki Burn",
 		"DESCRIPTION": "Consumes !M! Ki when drawn. NL Ethereal."
 	},
-	"DragonFist": {
+	"Saiyan:DragonFist": {
 		"NAME": "Dragon Fist",
 		"DESCRIPTION": " Follow-up. NL Deal !D! damage. Exhaust a card. NL Shuffle a Ki_Burn into your discard pile.",
 		"UPGRADE_DESCRIPTION": "Follow-up. NL Deal !D! damage. Exhaust a card."
 	},
-	"Medicine": {
+	"Saiyan:Medicine": {
 		"NAME": "Medicine",
 		"DESCRIPTION": "Gain !M! Regen and 1 Medicine."
 	},
-	"Honing": {
+	"Saiyan:Honing": {
 		"NAME": "Honing",
 		"DESCRIPTION": "Exhaust up to !M! card and gain Ki-Regen equal to 1 + double its cost. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Exhaust up to !M! cards and gain Ki-Regen equal to 2 + double their cost."
 	},
-	"UltraInstinct": {
+	"Saiyan:UltraInstinct": {
 		"NAME": "Ultra Instinct",
 		"DESCRIPTION": "Gain 25% Dodge chance X times.",
 		"UPGRADE_DESCRIPTION": "Gain 25% Dodge chance X+1 times."
 	},
-	"KameHameHa": {
+	"Saiyan:KameHameHa": {
 		"NAME": "Kame Hame Ha",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. NL Finisher: Costs 1 less energy per Combo stack."
 	},
-	"Fly": {
+	"Saiyan:Fly": {
 		"NAME": "Fly",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain 2 Flight."
 	},
-	"PowerPole": {
+	"Saiyan:PowerPole": {
 		"NAME": "Power Pole",
 		"DESCRIPTION": "Damage ALL enemies, dealing !D! to the closest one, and doubling the damage for each one after that."
 	},
-	"SaiyanHubris": {
+	"Saiyan:SaiyanHubris": {
 		"NAME": "Saiyan Hubris",
 		"DESCRIPTION": "Gain !M! Ki for each enemy."
 	},
-	"SuperSaiyanThree": {
+	"Saiyan:SuperSaiyanThree": {
 		"NAME": "Super Saiyan 3",
 		"DESCRIPTION": "Gain !Saiyan:KiVar! Ki and Ki-regen. NL Gain !M! Strength. NL Lose them gradually over !Saiyan:Misc! turns."
 	},
-	"MajinSeal": {
+	"Saiyan:MajinSeal": {
 		"NAME": "Majin Seal",
 		"DESCRIPTION": "Gain !M! Ki-regen. Every time you gain Combo gain another Combo. NL Randomize the target of the 1st attack you play each turn."
 	},
-	"CCCapsule": {
+	"Saiyan:CCCapsule": {
 		"NAME": "C.C. Capsule",
 		"DESCRIPTION": "Get a random Power, it costs 1 less Energy until played. NL Exhaust."
 	},
-	"Momentum": {
+	"Saiyan:Momentum": {
 		"NAME": "Momentum",
 		"DESCRIPTION": "Whenever you use a Finisher, only consume half of your Combo.",
 		"UPGRADE_DESCRIPTION": "Innate. NL Whenever you use a Finisher, only consume half of your Combo."
 	},
-	"ReverberatingForce": {
+	"Saiyan:ReverberatingForce": {
 		"NAME": "Reverb Strike",
-		"DESCRIPTION": "Deal !D! damage. NL At the end of your next turn deal !D! damage. NL Finisher: Increase next turn damage by !D! x Combo."
+		"DESCRIPTION": "Deal !D! damage. NL At the end of the target's turn deal !D! damage. NL Finisher: Increase delayed damage by !D! x Combo."
 	},
-	"KiStrike": {
+	"Saiyan:KiStrike": {
 		"NAME": "Ki Strike",
-		"DESCRIPTION": "Starter. NL Gain !B! Block. NL Deal !D! damage."
+		"DESCRIPTION": "Starter. Consume !Saiyan:KiReq! Ki. NL Gain !B! Block. NL Deal !D! damage."
 	},
-	"KaioKen": {
+	"Saiyan:KaioKen": {
 		"NAME": "KaioKen",
 		"DESCRIPTION": "Gain !M! Ki, apply 1 Vulnerable to yourself. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Gain !M! Ki, apply 1 Vulnerable to yourself."
 	},
-	"MeteorDash": {
+	"Saiyan:MeteorDash": {
 		"NAME": "Meteor Dash",
 		"DESCRIPTION": "Starter. NL Deal !D! damage."
 	},
-	"Endure": {
+	"Saiyan:Endure": {
 		"NAME": "Endure",
 		"DESCRIPTION": "Consume ALL your Ki, gain that much block (currently !B!)."
 	},
-	"BackAttack": {
+	"Saiyan:BackAttack": {
 		"NAME": "Back Attack",
 		"DESCRIPTION": "Deal !D! damage. Telegraphed. NL Finisher: Apply Weak equal to your Combo."
 	},
-	"ExtremeSpeed": {
+	"Saiyan:ExtremeSpeed": {
 		"NAME": "Extreme-speed",
 		"DESCRIPTION": "All your Finisher cards now also trigger: NL Finisher: Draw Combo/2 cards (round down)",
 		"UPGRADE_DESCRIPTION": "All your Finisher cards now also trigger: NL Finisher: Draw 1+ Combo/2 cards (round down)"
 	},
-	"BigBangAttack": {
+	"Saiyan:BigBangAttack": {
 		"NAME": "Big-Bang Attack",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage."
 	},
-	"LastResort": {
+	"Saiyan:LastResort": {
 		"NAME": "Last Resort",
 		"DESCRIPTION": "Consume ALL your Ki, gain 1 Strength for every !M! Ki consumed. NL Lose ALL Ki Regen. NL Exhaust."
 	},
-	"Quickening": {
+	"Saiyan:Quickening": {
 		"NAME": "Quickening",
 		"DESCRIPTION": "Starter. NL Consume !Saiyan:KiReq! Ki. NL Gain 2 Plated Armor, apply 1 Vulnerable to ALL enemies.",
 		"UPGRADE_DESCRIPTION": "Starter. NL Consumes !Saiyan:KiReq! Ki. NL Gain 3 Plated Armor, apply 1 Vulnerable to ALL enemies."
 	},
-	"MonkeyTail": {
+	"Saiyan:MonkeyTail": {
 		"NAME": "Monkey Tail",
 		"DESCRIPTION": "Gain !M! Strength. NL Put a Full Moon and a Great_Ape Form in your draw pile."
 	},
-	"FullMoon": {
+	"Saiyan:FullMoon": {
 		"NAME": "Full Moon",
 		"DESCRIPTION": "The moon looms ominously in the sky."
 	},
-	"GreatApeForm": {
+	"Saiyan:GreatApeForm": {
 		"NAME": "Great Ape Form",
 		"DESCRIPTION": "Moonstruck. Gain [E] [E]  at the start of every turn. Exhaust ALL your non-attack cards. Become a Great_Ape."
 	},
-	"ConcussiveBlow": {
+	"Saiyan:ConcussiveBlow": {
 		"NAME": "Concussive Blow",
 		"DESCRIPTION": "Deal !D! damage and apply !M! Concussion to the target."
 	},
-	"DragonRadar": {
+	"Saiyan:DragonRadar": {
 		"NAME": "Dragon Radar",
 		"DESCRIPTION": "Put 7 Dragon Balls in your deck, split between your draw and discard piles. NL Exhaust."
 	},
-	"DragonBall": {
+	"Saiyan:DragonBall": {
 		"NAME": "Dragon Ball",
 		"DESCRIPTION": "Draw a card. NL Play 7 to grant a powerful wish."
 	},
-	"Makankosappo": {
+	"Saiyan:Makankosappo": {
 		"NAME": "Makankosappo",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage !Saiyan:Misc! times. NL Finisher: Apply concussion equal to your combo."
 	},
-	"Kienzan": {
+	"Saiyan:Kienzan": {
 		"NAME": "Kien-zan",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. This attack ignores block."
 	},
-	"DoubleMasenko": {
+	"Saiyan:DoubleMasenko": {
 		"NAME": "Double Masenko",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage to two different random enemies."
 	},
-	"BurningSoul": {
+	"Saiyan:BurningSoul": {
 		"NAME": "Burning Soul",
 		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn, gain that much Ki-Barrier."
 	},
-	"Scouter": {
+	"Saiyan:Scouter": {
 		"NAME": "Scouter",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain !B! block this and next turn. NL If the enemy is NOT attacking gain an extra !M! block."
 	},
-	"TurtleShell": {
+	"Saiyan:TurtleShell": {
 		"NAME": "Turtle Shell",
 		"DESCRIPTION": "Gain !M! Ki Regen."
 	},
-	"Flurry": {
+	"Saiyan:Flurry": {
 		"NAME": "Flurry",
 		"DESCRIPTION": "Follow-up. NL Deal !D! damage 3 times. NL Ki-Enhanced( !M! ): hit 1 additional time."	
 	},
-	"ThirstForFight": {
+	"Saiyan:ThirstForFight": {
 		"NAME": "Thirst for Battle",
 		"DESCRIPTION": "Gain 1 Strength for every buff on a target enemy. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Gain 1 Strength for every buff on a target enemy."
 	},
-	"Teleport": {
+	"Saiyan:Teleport": {
 		"NAME": "Instant Transfer",
 		"DESCRIPTION": "Starter & Follow-up. NL Consumes !Saiyan:KiReq! Ki. NL Apply !M! Vulnerable."
 	},
-	"DrainingStrike": {
+	"Saiyan:DrainingStrike": {
 		"NAME": "Draining Force",
 		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain [E]  for each enemy hit with unblocked damage. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain [E]  for each enemy hit. NL Exhaust."
 	},
-	"Taunt": {
+	"Saiyan:Taunt": {
 		"NAME": "Taunt",
 		"DESCRIPTION": "Give an enemy !M! Strength, gain 2 Reflect."
 	},
-	"KiExplosion": {
+	"Saiyan:KiExplosion": {
 		"NAME": "Ki Explosion",
 		"DESCRIPTION": "Follow-up. NL Consumes !Saiyan:KiReq! Ki. NL Gain !B! block and !M! Ki-Barrier. "
 	},
-	"RuthlessBlow": {
+	"Saiyan:RuthlessBlow": {
 		"NAME": "Ruthless Blow",
 		"DESCRIPTION": "Deal !D! damage. NL Finisher: Apply Vulnerable equal to your Combo. "
 	},
-	"SolarFlare": {
+	"Saiyan:SolarFlare": {
 		"NAME": "Solar Flare",
 		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Stun an enemy for 1 turn. ",
 		"UPGRADE_DESCRIPTION": "Consumes !Saiyan:KiReq! Ki. NL Stun ALL enemies for 1 turn."
 	},
-	"SuperSaiyanForm": {
+	"Saiyan:SuperSaiyanForm": {
 		"NAME": "Super Saiyan Form",
 		"DESCRIPTION": "Gain !M! Ki Regen and 4 Metallicize.",
 		"UPGRADE_DESCRIPTION": "Gain !M! Ki Regen and 5 Metallicize."
 	},
-	"SenzuBean": {
+	"Saiyan:SenzuBean": {
 		"NAME": "Senzu Bean",
 		"DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Invincible (33% Max HP). NL Obtain a random common relic at end of combat.",
 		"UPGRADE_DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Metallicize( !M! x3 ). NL Obtain a random common relic at end of combat."
 	},
-	"GenkiDama": {
+	"Saiyan:GenkiDama": {
 		"NAME": "Genki Dama",
 		"DESCRIPTION": "Consume up to !M! Ki and deal that much damage to ALL enemies (currently !D! ). NL Gain !Saiyan:Misc! Weak."
 	}

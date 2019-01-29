@@ -95,6 +95,10 @@ public class CardPaths {
 	public static final String MIND_BOOM = "img/cards/theBomb.png";
 	public static final String PLANNING = "img/cards/theBomb.png";
 	public static final String KI_STRIKE = "img/cards/transfigurationBeam.png";
+	public static final String PACING = "img/cards/theBomb.png";
+	public static final String RESET = "img/cards/theBomb.png";
+	public static final String EXPANDING_SHOCKWAVE = "img/cards/transfigurationBeam.png";
+	public static final String TWIZE = "img/cards/theBomb.png";
 
 	
 }

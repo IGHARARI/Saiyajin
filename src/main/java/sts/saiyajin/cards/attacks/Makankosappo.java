@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -17,12 +18,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 import sts.saiyajin.cards.types.ComboFinisher;
-import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.ConcussionPower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
-import sts.saiyajin.utils.PowersHelper;
 
 public class Makankosappo extends ComboFinisher {
 
@@ -59,15 +58,16 @@ public class Makankosappo extends ComboFinisher {
 	}
 
 	@Override
+	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ConcussionPower(monster, comboStacks), comboStacks));
+	}
+	
+	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		for(int i = 0; i < BASE_HIT_TIMES; i++) {
 			DamageInfo damageInfo = new DamageInfo(player, this.damage, this.damageTypeForTurn);
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, damageInfo, AttackEffect.BLUNT_LIGHT, true));
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SmallLaserEffect(player.hb.cX, player.hb.cY, monster.hb.cX, monster.hb.cY), 0.07f));
-		}
-		int comboAmount = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
-		if (comboAmount > 0){
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ConcussionPower(monster, comboAmount), comboAmount));
 		}
 	}
 }

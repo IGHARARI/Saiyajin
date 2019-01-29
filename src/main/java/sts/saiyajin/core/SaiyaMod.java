@@ -42,6 +42,7 @@ import sts.saiyajin.cards.attacks.ConcussiveBlow;
 import sts.saiyajin.cards.attacks.DoubleMasenko;
 import sts.saiyajin.cards.attacks.DragonFist;
 import sts.saiyajin.cards.attacks.DrainingStrike;
+import sts.saiyajin.cards.attacks.ExpandingShockwave;
 import sts.saiyajin.cards.attacks.Flurry;
 import sts.saiyajin.cards.attacks.GenkiDama;
 import sts.saiyajin.cards.attacks.KameHameHa;
@@ -85,11 +86,13 @@ import sts.saiyajin.cards.skills.LastResort;
 import sts.saiyajin.cards.skills.Medicine;
 import sts.saiyajin.cards.skills.MindBoom;
 import sts.saiyajin.cards.skills.Overexert;
+import sts.saiyajin.cards.skills.Pacing;
 import sts.saiyajin.cards.skills.Planning;
 import sts.saiyajin.cards.skills.PowerUp;
 import sts.saiyajin.cards.skills.PressOn;
 import sts.saiyajin.cards.skills.Quickening;
 import sts.saiyajin.cards.skills.Rekindle;
+import sts.saiyajin.cards.skills.Reset;
 import sts.saiyajin.cards.skills.SaiyanHubris;
 import sts.saiyajin.cards.skills.Scouter;
 import sts.saiyajin.cards.skills.SenzuBean;
@@ -97,6 +100,7 @@ import sts.saiyajin.cards.skills.SolarFlare;
 import sts.saiyajin.cards.skills.Taunt;
 import sts.saiyajin.cards.skills.TheBomb;
 import sts.saiyajin.cards.skills.ThirstForFight;
+import sts.saiyajin.cards.skills.Twize;
 import sts.saiyajin.cards.skills.UltraInstinct;
 import sts.saiyajin.cards.special.KiBurn;
 import sts.saiyajin.cards.special.Training;
@@ -130,12 +134,14 @@ public class SaiyaMod implements
 //	RenderSubscriber,
 //	PostInitializeSubscriber
 	{
-
-	public static final Logger logger = LogManager.getLogger(SaiyaMod.class);
+	
 	
 //	private static KiEnergyCounter kiCounter;
 	
+	public static final String MOD_ID = "Saiyan:";
+	public static final Logger logger = LogManager.getLogger(SaiyaMod.class);
     public SaiyaMod() {
+
     	BaseMod.subscribe(this);
     	Color someColor = CardHelper.getColor(100f, 10f, 30.0f);
     	String ATTACK_CC = "img/512/bg_attack_saiyan_s.png";
@@ -203,8 +209,6 @@ public class SaiyaMod implements
 //    }
 //    
     public void receiveEditCharacters() {
-    	logger.info("Start editCharacters: ");
-
         logger.info("Adding character:  " + SaiyajinPlayer.SAIYAJIN.toString());
         BaseMod.addCharacter(
             new Saiyajin("Weakling"),
@@ -212,16 +216,13 @@ public class SaiyaMod implements
             CharacterSelection.SAIYAN_PORTRAIT,
             SaiyajinPlayer.SAIYAJIN
         );
-        logger.info("done editing characters");
 	}
     
     public void receiveEditCards() {
-    	
-    	
     	/**
     	 * Add dynamic variables
     	 */
-    	logger.info("Adding Ki Dynamic variable");
+    	logger.info("Adding Saiyan Dynamic variables");
     	BaseMod.addDynamicVariable(new KiVarDynamicVariable());
     	BaseMod.addDynamicVariable(new KiReqDynamicVariable());
     	BaseMod.addDynamicVariable(new MiscDynamicVariable());
@@ -283,6 +284,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.FUROR);
         BaseMod.addCard(new Planning());
         UnlockTracker.unlockCard(CardNames.PLANNING);
+        BaseMod.addCard(new ExpandingShockwave());
+        UnlockTracker.unlockCard(CardNames.EXPANDING_SHOCKWAVE);
         
         /**
          * Uncommon cards
@@ -331,6 +334,12 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.REVERBERATING_FORCE);
         BaseMod.addCard(new KiStrike());
         UnlockTracker.unlockCard(CardNames.KI_STRIKE);
+        BaseMod.addCard(new Pacing());
+        UnlockTracker.unlockCard(CardNames.PACING);
+        BaseMod.addCard(new Reset());
+        UnlockTracker.unlockCard(CardNames.RESET);
+        BaseMod.addCard(new Twize());
+        UnlockTracker.unlockCard(CardNames.TWIZE);
 
         /**
          * RARE CARDS
@@ -379,9 +388,7 @@ public class SaiyaMod implements
     }
     
     public void receiveEditStrings() {
-
         String relicStrings, cardStrings, powerStrings, uiStrings;
-
         //	ASSUME THAT ("lang == eng");
           relicStrings = Gdx.files.internal("localization/saiyajin_relics.json")
               .readString(String.valueOf(StandardCharsets.UTF_8));

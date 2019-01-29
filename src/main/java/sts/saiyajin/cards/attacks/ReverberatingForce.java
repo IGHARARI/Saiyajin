@@ -5,20 +5,18 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.cards.types.ComboFinisher;
-import sts.saiyajin.powers.ComboPower;
 import sts.saiyajin.powers.ReverbHitPower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
-import sts.saiyajin.utils.PowersHelper;
 
 public class ReverberatingForce extends ComboFinisher {
 
@@ -45,15 +43,18 @@ public class ReverberatingForce extends ComboFinisher {
 			upgradeDamage(UPGRADE_DAMAGE);
 		}
 	}
+	
+	@Override
+	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {
+		for (int i = 0; i < comboStacks; i++) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ReverbHitPower(monster, this.damage), this.damage));
+		}
+	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ReverbHitPower(monster, this.damage), this.damage));
-		int comboStacks = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
-		for (int i = 0; i < comboStacks; i++) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ReverbHitPower(monster, this.damage), this.damage));
-		}
 	}
 
 }

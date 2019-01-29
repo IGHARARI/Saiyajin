@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -63,6 +64,9 @@ public class KameHameHa extends ComboFinisher {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, damageInfo, AttackEffect.BLUNT_HEAVY));
 	}
 
+	@Override
+	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {}
+	
 	@Override
 	public void onComboUpdated() {
 		//I do +1 as this is triggered before the Combo is actually applied
