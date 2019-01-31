@@ -31,7 +31,7 @@ public class SpiritSwordLaserEffect extends AbstractGameEffect {
         this.dX = dX;
         this.dY = dY;
         this.dst = Vector2.dst(this.sX, this.sY, this.dX, this.dY) / Settings.scale;
-        this.color = new Color(255, 210, 30, 1);
+        this.color = Color.GOLD.cpy();// new Color(255, 210, 30, 1);
         this.duration = DUR;
         this.startingDuration = DUR;
         this.rotation = MathUtils.atan2(dX - sX, dY - sY);

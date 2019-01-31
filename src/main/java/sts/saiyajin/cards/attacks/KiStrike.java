@@ -27,7 +27,7 @@ public class KiStrike extends SaiyanCard {
 	private static final int UPGRADE_DAMAGE = 2;
 	private static final int BASE_BLOCK = 6;
 	private static final int UPGRADE_BLOCK = 2;
-	private static final int KI_REQUIRED = 8;
+	private static final int KI_REQUIRED = 6;
 	
 	public KiStrike() {
 		super(CardNames.KI_STRIKE, cardStrings.NAME, CardPaths.KI_STRIKE, COST, cardStrings.DESCRIPTION, 

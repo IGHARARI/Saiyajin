@@ -20,15 +20,15 @@ public class ChaozAction extends AbstractGameAction {
     
     @Override
     public void update() {
-        if (this.duration == 0.1f && this.target != null) {
-                for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-                    if (!c.uuid.equals(this.uuid)) {
-                        continue;
-                    }
-                    final AbstractCard abstractCard = c;
-                    abstractCard.baseMagicNumber += this.increaseAmount;
-                    c.isMagicNumberModified = false;
+        if (this.duration == 0.1f) {
+            for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+                if (!c.uuid.equals(this.uuid)) {
+                    continue;
                 }
+                final AbstractCard abstractCard = c;
+                abstractCard.baseMagicNumber += this.increaseAmount;
+                c.isMagicNumberModified = false;
+            }
         }
         this.tickDuration();
     }

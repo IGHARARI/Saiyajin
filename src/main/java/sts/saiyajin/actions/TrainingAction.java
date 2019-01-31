@@ -23,7 +23,7 @@ public class TrainingAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_XFAST) {
         	boolean isTraining = false;
         	for (AbstractCard card : AbstractDungeon.player.hand.group) {
-        		if (card.cardID == CardNames.TRAINING) {
+        		if (card instanceof Training) {
         			Training trainCard = (Training) card;
         			trainCard.flash();
         			trainCard.addTrainingTurns(this.amount);

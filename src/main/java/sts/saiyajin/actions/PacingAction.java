@@ -41,7 +41,9 @@ public class PacingAction extends AbstractGameAction {
             ++effect;
         }
         if (effect > 0) {
-            PowersHelper.increaseComboBy(effect);
+        	for(int i = 0; i < effect; i++) {
+        		PowersHelper.increaseComboBy(1);
+        	}
             if (!this.freeToPlayOnce) {
                 this.p.energy.use(EnergyPanel.totalCount);
             }

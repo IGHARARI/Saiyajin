@@ -57,10 +57,10 @@ public class PowerPaths {
 	public static final String REVERB_HIT_B = "img/powers/reverbhit128.png";
 	public static final String MOMENTUM = "img/powers/momentum48.png";
 	public static final String MOMENTUM_B = "img/powers/momentum128.png";
+	public static final String TWIZE = "img/powers/twize48.png";
+	public static final String TWIZE_B = "img/powers/twize128.png";
 	
 	/**
 	 * unimplemented
 	 */
-	public static final String TWIZE = "img/powers/momentum48.png";
-	public static final String TWIZE_B = "img/powers/momentum128.png";
 }

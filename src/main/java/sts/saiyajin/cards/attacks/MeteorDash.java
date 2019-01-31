@@ -22,7 +22,7 @@ public class MeteorDash extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.METEOR_DASH);
 
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 9;
+	private static final int BASE_DAMAGE = 10;
 	private static final int UPGRADE_DAMAGE = 3;
 	
 	public MeteorDash() {

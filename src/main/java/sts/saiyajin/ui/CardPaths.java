@@ -9,14 +9,14 @@ public class CardPaths {
 	 */
 	public static final String SAIYAN_STRIKE = "img/cards/strike_b.png";
 	public static final String SAIYAN_DEFEND = "img/cards/block_b.png";
-	public static final String KI_BLAST = "img/cards/kiblast_b.png";
-	public static final String POWER_UP = "img/cards/powerup_b.png";
+	public static final String KI_BLAST = "img/cards/kiblast.png";
+	public static final String KAIO_KEN = "img/cards/kaioken.png";
 	public static final String RUTHLESS_BLOW = "img/cards/ruthlessblow.png";
 
 	/**
 	 * COMMONS
 	 */
-	public static final String KAIO_KEN = "img/cards/kaioken_b.png";
+	public static final String POWER_UP = "img/cards/powerup_b.png";
 	public static final String KAME_HAME_HA = "img/cards/kamehameha_b.png";
 	public static final String METEOR_DASH = "img/cards/meteordash_b.png";
 	public static final String FLURRY = "img/cards/flurry_b.png";
@@ -37,6 +37,8 @@ public class CardPaths {
 	public static final String DRAGON_FIST = "img/cards/dragonfist.png";
 	public static final String SOUL_SPICE = "img/cards/soulSpice.png";
 	public static final String FUROR = "img/cards/defiance.png";
+	public static final String EXPANDING_SHOCKWAVE = "img/cards/expandingshockwave.png";
+	public static final String PLANNING = "img/cards/planning.png";
 
 	/**
 	 * UNCOMMONS
@@ -60,6 +62,12 @@ public class CardPaths {
 	public static final String ULTRA_INSTINCT = "img/cards/ultrainstinct.png";
 	public static final String PRESS_ON = "img/cards/pressOn.png";
 	public static final String REVERBERATING_FORCE = "img/cards/reverbStrike.png";
+	public static final String AUGMENTED_BLAST = "img/cards/augmentedblast.png";
+	public static final String FINAL_FLASH = "img/cards/finalflash.png";
+	public static final String KI_STRIKE = "img/cards/kistrike.png";
+	public static final String PACING = "img/cards/pacing.png";
+	public static final String RESET = "img/cards/reset.png";
+	public static final String TWIZE = "img/cards/twize.png";
 	
 	/**
 	 * RARES
@@ -75,6 +83,7 @@ public class CardPaths {
 	public static final String MOMENTUM = "img/cards/momentum.png";
 	public static final String TRANSFIGURATION_BEAM = "img/cards/transfigurationBeam.png";
 	public static final String THE_BOMB = "img/cards/theBomb.png";
+	public static final String MIND_BOOM = "img/cards/mindboom.png";
 	
 	/**
 	 * SPECIAL
@@ -89,16 +98,4 @@ public class CardPaths {
 	public static final String TRAINING = "img/cards/training.png";
 	public static final String KI_BURN = "img/cards/kiburn.png";
 
-	/**
-	 * unimplemented
-	 */
-	public static final String MIND_BOOM = "img/cards/theBomb.png";
-	public static final String PLANNING = "img/cards/theBomb.png";
-	public static final String KI_STRIKE = "img/cards/transfigurationBeam.png";
-	public static final String PACING = "img/cards/theBomb.png";
-	public static final String RESET = "img/cards/theBomb.png";
-	public static final String EXPANDING_SHOCKWAVE = "img/cards/transfigurationBeam.png";
-	public static final String TWIZE = "img/cards/theBomb.png";
-
-	
 }

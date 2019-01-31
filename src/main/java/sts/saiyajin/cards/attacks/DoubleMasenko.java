@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
+import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
@@ -55,13 +55,15 @@ public class DoubleMasenko extends SaiyanCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractMonster mon1 = AbstractDungeon.getMonsters().getRandomMonster(true);
 		AbstractMonster mon2 = AbstractDungeon.getMonsters().getRandomMonster(mon1, true);
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SmallLaserEffect(player.hb.cX, player.hb.cY, mon1.hb.cX, mon1.hb.cY), 0.1f));
+//		AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SmallLaserEffect(player.hb.cX, player.hb.cY, mon1.hb.cX, mon1.hb.cY), 0.1f));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new BloodShotEffect(player.hb.cX, player.hb.cY, mon1.hb.cX, mon1.hb.cY, 1), 0.6f));
 		DamageInfo info = new DamageInfo(player, this.baseDamage);
 		info.applyPowers(player, mon1);
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(mon1, info, AttackEffect.SLASH_DIAGONAL));
 		if (mon2 != null && mon2 != mon1){
 			info = new DamageInfo(player, this.baseDamage);
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SmallLaserEffect(player.hb.cX, player.hb.cY, mon2.hb.cX, mon2.hb.cY), 0.1f));
+//			AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SmallLaserEffect(player.hb.cX, player.hb.cY, mon2.hb.cX, mon2.hb.cY), 0.1f));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new BloodShotEffect(player.hb.cX, player.hb.cY, mon2.hb.cX, mon2.hb.cY, 1), 0.6f));
 			info.applyPowers(player, mon2);
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(mon2, info, AttackEffect.SLASH_DIAGONAL));
 			

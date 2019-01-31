@@ -7,13 +7,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import sts.saiyajin.core.Saiyajin;
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
 import sts.saiyajin.utils.PowersHelper;
@@ -44,12 +44,12 @@ public class BurningSoulPower extends AbstractPower {
 	@Override
 	public void atEndOfTurn(boolean isPlayer) {
 		if(isPlayer){
-			Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
+			AbstractPlayer kakarot = AbstractDungeon.player;
 			if (kakarot.hasPower(PowerNames.KI)){
 				int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
 				int usableKi = Math.min(this.amount, kiPower);
 				if (usableKi > 0) {
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiBarrierPower(kakarot, usableKi), usableKi));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(kakarot, kakarot, new KiBarrierPower(kakarot, usableKi*2), usableKi*2));
 					AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(kakarot, kakarot, KiPower.POWER_ID, usableKi));
 				}
 			}

@@ -58,7 +58,9 @@ public class WeakRevivePower extends AbstractPower {
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, buffAmount), buffAmount));
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new MetallicizePower(owner, buffAmount*3), buffAmount*3));
 		AbstractDungeon.actionManager.addToTop(new GainBlockAction(owner, owner, buffAmount*3));
-		AbstractDungeon.actionManager.addToTop(new StunMonsterAction((AbstractMonster) owner, owner, 1));
+		if (owner instanceof AbstractMonster) {
+			AbstractDungeon.actionManager.addToTop(new StunMonsterAction((AbstractMonster) owner, owner, 1));
+		}
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new CantRevivePower(owner, 1), 1));
 		for(AbstractPower power : this.owner.powers){
 			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, power));

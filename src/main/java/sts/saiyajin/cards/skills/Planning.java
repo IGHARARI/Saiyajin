@@ -41,6 +41,7 @@ public class Planning extends SaiyanCard {
 			upgradeMagicNumber(UPGRADED_KI_GAIN);
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 			this.initializeDescription();
+			this.exhaust = false;
 		}
 	}
 
@@ -48,7 +49,6 @@ public class Planning extends SaiyanCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, this.magicNumber), this.magicNumber));
 	    AbstractDungeon.actionManager.addToBottom(new PlanningAction(1));
-	    this.exhaust = false;
 	}
 
 }

@@ -36,6 +36,7 @@ import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostPowerApplySubscriber;
+import sts.saiyajin.cards.attacks.AugmentedBlast;
 import sts.saiyajin.cards.attacks.BackAttack;
 import sts.saiyajin.cards.attacks.BigBangAttack;
 import sts.saiyajin.cards.attacks.ConcussiveBlow;
@@ -43,6 +44,7 @@ import sts.saiyajin.cards.attacks.DoubleMasenko;
 import sts.saiyajin.cards.attacks.DragonFist;
 import sts.saiyajin.cards.attacks.DrainingStrike;
 import sts.saiyajin.cards.attacks.ExpandingShockwave;
+import sts.saiyajin.cards.attacks.FinalFlash;
 import sts.saiyajin.cards.attacks.Flurry;
 import sts.saiyajin.cards.attacks.GenkiDama;
 import sts.saiyajin.cards.attacks.KameHameHa;
@@ -111,6 +113,7 @@ import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.relics.SaiyanHeart;
 import sts.saiyajin.relics.SaiyanSoul;
 import sts.saiyajin.ui.CharacterSelection;
+import sts.saiyajin.ui.ComboDynamicVariable;
 import sts.saiyajin.ui.KiReqDynamicVariable;
 import sts.saiyajin.ui.KiVarDynamicVariable;
 import sts.saiyajin.ui.MiscDynamicVariable;
@@ -226,6 +229,7 @@ public class SaiyaMod implements
     	BaseMod.addDynamicVariable(new KiVarDynamicVariable());
     	BaseMod.addDynamicVariable(new KiReqDynamicVariable());
     	BaseMod.addDynamicVariable(new MiscDynamicVariable());
+    	BaseMod.addDynamicVariable(new ComboDynamicVariable());
     	
     	
     	logger.info("Adding cards for the Saiyan");
@@ -340,6 +344,10 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.RESET);
         BaseMod.addCard(new Twize());
         UnlockTracker.unlockCard(CardNames.TWIZE);
+        BaseMod.addCard(new FinalFlash());
+        UnlockTracker.unlockCard(CardNames.FINAL_FLASH);
+        BaseMod.addCard(new AugmentedBlast());
+        UnlockTracker.unlockCard(CardNames.AUGMENTED_BLAST);
 
         /**
          * RARE CARDS
@@ -428,10 +436,11 @@ public class SaiyaMod implements
 
 	@Override
 	public void receiveOnBattleStart(AbstractRoom r) {
-		Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
-		KiPower kiPower = new KiPower(kakarot, kakarot.getMaxKi());
-		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(kakarot, kakarot, kiPower, kakarot.getMaxKi()));
-		
+		if (AbstractDungeon.player instanceof Saiyajin) {
+			Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
+			KiPower kiPower = new KiPower(kakarot, kakarot.getMaxKi());
+			AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(kakarot, kakarot, kiPower, kakarot.getMaxKi()));
+		}
 	}
 
 	@Override

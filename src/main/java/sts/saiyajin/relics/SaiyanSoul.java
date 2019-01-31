@@ -4,13 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
 import sts.saiyajin.core.SaiyaMod;
-import sts.saiyajin.core.Saiyajin;
 import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.RelicPaths;
 import sts.saiyajin.utils.RelicNames;
@@ -46,7 +46,7 @@ public class SaiyanSoul extends CustomRelic {
 	@Override
 	public void atBattleStartPreDraw() {
 		this.flash();
-		Saiyajin kakarot = (Saiyajin) AbstractDungeon.player;
+		AbstractPlayer kakarot = AbstractDungeon.player;
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(kakarot, kakarot, new KiRegenPower(kakarot, KI_REGEN), KI_REGEN));
 	}
 	

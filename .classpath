@@ -24,7 +24,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/SteamLibrary/steamapps/common/SlayTheSpire/desktop-1.0.jar" sourcepath="D:/Lelouch/Documents/ModDependencies/NEWdecompiled-desktop1.0.zip"/>
+	<classpathentry kind="lib" path="D:/SteamLibrary/steamapps/common/SlayTheSpire/desktop-1.0.jar" sourcepath="D:/Lelouch/Documents/ModDependencies/decompiled-desktop1.0.zip"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>

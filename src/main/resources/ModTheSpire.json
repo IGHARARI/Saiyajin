@@ -1,14 +1,13 @@
 {
   "modid": "Saiyan_01",
-  "name": "Saiyajin Invasion",
+  "name": "The Saiyan",
   "author_list": [
     "Korbo"
   ],
-  "description": "Adds the scum of the Saiyajin planet as a playable character.",
+  "description": "Adds the weakling of the Saiyajin planet as a playable character.",
   "dependencies": [
     "basemod", "stslib"
   ],
-  "version": "0.4.0",
-  "sts_version": "11-13-2018"
-//  "update_json": "https://api.github.com/repos/lf201014/STS_ThMod_MRS/releases/latest"
+  "version": "0.4.3",
+  "sts_version": "01-23-2019"
 }

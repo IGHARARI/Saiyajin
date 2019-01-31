@@ -30,6 +30,7 @@ public abstract class PowerNames {
 	public static final String SOUL_SPICE = SaiyaMod.MOD_ID + "SoulSpice";
 	public static final String REVERB_HIT = SaiyaMod.MOD_ID + "ReverbHit";
 	public static final String MOMENTUM = SaiyaMod.MOD_ID + "Momentum";
+	public static final String CHAOZ = SaiyaMod.MOD_ID + "Chaoz";
 
 	
 	public static final String TWIZE = SaiyaMod.MOD_ID + "Twize";

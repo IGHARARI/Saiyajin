@@ -69,6 +69,8 @@ public abstract class CardNames {
 	public static final String PACING = SaiyaMod.MOD_ID + "Pacing";
 	public static final String RESET = SaiyaMod.MOD_ID + "Reset";
 	public static final String TWIZE = SaiyaMod.MOD_ID + "Twize";
+	public static final String FINAL_FLASH = SaiyaMod.MOD_ID + "FinalFlash";
+	public static final String AUGMENTED_BLAST = SaiyaMod.MOD_ID + "AugmentedBlast";
 	
 	/**
 	 * RARES

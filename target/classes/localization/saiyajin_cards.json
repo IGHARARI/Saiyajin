@@ -19,6 +19,14 @@
 		"NAME": "Expanding Shockwave",
 		"DESCRIPTION": "Follow-up. NL Deal !D! damage. NL Deal twice that much damage to all other enemies."
 	},
+	"Saiyan:FinalFlash": {
+		"NAME": "Final Flash",
+		"DESCRIPTION": "Consumes !Saiyan:KiReq! Ki. NL Deal !D! damage. NL Finisher: Target loses Strength equal to your Combo. NL Exhaust."
+	},
+	"Saiyan:AugmentedBlast": {
+		"NAME": "Augmented Blast",
+		"DESCRIPTION": "Consume up to !Saiyan:Misc! Ki to deal damage (currently !D!). NL Permanently increase this card's max consumption & damage by !M!. NL Exhaust."
+	},
 	"Saiyan:Twize": {
 		"NAME": "Twize",
 		"DESCRIPTION": "The next Finisher you trigger this turn gets triggered an additional time. NL Exhaust",
@@ -36,8 +44,8 @@
 	},
 	"Saiyan:Pacing": {
 		"NAME": "Pacing",
-		"DESCRIPTION": "Gain X Combo.",
-		"UPGRADE_DESCRIPTION": "Gain X+1 Combo."
+		"DESCRIPTION": "Gain Combo X times.",
+		"UPGRADE_DESCRIPTION": "Gain Combo X+1 times."
 	},
 	"Saiyan:Planning": {
 		"NAME": "Planning",
@@ -160,7 +168,7 @@
 	},
 	"Saiyan:KiStrike": {
 		"NAME": "Ki Strike",
-		"DESCRIPTION": "Starter. Consume !Saiyan:KiReq! Ki. NL Gain !B! Block. NL Deal !D! damage."
+		"DESCRIPTION": "Starter. NL Consume !Saiyan:KiReq! Ki. NL Gain !B! Block. NL Deal !D! damage."
 	},
 	"Saiyan:KaioKen": {
 		"NAME": "KaioKen",
@@ -235,7 +243,7 @@
 	},
 	"Saiyan:BurningSoul": {
 		"NAME": "Burning Soul",
-		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn, gain that much Ki-Barrier."
+		"DESCRIPTION": "Consume up to !M! Ki at the end of every turn, gain twice that much Ki-Barrier."
 	},
 	"Saiyan:Scouter": {
 		"NAME": "Scouter",

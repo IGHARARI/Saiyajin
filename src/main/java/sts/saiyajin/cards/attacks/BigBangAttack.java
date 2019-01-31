@@ -52,6 +52,7 @@ public class BigBangAttack extends SaiyanCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SmallLaserEffect(player.hb.cX, player.hb.cY, monster.hb.cX, monster.hb.cY), 0.1f));
+		CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT");
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage), AbstractGameAction.AttackEffect.NONE));
 	}
 

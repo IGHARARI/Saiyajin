@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import sts.saiyajin.actions.ComboFollowUpAction;
 import sts.saiyajin.actions.ComboStarterAction;
 import sts.saiyajin.powers.ComboPower;
+import sts.saiyajin.powers.MajinSealPower;
 
 public class PowersHelper {
 	public static int getPlayerPowerAmount(String powerId){
@@ -32,6 +33,7 @@ public class PowersHelper {
 	
 	public static void increaseComboBy(int amount) {
 		AbstractPlayer p = AbstractDungeon.player;
+		if (p.hasPower(MajinSealPower.POWER_ID)) amount += p.getPower(MajinSealPower.POWER_ID).amount;
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ComboPower(p, amount), amount));
 	}
 	

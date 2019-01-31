@@ -11,6 +11,10 @@
     "NAME": "Revive",
     "DESCRIPTIONS": ["Enemy will revive when killed with full HP and extra buffs."]
   },
+  "Saiyan:Chaoz": {
+    "NAME": "Chaoz",
+    "DESCRIPTIONS": ["Does anybody like chaotzu?"]
+  },
   "Saiyan:Twize": {
     "NAME": "Twize",
     "DESCRIPTIONS": ["Your next Finisher will get triggered Twice!"]

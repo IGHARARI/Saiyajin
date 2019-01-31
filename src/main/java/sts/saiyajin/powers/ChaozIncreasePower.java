@@ -19,7 +19,7 @@ import sts.saiyajin.utils.PowerNames;
 
 public class ChaozIncreasePower extends AbstractPower implements InvisiblePower {
 
-	public static final String POWER_ID = PowerNames.COMBO;
+	public static final String POWER_ID = PowerNames.CHAOZ;
 	private static final PowerStrings powerStrings =
 			CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 	public static final String NAME = powerStrings.NAME;
@@ -39,8 +39,12 @@ public class ChaozIncreasePower extends AbstractPower implements InvisiblePower 
 		this.canGoNegative = false;
 		this.incAmount = incAmount;
 		this.targetUUID = targetUUID;
+		this.loadRegion("combust");
 	}
 	
+	
+	@Override
+	public void flash() {}
 	
     @Override
     public void atEndOfTurn(final boolean isPlayer) {

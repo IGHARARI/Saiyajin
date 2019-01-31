@@ -4,10 +4,10 @@ size: 512,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-Gokusteppingoutofaspaceship
+goku
   rotate: false
   xy: 1, 1
-  size: 382, 862
-  orig: 391, 870
-  offset: 2, 8
+  size: 380, 861
+  orig: 380, 861
+  offset: 0, 0
   index: -1
