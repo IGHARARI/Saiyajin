@@ -7,17 +7,14 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import sts.saiyajin.cards.types.ComboFinisher;
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
-import sts.saiyajin.utils.PowersHelper;
 
 public class ExtremeSpeedPower extends AbstractPower {
 
@@ -29,16 +26,11 @@ public class ExtremeSpeedPower extends AbstractPower {
 
 	final Logger logger = LogManager.getLogger(ExtremeSpeedPower.class);
 	
-	private int extraDraw = 0;
 	public ExtremeSpeedPower(AbstractCreature owner) {
-		this(owner, 0);
-	}	
-	public ExtremeSpeedPower(AbstractCreature owner, int extraDraw) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = 1;
-		this.extraDraw = extraDraw;
 		this.type = AbstractPower.PowerType.BUFF;
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.EXTREME_SPEED_B), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.EXTREME_SPEED), 0, 0, 48, 48);
@@ -47,15 +39,12 @@ public class ExtremeSpeedPower extends AbstractPower {
 	}
 	
 	@Override
-	public void onAfterCardPlayed(AbstractCard usedCard) {
-		super.onAfterCardPlayed(usedCard);
-		if (usedCard instanceof ComboFinisher) {
-			int comboAmount = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
-			int draw = comboAmount/2 + extraDraw;
-			if (draw > 0) {
-				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, draw));
-			}
+	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+		if (ComboPower.POWER_ID.equals(power.ID) && target.equals(AbstractDungeon.player)) {
+			this.flash();
+			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner, this.amount));
 		}
+		super.onApplyPower(power, target, source);
 	}
 	
 	@Override

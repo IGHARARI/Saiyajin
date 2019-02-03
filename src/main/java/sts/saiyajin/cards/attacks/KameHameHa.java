@@ -67,11 +67,21 @@ public class KameHameHa extends ComboFinisher {
 	@Override
 	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {}
 	
+//	@Override
+//	public void applyPowers() {
+//		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
+//		int costModify = Math.max(0, COST - this.cost - comboAmt);
+//		this.modifyCostForCombat(costModify);
+//		super.applyPowers();
+//	}
+	
 	@Override
 	public void onComboUpdated() {
 		//I do +1 as this is triggered before the Combo is actually applied
 		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) + 1;
-		this.modifyCostForCombat(COST - this.cost - comboAmt);
+		int costModify = COST - this.cost - comboAmt;
+		if (costModify > this.cost) costModify = this.cost;
+		this.modifyCostForCombat(costModify);
 		//Current cost is this.cost so the result of the #math is (COST - combo)
 	}
 

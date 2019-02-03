@@ -23,7 +23,7 @@ public class KiBurn extends SaiyanCard {
 	public static final Logger logger = LogManager.getLogger(KiBurn.class);
 	
 	public KiBurn() {
-		this(10);
+		this(8);
 	}
 	
 	public KiBurn(Integer kiToBurn) {

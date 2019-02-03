@@ -26,7 +26,7 @@ public class ExpandingShockwave extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.EXPANDING_SHOCKWAVE);
 
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 5;
+	private static final int BASE_DAMAGE = 4;
 	private static final int UPGRADE_DAMAGE = 2;
 	
 	public ExpandingShockwave() {

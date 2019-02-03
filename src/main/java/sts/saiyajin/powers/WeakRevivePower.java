@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
@@ -70,8 +69,6 @@ public class WeakRevivePower extends AbstractPower {
 			dmgReturn = owner.currentHealth -1;
 		}
 		AbstractDungeon.actionManager.addToTop(new WaitAction(1f));
-		AbstractDungeon.getCurrRoom().addRelicToRewards(RelicTier.COMMON);
-		//TODO: CHECK IF ESCAPING GIVES RELIC ANYWAY
 		return dmgReturn;
 	}
 	

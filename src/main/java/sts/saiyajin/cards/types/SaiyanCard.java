@@ -58,7 +58,7 @@ public class SaiyanCard extends CustomCard {
 				costColor = Color.FIREBRICK.cpy();
 			}
 			int kiCost = this.kiRequired;
-			if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(PowerNames.PRESS_ON) && !AbstractDungeon.getCurrRoom().isBattleOver) {
+			if (AbstractDungeon.player != null && isKiCostFree() && !AbstractDungeon.getCurrRoom().isBattleOver) {
 				kiCost = 0;
 				costColor = Color.LIME;
 			}
@@ -72,10 +72,14 @@ public class SaiyanCard extends CustomCard {
 		}
 	}
 	
-	public static boolean canUseKiCard(CustomCard c, boolean superCanUse, int kiRequired) {
+	private boolean isKiCostFree() {
+		return AbstractDungeon.player.hasPower(PowerNames.PRESS_ON) || this.freeToPlayOnce;
+	}
+
+	public boolean canUseKiCard(CustomCard c, boolean superCanUse, int kiRequired) {
 		if (kiRequired == 0) return superCanUse;
 		if (!superCanUse) return false;
-		if (AbstractDungeon.player.hasPower(PowerNames.PRESS_ON)) return true;
+		if (isKiCostFree()) return true;
 		if (AbstractDungeon.player.hasPower(PowerNames.KI)){
 			int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
 			if (kiPower >= kiRequired) return true;

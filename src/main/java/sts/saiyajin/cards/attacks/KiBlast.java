@@ -26,8 +26,8 @@ public class KiBlast extends SaiyanCard {
 	private static final int COST = 0;
 	private static final int BASE_DAMAGE = 4; 
 	private static final int UPGRADE_DAMAGE = 1; 
-	private static final int BASE_KI_COST = 8;
-	private static final int UPGRADED_KI_COST = -2;
+	private static final int BASE_KI_COST = 6;
+	private static final int UPGRADED_KI_COST = -3;
 	
 	public KiBlast() {
 		super(CardNames.KI_BLAST, cardStrings.NAME, CardPaths.KI_BLAST, COST, cardStrings.DESCRIPTION, 
@@ -62,9 +62,6 @@ public class KiBlast extends SaiyanCard {
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, magicNumber));
 		}
 		this.calculateCardDamage(null);
-		String dmg = "multidamage damage: ";
-		for (int i : this.multiDamage) {dmg += " " + i + " ";}
-		logger.info(dmg);
 		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(player, this.multiDamage, damageTypeForTurn, AttackEffect.SLASH_HORIZONTAL);
 		AbstractDungeon.actionManager.addToBottom(damageAction);
 		for (AbstractMonster m : AbstractDungeon.getMonsters().monsters){

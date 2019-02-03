@@ -23,8 +23,7 @@ public class LastResort extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.LAST_RESORT);
 
-	private static final int COST = 2;
-	private static final int UPGR_COST = 1;
+	private static final int COST = 1;
 	private static final int KI_FOR_STR = 6;
 	private static final int UPGRADED_KI_FOR_STR = -1;
 	
@@ -43,7 +42,6 @@ public class LastResort extends SaiyanCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeBaseCost(UPGR_COST);
 			upgradeMagicNumber(UPGRADED_KI_FOR_STR);
 		}
 	}

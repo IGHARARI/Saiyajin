@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import sts.saiyajin.actions.PlanningAction;
 import sts.saiyajin.cards.types.SaiyanCard;
-import sts.saiyajin.powers.KiPower;
+import sts.saiyajin.powers.RetainOncePower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
@@ -20,8 +20,10 @@ public class Planning extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.PLANNING);
 
 	private static final int COST = 1;
-	private static final int KI_GAIN = 4;
-	private static final int UPGRADED_KI_GAIN = 4;
+	private static final int UPGRADED_COST = 0;
+	
+//	private static final int KI_GAIN = 4;
+//	private static final int UPGRADED_KI_GAIN = 4;
 	
 	public Planning() {
 		super(CardNames.PLANNING, cardStrings.NAME, CardPaths.PLANNING, COST, cardStrings.DESCRIPTION, 
@@ -30,7 +32,7 @@ public class Planning extends SaiyanCard {
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.SELF);
 		
-		this.magicNumber = this.baseMagicNumber = KI_GAIN;
+//		this.magicNumber = this.baseMagicNumber = KI_GAIN;
 		this.exhaust = true;
 	}
 
@@ -38,7 +40,8 @@ public class Planning extends SaiyanCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeMagicNumber(UPGRADED_KI_GAIN);
+			upgradeBaseCost(UPGRADED_COST);
+//			upgradeMagicNumber(UPGRADED_KI_GAIN);
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 			this.initializeDescription();
 			this.exhaust = false;
@@ -47,8 +50,8 @@ public class Planning extends SaiyanCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiPower(player, this.magicNumber), this.magicNumber));
 	    AbstractDungeon.actionManager.addToBottom(new PlanningAction(1));
+	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RetainOncePower(player), 1));
 	}
 
 }

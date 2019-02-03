@@ -28,7 +28,7 @@ public class Makankosappo extends ComboFinisher {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.MAKANKOSAPPO);
 	private static final int COST = 2;
 	private static final int BASE_DAMAGE = 3; 
-	private static final int BASE_HIT_TIMES = 6; 
+	private static final int BASE_HIT_TIMES = 7; 
 	private static final int UPGRADE_DAMAGE = 1; 
 	private static final int KI_COST = 15; 
 	private static final int UPGRADED_KI_COST = -3; 

@@ -67,7 +67,7 @@ public class GenkiDama extends SaiyanCard {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, WEAK_GAINED, false), WEAK_GAINED));
 		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);
 		int kiToUse = Math.min(kiPower, this.magicNumber);
-		if (kiPower>0) AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiToUse));
+		if (kiToUse>0) AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiToUse));
 	}
 
 }

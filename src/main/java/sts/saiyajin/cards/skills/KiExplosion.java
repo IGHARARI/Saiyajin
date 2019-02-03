@@ -25,8 +25,8 @@ public class KiExplosion extends SaiyanCard {
 	private static final int KI_COST = 10;
 	private static final int BASE_THORNS = 3;
 	private static final int UPGRADED_THORNS = 2;
-	private static final int BASE_BLOCK = 16;
-	private static final int UPGRADE_BLOCK = 6;
+	private static final int BASE_BLOCK = 15;
+	private static final int UPGRADE_BLOCK = 5;
 	
 	public KiExplosion() {
 		super(CardNames.KI_EXPLOSION, cardStrings.NAME, CardPaths.KI_EXPLOSION, COST, cardStrings.DESCRIPTION, 

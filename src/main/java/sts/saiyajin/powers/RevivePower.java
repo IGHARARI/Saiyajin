@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -20,8 +19,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.InvinciblePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
+import sts.saiyajin.actions.DecreaseInvincibleAmountAction;
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
 
@@ -37,7 +36,7 @@ public class RevivePower extends AbstractPower {
 	
 	public  int strengthBuff;
 
-	public RevivePower(AbstractCreature owner, int strBuff) {
+	public RevivePower(AbstractMonster owner, int strBuff) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -52,23 +51,23 @@ public class RevivePower extends AbstractPower {
 	
 	@Override
 	public int onAttacked(DamageInfo info, int damageAmount) {
-		if (!this.owner.hasPower(PowerNames.REVIVE) || this.owner.currentHealth > damageAmount) return super.onAttacked(info, damageAmount);
-		int invincibleAmount = (owner.maxHealth / 3 ) +1;
-		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, strengthBuff), strengthBuff));
-		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new InvinciblePower(owner, invincibleAmount), invincibleAmount));
-		AbstractDungeon.actionManager.addToTop(new StunMonsterAction((AbstractMonster) owner, owner, 1));
-		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new CantRevivePower(owner, 1), 1));
-		AbstractDungeon.actionManager.addToTop(new HealAction(owner, owner, owner.maxHealth));
-		for(AbstractPower power : this.owner.powers){
-			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, power));
+		AbstractMonster monster = (AbstractMonster) owner;
+		if (!monster.hasPower(PowerNames.REVIVE) || monster.currentHealth > damageAmount) return super.onAttacked(info, damageAmount);
+		int invincibleAmount = (monster.maxHealth / 3 ) +1;
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(monster, monster, new StrengthPower(monster, strengthBuff), strengthBuff));
+		AbstractDungeon.actionManager.addToTop(new DecreaseInvincibleAmountAction(monster));
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(monster, monster, new InvinciblePower(monster, invincibleAmount), invincibleAmount));
+		AbstractDungeon.actionManager.addToTop(new StunMonsterAction(monster, monster, 1));
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(monster, monster, new CantRevivePower(monster, 1), 1));
+		AbstractDungeon.actionManager.addToTop(new HealAction(monster, monster, monster.maxHealth));
+		for(AbstractPower power : monster.powers){
+			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(monster, monster, power));
 		}
 		int dmgReturn = 0;
-		if (owner.currentHealth > 1){
-			dmgReturn = owner.currentHealth -1;
+		if (monster.currentHealth > 1){
+			dmgReturn = monster.currentHealth -1;
 		}
 		AbstractDungeon.actionManager.addToTop(new WaitAction(1f));
-		AbstractDungeon.getCurrRoom().addRelicToRewards(RelicTier.COMMON);
-		//TODO: CHECK IF ESCAPING GIVES RELIC ANYWAY
 		return dmgReturn;
 	}
 	

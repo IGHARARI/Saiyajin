@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.ui.PowerPaths;
 import sts.saiyajin.utils.PowerNames;
 import sts.saiyajin.utils.PowersHelper;
@@ -42,7 +43,7 @@ public class PowerStancePower extends AbstractPower {
 	@Override
 	public void onAfterCardPlayed(AbstractCard usedCard) {
 		super.onAfterCardPlayed(usedCard);
-		if (usedCard.type == CardType.ATTACK) {
+		if (usedCard.type == CardType.ATTACK && !usedCard.hasTag(SaiyajinCustomCardTags.COMBO_STARTER)) {
 			PowersHelper.startCombo();
 		}
 	}

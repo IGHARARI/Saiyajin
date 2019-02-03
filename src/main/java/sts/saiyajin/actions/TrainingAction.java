@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import sts.saiyajin.cards.special.Training;
-import sts.saiyajin.utils.CardNames;
 
 public class TrainingAction extends AbstractGameAction {
 	

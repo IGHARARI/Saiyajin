@@ -29,8 +29,8 @@
 	},
 	"Saiyan:Twize": {
 		"NAME": "Twize",
-		"DESCRIPTION": "The next Finisher you trigger this turn gets triggered an additional time. NL Exhaust",
-		"UPGRADE_DESCRIPTION": "The next Finisher you trigger this turn gets triggered an additional time."
+		"DESCRIPTION": "The next Finisher effect you trigger this turn gets triggered an additional time. NL Exhaust",
+		"UPGRADE_DESCRIPTION": "The next Finisher effect you trigger this turn gets triggered an additional time."
 	},
 	"Saiyan:Reset": {
 		"NAME": "Reset",
@@ -44,16 +44,16 @@
 	},
 	"Saiyan:Pacing": {
 		"NAME": "Pacing",
-		"DESCRIPTION": "Gain Combo X times.",
-		"UPGRADE_DESCRIPTION": "Gain Combo X+1 times."
+		"DESCRIPTION": "Retain a card this turn. NL Gain Combo X times.",
+		"UPGRADE_DESCRIPTION": "Retain a card this turn. NL Gain Combo X+1 times."
 	},
 	"Saiyan:Planning": {
 		"NAME": "Planning",
-		"DESCRIPTION": "Gain !M! Ki. NL Put a Starter or Follow-up from your draw pile into your hand. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Gain !M! Ki. NL Put a Starter or Follow-up from your draw pile into your hand."
+		"DESCRIPTION": "Retain a card this turn. NL Put a Starter or Follow-up from your draw pile into your hand. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Retain a card this turn. NL Put a Starter or Follow-up from your draw pile into your hand."
 	},
 	"Saiyan:MindBoom": {
-		"NAME": "Mind Boom",
+		"NAME": "Mental Boom",
 		"DESCRIPTION": "Apply !Saiyan:Misc! Concussion then double the target's Concussion. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Apply !Saiyan:Misc! Concussion then triple the target's Concussion.  NL Exhaust."
 	},
@@ -116,8 +116,8 @@
 		"UPGRADE_DESCRIPTION": "Follow-up. NL Deal !D! damage. Exhaust a card."
 	},
 	"Saiyan:Medicine": {
-		"NAME": "Medicine",
-		"DESCRIPTION": "Gain !M! Regen and 1 Medicine."
+		"NAME": "Heart Medicine",
+		"DESCRIPTION": "Gain !M! Regen and 1 Artifact. NL Exhaust."
 	},
 	"Saiyan:Honing": {
 		"NAME": "Honing",
@@ -126,8 +126,8 @@
 	},
 	"Saiyan:UltraInstinct": {
 		"NAME": "Ultra Instinct",
-		"DESCRIPTION": "Gain 25% Dodge chance X times.",
-		"UPGRADE_DESCRIPTION": "Gain 25% Dodge chance X+1 times."
+		"DESCRIPTION": "Gain 25% [#EFC851]Dodge[] [#EFC851]Chance[] X times.",
+		"UPGRADE_DESCRIPTION": "Gain 25% [#EFC851]Dodge[] [#EFC851]Chance[] X+1 times."
 	},
 	"Saiyan:KameHameHa": {
 		"NAME": "Kame Hame Ha",
@@ -155,7 +155,7 @@
 	},
 	"Saiyan:CCCapsule": {
 		"NAME": "C.C. Capsule",
-		"DESCRIPTION": "Get a random Power, it costs 1 less Energy until played. NL Exhaust."
+		"DESCRIPTION": "Get a random Power, it costs 1 less Energy this turn. NL Exhaust."
 	},
 	"Saiyan:Momentum": {
 		"NAME": "Momentum",
@@ -189,8 +189,7 @@
 	},
 	"Saiyan:ExtremeSpeed": {
 		"NAME": "Extreme-speed",
-		"DESCRIPTION": "All your Finisher cards now also trigger: NL Finisher: Draw Combo/2 cards (round down)",
-		"UPGRADE_DESCRIPTION": "All your Finisher cards now also trigger: NL Finisher: Draw 1+ Combo/2 cards (round down)"
+		"DESCRIPTION": "Every time you gain Combo, draw a card."
 	},
 	"Saiyan:BigBangAttack": {
 		"NAME": "Big-Bang Attack",
@@ -198,12 +197,11 @@
 	},
 	"Saiyan:LastResort": {
 		"NAME": "Last Resort",
-		"DESCRIPTION": "Consume ALL your Ki, gain 1 Strength for every !M! Ki consumed. NL Lose ALL Ki Regen. NL Exhaust."
+		"DESCRIPTION": "Consume ALL your Ki, lose ALL Ki Regen. NL Gain 1 Strength for every !M! Ki consumed. NL Exhaust."
 	},
 	"Saiyan:Quickening": {
 		"NAME": "Quickening",
-		"DESCRIPTION": "Starter. NL Consume !Saiyan:KiReq! Ki. NL Gain 2 Plated Armor, apply 1 Vulnerable to ALL enemies.",
-		"UPGRADE_DESCRIPTION": "Starter. NL Consumes !Saiyan:KiReq! Ki. NL Gain 3 Plated Armor, apply 1 Vulnerable to ALL enemies."
+		"DESCRIPTION": "Starter. NL Consume !Saiyan:KiReq! Ki. NL Gain !M! Plated Armor, apply 1 Vulnerable to ALL enemies."
 	},
 	"Saiyan:MonkeyTail": {
 		"NAME": "Monkey Tail",
@@ -223,11 +221,11 @@
 	},
 	"Saiyan:DragonRadar": {
 		"NAME": "Dragon Radar",
-		"DESCRIPTION": "Put 7 Dragon Balls in your deck, split between your draw and discard piles. NL Exhaust."
+		"DESCRIPTION": "Put 7 Dragon_Balls in your deck, split between your draw and discard piles. NL Exhaust."
 	},
 	"Saiyan:DragonBall": {
 		"NAME": "Dragon Ball",
-		"DESCRIPTION": "Draw a card. NL Play 7 to grant a powerful wish."
+		"DESCRIPTION": "Draw a card. NL Play 7 to grant a powerful wish. NL Exhaust."
 	},
 	"Saiyan:Makankosappo": {
 		"NAME": "Makankosappo",
@@ -259,12 +257,13 @@
 	},
 	"Saiyan:ThirstForFight": {
 		"NAME": "Thirst for Battle",
-		"DESCRIPTION": "Gain 1 Strength for every buff on a target enemy. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Gain 1 Strength for every buff on a target enemy."
+		"DESCRIPTION": "Draw 1 card. NL Gain 1 Strength for every buff on a target enemy. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Draw 1 card. NL Gain 1 Strength for every buff on a target enemy."
 	},
 	"Saiyan:Teleport": {
 		"NAME": "Instant Transfer",
-		"DESCRIPTION": "Starter & Follow-up. NL Consumes !Saiyan:KiReq! Ki. NL Apply !M! Vulnerable."
+		"DESCRIPTION": "Starter & Follow-up. NL Consumes !Saiyan:KiReq! Ki. NL Apply !M! Vulnerable.",
+		"UPGRADE_DESCRIPTION": "Starter & Follow-up. NL Consumes !Saiyan:KiReq! Ki. NL Draw a card. NL Apply !M! Vulnerable."
 	},
 	"Saiyan:DrainingStrike": {
 		"NAME": "Draining Force",

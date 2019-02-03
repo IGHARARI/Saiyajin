@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MinionPower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
+import sts.saiyajin.powers.OnVictoryAddRewardPower;
 import sts.saiyajin.powers.RevivePower;
 import sts.saiyajin.powers.WeakRevivePower;
 import sts.saiyajin.ui.CardPaths;
@@ -55,6 +56,8 @@ public class SenzuBean extends SaiyanCard {
 			} else {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new WeakRevivePower(monster, this.magicNumber), 1));
 			}
+			
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new OnVictoryAddRewardPower(), 1));
 		}
 	}
 

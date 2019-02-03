@@ -19,7 +19,7 @@ public class Taunt extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.TAUNT);
 
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int UPGRADED_COST = 0;
 	private static final int STR_GAIN = 2;
 	

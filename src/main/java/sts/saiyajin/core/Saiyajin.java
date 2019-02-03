@@ -34,7 +34,7 @@ import sts.saiyajin.utils.RelicNames;
 
 public class Saiyajin extends CustomPlayer {
 
-	private static final int MAX_HP = 50;
+	private static final int MAX_HP = 57;
 	private static final int STARTING_HP = MAX_HP;
 	private static final int STARTING_GOLD = 77;
 	private static final int BASE_HAND_SIZE = 6;
@@ -48,32 +48,29 @@ public class Saiyajin extends CustomPlayer {
 	public Saiyajin(String name){
 		super(name, SaiyajinPlayer.SAIYAJIN, Orb.TEXTURES, Orb.VFX, Orb.LAYER_SPEED, null, null);
 		
-//		currentKi = BASE_KI;
 		maxKi = BASE_KI;
 		
-	    this.dialogX = (this.drawX + 10.0F * Settings.scale); // set location for text bubbles
-	    this.dialogY = (this.drawY + 280.0F * Settings.scale); // you can just copy these values
+	    this.dialogX = (this.drawX + 10.0F * Settings.scale);
+	    this.dialogY = (this.drawY + 280.0F * Settings.scale); 
 
 
 	    
-	    int ENERGY_PER_TURN = 3; // how much energy you get every turn
-	    String GOKU_SHOULDER_2 = "img/char/Goku/shoulder_2.png"; // shoulder2 / shoulder_1
-	    String GOKU_SHOULDER_1 = "img/char/Goku/shoulder_1.png"; // shoulder1 / shoulder_2
-	    String GOKU_CORPSE = "img/char/Goku/goku_fallen.png"; // dead corpse
-//	    String skeletonAtlas = "img/char/Marisa/MarisaModel_v02.atlas";// Marisa_v0 / MarisaModel_v02
-//	    String skeletonJSON = "img/char/Marisa/MarisaModel_v02.json";
-	    String skeletonAtlas = "img/char/Goku/goku.atlas";// Marisa_v0 / MarisaModel_v02
+	    int startingMaxEnergy = 3; 
+	    String gokuShoulder2 = "img/char/Goku/shoulder_2.png"; 
+	    String gokuShoulder1 = "img/char/Goku/shoulder_1.png"; 
+	    String gokuFallen = "img/char/Goku/goku_fallen.png"; 
+	    String skeletonAtlas = "img/char/Goku/goku.atlas";
 	    String skeletonJSON = "img/char/Goku/goku.json";
 	    String animation = "animtion0";
 	    
 	    initializeClass(
 	        null,
-	        GOKU_SHOULDER_2, // required call to load textures and setup energy/loadout
-	        GOKU_SHOULDER_1,
-	        GOKU_CORPSE,
+	        gokuShoulder2, // required call to load textures and setup energy/loadout
+	        gokuShoulder1,
+	        gokuFallen,
 	        getLoadout(),
 	        20.0F, -10.0F, 220.0F, 290.0F,
-	        new EnergyManager(ENERGY_PER_TURN)
+	        new EnergyManager(startingMaxEnergy)
 	    );
 
 	    loadAnimation(skeletonAtlas, skeletonJSON, 1.0F);

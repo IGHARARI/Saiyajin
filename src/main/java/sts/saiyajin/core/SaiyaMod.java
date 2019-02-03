@@ -32,9 +32,7 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
-import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
-import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostPowerApplySubscriber;
 import sts.saiyajin.cards.attacks.AugmentedBlast;
 import sts.saiyajin.cards.attacks.BackAttack;
@@ -120,7 +118,6 @@ import sts.saiyajin.ui.MiscDynamicVariable;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
 import sts.saiyajin.utils.PowerNames;
-import sts.saiyajin.utils.RelicNames;
 
 @SpireInitializer
 public class SaiyaMod implements 
@@ -128,8 +125,6 @@ public class SaiyaMod implements
 	EditCharactersSubscriber,
 	EditCardsSubscriber,
 	EditRelicsSubscriber,
-	OnPowersModifiedSubscriber,
-	PostBattleSubscriber,
 	OnStartBattleSubscriber,
 	PostPowerApplySubscriber,
 	EditKeywordsSubscriber,
@@ -420,19 +415,19 @@ public class SaiyaMod implements
 	    BaseMod.addRelicToCustomPool(new SaiyanSoul(), CardColors.SAIYAN_CARD_COLOR);
 	}
 
-	@Override
-	public void receivePowersModified() {
-		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
-			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).powersWereModified();
-		}
-	}
-
-	@Override
-	public void receivePostBattle(AbstractRoom r) {
-		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
-			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).battleEnd();
-		}
-	}
+//	@Override
+//	public void receivePowersModified() {
+//		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
+//			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).powersWereModified();
+//		}
+//	}
+//
+//	@Override
+//	public void receivePostBattle(AbstractRoom r) {
+//		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
+//			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).battleEnd();
+//		}
+//	}
 
 	@Override
 	public void receiveOnBattleStart(AbstractRoom r) {
@@ -456,7 +451,6 @@ public class SaiyaMod implements
 				if (c instanceof ComboFinisher) ((ComboFinisher) c).onComboUpdated();
 			}
 		}
-		
 	}
 
 	@Override

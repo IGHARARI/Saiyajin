@@ -8,6 +8,6 @@
   "dependencies": [
     "basemod", "stslib"
   ],
-  "version": "0.4.3",
+  "version": "0.4.7",
   "sts_version": "01-23-2019"
 }

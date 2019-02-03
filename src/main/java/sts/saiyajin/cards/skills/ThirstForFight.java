@@ -1,6 +1,7 @@
 package sts.saiyajin.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -21,6 +22,7 @@ public class ThirstForFight extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.THIRST_FOR_FIGHT);
 
 	private static final int COST = 1;
+	private static final int DRAW = 1;
 	
 	
 	public ThirstForFight() {
@@ -44,6 +46,7 @@ public class ThirstForFight extends SaiyanCard {
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, DRAW));
 		int buffsCounter = 0;
 		for (AbstractPower power : monster.powers){
 			if (power.type.equals(PowerType.BUFF)) buffsCounter++;

@@ -1,5 +1,6 @@
 package sts.saiyajin.cards.skills;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import sts.saiyajin.actions.PacingAction;
 import sts.saiyajin.cards.types.SaiyanCard;
+import sts.saiyajin.powers.RetainOncePower;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
@@ -47,5 +49,6 @@ public class Pacing extends SaiyanCard {
             this.energyOnUse = EnergyPanel.totalCount;
         }
         AbstractDungeon.actionManager.addToBottom(new PacingAction(player, this.energyOnUse, this.upgraded, this.freeToPlayOnce));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RetainOncePower(player), 1));
 	}
 }

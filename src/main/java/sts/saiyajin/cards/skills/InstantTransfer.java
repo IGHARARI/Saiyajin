@@ -1,6 +1,7 @@
 package sts.saiyajin.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -21,8 +22,7 @@ public class InstantTransfer extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.TELEPORT);
 
 	private static final int COST = 0;
-	private static final int KI_CONSUMPTION = 10;
-	private static final int UPGRADED_KI_CONSUMPTION = -3;
+	private static final int KI_CONSUMPTION = 9;
 	private static final int VULNERABILITY_STACKS = 1;
 	private static final int UPGRADE_VULNERABILITY_STACKS = 1;
 	
@@ -44,7 +44,8 @@ public class InstantTransfer extends SaiyanCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_VULNERABILITY_STACKS);
-			upgradeKiRequired(UPGRADED_KI_CONSUMPTION);
+			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+			this.initializeDescription();
 		}
 	}
 
@@ -52,6 +53,7 @@ public class InstantTransfer extends SaiyanCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 	    PowersHelper.startOrFollowUpCombo();
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, this.magicNumber, false), this.magicNumber));
+	    if (upgraded) AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
 	}
 
 }

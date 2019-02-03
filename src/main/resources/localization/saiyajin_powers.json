@@ -15,9 +15,17 @@
     "NAME": "Chaoz",
     "DESCRIPTIONS": ["Does anybody like chaotzu?"]
   },
+  "Saiyan:RetainOnce": {
+    "NAME": "Retain Once",
+    "DESCRIPTIONS": ["Gain the ability to retain a card for this turn."]
+  },
   "Saiyan:Twize": {
     "NAME": "Twize",
     "DESCRIPTIONS": ["Your next Finisher will get triggered Twice!"]
+  },
+  "Saiyan:ExtraReward": {
+    "NAME": "Relic Reward",
+    "DESCRIPTIONS": ["Get a common relic when winning this battle."]
   },
   "Saiyan:SoulSpice": {
     "NAME": "Soul Spice",

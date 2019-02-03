@@ -26,11 +26,9 @@ public class Quickening extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.QUICKENING);
 
 	private static final int COST = 0;
-	private static final int KI_CONSUMPTION = 10;
-	private static final int UPGRADED_KI_CONSUMPTION = -3;
-	private static final int PLATED_ARMOR_AMOUNT = 2;
+	private static final int KI_CONSUMPTION = 8;
+	private static final int PLATED_ARMOR_AMOUNT = 1;
 	private static final int UPGRADED_PLATED_ARMOR_AMOUNT = 1;
-	private int platedArmor;
 	
 	final Logger logger = LogManager.getLogger(Quickening.class);
 	
@@ -40,10 +38,8 @@ public class Quickening extends SaiyanCard {
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.COMMON,
 		        AbstractCard.CardTarget.SELF);
-		this.baseMagicNumber = KI_CONSUMPTION;
-		this.magicNumber = this.baseMagicNumber;
+		this.magicNumber = this.baseMagicNumber = PLATED_ARMOR_AMOUNT;
 		this.kiRequired = KI_CONSUMPTION;
-		this.platedArmor = PLATED_ARMOR_AMOUNT;
 		this.tags.add(SaiyajinCustomCardTags.COMBO_STARTER);
 	}
 
@@ -51,17 +47,13 @@ public class Quickening extends SaiyanCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeMagicNumber(UPGRADED_KI_CONSUMPTION);
-			upgradeKiRequired(UPGRADED_KI_CONSUMPTION);
-			this.platedArmor += UPGRADED_PLATED_ARMOR_AMOUNT;
-			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-			initializeDescription();
+			this.upgradeMagicNumber(UPGRADED_PLATED_ARMOR_AMOUNT);
 		}
 	}
 
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, platedArmor), platedArmor));
+	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlatedArmorPower(player, magicNumber), magicNumber));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, 1, false), 1, true, AbstractGameAction.AttackEffect.NONE));
         }

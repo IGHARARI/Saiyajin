@@ -33,5 +33,7 @@ public abstract class PowerNames {
 	public static final String CHAOZ = SaiyaMod.MOD_ID + "Chaoz";
 
 	
+	public static final String REWARD = SaiyaMod.MOD_ID + "ExtraReward";
 	public static final String TWIZE = SaiyaMod.MOD_ID + "Twize";
+	public static final String RETAIN_ONCE = SaiyaMod.MOD_ID + "RetainOnce";
 }

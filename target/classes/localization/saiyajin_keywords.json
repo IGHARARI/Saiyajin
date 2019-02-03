@@ -25,7 +25,7 @@
       "Stopped",
       "stopped"
     ],
-    "DESCRIPTION": "Stopped enemies can't take actions.'"
+    "DESCRIPTION": "Stopped enemies can't take actions."
   },
   {
   	"PROPER_NAME":"Ki Burn",
@@ -38,6 +38,18 @@
       "ki_burns"
     ],
     "DESCRIPTION": "Ki-burns are ethereal status cards that consume Ki when drawn."
+  },
+  {
+  	"PROPER_NAME":"Dragon Ball",
+    "NAMES": [
+      "dragon ball",
+      "dragon balls",
+      "dragon_balls",
+      "Dragon_Ball",
+      "Dragon_Balls",
+      "dragon_ball"
+    ],
+    "DESCRIPTION": "After collecting 7 dragon balls, you'll be given a choice to be granted a powerful wish."
   },
   {
     "NAMES": [

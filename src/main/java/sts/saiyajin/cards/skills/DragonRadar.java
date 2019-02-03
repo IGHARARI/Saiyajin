@@ -20,7 +20,7 @@ public class DragonRadar extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.DRAGON_RADAR);
 
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int UPGRADED_COST = 0;
 	
 	
@@ -36,6 +36,7 @@ public class DragonRadar extends SaiyanCard {
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
+			upgradeName();
 			upgradeBaseCost(UPGRADED_COST);
 		}
 	}
