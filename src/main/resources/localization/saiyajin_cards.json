@@ -15,6 +15,14 @@
 		"NAME": "Soul Spice",
 		"DESCRIPTION": "Whenever you exhaust a Status card gain !M! Strength."
 	},
+	"Saiyan:RemoveWeights": {
+		"NAME": "Remove Weights",
+		"DESCRIPTION": "Retain a card this turn. NL Gain !M! Strength. NL Lose !M! Strength at the end of your turn."
+	},
+	"Saiyan:WarmUp": {
+		"NAME": "Warm Up",
+		"DESCRIPTION": "Every turn !M! time(s) per turn, whenever you play a Power gain [E]."
+	},
 	"Saiyan:ExpandingShockwave": {
 		"NAME": "Expanding Shockwave",
 		"DESCRIPTION": "Follow-up. NL Deal !D! damage. NL Deal twice that much damage to all other enemies."
@@ -31,6 +39,16 @@
 		"NAME": "Twize",
 		"DESCRIPTION": "The next Finisher effect you trigger this turn gets triggered an additional time. NL Exhaust",
 		"UPGRADE_DESCRIPTION": "The next Finisher effect you trigger this turn gets triggered an additional time."
+	},
+	"Saiyan:PlotArmor": {
+		"NAME": "Plot Armor",
+		"DESCRIPTION": "Every time you play a Power card, gain !M! Block.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Every time you play a Power card, gain !M! Block."
+	},
+	"Saiyan:Expend": {
+		"NAME": "Expend",
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain [E] . NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain [E] ."
 	},
 	"Saiyan:Reset": {
 		"NAME": "Reset",
@@ -49,8 +67,8 @@
 	},
 	"Saiyan:Planning": {
 		"NAME": "Planning",
-		"DESCRIPTION": "Retain a card this turn. NL Put a Starter or Follow-up from your draw pile into your hand. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Retain a card this turn. NL Put a Starter or Follow-up from your draw pile into your hand."
+		"DESCRIPTION": "Put a Starter or Follow-up from your draw pile into your hand. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Put a Starter or Follow-up from your draw pile into your hand."
 	},
 	"Saiyan:MindBoom": {
 		"NAME": "Mental Boom",
@@ -86,7 +104,7 @@
 	},
 	"Saiyan:HyperTimeChamber": {
 		"NAME": "The Time Chamber",
-		"DESCRIPTION": "Enemies become Stopped for 2 turns. NL You are Training for 2 turns."
+		"DESCRIPTION": "Apply 2 Stun to all enemies. NL You are Training for 2 turns."
 	},
 	"Saiyan:Training": {
 		"NAME": "Training",
@@ -229,7 +247,7 @@
 	},
 	"Saiyan:Makankosappo": {
 		"NAME": "Makankosappo",
-		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage !Saiyan:Misc! times. NL Finisher: Apply concussion equal to your combo."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage !Saiyan:Misc! times. NL Finisher: Apply concussion equal to double your combo."
 	},
 	"Saiyan:Kienzan": {
 		"NAME": "Kien-zan",
@@ -284,8 +302,8 @@
 	},
 	"Saiyan:SolarFlare": {
 		"NAME": "Solar Flare",
-		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Stun an enemy for 1 turn. ",
-		"UPGRADE_DESCRIPTION": "Consumes !Saiyan:KiReq! Ki. NL Stun ALL enemies for 1 turn."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Apply 1 Stun to an enemy. ",
+		"UPGRADE_DESCRIPTION": "Consumes !Saiyan:KiReq! Ki. NL Apply 1 Stun to ALL enemies."
 	},
 	"Saiyan:SuperSaiyanForm": {
 		"NAME": "Super Saiyan Form",

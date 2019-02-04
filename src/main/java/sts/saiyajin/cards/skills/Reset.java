@@ -20,7 +20,7 @@ public class Reset extends ComboFinisher {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.RESET);
 
-	private static final int COST = 2;
+	private static final int COST = 1;
 	
 	
 	public Reset() {

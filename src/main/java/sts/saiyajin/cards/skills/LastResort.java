@@ -1,7 +1,6 @@
 package sts.saiyajin.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -53,8 +52,6 @@ public class LastResort extends SaiyanCard {
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, strGain), strGain));
 	    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(player, player, KiPower.POWER_ID));
 	    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(player, player, KiRegenPower.POWER_ID));
-	    if (kiPower>0)
-	    	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, kiPower));
 	}
 
 }

@@ -59,7 +59,7 @@ public class Makankosappo extends ComboFinisher {
 
 	@Override
 	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ConcussionPower(monster, comboStacks), comboStacks));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new ConcussionPower(monster, comboStacks*2), comboStacks*2));
 	}
 	
 	@Override

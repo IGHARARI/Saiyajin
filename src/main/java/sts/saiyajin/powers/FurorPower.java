@@ -4,7 +4,6 @@ package sts.saiyajin.powers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -40,8 +40,8 @@ public class FurorPower extends AbstractPower implements OnApplyPowerActionSubsc
 		this.owner = owner;
 		this.amount = amount;
 		this.type = AbstractPower.PowerType.BUFF;
-        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.FUROR_B), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.FUROR), 0, 0, 48, 48);
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PowerPaths.FUROR_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PowerPaths.FUROR), 0, 0, 48, 48);
         this.description = DESCRIPTIONS[0];
 		this.canGoNegative = false;
 	}

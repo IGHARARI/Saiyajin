@@ -40,6 +40,8 @@ public abstract class CardNames {
 	public static final String FUROR = SaiyaMod.MOD_ID + "Furor";
 	public static final String PLANNING = SaiyaMod.MOD_ID + "Planning";
 	public static final String EXPANDING_SHOCKWAVE = SaiyaMod.MOD_ID + "ExpandingShockwave";
+	public static final String PLOT_ARMOR = SaiyaMod.MOD_ID + "PlotArmor";
+	public static final String REMOVE_WEIGHTS = SaiyaMod.MOD_ID + "RemoveWeights";
 	
 	/**
 	 * UNCOMMONS
@@ -71,6 +73,8 @@ public abstract class CardNames {
 	public static final String TWIZE = SaiyaMod.MOD_ID + "Twize";
 	public static final String FINAL_FLASH = SaiyaMod.MOD_ID + "FinalFlash";
 	public static final String AUGMENTED_BLAST = SaiyaMod.MOD_ID + "AugmentedBlast";
+	public static final String EXPEND = SaiyaMod.MOD_ID + "Expend";
+	public static final String WARM_UP = SaiyaMod.MOD_ID + "WarmUp";
 	
 	/**
 	 * RARES

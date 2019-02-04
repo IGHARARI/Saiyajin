@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 
+import basemod.helpers.BaseModCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.KiRegenPower;
 import sts.saiyajin.ui.CardPaths;
@@ -33,6 +34,7 @@ public class SuperSaiyanForm extends SaiyanCard
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
+		this.tags.add(BaseModCardTags.FORM);
 		this.baseMagicNumber = BASE_KI_REGEN;
 		this.magicNumber = this.baseMagicNumber;
 		metallicizeAmount = BASE_METALLICIZE;

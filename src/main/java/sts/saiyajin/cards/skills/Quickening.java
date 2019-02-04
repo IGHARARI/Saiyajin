@@ -37,7 +37,7 @@ public class Quickening extends SaiyanCard {
 		        AbstractCard.CardType.SKILL,
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.COMMON,
-		        AbstractCard.CardTarget.SELF);
+		        AbstractCard.CardTarget.ALL);
 		this.magicNumber = this.baseMagicNumber = PLATED_ARMOR_AMOUNT;
 		this.kiRequired = KI_CONSUMPTION;
 		this.tags.add(SaiyajinCustomCardTags.COMBO_STARTER);

@@ -15,6 +15,15 @@
     "NAME": "Chaoz",
     "DESCRIPTIONS": ["Does anybody like chaotzu?"]
   },
+  "Saiyan:PlotArmor": {
+    "NAME": "Plot Armor",
+    "DESCRIPTIONS": ["Gain Block every time you play a Power card."]
+  },
+  "Saiyan:WarmUp": {
+    "NAME": "Warm Up",
+    "DESCRIPTIONS": ["Gain [E] the first time you play a Power each turn.",
+    	"Every turn, the first ", " times you play a Power gain [E] ."]
+  },
   "Saiyan:RetainOnce": {
     "NAME": "Retain Once",
     "DESCRIPTIONS": ["Gain the ability to retain a card for this turn."]

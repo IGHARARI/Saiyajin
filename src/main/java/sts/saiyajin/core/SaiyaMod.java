@@ -32,7 +32,9 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
+import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostPowerApplySubscriber;
 import sts.saiyajin.cards.attacks.AugmentedBlast;
 import sts.saiyajin.cards.attacks.BackAttack;
@@ -64,17 +66,20 @@ import sts.saiyajin.cards.powers.HyperbolicTimeChamber;
 import sts.saiyajin.cards.powers.MajinSeal;
 import sts.saiyajin.cards.powers.Momentum;
 import sts.saiyajin.cards.powers.MonkeyTail;
+import sts.saiyajin.cards.powers.PlotArmor;
 import sts.saiyajin.cards.powers.PowerStance;
 import sts.saiyajin.cards.powers.SoulSpice;
 import sts.saiyajin.cards.powers.SuperSaiyan3Form;
 import sts.saiyajin.cards.powers.SuperSaiyanForm;
 import sts.saiyajin.cards.powers.TurtleShell;
+import sts.saiyajin.cards.powers.WarmUp;
 import sts.saiyajin.cards.skills.Afterimage;
 import sts.saiyajin.cards.skills.CcCapsule;
 import sts.saiyajin.cards.skills.Defend;
 import sts.saiyajin.cards.skills.DragonBall;
 import sts.saiyajin.cards.skills.DragonRadar;
 import sts.saiyajin.cards.skills.Endure;
+import sts.saiyajin.cards.skills.Expend;
 import sts.saiyajin.cards.skills.ExtremeSpeed;
 import sts.saiyajin.cards.skills.Fly;
 import sts.saiyajin.cards.skills.FullMoon;
@@ -92,6 +97,7 @@ import sts.saiyajin.cards.skills.PowerUp;
 import sts.saiyajin.cards.skills.PressOn;
 import sts.saiyajin.cards.skills.Quickening;
 import sts.saiyajin.cards.skills.Rekindle;
+import sts.saiyajin.cards.skills.RemoveWeights;
 import sts.saiyajin.cards.skills.Reset;
 import sts.saiyajin.cards.skills.SaiyanHubris;
 import sts.saiyajin.cards.skills.Scouter;
@@ -118,6 +124,7 @@ import sts.saiyajin.ui.MiscDynamicVariable;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
 import sts.saiyajin.utils.PowerNames;
+import sts.saiyajin.utils.RelicNames;
 
 @SpireInitializer
 public class SaiyaMod implements 
@@ -128,6 +135,8 @@ public class SaiyaMod implements
 	OnStartBattleSubscriber,
 	PostPowerApplySubscriber,
 	EditKeywordsSubscriber,
+	PostBattleSubscriber,
+	OnPowersModifiedSubscriber,
 	OnCardUseSubscriber
 //	RenderSubscriber,
 //	PostInitializeSubscriber
@@ -285,6 +294,10 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.PLANNING);
         BaseMod.addCard(new ExpandingShockwave());
         UnlockTracker.unlockCard(CardNames.EXPANDING_SHOCKWAVE);
+        BaseMod.addCard(new PlotArmor());
+        UnlockTracker.unlockCard(CardNames.PLOT_ARMOR);
+        BaseMod.addCard(new RemoveWeights());
+        UnlockTracker.unlockCard(CardNames.REMOVE_WEIGHTS);
         
         /**
          * Uncommon cards
@@ -343,6 +356,10 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.FINAL_FLASH);
         BaseMod.addCard(new AugmentedBlast());
         UnlockTracker.unlockCard(CardNames.AUGMENTED_BLAST);
+        BaseMod.addCard(new WarmUp());
+        UnlockTracker.unlockCard(CardNames.WARM_UP);
+        BaseMod.addCard(new Expend());
+        UnlockTracker.unlockCard(CardNames.EXPEND);
 
         /**
          * RARE CARDS
@@ -415,19 +432,19 @@ public class SaiyaMod implements
 	    BaseMod.addRelicToCustomPool(new SaiyanSoul(), CardColors.SAIYAN_CARD_COLOR);
 	}
 
-//	@Override
-//	public void receivePowersModified() {
-//		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
-//			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).powersWereModified();
-//		}
-//	}
-//
-//	@Override
-//	public void receivePostBattle(AbstractRoom r) {
-//		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
-//			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).battleEnd();
-//		}
-//	}
+	@Override
+	public void receivePowersModified() {
+		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
+			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).powersWereModified();
+		}
+	}
+
+	@Override
+	public void receivePostBattle(AbstractRoom r) {
+		if (AbstractDungeon.player.hasRelic(RelicNames.SAIYAN_HEART)){
+			((SaiyanHeart)AbstractDungeon.player.getRelic(RelicNames.SAIYAN_HEART)).battleEnd();
+		}
+	}
 
 	@Override
 	public void receiveOnBattleStart(AbstractRoom r) {

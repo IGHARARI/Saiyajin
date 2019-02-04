@@ -3,12 +3,12 @@ package sts.saiyajin.powers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -30,8 +30,8 @@ public class PowerStancePower extends AbstractPower {
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = -1;
-        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.POWER_STANCE_B), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.POWER_STANCE), 0, 0, 48, 48);
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PowerPaths.POWER_STANCE_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PowerPaths.POWER_STANCE), 0, 0, 48, 48);
         updateDescription();
 	}
   

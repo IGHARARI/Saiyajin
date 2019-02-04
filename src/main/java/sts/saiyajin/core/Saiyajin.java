@@ -34,7 +34,7 @@ import sts.saiyajin.utils.RelicNames;
 
 public class Saiyajin extends CustomPlayer {
 
-	private static final int MAX_HP = 57;
+	private static final int MAX_HP = 64;
 	private static final int STARTING_HP = MAX_HP;
 	private static final int STARTING_GOLD = 77;
 	private static final int BASE_HAND_SIZE = 6;

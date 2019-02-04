@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,6 +12,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -33,8 +33,8 @@ public class ConcussionPower extends AbstractPower implements HealthBarRenderPow
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.CONCUSSION_B), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(new Texture(PowerPaths.CONCUSSION), 0, 0, 48, 48);
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PowerPaths.CONCUSSION_B), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PowerPaths.CONCUSSION), 0, 0, 48, 48);
         this.isTurnBased = true;
 		this.description = DESCRIPTIONS[0];
 		this.type = PowerType.DEBUFF;

@@ -28,6 +28,13 @@
     "DESCRIPTION": "Stopped enemies can't take actions."
   },
   {
+    "NAMES": [
+      "stun",
+      "stunned"
+    ],
+    "DESCRIPTION": "Stunned enemies can't take actions."
+  },
+  {
   	"PROPER_NAME":"Ki Burn",
     "NAMES": [
       "Ki-burns",

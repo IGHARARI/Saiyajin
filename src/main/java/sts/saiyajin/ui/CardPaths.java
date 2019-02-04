@@ -41,6 +41,8 @@ public class CardPaths {
 	public static final String FUROR = PATH_TO_CARDS + "defiance.png";
 	public static final String EXPANDING_SHOCKWAVE = PATH_TO_CARDS + "expandingshockwave.png";
 	public static final String PLANNING = PATH_TO_CARDS + "planning.png";
+	public static final String REMOVE_WEIGHTS = PATH_TO_CARDS + "removeweights.png";
+	public static final String PLOT_ARMOR =  PATH_TO_CARDS + "plotarmor.png";
 
 	/**
 	 * UNCOMMONS
@@ -70,6 +72,8 @@ public class CardPaths {
 	public static final String PACING = PATH_TO_CARDS + "pacing.png";
 	public static final String RESET = PATH_TO_CARDS + "reset.png";
 	public static final String TWIZE = PATH_TO_CARDS + "twize.png";
+	public static final String WARM_UP = PATH_TO_CARDS + "warmup.png";
+	public static final String EXPEND = PATH_TO_CARDS + "expend.png";
 	
 	/**
 	 * RARES
@@ -99,5 +103,9 @@ public class CardPaths {
 	 */
 	public static final String TRAINING = PATH_TO_CARDS + "training.png";
 	public static final String KI_BURN = PATH_TO_CARDS + "kiburn.png";
+
+	/**
+	 * unimplemented
+	 */
 
 }

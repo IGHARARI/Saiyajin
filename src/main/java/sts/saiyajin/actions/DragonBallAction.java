@@ -57,7 +57,7 @@ public class DragonBallAction extends AbstractGameAction implements basemod.help
 		AbstractPlayer player = AbstractDungeon.player;
         switch (paramInt) {
         case 0:
-        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, 10), 10));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, 9), 9));
             break;
         case 1:
         	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, 5), 5));
@@ -68,7 +68,7 @@ public class DragonBallAction extends AbstractGameAction implements basemod.help
         	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PlusEnergyPower(player, 3), 3));
             break;
         case 3:
-    		int[] damage = DamageInfo.createDamageMatrix(70);
+    		int[] damage = DamageInfo.createDamageMatrix(99);
     		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, damage, DamageType.NORMAL, AttackEffect.SMASH));
         	break;
         default:

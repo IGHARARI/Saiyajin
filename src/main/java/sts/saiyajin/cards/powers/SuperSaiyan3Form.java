@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
+import basemod.helpers.BaseModCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.powers.KiRegenPower;
@@ -35,6 +36,7 @@ public class SuperSaiyan3Form extends SaiyanCard
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.RARE,
 		        AbstractCard.CardTarget.SELF);
+		this.tags.add(BaseModCardTags.FORM);
 		this.baseMagicNumber = BASE_STR;
 		this.magicNumber = this.baseMagicNumber;
 		this.kiVariable = BASE_KI_REGEN;

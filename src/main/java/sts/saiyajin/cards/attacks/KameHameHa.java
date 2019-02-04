@@ -80,7 +80,7 @@ public class KameHameHa extends ComboFinisher {
 		//I do +1 as this is triggered before the Combo is actually applied
 		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) + 1;
 		int costModify = COST - this.cost - comboAmt;
-		if (costModify > this.cost) costModify = this.cost;
+		if (-costModify > this.cost) costModify = -this.cost;
 		this.modifyCostForCombat(costModify);
 		//Current cost is this.cost so the result of the #math is (COST - combo)
 	}
@@ -89,5 +89,6 @@ public class KameHameHa extends ComboFinisher {
 	public void onComboRemoved() {
 		int costDiff = COST - this.cost; 
 		this.modifyCostForCombat(costDiff);
+		this.isCostModified = false;
 	}
 }
