@@ -25,7 +25,7 @@ public class ConcussiveBlow extends SaiyanCard {
 	private static final int BASE_DAMAGE = 3;
 	private static final int UPGRADE_DAMAGE = 1;
 	private static final int CONCUSSION_STACKS = 2;
-	private static final int UPGRADED_CONCUSSION_STACKS = 2;
+	private static final int UPGRADED_CONCUSSION_STACKS = 1;
 	
 	public ConcussiveBlow() {
 		super(CardNames.CONCUSSIVE_BLOW, cardStrings.NAME, CardPaths.CONCUSSIVE_BLOW, COST, cardStrings.DESCRIPTION, 
