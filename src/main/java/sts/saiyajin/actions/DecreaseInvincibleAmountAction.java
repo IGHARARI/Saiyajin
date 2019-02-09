@@ -27,6 +27,7 @@ public class DecreaseInvincibleAmountAction extends AbstractGameAction {
         	if (owner!= null && owner.hasPower(InvinciblePower.POWER_ID)) {
         		InvinciblePower power = (InvinciblePower)owner.getPower(InvinciblePower.POWER_ID);
         		power.amount = this.amount;
+        		power.updateDescription();
         	}
         }
         this.tickDuration();

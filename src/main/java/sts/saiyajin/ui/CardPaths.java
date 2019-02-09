@@ -43,6 +43,7 @@ public class CardPaths {
 	public static final String PLANNING = PATH_TO_CARDS + "planning.png";
 	public static final String REMOVE_WEIGHTS = PATH_TO_CARDS + "removeweights.png";
 	public static final String PLOT_ARMOR =  PATH_TO_CARDS + "plotarmor.png";
+	public static final String FINGER_PARRY = PATH_TO_CARDS + "fingerparry.png";
 
 	/**
 	 * UNCOMMONS
@@ -90,6 +91,7 @@ public class CardPaths {
 	public static final String TRANSFIGURATION_BEAM = PATH_TO_CARDS + "transfigurationBeam.png";
 	public static final String THE_BOMB = PATH_TO_CARDS + "theBomb.png";
 	public static final String MIND_BOOM = PATH_TO_CARDS + "mindboom.png";
+	public static final String GHOST_ATTACK = PATH_TO_CARDS + "ghostattack.png";
 	
 	/**
 	 * SPECIAL
@@ -104,8 +106,10 @@ public class CardPaths {
 	public static final String TRAINING = PATH_TO_CARDS + "training.png";
 	public static final String KI_BURN = PATH_TO_CARDS + "kiburn.png";
 
+
 	/**
 	 * unimplemented
 	 */
+
 
 }

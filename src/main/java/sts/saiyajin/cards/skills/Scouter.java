@@ -20,7 +20,7 @@ public class Scouter extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.SCOUTER);
 
 	private static final int COST = 1;
-	private static final int BASE_BLOCK = 5;
+	private static final int BASE_BLOCK = 6;
 	private static final int UPGRADE_BLOCK = 3;
 	private static final int EXTRA_BLOCK = 4;
 	private static final int KI_CONSUMPTION = 8;

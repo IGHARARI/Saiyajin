@@ -12,7 +12,7 @@
     "DESCRIPTIONS": ["Enemy will revive when killed with full HP and extra buffs."]
   },
   "Saiyan:Chaoz": {
-    "NAME": "Chaoz",
+    "NAME": "",
     "DESCRIPTIONS": ["Does anybody like chaotzu?"]
   },
   "Saiyan:PlotArmor": {
@@ -33,7 +33,7 @@
     "DESCRIPTIONS": ["Your next Finisher will get triggered Twice!"]
   },
   "Saiyan:ExtraReward": {
-    "NAME": "Relic Reward",
+    "NAME": "",
     "DESCRIPTIONS": ["Get a common relic when winning this battle."]
   },
   "Saiyan:SoulSpice": {

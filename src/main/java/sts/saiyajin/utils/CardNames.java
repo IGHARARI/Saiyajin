@@ -42,6 +42,7 @@ public abstract class CardNames {
 	public static final String EXPANDING_SHOCKWAVE = SaiyaMod.MOD_ID + "ExpandingShockwave";
 	public static final String PLOT_ARMOR = SaiyaMod.MOD_ID + "PlotArmor";
 	public static final String REMOVE_WEIGHTS = SaiyaMod.MOD_ID + "RemoveWeights";
+	public static final String FINGER_PARRY = SaiyaMod.MOD_ID + "FingerParry";
 	
 	/**
 	 * UNCOMMONS
@@ -90,6 +91,7 @@ public abstract class CardNames {
 	public static final String TRANSFIGURATION_BEAM = SaiyaMod.MOD_ID + "TransfigurationBeam";
 	public static final String MOMENTUM = SaiyaMod.MOD_ID + "Momentum";
 	public static final String MIND_BOOM = SaiyaMod.MOD_ID + "MindBoom";
+	public static final String GHOST_ATTACK = SaiyaMod.MOD_ID + "GhostAttack";
 
 	
 	

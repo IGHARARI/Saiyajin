@@ -19,6 +19,10 @@
 		"NAME": "Remove Weights",
 		"DESCRIPTION": "Retain a card this turn. NL Gain !M! Strength. NL Lose !M! Strength at the end of your turn."
 	},
+	"Saiyan:FingerParry": {
+		"NAME": "Finger Parry",
+		"DESCRIPTION": "Gain !M! Vulnerable. NL Gain !B! Block."
+	},
 	"Saiyan:WarmUp": {
 		"NAME": "Warm Up",
 		"DESCRIPTION": "Every turn !M! time(s) per turn, whenever you play a Power gain [E]."
@@ -126,7 +130,7 @@
 	},
 	"Saiyan:KiBurn": {
 		"NAME": "Ki Burn",
-		"DESCRIPTION": "Consumes !M! Ki when drawn. NL Ethereal."
+		"DESCRIPTION": "Unplayable. NL Ethereal. NL Consumes !M! Ki when drawn."
 	},
 	"Saiyan:DragonFist": {
 		"NAME": "Dragon Fist",
@@ -203,7 +207,7 @@
 	},
 	"Saiyan:BackAttack": {
 		"NAME": "Back Attack",
-		"DESCRIPTION": "Deal !D! damage. Telegraphed. NL Finisher: Apply Weak equal to your Combo."
+		"DESCRIPTION": "Telegraphed. NL Deal !D! damage. NL Apply !M! Weak."
 	},
 	"Saiyan:ExtremeSpeed": {
 		"NAME": "Extreme-speed",
@@ -215,7 +219,7 @@
 	},
 	"Saiyan:LastResort": {
 		"NAME": "Last Resort",
-		"DESCRIPTION": "Consume ALL your Ki, lose ALL Ki Regen. NL Gain 1 Strength for every !M! Ki consumed. NL Exhaust."
+		"DESCRIPTION": "Consume ALL your Ki, lose half of your Ki Regen. NL Gain 1 Strength for every !M! Ki consumed. NL Exhaust."
 	},
 	"Saiyan:Quickening": {
 		"NAME": "Quickening",
@@ -291,6 +295,10 @@
 	"Saiyan:Taunt": {
 		"NAME": "Taunt",
 		"DESCRIPTION": "Give an enemy !M! Strength, gain 2 Reflect."
+	},
+	"Saiyan:GhostAttack": {
+		"NAME": "Kamikaze Ghosts",
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! Damage and Apply !M! Vulnearble to a random enemy !Saiyan:Misc! times. NL Exhaust."
 	},
 	"Saiyan:KiExplosion": {
 		"NAME": "Ki Explosion",

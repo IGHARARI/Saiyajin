@@ -16,7 +16,7 @@ public class KiReqDynamicVariable extends DynamicVariable {
 
 	@Override
 	public boolean isModified(AbstractCard card) {
-		return false;
+		return value(card) != baseValue(card);
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class KiReqDynamicVariable extends DynamicVariable {
 	@Override
 	public int baseValue(AbstractCard card) {
 		if (card instanceof SaiyanCard) {
-			return ((SaiyanCard)card).kiRequired;
+			return ((SaiyanCard)card.makeCopy()).kiRequired;
 		}
 		return 0;
 	}

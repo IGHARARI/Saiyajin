@@ -85,6 +85,16 @@ public class SaiyanHeart extends CustomRelic {
 	}
 	
 	public void battleEnd(){
+		if (GameActionManager.turn <= MAX_TURNS_HEART) {
+			int remainingDebuffs = 0;
+			for(AbstractPower power : AbstractDungeon.player.powers){
+				if (power.type.equals(PowerType.DEBUFF) && !invalidDebuffs.contains(power.ID)){
+					remainingDebuffs++;
+				}
+			}
+			if (remainingDebuffs > 0) AbstractDungeon.player.increaseMaxHp(remainingDebuffs, true);
+		}
+		
 		isBattling = false;
 		this.counter = -1;
 		this.stopPulse();

@@ -67,28 +67,32 @@ public class KameHameHa extends ComboFinisher {
 	@Override
 	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {}
 	
-//	@Override
-//	public void applyPowers() {
-//		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
-//		int costModify = Math.max(0, COST - this.cost - comboAmt);
-//		this.modifyCostForCombat(costModify);
-//		super.applyPowers();
-//	}
+	@Override
+	public void applyPowers() {
+		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID);
+		int costModify = COST - this.cost - comboAmt;
+		if (-costModify > this.cost) costModify = -this.cost;
+		this.modifyCostForCombat(costModify);
+	}
 	
 	@Override
 	public void onComboUpdated() {
 		//I do +1 as this is triggered before the Combo is actually applied
 		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) + 1;
 		int costModify = COST - this.cost - comboAmt;
+		logger.info("cost modify before check: " + costModify );
 		if (-costModify > this.cost) costModify = -this.cost;
+		logger.info("cost modify AFTER check: " + costModify );
+		logger.info("KAME COST / costforturn: " + this.cost  + " / " + this.costForTurn);
 		this.modifyCostForCombat(costModify);
+		logger.info("KAME COST / costforturn: " + this.cost  + " / " + this.costForTurn);
 		//Current cost is this.cost so the result of the #math is (COST - combo)
 	}
 
 	@Override
 	public void onComboRemoved() {
-		int costDiff = COST - this.cost; 
-		this.modifyCostForCombat(costDiff);
+		this.cost = COST;
+		this.costForTurn = COST;
 		this.isCostModified = false;
 	}
 }

@@ -25,7 +25,7 @@ public class Furor extends SaiyanCard {
 		super(CardNames.FUROR, cardStrings.NAME, CardPaths.FUROR, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.POWER,
 		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.COMMON,
+		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = STR_GAIN;
 		this.magicNumber = baseMagicNumber;

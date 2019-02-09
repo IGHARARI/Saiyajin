@@ -29,6 +29,7 @@ public class Reset extends ComboFinisher {
 		        CardColors.SAIYAN_CARD_COLOR,
 		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.SELF);
+		this.exhaust = true;
 	}
 
 	@Override
@@ -37,6 +38,7 @@ public class Reset extends ComboFinisher {
 			upgradeName();
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 			this.initializeDescription();
+			this.exhaust = false;
 		}
 	}
 

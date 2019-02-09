@@ -23,8 +23,8 @@ public class LastResort extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.LAST_RESORT);
 
 	private static final int COST = 1;
-	private static final int KI_FOR_STR = 6;
-	private static final int UPGRADED_KI_FOR_STR = -1;
+	private static final int KI_FOR_STR = 8;
+	private static final int UPGRADED_KI_FOR_STR = -2;
 	
 	public LastResort() {
 		super(CardNames.LAST_RESORT, cardStrings.NAME, CardPaths.LAST_RESORT, COST, cardStrings.DESCRIPTION, 
@@ -51,7 +51,10 @@ public class LastResort extends SaiyanCard {
 		int strGain = kiPower / magicNumber;
 	    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, strGain), strGain));
 	    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(player, player, KiPower.POWER_ID));
-	    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(player, player, KiRegenPower.POWER_ID));
+	    int totalKiRegen = PowersHelper.getPlayerPowerAmount(KiRegenPower.POWER_ID);
+	    int kiRegenToLose = -totalKiRegen/2;
+	    if (kiRegenToLose > 0)
+	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new KiRegenPower(player, kiRegenToLose), kiRegenToLose) );
 	}
 
 }

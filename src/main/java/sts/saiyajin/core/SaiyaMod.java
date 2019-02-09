@@ -58,6 +58,7 @@ import sts.saiyajin.cards.attacks.ReverberatingForce;
 import sts.saiyajin.cards.attacks.RuthlessBlow;
 import sts.saiyajin.cards.attacks.SpiritSword;
 import sts.saiyajin.cards.attacks.Strike;
+import sts.saiyajin.cards.attacks.SuperGhostKamikazeAttack;
 import sts.saiyajin.cards.attacks.TransfigurationBeam;
 import sts.saiyajin.cards.powers.BurningSoul;
 import sts.saiyajin.cards.powers.Furor;
@@ -81,6 +82,7 @@ import sts.saiyajin.cards.skills.DragonRadar;
 import sts.saiyajin.cards.skills.Endure;
 import sts.saiyajin.cards.skills.Expend;
 import sts.saiyajin.cards.skills.ExtremeSpeed;
+import sts.saiyajin.cards.skills.FingerParry;
 import sts.saiyajin.cards.skills.Fly;
 import sts.saiyajin.cards.skills.FullMoon;
 import sts.saiyajin.cards.skills.Honing;
@@ -258,8 +260,6 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.POWER_UP);
         BaseMod.addCard(new KiExplosion());
         UnlockTracker.unlockCard(CardNames.KI_EXPLOSION);
-        BaseMod.addCard(new BurningSoul());
-        UnlockTracker.unlockCard(CardNames.BURNING_SOUL);
         BaseMod.addCard(new KameHameHa());
         UnlockTracker.unlockCard(CardNames.KAME_HAME_HA);
         BaseMod.addCard(new MeteorDash());
@@ -268,18 +268,12 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.FLURRY);
         BaseMod.addCard(new DoubleMasenko());
         UnlockTracker.unlockCard(CardNames.DOUBLE_MASENKO);
-        BaseMod.addCard(new DrainingStrike());
-        UnlockTracker.unlockCard(CardNames.DRAINING_STRIKE);
-        BaseMod.addCard(new ConcussiveBlow());
-        UnlockTracker.unlockCard(CardNames.CONCUSSIVE_BLOW);
         BaseMod.addCard(new Quickening());
         UnlockTracker.unlockCard(CardNames.QUICKENING);
         BaseMod.addCard(new TurtleShell());
         UnlockTracker.unlockCard(CardNames.TURTLE_SHELL);
         BaseMod.addCard(new Scouter());
         UnlockTracker.unlockCard(CardNames.SCOUTER);
-        BaseMod.addCard(new CcCapsule());
-        UnlockTracker.unlockCard(CardNames.CC_CAPSULE);
         BaseMod.addCard(new BigBangAttack());
         UnlockTracker.unlockCard(CardNames.BIG_BANG_ATTACK);
         BaseMod.addCard(new BackAttack());
@@ -288,8 +282,6 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.SAIYAN_HUBRIS);
         BaseMod.addCard(new DragonFist());
         UnlockTracker.unlockCard(CardNames.DRAGON_FIST);
-        BaseMod.addCard(new Furor());
-        UnlockTracker.unlockCard(CardNames.FUROR);
         BaseMod.addCard(new Planning());
         UnlockTracker.unlockCard(CardNames.PLANNING);
         BaseMod.addCard(new ExpandingShockwave());
@@ -298,10 +290,22 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.PLOT_ARMOR);
         BaseMod.addCard(new RemoveWeights());
         UnlockTracker.unlockCard(CardNames.REMOVE_WEIGHTS);
+        BaseMod.addCard(new FingerParry());
+        UnlockTracker.unlockCard(CardNames.FINGER_PARRY);
         
         /**
          * Uncommon cards
          */
+        BaseMod.addCard(new ConcussiveBlow());
+        UnlockTracker.unlockCard(CardNames.CONCUSSIVE_BLOW);
+        BaseMod.addCard(new CcCapsule());
+        UnlockTracker.unlockCard(CardNames.CC_CAPSULE);
+        BaseMod.addCard(new Furor());
+        UnlockTracker.unlockCard(CardNames.FUROR);
+        BaseMod.addCard(new DrainingStrike());
+        UnlockTracker.unlockCard(CardNames.DRAINING_STRIKE);
+        BaseMod.addCard(new BurningSoul());
+        UnlockTracker.unlockCard(CardNames.BURNING_SOUL);
         BaseMod.addCard(new Makankosappo());
         UnlockTracker.unlockCard(CardNames.MAKANKOSAPPO);
         BaseMod.addCard(new ExtremeSpeed());
@@ -390,6 +394,8 @@ public class SaiyaMod implements
         UnlockTracker.unlockCard(CardNames.MOMENTUM);
         BaseMod.addCard(new MindBoom());
         UnlockTracker.unlockCard(CardNames.MIND_BOOM);
+        BaseMod.addCard(new SuperGhostKamikazeAttack());
+        UnlockTracker.unlockCard(CardNames.GHOST_ATTACK);
         
         /**
          * UNOBTAINABLE CARDS

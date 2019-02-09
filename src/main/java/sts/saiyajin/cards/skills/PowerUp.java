@@ -23,8 +23,8 @@ public class PowerUp extends SaiyanCard {
 
 	private static final int COST = 2;
 	private static final int BASE_KI_GAIN = 6;
-	private static final int UPGRADE_KI_GAIN = 6;
-	private static final int BASE_BLOCK = 12;
+	private static final int UPGRADE_KI_GAIN = 4;
+	private static final int BASE_BLOCK = 14;
 	private static final int UPGRADE_BLOCK = 4;
 	
 	public PowerUp() {

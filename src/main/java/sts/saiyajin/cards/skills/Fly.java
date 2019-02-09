@@ -19,9 +19,9 @@ public class Fly extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.FLY);
 
 	private static final int COST = 1;
-	private static final int FLY_AMOUNT = 2;
+	private static final int FLY_AMOUNT = 3;
 	private static final int KI_COST = 20;
-	private static final int UPGRADED_KI_COST = -10;
+	private static final int UPGRADED_KI_COST = -8;
 	
 	
 	public Fly() {

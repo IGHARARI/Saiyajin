@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -28,12 +28,16 @@ public class ChaozIncreasePower extends AbstractPower implements InvisiblePower 
 	final Logger logger = LogManager.getLogger(ChaozIncreasePower.class);
 	 final private int incAmount;
 	 final private UUID targetUUID;
+	 private static int chaozIncreaseOffset = 0;
+	 private int counter;
 	 
 	public ChaozIncreasePower(final AbstractCreature owner, final int turns, final int incAmount, final UUID targetUUID) {
 		this.name = NAME;
 		this.owner = owner;
-		this.amount = turns;
-		this.ID = POWER_ID;
+		this.amount = -1;
+		this.counter = turns;
+		chaozIncreaseOffset++;
+		this.ID = POWER_ID + chaozIncreaseOffset;
 		this.type = AbstractPower.PowerType.BUFF;
         this.description = DESCRIPTIONS[0];
 		this.canGoNegative = false;
@@ -46,17 +50,28 @@ public class ChaozIncreasePower extends AbstractPower implements InvisiblePower 
 	@Override
 	public void flash() {}
 	
+	@Override
+	public void flashWithoutSound() {}
+	
+	@Override
+	public void stackPower(int stackAmount) {
+		counter+=stackAmount;
+	}
+	@Override
+	public void reducePower(int reduceAmount) {}
+	
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
-            if (this.amount == 1) {
+            counter--;
+            if (counter == 0) {
                 AbstractDungeon.actionManager.addToBottom(new ChaozAction(incAmount, targetUUID));
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this.ID));
             }
         }
     }
-	
-	@Override
+
+    @Override
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0];
 	}

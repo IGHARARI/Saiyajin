@@ -31,7 +31,7 @@ public class ConcussiveBlow extends SaiyanCard {
 		super(CardNames.CONCUSSIVE_BLOW, cardStrings.NAME, CardPaths.CONCUSSIVE_BLOW, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.ATTACK,
 		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.COMMON,
+		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.ENEMY);
 	    this.baseDamage = BASE_DAMAGE;
 	    this.baseMagicNumber = CONCUSSION_STACKS;

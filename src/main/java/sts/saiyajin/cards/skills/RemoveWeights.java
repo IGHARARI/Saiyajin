@@ -21,7 +21,7 @@ public class RemoveWeights extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.REMOVE_WEIGHTS);
 
 	private static final int COST = 0;
-	private static final int TEMP_STR = 1;
+	private static final int TEMP_STR = 2;
 	private static final int UPGR_TEMP_STR = 1;
 	
 	

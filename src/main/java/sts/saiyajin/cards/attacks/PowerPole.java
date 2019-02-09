@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
 
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
@@ -53,14 +55,17 @@ public class PowerPole extends SaiyanCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		ArrayList<AbstractMonster> orderedMonsters = BattleHelper.getCurrentBattleMonstersSortedOnX(true);
 		int attackMultiplier = 1;
-		for (AbstractMonster m : orderedMonsters) {
-			DamageInfo tempInfo = new DamageInfo(player, this.baseDamage);
-			tempInfo.applyPowers(player, m);
-			DamageInfo actualDamageInfo = new DamageInfo(player, tempInfo.output * attackMultiplier);
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m, actualDamageInfo, AttackEffect.SLASH_HORIZONTAL, true));
-			attackMultiplier *= 2;
+		if (orderedMonsters.size() > 0) {
+			AbstractMonster lastMonster = orderedMonsters.get(orderedMonsters.size()-1);
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new IronWaveEffect(player.hb.cX, player.hb.cY, lastMonster.hb.cX), 0.5f));
+			for (AbstractMonster m : orderedMonsters) {
+				DamageInfo tempInfo = new DamageInfo(player, this.baseDamage);
+				tempInfo.applyPowers(player, m);
+				DamageInfo actualDamageInfo = new DamageInfo(player, tempInfo.output * attackMultiplier);
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(m, actualDamageInfo, AttackEffect.SLASH_HORIZONTAL, true));
+				attackMultiplier *= 2;
+			}
 		}
-		applyPowers();
 	}
 
 }

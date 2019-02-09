@@ -25,7 +25,7 @@ public class CcCapsule extends SaiyanCard {
 		super(CardNames.CC_CAPSULE, cardStrings.NAME, CardPaths.CC_CAPSULE, COST, cardStrings.DESCRIPTION, 
 		        AbstractCard.CardType.SKILL,
 		        CardColors.SAIYAN_CARD_COLOR,
-		        AbstractCard.CardRarity.COMMON,
+		        AbstractCard.CardRarity.UNCOMMON,
 		        AbstractCard.CardTarget.NONE);
 		this.exhaust = true;
 	}

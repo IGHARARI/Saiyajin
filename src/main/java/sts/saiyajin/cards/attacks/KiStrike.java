@@ -23,10 +23,10 @@ public class KiStrike extends SaiyanCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.KI_STRIKE);
 
 	private static final int COST = 1;
-	private static final int BASE_DAMAGE = 6;
-	private static final int UPGRADE_DAMAGE = 2;
-	private static final int BASE_BLOCK = 6;
-	private static final int UPGRADE_BLOCK = 2;
+	private static final int BASE_DAMAGE = 7;
+	private static final int UPGRADE_DAMAGE = 3;
+	private static final int BASE_BLOCK = 7;
+	private static final int UPGRADE_BLOCK = 3;
 	private static final int KI_REQUIRED = 6;
 	
 	public KiStrike() {
