@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import sts.saiyajin.cards.types.ComboFinisher;
@@ -31,6 +32,7 @@ public class KameHameHa extends ComboFinisher {
 	private static final int UPGRADE_DAMAGE = 8; 
 	private static final int KI_COST = 16; 
 	private static final int UPGRADED_KI_COST = -6; 
+	private final static String ONE_LINER = cardStrings.EXTENDED_DESCRIPTION[0];
 	
 	final Logger logger = LogManager.getLogger(KameHameHa.class);
 	
@@ -59,6 +61,7 @@ public class KameHameHa extends ComboFinisher {
 	
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
+		AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0f, ONE_LINER, true));
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal), 0.1f));
 		DamageInfo damageInfo = new DamageInfo(player, this.damage, this.damageTypeForTurn);
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, damageInfo, AttackEffect.BLUNT_HEAVY));
@@ -80,12 +83,8 @@ public class KameHameHa extends ComboFinisher {
 		//I do +1 as this is triggered before the Combo is actually applied
 		int comboAmt = PowersHelper.getPlayerPowerAmount(ComboPower.POWER_ID) + 1;
 		int costModify = COST - this.cost - comboAmt;
-		logger.info("cost modify before check: " + costModify );
 		if (-costModify > this.cost) costModify = -this.cost;
-		logger.info("cost modify AFTER check: " + costModify );
-		logger.info("KAME COST / costforturn: " + this.cost  + " / " + this.costForTurn);
 		this.modifyCostForCombat(costModify);
-		logger.info("KAME COST / costforturn: " + this.cost  + " / " + this.costForTurn);
 		//Current cost is this.cost so the result of the #math is (COST - combo)
 	}
 

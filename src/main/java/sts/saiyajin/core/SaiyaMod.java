@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -416,19 +417,25 @@ public class SaiyaMod implements
     public void receiveEditStrings() {
         String relicStrings, cardStrings, powerStrings, uiStrings;
         //	ASSUME THAT ("lang == eng");
-          relicStrings = Gdx.files.internal("localization/saiyajin_relics.json")
+        String pathToLoc;
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+        	pathToLoc = "localization/zhs/";
+        } else {
+        	pathToLoc = "localization/eng/";
+        }
+          relicStrings = Gdx.files.internal(pathToLoc+"saiyajin_relics.json")
               .readString(String.valueOf(StandardCharsets.UTF_8));
           BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
 
-          cardStrings = Gdx.files.internal("localization/saiyajin_cards.json")
+          cardStrings = Gdx.files.internal(pathToLoc+"saiyajin_cards.json")
               .readString(String.valueOf(StandardCharsets.UTF_8));
           BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 
-          powerStrings = Gdx.files.internal("localization/saiyajin_powers.json")
+          powerStrings = Gdx.files.internal(pathToLoc+"saiyajin_powers.json")
               .readString(String.valueOf(StandardCharsets.UTF_8));
           BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
 
-          uiStrings = Gdx.files.internal("localization/saiyajin_UI.json")
+          uiStrings = Gdx.files.internal(pathToLoc+"saiyajin_UI.json")
         		  .readString(String.valueOf(StandardCharsets.UTF_8));
           BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
     }
@@ -479,7 +486,13 @@ public class SaiyaMod implements
 	@Override
 	public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal("localization/saiyajin_keywords.json").readString(StandardCharsets.UTF_8.name());
+        String pathToLoc;
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+        	pathToLoc = "localization/zhs/";
+        } else {
+        	pathToLoc = "localization/eng/";
+        }
+        String json = Gdx.files.internal(pathToLoc + "saiyajin_keywords.json").readString(StandardCharsets.UTF_8.name());
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
 
         if (keywords != null) {

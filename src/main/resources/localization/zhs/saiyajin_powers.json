@@ -1,0 +1,135 @@
+{
+  "Saiyan:KiPower": {
+    "NAME": "气",
+    "DESCRIPTIONS": ["增强你不同技能的能力。"]
+  },
+  "Saiyan:StunPower": {
+    "NAME": "眩晕",
+    "DESCRIPTIONS": ["晕住的敌人什么都做不了。"]
+  },
+  "Saiyan:Revive": {
+    "NAME": "复活",
+    "DESCRIPTIONS": ["敌人死了之后会满血复活，并且得到一些Buff。"]
+  },
+  "Saiyan:Chaoz": {
+    "NAME": "",
+    "DESCRIPTIONS": ["Does anybody like chaotzu?"]
+  },
+  "Saiyan:PlotArmor": {
+    "NAME": "主角光环",
+    "DESCRIPTIONS": ["每当你用能力牌的时候，获得格挡。"]
+  },
+  "Saiyan:WarmUp": {
+    "NAME": "热身",
+    "DESCRIPTIONS": ["每回合第一次使用能力牌的时候，得到 [E] 。",
+    	"每回合前", "次使用能力牌的时候，得到 [E] 。"]
+  },
+  "Saiyan:RetainOnce": {
+    "NAME": "保留一次",
+    "DESCRIPTIONS": ["这个回合保留一张卡。"]
+  },
+  "Saiyan:Twize": {
+    "NAME": "双击",
+    "DESCRIPTIONS": ["你的下一个  终结技  会触发两次。"]
+  },
+  "Saiyan:ExtraReward": {
+    "NAME": "",
+    "DESCRIPTIONS": ["这场战斗结束之后得到一个普通遗物。"]
+  },
+  "Saiyan:SoulSpice": {
+    "NAME": "灵魂美食",
+    "DESCRIPTIONS": ["每当你消耗一张状态牌时，获得一点力量。"]
+  },
+  "Saiyan:EnergyPlus": {
+    "NAME": "超能量",
+    "DESCRIPTIONS": ["每回合开始时获得 [E] 。"]
+  },
+  "Saiyan:Momentum": {
+    "NAME": "动量",
+    "DESCRIPTIONS": ["你的  终结技  只会用掉 连击 的一半。"]
+  },
+  "Saiyan:ReverbHit": {
+    "NAME": "回响一击",
+    "DESCRIPTIONS": ["会在敌人的下一回合开始时造成伤害。"]
+  },
+  "Saiyan:Furor": {
+    "NAME": "挑战",
+    "DESCRIPTIONS": ["当敌人获得Buff时，获得一点力量。"]
+  },
+  "Saiyan:PressOn": {
+    "NAME": "追击",
+    "DESCRIPTIONS": ["这回合无视气的费用。每当你用一张卡时，将一个 气燃烧 放进你的弃牌堆。"]
+  },
+  "Saiyan:Reflection": {
+    "NAME": "反弹",
+    "DESCRIPTIONS": ["反弹 敌人造成的伤害。"]
+  },
+  "Saiyan:SuperSaiyanThreeDebuff": {
+    "NAME": "超级赛亚人三",
+    "DESCRIPTIONS": ["你变身之后跟厉害了，但是你的力量在慢慢流失。"]
+  },
+  "Saiyan:PowerStance": {
+    "NAME": "攻击式",
+    "DESCRIPTIONS": ["你的攻击牌算为 起始技 。"]
+  },
+  "Saiyan:MajinSeal": {
+    "NAME": "魔人封印",
+    "DESCRIPTIONS": ["你每回合第一张攻击牌回答中随机的敌人。每当你得到 连击 时，多叠一点 连击 。"]
+  },
+  "Saiyan:DragonBall": {
+    "NAME": "龙珠",
+    "DESCRIPTIONS": ["集齐七个 龙珠 会完成你一个愿望。"]
+  },
+  "Saiyan:Dodge": {
+    "NAME": "躲避",
+    "DESCRIPTIONS": ["当你受到攻击时，你有和你躲避一样的几率无视对方的动机。回合结束时消失。"]
+  },
+  "Saiyan:ExtremeSpeed": {
+    "NAME": "超级速度",
+    "DESCRIPTIONS": ["每当你使用 终结技 时，抓一张牌。"]
+  },
+  "Saiyan:CantRevive": {
+    "NAME": "无法复活",
+    "DESCRIPTIONS": ["这个生物已经复活过一次，不能再复活了。"]
+  },
+  "Saiyan:PlayerFlight": {
+    "NAME": "飞翔",
+    "DESCRIPTIONS": ["收到50%的伤害。当你被攻击之后，去掉一点 飞翔 。当你失去飞翔时，得到一点虚弱。"]
+  },
+  "Saiyan:Medicine": {
+    "NAME": "药",
+    "DESCRIPTIONS": ["等你有两点 药 的时候，将他们变成一点人工制品。"]
+  },
+  "Saiyan:BurningSoul": {
+    "NAME": "燃耗着的灵魂",
+    "DESCRIPTIONS": ["在回合结束时，使用气来获得 气护盾 。"]
+  },
+  "Saiyan:ConcussionPower": {
+    "NAME": "脑震荡",
+    "DESCRIPTIONS": ["拥有 脑震荡 的生物每回合开始时会失去血，并且多叠一点 脑震荡 。"]
+  },
+  "Saiyan:KiRegen": {
+    "NAME": "蓄气",
+    "DESCRIPTIONS": ["回合开始时，获得与蓄气点数一样的气。"]
+  },
+  "Saiyan:KiExplosion": {
+    "NAME": "气护盾",
+    "DESCRIPTIONS": ["当被攻击时，将对方造成与 气护盾  一样的伤害。回合结束时消失。"]
+  },
+  "Saiyan:SuperSaiyanForm": {
+    "NAME": "超级赛亚人模式",
+    "DESCRIPTIONS": ["哈啊啊啊啊啊啊！！"]
+  },
+  "Saiyan:GreatApe": {
+    "NAME": "巨猿模式",
+    "DESCRIPTIONS": ["每回合开始时获得 [E] [E] 。"]
+  },
+  "Saiyan:FullMoon": {
+    "NAME": "圆月",
+    "DESCRIPTIONS": ["你望向圆月，月光闪瞎了你的眼。"]
+  },
+  "Saiyan:ComboPower": {
+    "NAME": "连击",
+    "DESCRIPTIONS": ["用 终结技 来结束 连击 会得到效果增幅。"]
+  }
+}

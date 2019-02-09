@@ -27,7 +27,7 @@ public class BackAttack extends SaiyanCard {
 	private static final int UPGRADE_DAMAGE = 3;
 	private static final int BASE_WEAK = 2;
 	private static final int UPGRADE_WEAK = 1;
-	private static final String ENEMY_NOT_VULN = "The enemy isn't vulnerable...";
+	private static final String ENEMY_NOT_VULN = cardStrings.EXTENDED_DESCRIPTION[0];
 	
 	public BackAttack() {
 		super(CardNames.BACK_ATTACK, cardStrings.NAME, CardPaths.BACK_ATTACK, COST, cardStrings.DESCRIPTION, 

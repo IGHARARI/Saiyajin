@@ -9,7 +9,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
@@ -23,6 +25,8 @@ import sts.saiyajin.utils.CardColors;
 
 public class DragonBallAction extends AbstractGameAction implements basemod.helpers.ModalChoice.Callback{
     
+	private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DragonBallAction");
+	
     public DragonBallAction() {
         this.setValues(AbstractDungeon.player, AbstractDungeon.player);
         this.actionType = ActionType.SPECIAL;
@@ -38,12 +42,12 @@ public class DragonBallAction extends AbstractGameAction implements basemod.help
             	
             	ModalChoice modal = new ModalChoiceBuilder()
                         .setCallback(this)
-                        .setTitle("What is your Wish...?")
+                        .setTitle(uiStrings.TEXT[0])
                         .setColor(CardColors.SAIYAN_CARD_COLOR)
-                        .addOption("Power", "Obtain incredible Power", CardTarget.NONE)
-                        .addOption("Resilience", "Receive limitless Resilience", CardTarget.NONE)
-                        .addOption("Determination", "Become filled with Determination", CardTarget.NONE)
-                        .addOption("Destruction", "Vanquish your enemies", CardTarget.NONE)
+                        .addOption(uiStrings.TEXT[1], uiStrings.TEXT[2], CardTarget.NONE)
+                        .addOption(uiStrings.TEXT[3], uiStrings.TEXT[4], CardTarget.NONE)
+                        .addOption(uiStrings.TEXT[5], uiStrings.TEXT[6], CardTarget.NONE)
+                        .addOption(uiStrings.TEXT[7], uiStrings.TEXT[8], CardTarget.NONE)
                         .create();
             	modal.open();
             } else {

@@ -1,0 +1,28 @@
+{
+	"character_description": {
+		"TEXT": ["塞亚星弱者"],
+		"EXTRA_TEXT": ["从遥远的赛亚星来打破尖塔。"]
+	},
+	"character_name": {
+		"TEXT": ["赛亚人"]
+	},
+	"HeartKillText": {
+		"TEXT": ["你举起你的拳头，全身激动的颤抖着……"]
+	},
+	"KiCounter": {
+		"TEXT": ["气", "这是你现在拥有的气。"]
+	},
+	"PlanningAction": {
+		"TEXT": ["选择1张卡放入你手牌。"]
+	},
+	"HoningAction": {
+		"TEXT": ["消耗最多","张卡。"]
+	},
+	"DragonBallAction": {
+		"TEXT": ["What is your Wish...?",
+				 "Power", "Obtain incredible Power",
+				 "Resilience", "Receive limitless Resilience",
+				 "Determination", "Become filled with Determination",
+				 "Destruction", "Vanquish your enemies"]
+	}
+}

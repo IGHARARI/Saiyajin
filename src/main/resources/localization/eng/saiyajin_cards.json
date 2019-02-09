@@ -153,7 +153,8 @@
 	},
 	"Saiyan:KameHameHa": {
 		"NAME": "Kame Hame Ha",
-		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. NL Finisher: Costs 1 less energy per Combo stack."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Deal !D! damage. NL Finisher: Costs 1 less energy per Combo stack.",
+		"EXTENDED_DESCRIPTION" : ["KAME HAME HAAAaaa!!"]
 	},
 	"Saiyan:Fly": {
 		"NAME": "Fly",
@@ -165,7 +166,8 @@
 	},
 	"Saiyan:SaiyanHubris": {
 		"NAME": "Saiyan Hubris",
-		"DESCRIPTION": "Gain !M! Ki for each enemy."
+		"DESCRIPTION": "Gain !M! Ki for each enemy.",
+		"EXTENDED_DESCRIPTION": ["Heh. Finally a real challenge."]
 	},
 	"Saiyan:SuperSaiyanThree": {
 		"NAME": "Super Saiyan 3",
@@ -207,7 +209,8 @@
 	},
 	"Saiyan:BackAttack": {
 		"NAME": "Back Attack",
-		"DESCRIPTION": "Telegraphed. NL Deal !D! damage. NL Apply !M! Weak."
+		"DESCRIPTION": "Telegraphed. NL Deal !D! damage. NL Apply !M! Weak.",
+		"EXTENDED_DESCRIPTION" : ["The enemy isn't vulnerable..."]
 	},
 	"Saiyan:ExtremeSpeed": {
 		"NAME": "Extreme-speed",

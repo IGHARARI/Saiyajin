@@ -1,5 +1,11 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/resources/localization=UTF-8
+encoding//src/main/resources/localization/zhs/saiyajin_UI.json=UTF-8
+encoding//src/main/resources/localization/zhs/saiyajin_cards.json=UTF-8
+encoding//src/main/resources/localization/zhs/saiyajin_keywords.json=UTF-8
+encoding//src/main/resources/localization/zhs/saiyajin_powers.json=UTF-8
+encoding//src/main/resources/localization/zhs/saiyajin_relics.json=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

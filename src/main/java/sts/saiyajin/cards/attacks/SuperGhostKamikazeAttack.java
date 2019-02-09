@@ -26,12 +26,12 @@ public class SuperGhostKamikazeAttack extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.GHOST_ATTACK);
 	private static final int COST = 3;
-	private static final int BASE_DAMAGE = 8; 
+	private static final int BASE_DAMAGE = 6; 
 	private static final int UPGRADE_DAMAGE = 2;
 	private static final int NUMBER_OF_HITS = 9;
 	private static final int VULN_PER_HIT = 1;
 	
-	private static final int KI_COST = 40; 
+	private static final int KI_COST = 50; 
 	
 	final Logger logger = LogManager.getLogger(SuperGhostKamikazeAttack.class);
 	

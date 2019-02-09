@@ -40,7 +40,6 @@ public class UltraInstinctAction extends AbstractGameAction {
 	        }
 	        if (effect > 0) {
 	            for (int i = 0; i < effect; ++i) {
-	            	logger.info("Applying dodge amount: " + amount);
 	                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new DodgePower(p, amount), amount));
 	            }
 	            if (!this.freeToPlayOnce) {

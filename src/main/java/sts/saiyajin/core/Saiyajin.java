@@ -23,7 +23,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.abstracts.CustomPlayer;
-import sts.saiyajin.cards.attacks.Strike;
+import sts.saiyajin.cards.skills.KaioKen;
 import sts.saiyajin.ui.Orb;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
@@ -34,7 +34,7 @@ import sts.saiyajin.utils.RelicNames;
 
 public class Saiyajin extends CustomPlayer {
 
-	private static final int MAX_HP = 64;
+	private static final int MAX_HP = 60;
 	private static final int STARTING_HP = MAX_HP;
 	private static final int STARTING_GOLD = 77;
 	private static final int BASE_HAND_SIZE = 6;
@@ -139,7 +139,7 @@ public class Saiyajin extends CustomPlayer {
 	}
 	@Override
 	public AbstractCard getStartCardForEvent() {
-		return new Strike();
+		return new KaioKen();
 	}
 	@Override
 	public Color getCardTrailColor() {
