@@ -21,7 +21,7 @@ public class SaiyanHubris extends SaiyanCard {
 
 	private static final int COST = 0;
 	private static final int KI_GAIN_PER_ENEMY = 5;
-	private final static int UPGRADED_KI_GAIN = 8;
+	private final static int UPGRADED_KI_GAIN = 3;
 	private final static String ONE_LINER = cardStrings.EXTENDED_DESCRIPTION[0];
 	
 	

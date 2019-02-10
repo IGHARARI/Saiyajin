@@ -15,11 +15,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 import sts.saiyajin.cards.types.ComboFinisher;
 import sts.saiyajin.powers.ConcussionPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.ui.vfx.MakankosappoLaserEffect;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
 
@@ -67,7 +67,7 @@ public class Makankosappo extends ComboFinisher {
 		for(int i = 0; i < BASE_HIT_TIMES; i++) {
 			DamageInfo damageInfo = new DamageInfo(player, this.damage, this.damageTypeForTurn);
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, damageInfo, AttackEffect.BLUNT_LIGHT, true));
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SmallLaserEffect(player.hb.cX, player.hb.cY, monster.hb.cX, monster.hb.cY), 0.07f));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new MakankosappoLaserEffect(player.hb.cX, player.hb.cY, monster.hb.cX, monster.hb.cY), 0.07f));
 		}
 	}
 }

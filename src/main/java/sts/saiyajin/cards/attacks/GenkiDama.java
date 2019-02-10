@@ -1,6 +1,9 @@
 package sts.saiyajin.cards.attacks;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -15,6 +18,8 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.powers.KiPower;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.ui.vfx.GenkiDamaBallEffect;
+import sts.saiyajin.utils.BattleHelper;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
 import sts.saiyajin.utils.PowerNames;
@@ -63,6 +68,9 @@ public class GenkiDama extends SaiyanCard {
 		
 		DamageAllEnemiesAction damageAction = new DamageAllEnemiesAction(
 				player, this.multiDamage, damageTypeForTurn, AttackEffect.SMASH);
+		ArrayList<AbstractMonster> orderedMonsters = BattleHelper.getCurrentBattleMonstersSortedOnX(false);
+		AbstractMonster lastMon = orderedMonsters.get(orderedMonsters.size()-1);
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new GenkiDamaBallEffect(player.hb.cX, player.hb.cY, lastMon.hb.cX, lastMon.hb.cY, 1), 1.2f));
 		AbstractDungeon.actionManager.addToBottom(damageAction);
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, WEAK_GAINED, false), WEAK_GAINED));
 		int kiPower = PowersHelper.getPlayerPowerAmount(PowerNames.KI);

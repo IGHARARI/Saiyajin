@@ -31,7 +31,7 @@ public class SaiyanHeart extends CustomRelic {
 	private static final String IMG_OTL = RelicPaths.SAIYAN_HEART_OUTLINE;
 
 	private static final int MAX_TURNS_HEART = 5;
-	private static final int TEMP_HP_PER_DEBUFF = 5;
+	private static final int TEMP_HP_PER_DEBUFF = 4;
 
 	private ArrayList<String> currentDebuffs = new ArrayList<String>();
 	private boolean isBattling = false;
@@ -85,7 +85,7 @@ public class SaiyanHeart extends CustomRelic {
 	}
 	
 	public void battleEnd(){
-		if (GameActionManager.turn <= MAX_TURNS_HEART) {
+		if (counter <= MAX_TURNS_HEART) {
 			int remainingDebuffs = 0;
 			for(AbstractPower power : AbstractDungeon.player.powers){
 				if (power.type.equals(PowerType.DEBUFF) && !invalidDebuffs.contains(power.ID)){

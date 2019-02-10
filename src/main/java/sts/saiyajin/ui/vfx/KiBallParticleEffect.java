@@ -25,8 +25,17 @@ public class KiBallParticleEffect extends AbstractGameEffect {
     private float vX;
     private TextureAtlas.AtlasRegion img;
     private boolean activated;
+    private Color secondaryColor;
+    private float drawScale;
     
-    public KiBallParticleEffect(final float sX, final float sY, final float tX, final float tY) {
+    public KiBallParticleEffect(final float sX, final float sY, final float tX, final float tY, final Color ballColor) {
+    	this(sX, sY, tX, tY, ballColor, Color.BLACK.cpy());
+    }
+    
+    public KiBallParticleEffect(final float sX, final float sY, final float tX, final float tY, final Color ballColor, final Color secondaryColor) {
+    	this(sX, sY, tX, tY, ballColor, secondaryColor, 1.0f);
+    }
+    public KiBallParticleEffect(final float sX, final float sY, final float tX, final float tY, final Color ballColor, final Color secondaryColor, float drawScale) {
         this.activated = false;
         this.img = ImageMaster.GLOW_SPARK_2;
         this.sX = sX + MathUtils.random(-90.0f, 90.0f) * Settings.scale;
@@ -41,7 +50,9 @@ public class KiBallParticleEffect extends AbstractGameEffect {
         this.startingDuration = 0.8f;
         this.duration = this.startingDuration;
         this.renderBehind = MathUtils.randomBoolean(0.2f);
-        this.color = new Color(1.0f, 0.1f, MathUtils.random(0.2f, 0.5f), 1.0f);
+        this.color = ballColor;
+        this.secondaryColor = secondaryColor;
+        this.drawScale = drawScale;
     }
     
     @Override
@@ -71,10 +82,10 @@ public class KiBallParticleEffect extends AbstractGameEffect {
     
     @Override
     public void render(final SpriteBatch sb) {
-        sb.setColor(Color.BLACK);
-        sb.draw(this.img, this.x, this.y, this.img.packedWidth / 2.0f, this.img.packedHeight / 2.0f, this.img.packedWidth, this.img.packedHeight, this.scale * 2.0f, this.scale * 2.0f, this.rotation);
+        sb.setColor(secondaryColor);
+        sb.draw(this.img, this.x, this.y, this.img.packedWidth / 2.0f, this.img.packedHeight / 2.0f, this.img.packedWidth, this.img.packedHeight, this.scale * (this.drawScale+1f), this.scale * (this.drawScale+1f), this.rotation);
         sb.setColor(this.color);
-        sb.draw(this.img, this.x, this.y, this.img.packedWidth / 2.0f, this.img.packedHeight / 2.0f, this.img.packedWidth, this.img.packedHeight, this.scale, this.scale, this.rotation);
+        sb.draw(this.img, this.x, this.y, this.img.packedWidth / 2.0f, this.img.packedHeight / 2.0f, this.img.packedWidth, this.img.packedHeight, this.scale*this.drawScale, this.scale*this.drawScale, this.rotation);
     }
     
     @Override

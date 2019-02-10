@@ -19,10 +19,10 @@
 		"TEXT": ["消耗最多","张卡。"]
 	},
 	"DragonBallAction": {
-		"TEXT": ["What is your Wish...?",
-				 "Power", "Obtain incredible Power",
-				 "Resilience", "Receive limitless Resilience",
-				 "Determination", "Become filled with Determination",
-				 "Destruction", "Vanquish your enemies"]
+		"TEXT": ["说出你的愿望吧！",
+				 "力量", "获得不可思议的力量",
+				 "坚毅", "获得无限坚毅",
+				 "决心", "你会充满了决心",
+				 "破坏", "征服你的敌人"]
 	}
 }

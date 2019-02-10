@@ -158,7 +158,7 @@
 	},
 	"Saiyan:Fly": {
 		"NAME": "Fly",
-		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain 2 Flight."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Gain 3 Flight."
 	},
 	"Saiyan:PowerPole": {
 		"NAME": "Power Pole",
@@ -323,8 +323,8 @@
 	},
 	"Saiyan:SenzuBean": {
 		"NAME": "Senzu Bean",
-		"DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Invincible (33% Max HP). NL Obtain a random common relic at end of combat.",
-		"UPGRADE_DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Metallicize( !M! x3 ). NL Obtain a random common relic at end of combat."
+		"DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Invincible (33% Max HP). NL Obtain a random common relic at end of combat. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Give a non-minion enemy Redemption: Strength( !M! ), Metallicize( !M! x3 ). NL Obtain a random common relic at end of combat. NL Exhaust."
 	},
 	"Saiyan:GenkiDama": {
 		"NAME": "Genki Dama",

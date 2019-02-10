@@ -56,13 +56,21 @@ public class SpiritSword extends ComboFinisher {
 	@Override
 	public void finisher(AbstractPlayer player, AbstractCreature monster, int comboStacks) {
 		int targetMonsterIdx = 0;
-		ArrayList<AbstractMonster> orderedMonsters = BattleHelper.getCurrentBattleMonstersSortedOnX(true);
+		ArrayList<AbstractMonster> orderedMonsters = BattleHelper.getCurrentBattleMonstersSortedOnX(false);
 		for (AbstractMonster m : orderedMonsters) {
 			if (m == monster) break;
 			targetMonsterIdx++;
 		}
-		if (targetMonsterIdx+1 < orderedMonsters.size()) {
-			AbstractMonster mon2 = orderedMonsters.get(targetMonsterIdx+1);
+		int finisherTargetIndex = targetMonsterIdx+1;
+		while(finisherTargetIndex < orderedMonsters.size()) {
+			if (orderedMonsters.get(finisherTargetIndex).isDeadOrEscaped()) {
+				finisherTargetIndex++;
+			} else {
+				break;
+			}
+		}
+		if (finisherTargetIndex < orderedMonsters.size()) {
+			AbstractMonster mon2 = orderedMonsters.get(finisherTargetIndex);
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new SpiritSwordLaserEffect(monster.hb.cX, monster.hb.cY, mon2.hb.cX, mon2.hb.cY), 0.1f));
 			DamageInfo info = new DamageInfo(player, this.baseDamage * comboStacks);
 			info.applyPowers(player, mon2);

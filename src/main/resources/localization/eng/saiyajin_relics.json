@@ -9,7 +9,7 @@
   "SaiyanHeart": {
     "NAME": "Saiyan Heart",
     "FLAVOR": "Your Saiyan Heart thirsts for battle.",
-    "DESCRIPTIONS": ["During the first 5 turns of a battle, whenever a debuff applied to you expires: gain 1 MaxHP and 5 Temporary HP. NL If you win before turn 5, also gain 1 Max HP for any remaining debuff on you.", 
+    "DESCRIPTIONS": ["During the first 5 turns of a battle, whenever a debuff applied to you expires: gain 1 MaxHP and 4 Temporary HP. NL If you win before turn 5, also gain 1 Max HP for any remaining debuff on you.", 
     	"Every time you defeat en elite or a boss, increase your Max HP by 5."]
   }
 }

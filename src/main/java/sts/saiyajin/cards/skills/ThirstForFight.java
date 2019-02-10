@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
+import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import sts.saiyajin.cards.types.SaiyanCard;
@@ -49,7 +50,7 @@ public class ThirstForFight extends SaiyanCard {
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, DRAW));
 		int buffsCounter = 0;
 		for (AbstractPower power : monster.powers){
-			if (power.type.equals(PowerType.BUFF)) buffsCounter++;
+			if (power.type.equals(PowerType.BUFF) && !MinionPower.POWER_ID.equals(power.ID)) buffsCounter++;
 		}
 		if (buffsCounter > 0){
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, buffsCounter), buffsCounter));

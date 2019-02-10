@@ -154,7 +154,7 @@
 	"Saiyan:KameHameHa": {
 		"NAME": "龟派气功",
 		"DESCRIPTION": "使用 !Saiyan:KiReq! 点气。 NL 造成 !D! 点伤害。 NL 终结技 ：每点 连击 减少1点需要的 [E] 。",
-		"EXTENDED_DESCRIPTION" : ["KAME HAME HAAAaaa!!"]
+		"EXTENDED_DESCRIPTION" : ["龟……派……气……功……波！！"]
 	},
 	"Saiyan:Fly": {
 		"NAME": "飞",
@@ -167,7 +167,7 @@
 	"Saiyan:SaiyanHubris": {
 		"NAME": "赛亚人的傲慢",
 		"DESCRIPTION": "当前每有一个敌人，获得 !M! 点气。",
-		"EXTENDED_DESCRIPTION": ["Heh. Finally a real challenge."]
+		"EXTENDED_DESCRIPTION": ["总算有点挑战性的了。"]
 	},
 	"Saiyan:SuperSaiyanThree": {
 		"NAME": "超级赛亚人三",
@@ -210,7 +210,7 @@
 	"Saiyan:BackAttack": {
 		"NAME": "背击",
 		"DESCRIPTION": "明显的 。 NL 造成 !D! 点伤害。NL 给与 !M! 点 虚弱 。",
-		"EXTENDED_DESCRIPTION" : ["The enemy isn't vulnerable..."]
+		"EXTENDED_DESCRIPTION" : ["敌人没有易伤。"]
 	},
 	"Saiyan:ExtremeSpeed": {
 		"NAME": "极速",
@@ -238,7 +238,7 @@
 	},
 	"Saiyan:GreatApeForm": {
 		"NAME": "巨猿化",
-		"DESCRIPTION": "看月亮 。每回合开始时获得 [E] [E] 。 消耗 所有非攻击牌。变成 巨猿 。"
+		"DESCRIPTION": "看圆月 。每回合开始时获得 [E] [E] 。 消耗 所有非攻击牌。变成 巨猿 。"
 	},
 	"Saiyan:ConcussiveBlow": {
 		"NAME": "震荡一击",

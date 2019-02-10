@@ -4,6 +4,7 @@
   "author_list": [
     "Korbo"
   ],
+  "credits":"Chinese translation by AmethystProductions.",
   "description": "Adds the weakling of the Saiyajin planet as a playable character.",
   "dependencies": [
     "basemod", "stslib"

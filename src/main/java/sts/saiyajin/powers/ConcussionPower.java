@@ -61,7 +61,7 @@ public class ConcussionPower extends AbstractPower implements HealthBarRenderPow
 	@Override
 	public Color getColor() {
 		//Somewhat orange-y cream color.
-		return Color.TAN;
+		return Color.TAN.cpy();
 	}
 
 	@Override

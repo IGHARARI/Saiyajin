@@ -58,7 +58,7 @@ public class ReverbHitPower extends AbstractPower implements HealthBarRenderPowe
 	
 	@Override
 	public Color getColor() {
-		return Color.SALMON;
+		return Color.SALMON.cpy();
 	}
 
 	@Override

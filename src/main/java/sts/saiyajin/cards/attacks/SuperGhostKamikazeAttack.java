@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
+import sts.saiyajin.ui.vfx.GhostAttackBallEffect;
 import sts.saiyajin.utils.CardColors;
 import sts.saiyajin.utils.CardNames;
 
@@ -26,7 +26,7 @@ public class SuperGhostKamikazeAttack extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.GHOST_ATTACK);
 	private static final int COST = 3;
-	private static final int BASE_DAMAGE = 6; 
+	private static final int BASE_DAMAGE = 7; 
 	private static final int UPGRADE_DAMAGE = 2;
 	private static final int NUMBER_OF_HITS = 9;
 	private static final int VULN_PER_HIT = 1;
@@ -61,8 +61,10 @@ public class SuperGhostKamikazeAttack extends SaiyanCard {
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		for (int i = 0; i < this.misc; i++) {
 			AbstractMonster mon = AbstractDungeon.getRandomMonster();
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new BloodShotEffect(player.hb.cX, player.hb.cY, mon.hb.cX, mon.hb.cY, 1), 0.08f));
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(mon, new DamageInfo(player, this.damage), AbstractGameAction.AttackEffect.FIRE, true));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new GhostAttackBallEffect(player.hb.cX, player.hb.cY, mon.hb.cX, mon.hb.cY, 1), 0.1f));
+			DamageInfo dinfo = new DamageInfo(player, this.baseDamage);
+			dinfo.applyPowers(player, mon);
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(mon, dinfo, AbstractGameAction.AttackEffect.FIRE, true));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mon, player, new VulnerablePower(mon, magicNumber, false), magicNumber));
 		}
 	}

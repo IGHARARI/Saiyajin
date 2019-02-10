@@ -60,7 +60,7 @@ public class SaiyanCard extends CustomCard {
 			int kiCost = this.kiRequired;
 			if (AbstractDungeon.player != null && isKiCostFree() && !AbstractDungeon.getCurrRoom().isBattleOver) {
 				kiCost = 0;
-				costColor = Color.LIME;
+				costColor = Color.LIME.cpy();
 			}
 			costColor.a = this.transparency;
 			final String text = String.valueOf(kiCost);
