@@ -9,7 +9,7 @@
 	},
 	"Saiyan:EnergyBlast": {
 		"NAME": "能量弹",
-		"DESCRIPTION": "起始技 。 NL 多所有敌人造成 !D! 点伤害. NL 气增幅 （ !M! ）：多造成2点伤害."
+		"DESCRIPTION": "起始技 。 NL 对所有敌人造成 !D! 点伤害. NL 气增幅 （ !M! ）：多造成2点伤害."
 	},
 	"Saiyan:SoulSpice": {
 		"NAME": "灵魂美食",
@@ -17,7 +17,7 @@
 	},
 	"Saiyan:RemoveWeights": {
 		"NAME": "卸掉重装",
-		"DESCRIPTION": "保留1张卡。 NL 获得 !M! 点 力量 。 NL 你的回合结束时，失去 !M! 点 力量 。"
+		"DESCRIPTION": "保留 1张卡。 NL 获得 !M! 点 力量 。 NL 你的回合结束时，失去 !M! 点 力量 。"
 	},
 	"Saiyan:FingerParry": {
 		"NAME": "手指格挡",
@@ -29,7 +29,7 @@
 	},
 	"Saiyan:ExpandingShockwave": {
 		"NAME": "扩放冲击波",
-		"DESCRIPTION": "连接技 。 NL 造成 !D! 点伤害。 NL 对其他敌人造成双倍伤害。"
+		"DESCRIPTION": "连接技 。 NL 对一个敌人造成 !D! 点伤害。 NL 对其他敌人造成双倍伤害。"
 	},
 	"Saiyan:FinalFlash": {
 		"NAME": "闪光炮",
@@ -45,7 +45,7 @@
 		"UPGRADE_DESCRIPTION": "你的下1个 终结技 会触发两次。"
 	},
 	"Saiyan:PlotArmor": {
-		"NAME": "主角光环",
+		"NAME": "情节盔甲",
 		"DESCRIPTION": "每当你用能力牌的时候，获得 !M!  格挡 。",
 		"UPGRADE_DESCRIPTION": "固有。 NL 每当你用能力牌的时候，获得 !M!  格挡 。"
 	},
@@ -66,8 +66,8 @@
 	},
 	"Saiyan:Pacing": {
 		"NAME": "踏步",
-		"DESCRIPTION": "这回合保留1张牌。 NL 获得X点 连击 。",
-		"UPGRADE_DESCRIPTION": "这回合保留1张牌。 NL 获得X+1点 连击 。"
+		"DESCRIPTION": "这回合 保留 1张牌。 NL 获得X点 连击 。",
+		"UPGRADE_DESCRIPTION": "这回合 保留 1张牌。 NL 获得X+1点 连击 。"
 	},
 	"Saiyan:Planning": {
 		"NAME": "计划",
@@ -112,7 +112,7 @@
 	},
 	"Saiyan:Training": {
 		"NAME": "训练",
-		"DESCRIPTION": "保留。 NL 你 训练 !M! 回合。 NL 训练 之后 消耗 ，不能被手动丢弃或 消耗 掉。",
+		"DESCRIPTION": "保留 。 NL 你 训练 !M! 回合。 NL 训练 之后 消耗 ，不能被手动丢弃或 消耗 掉。",
 		"UPGRADE_DESCRIPTION": "在 训练 中，不能用针对敌人的牌。"
 	},
 	"Saiyan:SpiritSword": {
@@ -242,7 +242,7 @@
 	},
 	"Saiyan:ConcussiveBlow": {
 		"NAME": "震荡一击",
-		"DESCRIPTION": "造成 !D! 点伤害，给与敌人 !M! 点震荡。"
+		"DESCRIPTION": "造成 !D! 点伤害，给与敌人 !M! 点 脑震荡。"
 	},
 	"Saiyan:DragonRadar": {
 		"NAME": "龙珠雷达",
@@ -269,7 +269,7 @@
 		"DESCRIPTION": "在回合结束时，使用 !M! 气来获得双倍的 气护盾 。"
 	},
 	"Saiyan:Scouter": {
-		"NAME": "战力检测眼睛",
+		"NAME": "战力检测眼镜",
 		"DESCRIPTION": "使用 !Saiyan:KiReq! 点气。 NL 这回合和下回合获得 !B! 点 格挡 。 NL 如果敌人并不准备攻击，增加 !M!  格挡 。"
 	},
 	"Saiyan:TurtleShell": {
