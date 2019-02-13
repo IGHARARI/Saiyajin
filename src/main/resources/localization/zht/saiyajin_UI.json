@@ -1,0 +1,28 @@
+{
+	"character_description": {
+		"TEXT": ["塞亞星弱者"],
+		"EXTRA_TEXT": ["從遙遠的賽亞星來打破尖塔。"]
+	},
+	"character_name": {
+		"TEXT": ["賽亞人"]
+	},
+	"HeartKillText": {
+		"TEXT": ["你舉起你的拳頭，全身激動的顫抖着…"]
+	},
+	"KiCounter": {
+		"TEXT": ["氣", "這是你現在擁有的氣"]
+	},
+	"PlanningAction": {
+		"TEXT": ["選擇1張牌放到手牌"]
+	},
+	"HoningAction": {
+		"TEXT": ["消耗最多","張牌"]
+	},
+	"DragonBallAction": {
+		"TEXT": ["說出你的願望吧！",
+				 "力量", "獲得不可思議的力量",
+				 "堅毅", "獲得無限堅毅",
+				 "決心", "你會充滿了決心",
+				 "破壞", "征服你的敵人"]
+	}
+}

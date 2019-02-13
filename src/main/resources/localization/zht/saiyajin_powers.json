@@ -1,0 +1,135 @@
+{
+  "Saiyan:KiPower": {
+    "NAME": "氣",
+    "DESCRIPTIONS": ["增強你不同技能的能力"]
+  },
+  "Saiyan:StunPower": {
+    "NAME": "眩暈",
+    "DESCRIPTIONS": ["暈住的敵人什麼都做不了"]
+  },
+  "Saiyan:Revive": {
+    "NAME": "復活",
+    "DESCRIPTIONS": ["敵人死後會滿血復活，並且獲得增益"]
+  },
+  "Saiyan:Chaoz": {
+    "NAME": "",
+    "DESCRIPTIONS": ["Does anybody like chaotzu?"]
+  },
+  "Saiyan:PlotArmor": {
+    "NAME": "情節盔甲",
+    "DESCRIPTIONS": ["每打出能力牌的時候，獲得格擋"]
+  },
+  "Saiyan:WarmUp": {
+    "NAME": "熱身",
+    "DESCRIPTIONS": ["每回合第一次使用能力牌的時候，得到 [E]",
+    	"每回合前", "次使用能力牌的時候，得到 [E]"]
+  },
+  "Saiyan:RetainOnce": {
+    "NAME": "保留1次",
+    "DESCRIPTIONS": ["本回合保留1張牌"]
+  },
+  "Saiyan:Twize": {
+    "NAME": "雙擊",
+    "DESCRIPTIONS": ["下個 終結技 會觸發2次"]
+  },
+  "Saiyan:ExtraReward": {
+    "NAME": "",
+    "DESCRIPTIONS": ["這場戰鬥結束之後得到1個普通遺物"]
+  },
+  "Saiyan:SoulSpice": {
+    "NAME": "靈魂美食",
+    "DESCRIPTIONS": ["每消耗1張 狀態牌 時，獲得1點 力量"]
+  },
+  "Saiyan:EnergyPlus": {
+    "NAME": "超能量",
+    "DESCRIPTIONS": ["每回合開始時獲得 [E]"]
+  },
+  "Saiyan:Momentum": {
+    "NAME": "動量",
+    "DESCRIPTIONS": ["你的 終結技 只會用掉一半 連擊 層數"]
+  },
+  "Saiyan:ReverbHit": {
+    "NAME": "迴響一擊",
+    "DESCRIPTIONS": ["在敵人的下回合開始時造成傷害"]
+  },
+  "Saiyan:Furor": {
+    "NAME": "挑戰",
+    "DESCRIPTIONS": ["當敵人獲得增益效果時，獲得1點 力量"]
+  },
+  "Saiyan:PressOn": {
+    "NAME": "追擊",
+    "DESCRIPTIONS": ["這回合無視氣的費用。每打出1張牌，增加1張 氣燃燒 到棄牌堆"]
+  },
+  "Saiyan:Reflection": {
+    "NAME": "反彈",
+    "DESCRIPTIONS": ["反彈 敵人造成的傷害"]
+  },
+  "Saiyan:SuperSaiyanThreeDebuff": {
+    "NAME": "超級賽亞人三",
+    "DESCRIPTIONS": ["你變身後更厲害了，但是你的力量在慢慢流失"]
+  },
+  "Saiyan:PowerStance": {
+    "NAME": "攻擊式",
+    "DESCRIPTIONS": ["你的攻擊牌算爲 起始技"]
+  },
+  "Saiyan:MajinSeal": {
+    "NAME": "魔人封印",
+    "DESCRIPTIONS": ["每回合第一張目標為敵人的攻擊牌會變成隨機目標。每當你獲得1層 連擊 ，多疊1層 連擊"]
+  },
+  "Saiyan:DragonBall": {
+    "NAME": "龍珠",
+    "DESCRIPTIONS": ["集齊七個 龍珠 會完成你一個願望"]
+  },
+  "Saiyan:Dodge": {
+    "NAME": "躲避",
+    "DESCRIPTIONS": ["當你受到攻擊時，你有和你躲避一樣的機率無視對方的動機。回合結束時消失"]
+  },
+  "Saiyan:ExtremeSpeed": {
+    "NAME": "超級速度",
+    "DESCRIPTIONS": ["每當你使用 終結技 時，抓一張牌"]
+  },
+  "Saiyan:CantRevive": {
+    "NAME": "無法復活",
+    "DESCRIPTIONS": ["這個生物已經復活過一次，不能再復活了"]
+  },
+  "Saiyan:PlayerFlight": {
+    "NAME": "飛翔",
+    "DESCRIPTIONS": ["減少受到50%的傷害。當被攻擊後，失去1層 飛翔 。當失去所有 飛翔 ，獲得1層 虛弱"]
+  },
+  "Saiyan:Medicine": {
+    "NAME": "藥物",
+    "DESCRIPTIONS": ["當擁有兩層 藥物 時，會轉化為1層 人工製品"]
+  },
+  "Saiyan:BurningSoul": {
+    "NAME": "燃耗着的靈魂",
+    "DESCRIPTIONS": ["在回合結束時，使用氣來獲得 氣護盾"]
+  },
+  "Saiyan:ConcussionPower": {
+    "NAME": "腦震盪",
+    "DESCRIPTIONS": ["擁有 腦震盪 的生物每回合開始時會失去生命，並獲得1層 腦震盪"]
+  },
+  "Saiyan:KiRegen": {
+    "NAME": "蓄氣",
+    "DESCRIPTIONS": ["回合開始時，獲得與蓄氣層數相同的氣"]
+  },
+  "Saiyan:KiExplosion": {
+    "NAME": "氣護盾",
+    "DESCRIPTIONS": ["當被攻擊時，使對方受到與 氣護盾 相受的傷害。回合結束時消失"]
+  },
+  "Saiyan:SuperSaiyanForm": {
+    "NAME": "超級賽亞人模式",
+    "DESCRIPTIONS": ["哈啊啊啊啊啊啊！！"]
+  },
+  "Saiyan:GreatApe": {
+    "NAME": "巨猿模式",
+    "DESCRIPTIONS": ["每回合開始時獲得 [E] [E]"]
+  },
+  "Saiyan:FullMoon": {
+    "NAME": "圓月",
+    "DESCRIPTIONS": ["你望向圓月，圓月望回你"]
+  },
+  "Saiyan:ComboPower": {
+    "NAME": "連擊",
+    "DESCRIPTIONS": ["用 終結技 來結束 連擊 會得到效果增幅"]
+  }
+}
