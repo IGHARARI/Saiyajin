@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -44,11 +45,28 @@ public class SaiyanCard extends CustomCard {
 	protected void renderEnergy(final SpriteBatch sb) {
 		SpireSuper.call(sb);
 		if (this.kiRequired > 0) {
-			final float drawX = this.current_x - 290.0f;
-			final float drawY = this.current_y - 280.0f;
+			final float drawX = this.current_x;// - 10.0f;
+			final float drawY = this.current_y;// + 10.0f;
 			sb.setColor(Color.valueOf("fce9b5"));//CardProperties.SAIYAN_CARD_RENDER_COLOR);
 			try {
-				sb.draw(ImageMaster.CARD_COLORLESS_ORB.getTexture(), drawX, drawY, 290.0f, 280.0f, 512.0f, 512.0f, 0.8f * this.drawScale * Settings.scale, 0.8f * this.drawScale * Settings.scale, this.angle, 0, 0, 512, 512, false, false);
+				AtlasRegion img = ImageMaster.CARD_COLORLESS_ORB;
+				float scale = 0.8f;
+				float offsetY = img.offsetY - 23f - img.originalHeight / 2.0f;
+				float offsetX = img.offsetX - 34f - img.originalWidth / 2.0f;
+				sb.draw(img, 
+						drawX + offsetX , 
+						drawY + offsetY , 
+						- offsetX, 
+						- offsetY,
+						img.packedWidth, img.packedHeight, 
+						this.drawScale * Settings.scale * scale, this.drawScale * Settings.scale * scale, 
+						this.angle);
+				
+//				sb.draw(ImageMaster.CARD_COLORLESS_ORB, drawX, drawY, 
+//						0, 0, // origins 290.0f, 280.0f,
+//						ImageMaster.CARD_COLORLESS_ORB.getRegionWidth(), ImageMaster.CARD_COLORLESS_ORB.getRegionHeight(), //width height
+//						0.8f * this.drawScale * Settings.scale, 0.8f * this.drawScale * Settings.scale, // scales
+//						this.angle, false); //rotation
 			}
 			catch (Exception e) {
 				ExceptionHandler.handleException(e, logger);

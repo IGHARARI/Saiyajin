@@ -30,14 +30,18 @@ public class KamikazeGhostAction extends AbstractGameAction {
     @Override
     public void update() {
 		AbstractMonster mon = AbstractDungeon.getRandomMonster();
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new GhostAttackBallEffect(source.hb.cX, source.hb.cY, mon.hb.cX, mon.hb.cY, 1), 0.1f));
-		DamageInfo dinfo = new DamageInfo(source, baseDamage);
-		dinfo.applyPowers(source, mon);
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(mon, dinfo, AbstractGameAction.AttackEffect.FIRE, true));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mon, source, new VulnerablePower(mon, vulnAmount, false), vulnAmount));
-        if (remainingGhosts > 0) {
-        	AbstractDungeon.actionManager.addToBottom(new KamikazeGhostAction(--remainingGhosts, baseDamage, vulnAmount));
-        }
+		if (mon != null) {
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new GhostAttackBallEffect(source.hb.cX, source.hb.cY, mon.hb.cX, mon.hb.cY, 1), 0.1f));
+			DamageInfo dinfo = new DamageInfo(source, baseDamage);
+			dinfo.applyPowers(source, mon);
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(mon, dinfo, AbstractGameAction.AttackEffect.FIRE, true));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mon, source, new VulnerablePower(mon, vulnAmount, false), vulnAmount));
+			if (remainingGhosts > 0) {
+				remainingGhosts--;
+				AbstractDungeon.actionManager.addToBottom(new KamikazeGhostAction(remainingGhosts, baseDamage, vulnAmount));
+			}
+		}
+        isDone = true;
     }
 
 }
