@@ -17,7 +17,7 @@ public class SolarFlare extends SaiyanCard {
 
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CardNames.SOLAR_FLARE);
 
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int KI_COST = 20;
 	
 	public SolarFlare() {
@@ -29,6 +29,7 @@ public class SolarFlare extends SaiyanCard {
 		kiRequired = KI_COST;
 		this.baseMagicNumber = KI_COST;
 		this.magicNumber = this.baseMagicNumber;
+		this.exhaust = true;
 	}
 
 	@Override

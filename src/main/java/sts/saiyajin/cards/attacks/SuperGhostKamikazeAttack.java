@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
+import sts.saiyajin.actions.KamikazeGhostAction;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.ui.vfx.GhostAttackBallEffect;
@@ -59,13 +60,6 @@ public class SuperGhostKamikazeAttack extends SaiyanCard {
 	
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
-		for (int i = 0; i < this.misc; i++) {
-			AbstractMonster mon = AbstractDungeon.getRandomMonster();
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new GhostAttackBallEffect(player.hb.cX, player.hb.cY, mon.hb.cX, mon.hb.cY, 1), 0.1f));
-			DamageInfo dinfo = new DamageInfo(player, this.baseDamage);
-			dinfo.applyPowers(player, mon);
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(mon, dinfo, AbstractGameAction.AttackEffect.FIRE, true));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mon, player, new VulnerablePower(mon, magicNumber, false), magicNumber));
-		}
+		AbstractDungeon.actionManager.addToBottom(new KamikazeGhostAction(this.misc, baseDamage, magicNumber));
 	}
 }

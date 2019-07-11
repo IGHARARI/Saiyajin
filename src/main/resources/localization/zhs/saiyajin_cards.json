@@ -144,7 +144,7 @@
 	"Saiyan:Honing": {
 		"NAME": "磨练",
 		"DESCRIPTION": "消耗 最多 !M! 张牌然后获得它的费用的两倍+1点数的蓄气。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "消耗 最多 !M! 张牌然后获得它的费用的两倍+2点数的蓄气。"
+		"UPGRADE_DESCRIPTION": "消耗 最多 !M! 张牌然后获得它的费用的两倍+2点数的蓄气。 NL 次使用消耗 !stslib:ex!"
 	},
 	"Saiyan:UltraInstinct": {
 		"NAME": "自在极意功",
@@ -313,8 +313,8 @@
 	},
 	"Saiyan:SolarFlare": {
 		"NAME": "太阳拳",
-		"DESCRIPTION": "使用 !Saiyan:KiReq! 点气。 NL 给与敌人1点 眩晕 。",
-		"UPGRADE_DESCRIPTION": "使用 !Saiyan:KiReq! 点气。 NL 给与所有敌人1点 眩晕 。"
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 点气。 NL 给与敌人1点 眩晕 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "使用 !Saiyan:KiReq! 点气。 NL 给与所有敌人1点 眩晕 。 NL 消耗 。"
 	},
 	"Saiyan:SuperSaiyanForm": {
 		"NAME": "超级赛亚人化",

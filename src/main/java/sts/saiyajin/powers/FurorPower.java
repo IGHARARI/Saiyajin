@@ -55,6 +55,7 @@ public class FurorPower extends AbstractPower implements OnApplyPowerActionSubsc
 	public void onApplyPowerAction(AbstractCreature target, AbstractCreature source, AbstractPower powerToApply, int stackAmount, boolean isFast, AttackEffect effect) {
 		if (!(target instanceof AbstractPlayer) && powerToApply.type == PowerType.BUFF) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StrengthPower(owner, amount), amount));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new KiPower(owner, kiToRegen), kiToRegen));
 		}
 	}
 }

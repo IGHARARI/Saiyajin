@@ -48,7 +48,7 @@ public class SaiyanCard extends CustomCard {
 			final float drawY = this.current_y - 280.0f;
 			sb.setColor(Color.valueOf("fce9b5"));//CardProperties.SAIYAN_CARD_RENDER_COLOR);
 			try {
-				sb.draw(ImageMaster.CARD_COLORLESS_ORB, drawX, drawY, 290.0f, 280.0f, 512.0f, 512.0f, 0.8f * this.drawScale * Settings.scale, 0.8f * this.drawScale * Settings.scale, this.angle, 0, 0, 512, 512, false, false);
+				sb.draw(ImageMaster.CARD_COLORLESS_ORB.getTexture(), drawX, drawY, 290.0f, 280.0f, 512.0f, 512.0f, 0.8f * this.drawScale * Settings.scale, 0.8f * this.drawScale * Settings.scale, this.angle, 0, 0, 512, 512, false, false);
 			}
 			catch (Exception e) {
 				ExceptionHandler.handleException(e, logger);

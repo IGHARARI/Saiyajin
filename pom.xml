@@ -13,9 +13,17 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<Steam.path>Z:/SteamLibrary/steamapps/</Steam.path>
 	</properties>
 
 	<dependencies>
+        <dependency>
+            <groupId>com.megacrit.cardcrawl</groupId>
+            <artifactId>slaythespire</artifactId>
+            <version>${SlayTheSpire.version}</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
+        </dependency>
 		<dependency>
 			<groupId>com.evacipated.cardcrawl</groupId>
 			<artifactId>ModTheSpire</artifactId>
@@ -23,13 +31,13 @@
 			<scope>system</scope>
 			<systemPath>${basedir}/lib/ModTheSpire.jar</systemPath>
 		</dependency>
-		<dependency>
-			<groupId>basemod</groupId>
-			<artifactId>basemod</artifactId>
-			<version>2.10.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/BaseMod.jar</systemPath>
-		</dependency>
+        <dependency>
+            <groupId>basemod</groupId>
+            <artifactId>basemod</artifactId>
+            <version>5.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
+        </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -46,6 +54,13 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.11.1</version>
 		</dependency>
+	        <dependency>
+            <groupId>com.evacipated.cardcrawl.mod</groupId>
+            <artifactId>StSLib</artifactId>
+            <version>1.3.2</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>

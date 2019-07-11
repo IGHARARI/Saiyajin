@@ -144,7 +144,7 @@
 	"Saiyan:Honing": {
 		"NAME": "Honing",
 		"DESCRIPTION": "Exhaust up to !M! card and gain Ki-Regen equal to 1 + double its cost. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Exhaust up to !M! cards and gain Ki-Regen equal to 2 + double their cost."
+		"UPGRADE_DESCRIPTION": "Exhaust up to !M! cards and gain Ki-Regen equal to 2 + double their cost. NL Exhaustive !stslib:ex!"
 	},
 	"Saiyan:UltraInstinct": {
 		"NAME": "Ultra Instinct",
@@ -313,8 +313,8 @@
 	},
 	"Saiyan:SolarFlare": {
 		"NAME": "Solar Flare",
-		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Apply 1 Stun to an enemy. ",
-		"UPGRADE_DESCRIPTION": "Consumes !Saiyan:KiReq! Ki. NL Apply 1 Stun to ALL enemies."
+		"DESCRIPTION": "Consume !Saiyan:KiReq! Ki. NL Apply 1 Stun to an enemy. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Consumes !Saiyan:KiReq! Ki. NL Apply 1 Stun to ALL enemies. NL Exhaust."
 	},
 	"Saiyan:SuperSaiyanForm": {
 		"NAME": "Super Saiyan Form",

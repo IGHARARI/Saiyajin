@@ -1,5 +1,6 @@
 package sts.saiyajin.cards.skills;
 
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -39,6 +40,7 @@ public class Honing extends SaiyanCard {
 			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 			initializeDescription();
 			this.exhaust = false;
+			ExhaustiveVariable.setBaseValue(this, 2);
 		}
 	}
 

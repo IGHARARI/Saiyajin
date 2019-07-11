@@ -63,7 +63,7 @@ public class PlayerFlightPower extends AbstractPower {
     @Override
     public int onAttacked(final DamageInfo info, final int damageAmount) {
         final Boolean willLive = this.calculateDamageTakenAmount(damageAmount, info.type) < this.owner.currentHealth;
-        if (info.owner != null && damageAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && willLive) {
+        if (info.owner != null && info.output > 0 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && willLive) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
         }

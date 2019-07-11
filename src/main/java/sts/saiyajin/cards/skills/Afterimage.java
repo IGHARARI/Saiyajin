@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 
+import sts.saiyajin.cards.tags.SaiyajinCustomCardTags;
 import sts.saiyajin.cards.types.SaiyanCard;
 import sts.saiyajin.ui.CardPaths;
 import sts.saiyajin.utils.CardColors;
@@ -35,6 +36,7 @@ public class Afterimage extends SaiyanCard {
 		this.exhaust = true;
 		this.baseMagicNumber = BASE_DAZES;
 		this.magicNumber = baseMagicNumber;
+		this.tags.add(SaiyajinCustomCardTags.COMBO_FOLLOW_UP);
 	}
 
 	@Override
