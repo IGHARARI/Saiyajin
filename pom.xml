@@ -14,6 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<Steam.path>Z:/SteamLibrary/steamapps/</Steam.path>
+		<SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
 	</properties>
 
 	<dependencies>
@@ -29,7 +30,7 @@
 			<artifactId>ModTheSpire</artifactId>
 			<version>2.6.0</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/lib/ModTheSpire.jar</systemPath>
+			<systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
 		</dependency>
         <dependency>
             <groupId>basemod</groupId>
@@ -47,12 +48,12 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.11.1</version>
+			<version>[2.13.2,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.11.1</version>
+			<version>[2.13.2,)</version>
 		</dependency>
 	        <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
@@ -77,7 +78,7 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.3.1</version>
 				<configuration>
-					<outputDirectory>C:/Users/Lelouch/eclipse/workspaces/ModTheSpyre</outputDirectory>
+					<outputDirectory>C:\Users\nacho\Desktop\Projects\SlayModding\Saiyajin</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>

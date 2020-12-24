@@ -41,7 +41,8 @@ public class CcCapsule extends SaiyanCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
         final AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
-        c.modifyCostForTurn(-1);
+        int cost = Math.max(c.costForTurn -1, 0);
+        c.setCostForTurn(cost);
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
 	}
 }

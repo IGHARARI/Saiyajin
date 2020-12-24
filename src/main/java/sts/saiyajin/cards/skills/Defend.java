@@ -49,13 +49,14 @@ public class Defend extends SaiyanCard {
 	@Override
 	public void use(AbstractPlayer player, AbstractMonster monster) {
 		int kiPower = PowersHelper.getPlayerPowerAmount(KiPower.POWER_ID);
-		int blockAmount = this.baseBlock;
-		if (kiPower >= KI_BLOCK_BONUS_REQUIREMENT) {
-			blockAmount += KI_BLOCK_BONUS;
+		boolean useKiBonus = kiPower >= KI_BLOCK_BONUS_REQUIREMENT;
+		Defend helperCard = (Defend) this.makeStatEquivalentCopy();
+		if (useKiBonus) {
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(player, player, KiPower.POWER_ID, this.magicNumber));
+			helperCard.baseBlock += KI_BLOCK_BONUS;
 		}
-		blockAmount = applyPowerOnBlockHelper(blockAmount);
-		GainBlockAction block = new GainBlockAction(player, player, blockAmount);
+		helperCard.applyPowersToBlock();
+		GainBlockAction block = new GainBlockAction(player, player, helperCard.block);
 	    AbstractDungeon.actionManager.addToBottom(block);
 	}
 
