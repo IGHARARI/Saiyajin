@@ -1,0 +1,333 @@
+{
+	"Saiyan:SAIYA_Strike": {
+		"NAME": "賽亞拳",
+		"DESCRIPTION": "造成 !D! 點傷害"
+	},
+	"Saiyan:SAIYA_Defend": {
+		"NAME": "防禦",
+		"DESCRIPTION": "獲得 !B! 點 格擋 。 NL 氣增幅 ( !M! ):獲得2點 格擋"
+	},
+	"Saiyan:EnergyBlast": {
+		"NAME": "能量彈",
+		"DESCRIPTION": "起始技 。 NL 對所有敵人造成 !D! 點傷害。 NL 氣增幅 ( !M! ):多造成2點傷害"
+	},
+	"Saiyan:SoulSpice": {
+		"NAME": "靈魂美食",
+		"DESCRIPTION": "每 消耗 1 張狀態牌，獲得 !M! 點 力量"
+	},
+	"Saiyan:RemoveWeights": {
+		"NAME": "卸掉重裝",
+		"DESCRIPTION": "保留 1張牌。 NL 獲得 !M! 點 力量 。 NL 你的回合結束時，失去 !M! 點 力量"
+	},
+	"Saiyan:FingerParry": {
+		"NAME": "手指格擋",
+		"DESCRIPTION": "獲得 !M! 點 易傷 。 NL 獲得 !B! 點 格擋"
+	},
+	"Saiyan:WarmUp": {
+		"NAME": "熱身",
+		"DESCRIPTION": "每回合前 !M! 次使用能力牌時，獲得 [E]"
+	},
+	"Saiyan:ExpandingShockwave": {
+		"NAME": "擴放衝擊波",
+		"DESCRIPTION": "連接技 。 NL 對1個敵人造成 !D! 點傷害。 NL 對其他敵人造成2倍傷害"
+	},
+	"Saiyan:FinalFlash": {
+		"NAME": "閃光炮",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 造成 !D! 點傷害。 NL 終結技 : 敵人失去與你 連擊 層數相等的 力量 。 NL 消耗"
+	},
+	"Saiyan:AugmentedBlast": {
+		"NAME": "增強一擊",
+		"DESCRIPTION": "使用 !Saiyan:Misc! 點氣來造成傷害(目前 !D! )。 NL 這個牌使用的氣和造成的傷害永久加 !M! 。 NL 消耗"
+	},
+	"Saiyan:Twize": {
+		"NAME": "雙擊",
+		"DESCRIPTION": "你的下個 終結技 會觸發兩次。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "你的下個 終結技 會觸發兩次"
+	},
+	"Saiyan:PlotArmor": {
+		"NAME": "情節盔甲",
+		"DESCRIPTION": "每打出能力牌，獲得 !M!  格擋",
+		"UPGRADE_DESCRIPTION": "固有。 NL 每打出能力牌，獲得 !M!  格擋"
+	},
+	"Saiyan:Expend": {
+		"NAME": "散氣",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 氣。 NL 獲得 [E] 。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "使用 !Saiyan:KiReq! 氣。 NL 獲得 [E] "
+	},
+	"Saiyan:Reset": {
+		"NAME": "重置",
+		"DESCRIPTION": "終結技 :獲得與你 連擊 相等層數的 力量 。 NL 回合結束時，失去那些 力量 。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "終結技 :獲得與你 連擊 相等層數的 力量 。 NL 回合結束時，失去那些 力量"
+	},
+	"Saiyan:TransfigurationBeam": {
+		"NAME": "巧克力光波",
+		"DESCRIPTION": "造成 !D! 點傷害。 NL 若這張牌殺死1名不是「爪牙」的敵人，獲得1瓶隨機藥水。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "造成 !D! 點傷害。 NL 若這張牌殺死1名不是「爪牙」的敵人，獲得1瓶隨機藥水"
+	},
+	"Saiyan:Pacing": {
+		"NAME": "踏步",
+		"DESCRIPTION": "保留 1張牌。 NL 獲得X點 連擊",
+		"UPGRADE_DESCRIPTION": "保留 1張牌。 NL 獲得X+1點 連擊"
+	},
+	"Saiyan:Planning": {
+		"NAME": "計劃",
+		"DESCRIPTION": "從抽牌堆選擇1張 起始技 或 終結技 放入手牌。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "從抽牌堆選擇1張 起始技 或 終結技 放入手牌"
+	},
+	"Saiyan:MindBoom": {
+		"NAME": "精神轟炸",
+		"DESCRIPTION": "給予 !Saiyan:Misc! 層 腦震盪 然後將它翻倍。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "給予 !Saiyan:Misc! 層 腦震盪 然後將它變爲三倍。  NL 消耗"
+	},
+	"Saiyan:TheBomb": {
+		"NAME": "洞洞波",
+		"DESCRIPTION": "在3回合結束後，多所有敵人造成 !M! 點傷害。這張牌的傷害永久增加 !Saiyan:Misc! 。 NL 消耗"
+	},
+	"Saiyan:PowerUp": {
+		"NAME": "能量提升",
+		"DESCRIPTION": "連接技 。 NL 超~大聲喊話，會獲得 !M! 點 氣 和 !B! 點 格擋"
+	},
+	"Saiyan:Rekindle": {
+		"NAME": "重燃",
+		"DESCRIPTION": "蓄氣增加50%。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "蓄氣增加50%"
+	},
+	"Saiyan:PressOn": {
+		"NAME": "追擊",
+		"DESCRIPTION": "本回合無視氣的費用。每打出1張牌，將1張 氣燃燒 放進棄牌堆。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "本回合無視氣的費用。每打出1張牌，將1張 氣燃燒 放進棄牌堆"
+	},
+	"Saiyan:PowerStance": {
+		"NAME": "攻擊式",
+		"DESCRIPTION": "攻擊牌算爲 起始技",
+		"UPGRADE_DESCRIPTION": "固有。 NL 攻擊牌算爲 起始技"
+	},
+	"Saiyan:Afterimage": {
+		"NAME": "餘像",
+		"DESCRIPTION": "連接技 。 NL 獲得1點 緩衝 。將 !M! 個 暈眩 放入抽牌堆。 NL 消耗"
+	},
+	"Saiyan:HyperTimeChamber": {
+		"NAME": "精神時間屋",
+		"DESCRIPTION": "給了所有敵人2層 眩暈 。 NL 你 訓練 兩回合"
+	},
+	"Saiyan:Training": {
+		"NAME": "訓練",
+		"DESCRIPTION": "保留 。 NL 你 訓練 !M! 回合。 NL 訓練 之後 消耗 ，不能被手動丟棄或 消耗",
+		"UPGRADE_DESCRIPTION": "在 訓練 中，不能用目標為敵人的牌"
+	},
+	"Saiyan:SpiritSword": {
+		"NAME": "氣劍",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 造成 !D! 點傷害。 NL 終結技 :對目標後方的敵人造成 !D! 倍 連擊 數的傷害"
+	},
+	"Saiyan:Furor": {
+		"NAME": "挑戰",
+		"DESCRIPTION": "當敵人獲得 增益 時，獲得1點 力量",
+		"UPGRADE_DESCRIPTION": "當敵人獲得 增益 時，獲得 !M! 點 力量 和 !Saiyan:KiVar! 點氣"
+	},
+	"Saiyan:Overexert": {
+		"NAME": "挑戰極限",
+		"DESCRIPTION": "獲得 !M! 點 力量 和 !Saiyan:KiVar! 點氣。將2張 氣燃燒 放入抽牌堆。 NL 消耗"
+	},
+	"Saiyan:KiBurn": {
+		"NAME": "氣燃燒",
+		"DESCRIPTION": "無法打出  。 NL 虛無 。 NL 抽到時失去 !M! 點氣"
+	},
+	"Saiyan:DragonFist": {
+		"NAME": "龍拳",
+		"DESCRIPTION": "連接技 。 NL 造成 !D! 點傷害。 消耗 1 張牌。 NL 將1張 氣燃燒 放入抽牌堆",
+		"UPGRADE_DESCRIPTION": "連接技 。 NL 造成 !D! 點傷害。 消耗 1 張牌"
+	},
+	"Saiyan:Medicine": {
+		"NAME": "心臟藥",
+		"DESCRIPTION": "獲得 !M! 點 再生 和 1層 人工製品 。 NL 消耗"
+	},
+	"Saiyan:Honing": {
+		"NAME": "磨練",
+		"DESCRIPTION": "消耗 最多 !M! 張牌然後獲得耗能的2倍+1的蓄氣。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "消耗 最多 !M! 張牌然後獲得耗能的2倍+1的蓄氣"
+	},
+	"Saiyan:UltraInstinct": {
+		"NAME": "自在極意功",
+		"DESCRIPTION": "獲得25% [#EFC851]閃避機率[] X次",
+		"UPGRADE_DESCRIPTION": "獲得25% [#EFC851]閃避機率[] X+1次"
+	},
+	"Saiyan:KameHameHa": {
+		"NAME": "龜派氣功",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 造成 !D! 點傷害。 NL 終結技 :每點 連擊 減少1點需要的 [E]",
+		"EXTENDED_DESCRIPTION" : ["龜…派…氣…功…波！！"]
+	},
+	"Saiyan:Fly": {
+		"NAME": "飛行",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 獲得3點 飛翔"
+	},
+	"Saiyan:PowerPole": {
+		"NAME": "如意棒",
+		"DESCRIPTION": "對最近的敵人造成 !D! 點傷害，然後每個後面的敵人傷害翻倍"
+	},
+	"Saiyan:SaiyanHubris": {
+		"NAME": "賽亞人的傲慢",
+		"DESCRIPTION": "當前每有1個敵人，獲得 !M! 點氣",
+		"EXTENDED_DESCRIPTION": ["總算有點挑戰性的了"]
+	},
+	"Saiyan:SuperSaiyanThree": {
+		"NAME": "超級賽亞人三",
+		"DESCRIPTION": "獲得 !Saiyan:KiVar! 點氣和蓄氣。 NL 獲得 !M! 點 力量 。 NL 在 !Saiyan:Misc! 回合內逐漸失去"
+	},
+	"Saiyan:MajinSeal": {
+		"NAME": "魔人封印",
+		"DESCRIPTION": "獲得 !M! 點蓄氣。每獲得 連擊 時，多獲得1點 連擊 。 NL 每回合第1張目標為敵人的攻擊牌會變成隨機目標"
+	},
+	"Saiyan:CCCapsule": {
+		"NAME": "萬能膠囊",
+		"DESCRIPTION": "增加1張隨機能力牌到手牌。該張牌在本回合消耗 -1 。 NL 消耗"
+	},
+	"Saiyan:Momentum": {
+		"NAME": "動量",
+		"DESCRIPTION": "終結技 只會用掉一半 連擊",
+		"UPGRADE_DESCRIPTION": "固有。 NL 終結技 只會用掉一半 連擊"
+	},
+	"Saiyan:ReverberatingForce": {
+		"NAME": "迴響一擊",
+		"DESCRIPTION": "造成 !D! 點傷害。 NL 在敵人回合結束時造成 !D! 點傷害。 NL 終結技 :延遲受到的傷害變為 連擊 數的 !D! 倍"
+	},
+	"Saiyan:KiStrike": {
+		"NAME": "氣擊",
+		"DESCRIPTION": "起始技 : NL 使用 !Saiyan:KiReq! 點氣。 NL 獲得 !B! 點 格擋 。 NL 造成 !D! 點傷害"
+	},
+	"Saiyan:KaioKen": {
+		"NAME": "界王拳",
+		"DESCRIPTION": "獲得 !M! 點氣。給予自己1點 易傷 。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "獲得 !M! 點氣。給予自己1點 易傷"
+	},
+	"Saiyan:MeteorDash": {
+		"NAME": "流星衝撞",
+		"DESCRIPTION": "起始技 。 NL 造成 !D! 點傷害"
+	},
+	"Saiyan:Endure": {
+		"NAME": "承受",
+		"DESCRIPTION": "使用所有氣， 獲得相等的 格擋 (目前 !B! )"
+	},
+	"Saiyan:BackAttack": {
+		"NAME": "背擊",
+		"DESCRIPTION": "明顯的 。 NL 造成 !D! 點傷害。NL 給予 !M! 點 虛弱",
+		"EXTENDED_DESCRIPTION" : ["敵人沒有易傷"]
+	},
+	"Saiyan:ExtremeSpeed": {
+		"NAME": "極速",
+		"DESCRIPTION": "每當你獲得 連擊 時，抓一張牌"
+	},
+	"Saiyan:BigBangAttack": {
+		"NAME": "大爆炸攻擊",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 造成 !D! 點傷害"
+	},
+	"Saiyan:LastResort": {
+		"NAME": "最後一站",
+		"DESCRIPTION": "使用所有的氣，丟失所有蓄氣。 NL 每使用 !M! 點氣，獲得1點 力量 。 NL 消耗"
+	},
+	"Saiyan:Quickening": {
+		"NAME": "加快",
+		"DESCRIPTION": "起始技 。 NL 使用 !Saiyan:KiReq! 點氣。 NL 獲得 !M! 點 多層護甲 。給予所有敵人1點 易傷"
+	},
+	"Saiyan:MonkeyTail": {
+		"NAME": "猴尾",
+		"DESCRIPTION": "獲得 !M! 點 力量 。 NL 將1張 圓月 和 巨猿化 放入抽牌堆"
+	},
+	"Saiyan:FullMoon": {
+		"NAME": "圓月",
+		"DESCRIPTION": "明月在天空中盯着你"
+	},
+	"Saiyan:GreatApeForm": {
+		"NAME": "巨猿化",
+		"DESCRIPTION": "看圓月 。每回合開始時獲得 [E] [E] 。 消耗 所有非攻擊牌。變成 巨猿"
+	},
+	"Saiyan:ConcussiveBlow": {
+		"NAME": "震盪一擊",
+		"DESCRIPTION": "造成 !D! 點傷害，給予敵人 !M! 點 腦震盪"
+	},
+	"Saiyan:DragonRadar": {
+		"NAME": "龍珠雷達",
+		"DESCRIPTION": "將7個 龍珠 隨機放入抽牌堆和棄牌堆。 NL 消耗"
+	},
+	"Saiyan:DragonBall": {
+		"NAME": "龍珠",
+		"DESCRIPTION": "抽1張牌。 NL 打出7張後得到1個強大的願望。 NL 消耗"
+	},
+	"Saiyan:Makankosappo": {
+		"NAME": "魔貫光殺炮",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 造成 !D! 點傷害 !Saiyan:Misc! 次。 NL 終結技 :給予2倍 連擊 的 腦震盪"
+	},
+	"Saiyan:Kienzan": {
+		"NAME": "氣圓斬",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 造成 !D! 點傷害。這個攻擊無視 格擋"
+	},
+	"Saiyan:DoubleMasenko": {
+		"NAME": "雙魔閃光",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 對2個隨機敵人造成 !D! 點傷害"
+	},
+	"Saiyan:BurningSoul": {
+		"NAME": "燃耗着的靈魂",
+		"DESCRIPTION": "在回合結束時，使用 !M! 氣來獲得2倍的 氣護盾"
+	},
+	"Saiyan:Scouter": {
+		"NAME": "戰力檢測眼鏡",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 這回合和下回合獲得 !B! 點 格擋 。 NL 若敵人並不準備攻擊，增加 !M!  格擋"
+	},
+	"Saiyan:TurtleShell": {
+		"NAME": "龜殼",
+		"DESCRIPTION": "得到 !M! 點 蓄氣"
+	},
+	"Saiyan:Flurry": {
+		"NAME": "亂舞",
+		"DESCRIPTION": "連接技 : NL 造成 !D! 點傷害3次。 NL 氣增幅 ( !M! ):多造成1次傷害"	
+	},
+	"Saiyan:ThirstForFight": {
+		"NAME": "飢渴戰鬥",
+		"DESCRIPTION": "抽1張牌。 NL 獲得與敵人 buff 數量相同的 力量 。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "抽1張牌。 NL 獲得與敵人 buff 數量相同的 力量 。 "
+	},
+	"Saiyan:Teleport": {
+		"NAME": "瞬移",
+		"DESCRIPTION": "起始技 。 連接技 。 NL 使用 !Saiyan:KiReq! 點氣。 NL 給予 !M! 點 易傷",
+		"UPGRADE_DESCRIPTION": "起始技 。 連接技 。 NL 使用 !Saiyan:KiReq! 點氣。 NL 給予 !M! 點 易傷 。 NL 抽1張牌"
+	},
+	"Saiyan:DrainingStrike": {
+		"NAME": "奪取力量",
+		"DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 每個敵人受到未格擋的傷害時，獲得 [E] 。 NL 消耗",
+		"UPGRADE_DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 每個敵人受到攻擊時，獲得 [E] 。 NL 消耗"
+	},
+	"Saiyan:Taunt": {
+		"NAME": "挑釁",
+		"DESCRIPTION": "給予敵人 !M! 點 力量 。獲得2點 反彈"
+	},
+	"Saiyan:GhostAttack": {
+		"NAME": "幽靈神風拳",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 對個隨機敵人造成 !D! 點傷害並且給予 !M! 點 易傷  !Saiyan:Misc! 次。 NL 消耗"
+	},
+	"Saiyan:KiExplosion": {
+		"NAME": "氣爆炸",
+		"DESCRIPTION": "連接技 。 NL 使用 !Saiyan:KiReq! 點氣。 NL 獲得 !B! 點 格擋 和 !M! 點 氣護盾"
+	},
+	"Saiyan:RuthlessBlow": {
+		"NAME": "無情一擊",
+		"DESCRIPTION": "造成 !D! 點傷害。 NL 終結技 :給予 連擊 數相等的 易傷"
+	},
+	"Saiyan:SolarFlare": {
+		"NAME": "太陽拳",
+		"DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 給予敵人1層 眩暈",
+		"UPGRADE_DESCRIPTION": "使用 !Saiyan:KiReq! 點氣。 NL 給予所有敵人1層 眩暈"
+	},
+	"Saiyan:SuperSaiyanForm": {
+		"NAME": "超級賽亞人形態",
+		"DESCRIPTION": "獲得 !M! 點蓄氣和4點金屬化",
+		"UPGRADE_DESCRIPTION": "獲得 !M! 點蓄氣和5點金屬化"
+	},
+	"Saiyan:SenzuBean": {
+		"NAME": "仙豆",
+		"DESCRIPTION": "給予一個非「爪牙」的敵人 贖罪 : 力量 ( !M! )， 無敵 （33%最大生命）。 NL 在戰鬥之後獲得1個普通遺物",
+		"UPGRADE_DESCRIPTION": "給予一個非「爪牙」的敵人 贖罪 : 力量 ( !M! )，金屬化（ !M! x3）。 NL 在戰鬥之後獲得1個普通遺物"
+	},
+	"Saiyan:GenkiDama": {
+		"NAME": "元氣彈",
+		"DESCRIPTION": "使用最多 !M! 點氣，對所有敵人造成相等的傷害(目前 !D! )。 NL 獲得 !Saiyan:Misc! 點 虛弱"
+	}
+}
