@@ -9,6 +9,6 @@
   "dependencies": [
     "basemod", "stslib"
   ],
-  "version": "0.5.1",
+  "version": "1.0.2",
   "sts_version": "01-23-2019"
 }
